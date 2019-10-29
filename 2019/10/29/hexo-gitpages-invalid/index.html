@@ -15,7 +15,7 @@
 <meta property="og:description" content="背景使用 Github Pages 功能将博客托管在了 Github 上，并配置 CNAME 将自己的域名解析了过去，在 Github 的仓库设置中开始 Custom domain 的功能，这时候就可以直接使用自己的域名访问啦。     但是发现一个问题是，每次配置 Custom domain 之后，再次 hexo deploy 之后，Custom domain 会被重置失效。 解决方案在 hex">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g8felp76szj311g0u00u4.jpg">
-<meta property="og:updated_time" content="2019-10-29T13:46:13.109Z">
+<meta property="og:updated_time" content="2019-10-29T13:54:37.137Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g8felp76szj311g0u00u4.jpg">
 
@@ -24,7 +24,7 @@
 
 <link href="/css/style.css?v=1.0.1" rel="stylesheet">
 
-<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+<link href="/css/hl_theme/darcula.css?v=1.0.1" rel="stylesheet">
 
 <link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -332,7 +332,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-29 21:46:13'>2019-10-29 13:37</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-29 21:54:37'>2019-10-29 13:37</time>
         
     </div>
     <div class="article-meta">
@@ -351,6 +351,17 @@
             </span>
         </span>
         
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
         
     </div>
     
@@ -373,7 +384,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>使用 <code>Github Pages</code> 功能将博客托管在了 Github 上，并配置 <code>CNAME</code> 将自己的域名解析了过去，在 <code>Github</code> 的仓库设置中开始 <code>Custom domain</code> 的功能，这时候就可以直接使用自己的域名访问啦。</p>
-<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8felp76szj311g0u00u4.jpg" alt="image-20191029140310609" style="zoom:40%;">
+<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8felp76szj311g0u00u4.jpg" alt="GitHub Pages" style="zoom:40%;">
 
 
 
@@ -400,13 +411,34 @@
     <p><span class="copy-title">文章字数:</span><span class="post-count">169</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="神秘的小岛岛">神秘的小岛岛</a></p>
     <p><span class="copy-title">发布时间:</span>2019-10-29, 13:37:25</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-29, 21:46:13</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-29, 21:54:37</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/29/hexo-gitpages-invalid/" title="hexo重新发布后GitPages自定义域名失效">http://tuyuankun.gitee.io/2019/10/29/hexo-gitpages-invalid/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
 </div>
 
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '9f82f3d33fe6303f2632',
+            clientSecret: '64316477206edcf4f37118b5e0f003e91445ce2a',
+            repo: '766564616.github.io',
+            owner: '766564616',
+            admin: ['766564616'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
 
 
 
@@ -549,7 +581,7 @@
         border-right: 1px solid #C3CCD0;
         text-align: right;
         color: #AAA;
-        background-color: #fafafa;
+        background-color: ;
     }
     .pre-numbering.widther {
         width: 35px;
