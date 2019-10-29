@@ -14,10 +14,10 @@
 <meta property="og:site_name" content="神秘的小岛岛">
 <meta property="og:description" content="背景使用 Github Pages 功能将博客托管在了 Github 上，并配置 CNAME 将自己的域名解析了过去，在 Github 的仓库设置中开始 Custom domain 的功能，这时候就可以直接使用自己的域名访问啦。   但是发现一个问题是，每次配置 Custom domain 之后，再次 hexo deploy 之后，Custom domain 会被重置失效。 解决方案在 hexo">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http:&#x2F;&#x2F;tuyuankun.gitee.io&#x2F;2019&#x2F;10&#x2F;29&#x2F;hexo-gitpages-invalid&#x2F;hexo-gitpages-invalid&#x2F;image-20191029140310609.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;tuyuankun.gitee.io&#x2F;.io&#x2F;&#x2F;image-20191029140310609.png">
 <meta property="og:updated_time" content="2019-10-29T06:03:29.251Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;tuyuankun.gitee.io&#x2F;2019&#x2F;10&#x2F;29&#x2F;hexo-gitpages-invalid&#x2F;hexo-gitpages-invalid&#x2F;image-20191029140310609.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;tuyuankun.gitee.io&#x2F;.io&#x2F;&#x2F;image-20191029140310609.png">
 
 
 <link rel="icon" href="/img/avatar.jpeg">
@@ -373,7 +373,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>使用 <code>Github Pages</code> 功能将博客托管在了 Github 上，并配置 <code>CNAME</code> 将自己的域名解析了过去，在 <code>Github</code> 的仓库设置中开始 <code>Custom domain</code> 的功能，这时候就可以直接使用自己的域名访问啦。</p>
-<img src="hexo-gitpages-invalid/image-20191029140310609.png" alt="image-20191029140310609" style="zoom:40%;" />
+<img src="/.io//image-20191029140310609.png" alt="image-20191029140310609" style="zoom:40%;">
 
 <p>但是发现一个问题是，每次配置 <code>Custom domain</code> 之后，再次 <code>hexo deploy</code> 之后，<code>Custom domain</code> 会被重置失效。</p>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在 <code>hexo</code> 生成的博客的 <code>source</code> 目录下新建一个 <code>CNAME</code> 文件，然后在这个文件中填入你的域名，最后重新部署hexo。这样就不会每次发布之后，<code>Github pages</code> 里的 <code>Custom domain</code> 都被重置掉啦。</p>
