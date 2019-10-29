@@ -6,16 +6,18 @@
   <meta name="keywords" content=" git , github , gitee ">
   <meta name="description" content="git 同时管理Github和Gitee | 神秘的小岛岛">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="1.取消git全局配置 取消全局的user.name和user.email  12git config --global --unset user.name &quot;xxx&quot;git config --global --unset user.email &quot;xxx&quot;  其中xxx是以前配置的信息，可以通过 下边命令查看 1git confg --global --list  2.生成new的ssh keys">
-<meta name="keywords" content="git,github,gitee">
+<meta name="description" content="背景使用 Github Pages 功能将博客托管在了 Github 上，并配置 CNAME 将自己的域名解析了过去，在 Github 的仓库设置中开始 Custom domain 的功能，这时候就可以直接使用自己的域名访问啦。   但是发现一个问题是，每次配置 Custom domain 之后，再次 hexo deploy 之后，Custom domain 会被重置失效。 解决方案在 hexo">
+<meta name="keywords" content="工具,hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git 同时管理Github和Gitee">
-<meta property="og:url" content="http:&#x2F;&#x2F;tuyuankun.gitee.io&#x2F;2019&#x2F;10&#x2F;29&#x2F;%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91&#x2F;%E3%80%90Git%E3%80%91&#x2F;git%20manage%20github&amp;&amp;gitee&#x2F;index.html">
+<meta property="og:title" content="hexo重新发布后GitPages自定义域名失效">
+<meta property="og:url" content="http:&#x2F;&#x2F;tuyuankun.gitee.io&#x2F;2019&#x2F;10&#x2F;29&#x2F;%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91&#x2F;%E3%80%90Hexo%E3%80%91&#x2F;hexo-gitpages-invalid&#x2F;index.html">
 <meta property="og:site_name" content="神秘的小岛岛">
-<meta property="og:description" content="1.取消git全局配置 取消全局的user.name和user.email  12git config --global --unset user.name &quot;xxx&quot;git config --global --unset user.email &quot;xxx&quot;  其中xxx是以前配置的信息，可以通过 下边命令查看 1git confg --global --list  2.生成new的ssh keys">
+<meta property="og:description" content="背景使用 Github Pages 功能将博客托管在了 Github 上，并配置 CNAME 将自己的域名解析了过去，在 Github 的仓库设置中开始 Custom domain 的功能，这时候就可以直接使用自己的域名访问啦。   但是发现一个问题是，每次配置 Custom domain 之后，再次 hexo deploy 之后，Custom domain 会被重置失效。 解决方案在 hexo">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-29T05:27:21.097Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;tuyuankun.gitee.io&#x2F;2019&#x2F;10&#x2F;29&#x2F;%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91&#x2F;%E3%80%90Hexo%E3%80%91&#x2F;hexo-gitpages-invalid&#x2F;images&#x2F;image-20191029134410220.png">
+<meta property="og:updated_time" content="2019-10-29T05:48:27.523Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;tuyuankun.gitee.io&#x2F;2019&#x2F;10&#x2F;29&#x2F;%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91&#x2F;%E3%80%90Hexo%E3%80%91&#x2F;hexo-gitpages-invalid&#x2F;images&#x2F;image-20191029134410220.png">
 
 
 <link rel="icon" href="/img/avatar.jpeg">
@@ -166,19 +168,19 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(2)</small></div></li>
+    <li><div class="all active">全部文章<small>(3)</small></div></li>
     
         
             
-            <li><div data-rel="工具"><i class="fold iconfont icon-right"></i>工具<small>(2)</small></div>
+            <li><div data-rel="工具"><i class="fold iconfont icon-right"></i>工具<small>(3)</small></div>
                 
                     <ul class="sub hide">
                         
-                        <li><div data-rel="hexo">hexo<small>(1)</small></div>
+                        <li><div data-rel="git">git<small>(1)</small></div>
                             
                         </li>
                             
-                        <li><div data-rel="git">git<small>(1)</small></div>
+                        <li><div data-rel="hexo">hexo<small>(2)</small></div>
                             
                         </li>
                             
@@ -206,8 +208,8 @@
     </div>
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="2">
-<input type="hidden" id="yelog_site_word_count" value="513">
+<input type="hidden" id="yelog_site_posts_number" value="3">
+<input type="hidden" id="yelog_site_word_count" value="682">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -241,14 +243,6 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">工具</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">hexo</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color4">git</a>
     </li>
     
@@ -260,11 +254,27 @@
         <a href="javascript:" class="color1">gitee</a>
     </li>
     
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">hexo</a>
+    </li>
+    
     <div class="clearfix"></div>
 </div>
 
     
     <nav id="title-list-nav">
+        
+        <a  class="工具 git "
+           href="/2019/10/29/%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91/%E3%80%90Git%E3%80%91/git-manage-github-gitee/"
+           data-tag="git,github,gitee"
+           data-author="" >
+            <span class="post-title" title="git 同时管理Github和Gitee">git 同时管理Github和Gitee</span>
+            <span class="post-date" title="2019-10-29 13:12:16">2019/10/29</span>
+        </a>
         
         <a  class="工具 hexo "
            href="/2019/10/29/%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91/%E3%80%90Hexo%E3%80%91/3-hexo-shortcuts/"
@@ -274,12 +284,12 @@
             <span class="post-date" title="2019-10-29 10:22:08">2019/10/29</span>
         </a>
         
-        <a  class="工具 git "
-           href="/2019/10/29/%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91/%E3%80%90Git%E3%80%91/git%20manage%20github&&gitee/"
-           data-tag="git,github,gitee"
+        <a  class="工具 hexo "
+           href="/2019/10/29/%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91/%E3%80%90Hexo%E3%80%91/hexo-gitpages-invalid/"
+           data-tag="工具,hexo"
            data-author="" >
-            <span class="post-title" title="git 同时管理Github和Gitee">git 同时管理Github和Gitee</span>
-            <span class="post-date" title="2019-10-29 13:12:16">2019/10/29</span>
+            <span class="post-title" title="hexo重新发布后GitPages自定义域名失效">hexo重新发布后GitPages自定义域名失效</span>
+            <span class="post-date" title="2019-10-29 13:37:25">2019/10/29</span>
         </a>
         
     </nav>
@@ -294,7 +304,7 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-【工具】/【Git】/git manage github&amp;&amp;gitee" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-【工具】/【Git】/git-manage-github-gitee" class="article article-type-post" itemscope itemprop="blogPost">
     
         <h1 class="article-title">git 同时管理Github和Gitee</h1>
     
@@ -324,7 +334,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-29 13:27:21'>2019-10-29 13:12</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-29 13:36:59'>2019-10-29 13:12</time>
         
     </div>
     <div class="article-meta">
@@ -442,8 +452,8 @@
     <p><span class="copy-title">文章字数:</span><span class="post-count">338</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="神秘的小岛岛">神秘的小岛岛</a></p>
     <p><span class="copy-title">发布时间:</span>2019-10-29, 13:12:16</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-29, 13:27:21</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/29/%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91/%E3%80%90Git%E3%80%91/git%20manage%20github&&gitee/" title="git 同时管理Github和Gitee">http://tuyuankun.gitee.io/2019/10/29/%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91/%E3%80%90Git%E3%80%91/git%20manage%20github&amp;&amp;gitee/</a>
+    <p><span class="copy-title">最后更新:</span>2019-10-29, 13:36:59</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/29/%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91/%E3%80%90Git%E3%80%91/git-manage-github-gitee/" title="git 同时管理Github和Gitee">http://tuyuankun.gitee.io/2019/10/29/%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91/%E3%80%90Git%E3%80%91/git-manage-github-gitee/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
@@ -504,7 +514,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#工具','#hexo','#git','#github','#gitee',],
+            'data': ['#git','#github','#gitee','#工具','#hexo',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
