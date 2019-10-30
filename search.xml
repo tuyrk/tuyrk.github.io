@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>hexo重新发布后GitPages自定义域名失效</title>
+      <link href="/2019/10/29/hexo-gitpages-invalid/"/>
+      <url>/2019/10/29/hexo-gitpages-invalid/</url>
+      
+        <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>使用 <code>Github Pages</code> 功能将博客托管在了 Github 上，并配置 <code>CNAME</code> 将自己的域名解析了过去，在 <code>Github</code> 的仓库设置中开始 <code>Custom domain</code> 的功能，这时候就可以直接使用自己的域名访问啦。</p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8felp76szj311g0u00u4.jpg" alt="GitHub Pages" style="zoom:40%;" /><p>但是发现一个问题是，每次配置 <code>Custom domain</code> 之后，再次 <code>hexo deploy</code> 之后，<code>Custom domain</code> 会被重置失效。</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在 <code>hexo</code> 生成的博客的 <code>source</code> 目录下新建一个 <code>CNAME</code> 文件，然后在这个文件中填入你的域名，最后重新部署hexo。这样就不会每次发布之后，<code>Github pages</code> 里的 <code>Custom domain</code> 都被重置掉啦。</p><pre><code class="shell">vim ource/CNAME</code></pre><pre><code class="shell">www.tuyrk.cn</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>git 同时管理Github和Gitee</title>
+      <link href="/2019/10/29/git-manage-github-gitee/"/>
+      <url>/2019/10/29/git-manage-github-gitee/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-取消git全局配置"><a href="#1-取消git全局配置" class="headerlink" title="1.取消git全局配置"></a>1.取消git全局配置</h2><blockquote><p>取消全局的user.name和user.email</p></blockquote><pre><code class="shell">git config --global --unset user.name &quot;xxx&quot;git config --global --unset user.email &quot;xxx&quot;</code></pre><p>其中<code>xxx</code>是以前配置的信息，可以通过 下边命令查看</p><pre><code class="shell">git confg --global --list</code></pre><h2 id="2-生成new的ssh-keys"><a href="#2-生成new的ssh-keys" class="headerlink" title="2.生成new的ssh keys"></a>2.生成new的ssh keys</h2><blockquote><p>如果需要github和gitee都能存在，那么就需要生成github和gitee的id_rsa， 然后放在一起</p></blockquote><ol><li><p>生成Github 和 Gitee的keys</p><pre><code class="shell">ssh-keygen -t rsa -f ~/.ssh/id_rsa.github -C &quot;xxx&quot;</code></pre><p>注：其中<code>xxx</code>是github平台的注册邮箱</p><pre><code class="shell">ssh-keygen -t rsa -f ~/.ssh/id_rsa.gitee -C &quot;...&quot;</code></pre><p>注：其中<code>...</code>是你gitee平台的注邮箱</p></li><li><p>将生成的新keys添加到ssh agent</p><pre><code class="shell">ssh-agent bash</code></pre><pre><code class="shell">ssh-add ~/.ssh/id_rsa.githubssh-add ~/.ssh/id_rsa.giteeexit</code></pre></li><li><p>配置config文件</p><blockquote><p>在.ssh文件夹下面配置config文件</p></blockquote><pre><code class="shell">vim ~/.ssh/config</code></pre><pre><code class="shell"># githubHost github.comHostname ssh.github.comPreferredAuthentications publickeyIdentityFile ~/.ssh/id_rsa.githubPort 443# giteeHost gitee.comHostName gitee.comPreferredAuthentications publickeyIdentityFile ~/.ssh/id_rsa.gitee</code></pre></li></ol><h2 id="3-平台设置SSH"><a href="#3-平台设置SSH" class="headerlink" title="3.平台设置SSH"></a>3.平台设置SSH</h2><blockquote><p>钥匙和配置文件搞定后，就需要将我们的公钥放入到我们的平台中了</p></blockquote><ol><li><p>Github：复制<code>~/.ssh/id_rsa.github.pub</code>的内容到Github公钥</p><p>Settings &gt; SSH and GPG keys &gt; New SSH key</p></li><li><p>Gitee：复制<code>~/.ssh/id_rsa.gitee.pub</code>的内容到Gitee公钥</p><p>设置 &gt; 安全设置 &gt; SSH公钥</p></li></ol><h2 id="4-测试是否成功"><a href="#4-测试是否成功" class="headerlink" title="4.测试是否成功"></a>4.测试是否成功</h2><ol><li><p>Github</p><pre><code class="shell">ssh -T git@github.com</code></pre><p>结果：</p><pre><code>Hi 766564616! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code></pre></li><li><p>Gitee</p><pre><code class="shell">ssh -T git@gitee.com</code></pre><p>结果：</p><pre><code>Hi 神秘的小岛岛! You&#39;ve successfully authenticated, but GITEE.COM does not provide shell access.</code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+          <category> git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+            <tag> github </tag>
+            
+            <tag> gitee </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>3-hexo快捷键说明</title>
+      <link href="/2019/10/29/3-hexo-shortcuts/"/>
+      <url>/2019/10/29/3-hexo-shortcuts/</url>
+      
+        <content type="html"><![CDATA[<p>快捷键为vim风格的。按键可能与vimium（chrome插件）的快捷键有冲突，插件设置屏蔽掉此站的快捷键即可</p><p>如果有比较好的建议，欢迎骚扰。</p><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><h3 id="搜索框"><a href="#搜索框" class="headerlink" title="搜索框"></a>搜索框</h3><table><thead><tr><th align="left">Key</th><th align="left">Descption</th></tr></thead><tbody><tr><td align="left">ESC</td><td align="left">1.如果输入框有内容，清除内容 2.如果输入框无内容，失去焦点</td></tr><tr><td align="left">i/I</td><td align="left">获取焦点</td></tr><tr><td align="left">下</td><td align="left">向下选择文章</td></tr><tr><td align="left">上</td><td align="left">向上选择文章</td></tr><tr><td align="left">回车</td><td align="left">打开当前选中的文章，若没有，则默认打开第一个</td></tr></tbody></table><h3 id="全局"><a href="#全局" class="headerlink" title="全局"></a>全局</h3><table><thead><tr><th align="left">Key</th><th align="left">Descption</th></tr></thead><tbody><tr><td align="left">s/S</td><td align="left">全屏/取消全屏</td></tr><tr><td align="left">w/W</td><td align="left">打开/关闭文章目录</td></tr><tr><td align="left">j/J</td><td align="left">向下滑动</td></tr><tr><td align="left">k/K</td><td align="left">向上滑动</td></tr><tr><td align="left">gg/GG</td><td align="left">到最顶端</td></tr><tr><td align="left">shift+G/g</td><td align="left">到最下端</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
