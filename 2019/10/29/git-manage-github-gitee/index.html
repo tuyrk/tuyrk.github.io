@@ -24,7 +24,7 @@
 
 <link href="/css/style.css?v=1.0.1" rel="stylesheet">
 
-<link href="/css/hl_theme/darcula.css?v=1.0.1" rel="stylesheet">
+<link href="/css/hl_theme/github-gist.css?v=1.0.1" rel="stylesheet">
 
 <link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -209,7 +209,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="3">
-<input type="hidden" id="yelog_site_word_count" value="682">
+<input type="hidden" id="yelog_site_word_count" value="700">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -276,20 +276,20 @@
             <span class="post-date" title="2019-10-29 10:22:08">2019/10/29</span>
         </a>
         
-        <a  class="工具 git "
-           href="/2019/10/29/git-manage-github-gitee/"
-           data-tag="git,github,gitee"
-           data-author="" >
-            <span class="post-title" title="git 同时管理Github和Gitee">git 同时管理Github和Gitee</span>
-            <span class="post-date" title="2019-10-29 13:12:16">2019/10/29</span>
-        </a>
-        
         <a  class="工具 hexo "
            href="/2019/10/29/hexo-gitpages-invalid/"
            data-tag="工具,hexo"
            data-author="" >
             <span class="post-title" title="hexo重新发布后GitPages自定义域名失效">hexo重新发布后GitPages自定义域名失效</span>
             <span class="post-date" title="2019-10-29 13:37:25">2019/10/29</span>
+        </a>
+        
+        <a  class="工具 git "
+           href="/2019/10/29/git-manage-github-gitee/"
+           data-tag="git,github,gitee"
+           data-author="" >
+            <span class="post-title" title="git 同时管理Github和Gitee">git 同时管理Github和Gitee</span>
+            <span class="post-date" title="2019-10-29 13:12:16">2019/10/29</span>
         </a>
         
     </nav>
@@ -339,7 +339,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:338</span>
+        <span>字数:356</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -388,36 +388,42 @@
         <h2 id="1-取消git全局配置"><a href="#1-取消git全局配置" class="headerlink" title="1.取消git全局配置"></a>1.取消git全局配置</h2><blockquote>
 <p>取消全局的user.name和user.email</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset user.name "xxx"</span><br><span class="line">git config --global --unset user.email "xxx"</span><br></pre></td></tr></table></figure>
-
+<pre><code class="shell">git config --global --unset user.name &quot;xxx&quot;
+git config --global --unset user.email &quot;xxx&quot;</code></pre>
 <p>其中<code>xxx</code>是以前配置的信息，可以通过 下边命令查看</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git confg --global --list</span><br></pre></td></tr></table></figure>
-
+<pre><code class="shell">git confg --global --list</code></pre>
 <h2 id="2-生成new的ssh-keys"><a href="#2-生成new的ssh-keys" class="headerlink" title="2.生成new的ssh keys"></a>2.生成new的ssh keys</h2><blockquote>
 <p>如果需要github和gitee都能存在，那么就需要生成github和gitee的id_rsa， 然后放在一起</p>
 </blockquote>
 <ol>
 <li><p>生成Github 和 Gitee的keys</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa.github -C "xxx"</span><br></pre></td></tr></table></figure>
-
+<pre><code class="shell">ssh-keygen -t rsa -f ~/.ssh/id_rsa.github -C &quot;xxx&quot;</code></pre>
 <p>注：其中<code>xxx</code>是github平台的注册邮箱</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa.gitee -C "..."</span><br></pre></td></tr></table></figure>
-
+<pre><code class="shell">ssh-keygen -t rsa -f ~/.ssh/id_rsa.gitee -C &quot;...&quot;</code></pre>
 <p>注：其中<code>...</code>是你gitee平台的注邮箱</p>
 </li>
 <li><p>将生成的新keys添加到ssh agent</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent bash</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_rsa.github</span><br><span class="line">ssh-add ~/.ssh/id_rsa.gitee</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">ssh-agent bash</code></pre>
+<pre><code class="shell">ssh-add ~/.ssh/id_rsa.github
+ssh-add ~/.ssh/id_rsa.gitee
+exit</code></pre>
 </li>
 <li><p>配置config文件</p>
 <blockquote>
 <p>在.ssh文件夹下面配置config文件</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.ssh/config</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> github</span></span><br><span class="line">Host github.com</span><br><span class="line">Hostname ssh.github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa.github</span><br><span class="line">Port 443</span><br><span class="line"><span class="meta">#</span><span class="bash"> gitee</span></span><br><span class="line">Host gitee.com</span><br><span class="line">HostName gitee.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa.gitee</span><br></pre></td></tr></table></figure>
-
+<pre><code class="shell">vim ~/.ssh/config</code></pre>
+<pre><code class="shell"># github
+Host github.com
+Hostname ssh.github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa.github
+Port 443
+# gitee
+Host gitee.com
+HostName gitee.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa.gitee</code></pre>
 </li>
 </ol>
 <h2 id="3-平台设置SSH"><a href="#3-平台设置SSH" class="headerlink" title="3.平台设置SSH"></a>3.平台设置SSH</h2><blockquote>
@@ -433,18 +439,13 @@
 </ol>
 <h2 id="4-测试是否成功"><a href="#4-测试是否成功" class="headerlink" title="4.测试是否成功"></a>4.测试是否成功</h2><ol>
 <li><p>Github</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
+<pre><code class="shell">ssh -T git@github.com</code></pre>
 <p>结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi 766564616! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>Hi 766564616! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code></pre></li>
 <li><p>Gitee</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@gitee.com</span><br></pre></td></tr></table></figure>
-
+<pre><code class="shell">ssh -T git@gitee.com</code></pre>
 <p>结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi 神秘的小岛岛! You&apos;ve successfully authenticated, but GITEE.COM does not provide shell access.</span><br></pre></td></tr></table></figure>
-
-</li>
+<pre><code>Hi 神秘的小岛岛! You&#39;ve successfully authenticated, but GITEE.COM does not provide shell access.</code></pre></li>
 </ol>
 
       
@@ -460,7 +461,7 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>git 同时管理Github和Gitee</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">338</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">356</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="神秘的小岛岛">神秘的小岛岛</a></p>
     <p><span class="copy-title">发布时间:</span>2019-10-29, 13:12:16</p>
     <p><span class="copy-title">最后更新:</span>2019-10-29, 13:36:59</p>
@@ -734,15 +735,6 @@
 
 
     /*引用块样式*/
-    
-    .post .pjax article blockquote {
-        padding: 10px 20px;
-        background-color: white;
-        border: none;
-        border-left: 4px solid #42b983;
-        border-right: 4px solid #42b983;
-        border-radius: 10px;
-    }
     
 
     /*文章列表背景图*/
