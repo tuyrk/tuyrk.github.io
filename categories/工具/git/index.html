@@ -172,6 +172,14 @@
     
         
             
+            <li><div data-rel="慕课网">慕课网<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
             <li><div data-rel="工具"><i class="fold iconfont icon-right"></i>工具<small>(3)</small></div>
                 
                     <ul class="sub hide">
@@ -185,14 +193,6 @@
                         </li>
                             
                     </ul>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="慕课网">慕课网<small>(3)</small></div>
                 
             </li>
             
@@ -251,15 +251,15 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color3">工具</a>
     </li>
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color5">hexo</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">git</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -280,12 +280,12 @@
     
     <nav id="title-list-nav">
         
-        <a  class="工具 hexo "
-           href="/2019/10/29/hexo-gitpages-invalid/"
-           data-tag="工具,hexo"
+        <a  class="慕课网 "
+           href="/2019/11/01/1052-Git/"
+           data-tag="git"
            data-author="" >
-            <span class="post-title" title="hexo重新发布后GitPages自定义域名失效">hexo重新发布后GitPages自定义域名失效</span>
-            <span class="post-date" title="2019-10-29 13:37:25">2019/10/29</span>
+            <span class="post-title" title="1052-Git入门">1052-Git入门</span>
+            <span class="post-date" title="2019-11-01 14:46:32">2019/11/01</span>
         </a>
         
         <a  class="慕课网 "
@@ -305,14 +305,6 @@
         </a>
         
         <a  class="慕课网 "
-           href="/2019/11/01/1052-Git/"
-           data-tag="git"
-           data-author="" >
-            <span class="post-title" title="1052-Git入门">1052-Git入门</span>
-            <span class="post-date" title="2019-11-01 14:46:32">2019/11/01</span>
-        </a>
-        
-        <a  class="慕课网 "
            href="/2019/11/01/390-Github/"
            data-tag="git,github"
            data-author="" >
@@ -326,6 +318,14 @@
            data-author="" >
             <span class="post-title" title="git 同时管理Github和Gitee">git 同时管理Github和Gitee</span>
             <span class="post-date" title="2019-10-29 13:12:16">2019/10/29</span>
+        </a>
+        
+        <a  class="工具 hexo "
+           href="/2019/10/29/hexo-gitpages-invalid/"
+           data-tag="工具,hexo"
+           data-author="" >
+            <span class="post-title" title="hexo重新发布后GitPages自定义域名失效">hexo重新发布后GitPages自定义域名失效</span>
+            <span class="post-date" title="2019-10-29 13:37:25">2019/10/29</span>
         </a>
         
     </nav>
@@ -411,6 +411,7 @@
     <div class="copyright">
         <p class="footer-entry"><%if(theme.bottom_text){%><%=theme.bottom_text%><%} else {%>©2017 <%=config.author%><%}%></p>
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+备案号：蜀ICP备18020272号-1
 
     </div>
     <div class="full-toc">
@@ -453,7 +454,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#工具','#hexo','#git','#github','#gitee',],
+            'data': ['#git','#工具','#hexo','#github','#gitee',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
