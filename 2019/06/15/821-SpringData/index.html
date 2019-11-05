@@ -1,0 +1,2603 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>821-轻松愉快之玩转SpringData | 神秘的小岛岛</title>
+  <meta name="keywords" content=" springdata ">
+  <meta name="description" content="821-轻松愉快之玩转SpringData | 神秘的小岛岛">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="https:&#x2F;&#x2F;www.imooc.com&#x2F;learn&#x2F;1129 简介：Vim作为一个强大的编辑器，是很多巨佬的不二之选，但因为其较高的入门学习门槛劝退了很多人。中文的系统教程少之又少，讲vim插件使用的更是屈指可数，本课程从vim最基础的操作和概念开始讲起，带领大家学会使用和配置 vim，安装强大的 vim 插件，真正掌握编辑器之神 vim 的使用。  @[TOC] 第1章 玩转vim 从放弃">
+<meta name="keywords" content="vim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1129-玩转Vim 从放弃到爱不释手">
+<meta property="og:url" content="https:&#x2F;&#x2F;tuyrk.cn&#x2F;2019&#x2F;11&#x2F;05&#x2F;1129-vim&#x2F;index.html">
+<meta property="og:site_name" content="神秘的小岛岛">
+<meta property="og:description" content="https:&#x2F;&#x2F;www.imooc.com&#x2F;learn&#x2F;1129 简介：Vim作为一个强大的编辑器，是很多巨佬的不二之选，但因为其较高的入门学习门槛劝退了很多人。中文的系统教程少之又少，讲vim插件使用的更是屈指可数，本课程从vim最基础的操作和概念开始讲起，带领大家学会使用和配置 vim，安装强大的 vim 插件，真正掌握编辑器之神 vim 的使用。  @[TOC] 第1章 玩转vim 从放弃">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g8gg8zp9kyj31jw0kojwp.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g8gg90lb5nj31gi0i0dis.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g8gg91qg8bj31dh0u0qag.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g8gg933wfnj30vi0lqwfr.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g8gj3vo85oj311w0o87le.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g8gk4xgm5mj316e0m0137.jpg">
+<meta property="og:updated_time" content="2019-11-05T08:03:00.349Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g8gg8zp9kyj31jw0kojwp.jpg">
+
+
+<link rel="icon" href="/img/avatar.jpeg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpeg" />
+</a>
+<div class="author">
+    <span>神秘的小岛岛</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+        <a title="github" href="https://github.com/766564616" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="weibo" href="https://weibo.com/u/5669532599" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/25d3e037d782" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/tu-yuan-kun/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="csdn" href="https://me.csdn.net/tyk766564616" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-csdn"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:tuyrk@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=766564616&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=437322403" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(21)</small></div></li>
+    
+        
+            
+            <li><div data-rel="慕课网">慕课网<small>(17)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="工具"><i class="fold iconfont icon-right"></i>工具<small>(4)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="hexo">hexo<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="git">git<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="21">
+<input type="hidden" id="yelog_site_word_count" value="66.6k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">vim</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">性能测试</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">LoadRunner</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">github</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">JMeter</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">springboot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">elasticsearch</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">springdata</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mycat</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">vpn</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">gitee</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mysql</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a  class="慕课网 "
+           href="/2019/11/04/1049-vim/"
+           data-tag="vim"
+           data-author="" >
+            <span class="post-title" title="1049-优雅玩转Vim">1049-优雅玩转Vim</span>
+            <span class="post-date" title="2019-11-04 22:34:45">2019/11/04</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/11/01/1052-Git/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="1052-Git入门">1052-Git入门</span>
+            <span class="post-date" title="2019-11-01 14:46:32">2019/11/01</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/11/01/208-Git/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="208-版本管理工具介绍—Git篇">208-版本管理工具介绍—Git篇</span>
+            <span class="post-date" title="2019-11-01 14:20:34">2019/11/01</span>
+        </a>
+        
+        <a  class="工具 hexo "
+           href="/2019/10/29/3-hexo-shortcuts/"
+           data-tag="工具,hexo"
+           data-author="" >
+            <span class="post-title" title="3-hexo快捷键说明">3-hexo快捷键说明</span>
+            <span class="post-date" title="2019-10-29 10:22:08">2019/10/29</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/09/29/714-LoadRunner/"
+           data-tag="性能测试,LoadRunner"
+           data-author="" >
+            <span class="post-title" title="714-性能测试之LoadRunner">714-性能测试之LoadRunner</span>
+            <span class="post-date" title="2019-09-29 22:39:54">2019/09/29</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/11/01/390-Github/"
+           data-tag="git,github"
+           data-author="" >
+            <span class="post-title" title="390-版本控制入门 – 搬进 Github">390-版本控制入门 – 搬进 Github</span>
+            <span class="post-date" title="2019-11-01 14:45:49">2019/11/01</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/09/28/735-JMeter/"
+           data-tag="性能测试,JMeter"
+           data-author="" >
+            <span class="post-title" title="735-JMeter性能测试入门篇">735-JMeter性能测试入门篇</span>
+            <span class="post-date" title="2019-09-28 23:42:43">2019/09/28</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/09/27/791-JMeterHTTP/"
+           data-tag="性能测试,JMeter"
+           data-author="" >
+            <span class="post-title" title="719-JMeter之HTTP协议接口性能测试">719-JMeter之HTTP协议接口性能测试</span>
+            <span class="post-date" title="2019-09-27 23:57:49">2019/09/27</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/06/05/767-2Hours-SringBoot/"
+           data-tag="springboot"
+           data-author="" >
+            <span class="post-title" title="767-2小时学会Spring Boot">767-2小时学会Spring Boot</span>
+            <span class="post-date" title="2019-06-05 23:54:25">2019/06/05</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/06/09/810-SpringBoot-Web/"
+           data-tag="springboot"
+           data-author="" >
+            <span class="post-title" title="810-Spring Boot进阶之Web进阶">810-Spring Boot进阶之Web进阶</span>
+            <span class="post-date" title="2019-06-09 20:59:01">2019/06/09</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/11/05/1129-vim/"
+           data-tag="vim"
+           data-author="" >
+            <span class="post-title" title="1129-玩转Vim 从放弃到爱不释手">1129-玩转Vim 从放弃到爱不释手</span>
+            <span class="post-date" title="2019-11-05 15:52:21">2019/11/05</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/06/29/867-Docker/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="867-Docker入门">867-Docker入门</span>
+            <span class="post-date" title="2019-06-29 21:48:19">2019/06/29</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/08/13/889-ElasticSearch/"
+           data-tag="elasticsearch"
+           data-author="" >
+            <span class="post-title" title="889-ElasticSearch入门">889-ElasticSearch入门</span>
+            <span class="post-date" title="2019-08-13 00:25:32">2019/08/13</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/07/06/945-mini-app/"
+           data-tag="springboot"
+           data-author="" >
+            <span class="post-title" title="945-SpringBoot+MyBatis搭建迷你小程序">945-SpringBoot+MyBatis搭建迷你小程序</span>
+            <span class="post-date" title="2019-07-06 23:20:09">2019/07/06</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/06/21/824-docker-java/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="824-第一个docker化的java应用">824-第一个docker化的java应用</span>
+            <span class="post-date" title="2019-06-21 19:32:49">2019/06/21</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/06/15/821-SpringData/"
+           data-tag="springdata"
+           data-author="" >
+            <span class="post-title" title="821-轻松愉快之玩转SpringData">821-轻松愉快之玩转SpringData</span>
+            <span class="post-date" title="2019-06-15 23:14:34">2019/06/15</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/07/09/951-MyCat/"
+           data-tag="mycat"
+           data-author="" >
+            <span class="post-title" title="951-MyCAT入门及应用">951-MyCAT入门及应用</span>
+            <span class="post-date" title="2019-07-09 21:49:07">2019/07/09</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2019/10/10/MacOS-OpenVPN/"
+           data-tag="vpn"
+           data-author="" >
+            <span class="post-title" title="Mac OS配置OpenVPN之Tunnelblick">Mac OS配置OpenVPN之Tunnelblick</span>
+            <span class="post-date" title="2019-10-10 11:23:59">2019/10/10</span>
+        </a>
+        
+        <a  class="工具 git "
+           href="/2019/10/29/git-manage-github-gitee/"
+           data-tag="git,github,gitee"
+           data-author="" >
+            <span class="post-title" title="git 同时管理Github和Gitee">git 同时管理Github和Gitee</span>
+            <span class="post-date" title="2019-10-29 13:12:16">2019/10/29</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/07/05/993-MySQL-PXC/"
+           data-tag="mysql"
+           data-author="" >
+            <span class="post-title" title="993-MySQL集群（PXC）入门">993-MySQL集群（PXC）入门</span>
+            <span class="post-date" title="2019-07-05 22:21:12">2019/07/05</span>
+        </a>
+        
+        <a  class="工具 hexo "
+           href="/2019/10/29/hexo-gitpages-invalid/"
+           data-tag="工具,hexo"
+           data-author="" >
+            <span class="post-title" title="hexo重新发布后GitPages自定义域名失效">hexo重新发布后GitPages自定义域名失效</span>
+            <span class="post-date" title="2019-10-29 13:37:25">2019/10/29</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-821-SpringData" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">821-轻松愉快之玩转SpringData</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="慕课网">慕课网</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color1">springdata</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-11-05 19:19:31'>2019-06-15 23:14</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:7.9k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第1章-课程介绍"><span class="toc-text">第1章 课程介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-课程介绍"><span class="toc-text">1-1 课程介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第2章-使用传统方式访问数据库"><span class="toc-text">第2章 使用传统方式访问数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-使用传统方式访问数据库"><span class="toc-text">2-1 使用传统方式访问数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-准备工作"><span class="toc-text">2-2 准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-JDBCUtil开发"><span class="toc-text">2-3 JDBCUtil开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Dao开发"><span class="toc-text">2-4 Dao开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-使用JdbcTemplate"><span class="toc-text">2-5 使用JdbcTemplate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-弊端分析"><span class="toc-text">2-6 弊端分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第3章-Spring-Data快速入门"><span class="toc-text">第3章 Spring Data快速入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-开发环境搭建"><span class="toc-text">3-1 开发环境搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-起步程序开发"><span class="toc-text">3-2 起步程序开发</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第4章-Spring-Data-JPA进阶"><span class="toc-text">第4章 Spring Data JPA进阶</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-关于Repository接口"><span class="toc-text">4-1 关于Repository接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-Repository子接口详解"><span class="toc-text">4-2 Repository子接口详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-查询方法定义规则和使用"><span class="toc-text">4-3 查询方法定义规则和使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-Query注解使用"><span class="toc-text">4-4 Query注解使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-更新操作整合事务使用"><span class="toc-text">4-5 更新操作整合事务使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第5章-Spring-Data-JPA高级"><span class="toc-text">第5章 Spring Data JPA高级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-CrudRepository接口使用详解"><span class="toc-text">5-1 CrudRepository接口使用详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-PagingAndSortingRespsitory接口使用详解-14-48"><span class="toc-text">5-2 PagingAndSortingRespsitory接口使用详解 (14:48)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-JpaRepository接口使用详解"><span class="toc-text">5-3 JpaRepository接口使用详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-JpaSpecificationExecutor接口使用详解"><span class="toc-text">5-4 JpaSpecificationExecutor接口使用详解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第6章-课程总结"><span class="toc-text">第6章 课程总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-课程总结"><span class="toc-text">6-1 课程总结</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><a href="https://www.imooc.com/learn/821" target="_blank" rel="noopener">https://www.imooc.com/learn/821</a></p>
+<p>简介：在企业级JavaEE应用开发中，对数据库的访问和操作是必须的。Spring Data作为SpringSource的其中一个子项目，旨在统一和简化对各类型持久化存储和访问，而不拘泥于是关系型数据库还是NoSQL数据存储，使得对数据库的访问变得方便快捷，并支持MapReduce框架及云计算服务；对于拥有海量数据的项目，可以用Spring Data来简化项目的开发，就如Spring Framework对JDBC、ORM的支持一样，Spring Data会让数据的访问变得更加方便，极大提高开发效率、提升程序员的幸福指数！</p>
+</blockquote>
+<p><div class='inner-toc'><h2>目录</h2><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第1章-课程介绍"><span class="toc-text">第1章 课程介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-课程介绍"><span class="toc-text">1-1 课程介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第2章-使用传统方式访问数据库"><span class="toc-text">第2章 使用传统方式访问数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-使用传统方式访问数据库"><span class="toc-text">2-1 使用传统方式访问数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-准备工作"><span class="toc-text">2-2 准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-JDBCUtil开发"><span class="toc-text">2-3 JDBCUtil开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Dao开发"><span class="toc-text">2-4 Dao开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-使用JdbcTemplate"><span class="toc-text">2-5 使用JdbcTemplate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-弊端分析"><span class="toc-text">2-6 弊端分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第3章-Spring-Data快速入门"><span class="toc-text">第3章 Spring Data快速入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-开发环境搭建"><span class="toc-text">3-1 开发环境搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-起步程序开发"><span class="toc-text">3-2 起步程序开发</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第4章-Spring-Data-JPA进阶"><span class="toc-text">第4章 Spring Data JPA进阶</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-关于Repository接口"><span class="toc-text">4-1 关于Repository接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-Repository子接口详解"><span class="toc-text">4-2 Repository子接口详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-查询方法定义规则和使用"><span class="toc-text">4-3 查询方法定义规则和使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-Query注解使用"><span class="toc-text">4-4 Query注解使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-更新操作整合事务使用"><span class="toc-text">4-5 更新操作整合事务使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第5章-Spring-Data-JPA高级"><span class="toc-text">第5章 Spring Data JPA高级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-CrudRepository接口使用详解"><span class="toc-text">5-1 CrudRepository接口使用详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-PagingAndSortingRespsitory接口使用详解-14-48"><span class="toc-text">5-2 PagingAndSortingRespsitory接口使用详解 (14:48)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-JpaRepository接口使用详解"><span class="toc-text">5-3 JpaRepository接口使用详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-JpaSpecificationExecutor接口使用详解"><span class="toc-text">5-4 JpaSpecificationExecutor接口使用详解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第6章-课程总结"><span class="toc-text">第6章 课程总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-课程总结"><span class="toc-text">6-1 课程总结</span></a></li></ol></li></ol></div></p>
+<h2 id="第1章-课程介绍"><a href="#第1章-课程介绍" class="headerlink" title="第1章 课程介绍"></a>第1章 课程介绍</h2><blockquote>
+<p>课程介绍</p>
+</blockquote>
+<h3 id="1-1-课程介绍"><a href="#1-1-课程介绍" class="headerlink" title="1-1 课程介绍"></a>1-1 课程介绍</h3><p>什么是Spring Data</p>
+<blockquote>
+<p>主旨：provide a familiar and consistent，Spring-based programming model for data access<br>​            提供一个熟悉的、一致的，基于Spring框架的数据访问框架。</p>
+<p>简化数据库的访问。<br>历史：2010年提出，作者Rod Johnso，Spring Source项目<br>网址：<a href="http://projects.spring.io/spring-data/#quick-start" target="_blank" rel="noopener">http://projects.spring.io/spring-data/#quick-start</a></p>
+</blockquote>
+<p>Spring Data概览</p>
+<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8gig4qf3wj30h40c70tv.jpg" width="500" alt="Spring Data概览"/>
+
+<p>Spring Data包含多个子项目</p>
+<blockquote>
+<ul>
+<li><p>Spring Data JPA<br>减少数据访问层的开发量</p>
+</li>
+<li><p>Spring Data Mongo DB<br>基于分布于存储的数据库</p>
+</li>
+<li><p>Spring Data Redis<br>开源、C语言开发、支持网络内存、可持久化的Key-Value的数据库</p>
+</li>
+<li><p>Spring Data Solr<br>Solr是高性能的、Java语言开发、基于Lucence的全文搜索服务器</p>
+</li>
+</ul>
+</blockquote>
+<p>课程安排</p>
+<blockquote>
+<ul>
+<li>传统方式访问数据库<br>原生JDBC、Spring JdbcTemplate</li>
+<li>Spring Data快速起步</li>
+<li>Spring Data JPA进阶<ul>
+<li>Spring Data JPA高级</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="第2章-使用传统方式访问数据库"><a href="#第2章-使用传统方式访问数据库" class="headerlink" title="第2章 使用传统方式访问数据库"></a>第2章 使用传统方式访问数据库</h2><blockquote>
+<p>先使用传统的JDBC方法操作数据库，进而再使用Spring JdbcTemplate方式操作数据库，并对比现存操作方式的优缺点</p>
+</blockquote>
+<h3 id="2-1-使用传统方式访问数据库"><a href="#2-1-使用传统方式访问数据库" class="headerlink" title="2-1 使用传统方式访问数据库"></a>2-1 使用传统方式访问数据库</h3><blockquote>
+<ul>
+<li>JDBC</li>
+<li>Spring JdbcTemplate</li>
+<li>弊端分析</li>
+</ul>
+</blockquote>
+<h3 id="2-2-准备工作"><a href="#2-2-准备工作" class="headerlink" title="2-2 准备工作"></a>2-2 准备工作</h3><p>JDBC</p>
+<blockquote>
+<p>Connection<br>Statement<br>ResultSet<br>Test Case</p>
+</blockquote>
+<p>搭建开发环境</p>
+<ul>
+<li><p>创建maven项目<br>Maven工程的目录结构</p>
+</li>
+<li><p>添加数据库驱动和单元测试依赖</p>
+<pre><code class="xml">&lt;!-- mysql --&gt;
+&lt;dependency&gt;
+   &lt;groupId&gt;mysql&lt;/groupId&gt;
+   &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+   &lt;version&gt;5.1.38&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!-- junit --&gt;
+&lt;dependency&gt;
+   &lt;groupId&gt;junit&lt;/groupId&gt;
+   &lt;artifactId&gt;junit&lt;/artifactId&gt;
+   &lt;version&gt;4.10&lt;/version&gt;
+   &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;</code></pre>
+</li>
+<li><p>数据库表的准备，使用mysql数据库</p>
+<pre><code class="mysql"># 创建数据库
+create database spring_data;
+# 创建数据表
+create table student(
+    id int not null auto_increment,
+    name varchar(20)not null,
+    age int not null,
+    primary key(id)
+);
+# 查看表结构
+desc student;
+# 插入数据
+insert into student(name,age)values(&quot;zhangsan&quot;, 20);
+insert into student(name,age)values(&quot;lisi&quot;, 21);
+insert into student(name,age)values(&quot;wangwu&quot;, 22);
+# 查询数据
+select * from student;</code></pre>
+</li>
+</ul>
+<h3 id="2-3-JDBCUtil开发"><a href="#2-3-JDBCUtil开发" class="headerlink" title="2-3 JDBCUtil开发"></a>2-3 JDBCUtil开发</h3><p>开发JDBCUtil工具类：</p>
+<blockquote>
+<p>获取Connection，关闭Connection、Statement、ResultSet<br>注意事项：配置的属性放置配置文件中，然后通过代码的方式将配置文件中的数据加载进来即可。</p>
+</blockquote>
+<p>代码示例：</p>
+<pre><code class="java">package com.myimooc.springdata.jdbc.util;
+import java.io.InputStream;
+import java.sql.*;
+import java.util.Properties;
+/**
+ * JDBC工具类：
+ * 1）获取Connection
+ * 2）释放资源
+ */
+public class JDBCUtils {
+    /**
+     * 获取Connection
+     * @return 所获得到的JDBC的Connection
+     */
+    public static Connection getConnection() throws Exception {
+        /**
+         * 不建议大家把配置硬编码到代码中
+         * 最佳实践：配置性的建议写到配置文件中
+         * */
+//        String url = &quot;jdbc:mysql:///spring_data&quot;;
+//        String username = &quot;root&quot;;
+//        String password = &quot;root&quot;;
+//        String dirverClass = &quot;com.mysql.jdbc.Driver&quot;;
+        InputStream inputStream =  JDBCUtils.class.getClassLoader().getResourceAsStream(&quot;db.properties&quot;);
+        Properties properties = new Properties();
+        properties.load(inputStream);
+        String url = properties.getProperty(&quot;jdbc.url&quot;);
+        String username = properties.getProperty(&quot;jdbc.username&quot;);
+        String password = properties.getProperty(&quot;jdbc.password&quot;);
+        String driverClass = properties.getProperty(&quot;jdbc.driverClass&quot;);
+
+        Class.forName(driverClass);
+        return DriverManager.getConnection(url,username,password);
+    }
+    /**
+     * 释放DB相关资源
+     */
+    public static void release(ResultSet resultSet, Statement statement, Connection connection) throws Exception {
+        if(resultSet != null ){
+            resultSet.close();
+        }
+        if(statement != null ){
+            statement.close();
+        }
+        if(connection != null ){
+            connection.close();
+        }
+    }
+}</code></pre>
+<p>数据库连接配置文件：</p>
+<pre><code class="properties"># db.properties
+jdbc.url = jdbc:mysql:///spring_data
+jdbc.user = root
+jdbc.password = root
+jdbc.driverClass = com.mysql.jdbc.Driver</code></pre>
+<p>注：</p>
+<ul>
+<li>配置的属性放在配置文件中，然后通过代码的方式将配置文件中的数据加载进来即可。</li>
+</ul>
+<p>单元测试：</p>
+<pre><code class="java">@Test
+public void testGetConnection() throws Exception {
+    Connection connection = JDBCUtil.getConnection();
+    Assert.assertNotNull(connection);
+}</code></pre>
+<h3 id="2-4-Dao开发"><a href="#2-4-Dao开发" class="headerlink" title="2-4 Dao开发"></a>2-4 Dao开发</h3><p>建立对象模型及DAO层开发。</p>
+<p>代码演示：</p>
+<ol>
+<li><p>对象模型</p>
+<pre><code class="java">package com.myimooc.springdata.jdbc.domain;
+/**
+ * Student实体类
+ */
+@Data
+public class Student {
+    /** 主键ID */
+    private Integer id;
+    /** 姓名 */
+    private String name;
+    /** 年龄 */
+    private int age;
+}</code></pre>
+</li>
+<li><p>DAO接口</p>
+<pre><code class="java">package com.myimooc.springdata.jdbc.dao;
+import com.myimooc.springdata.jdbc.domain.Student;
+import java.util.List;
+/**
+ * Student DAO访问接口
+ */
+public interface StudentDao {
+    /**
+     * 获取所有学生
+     * @return 所有学生
+     */
+    List&lt;Student&gt; listStudent();
+    /**
+     * 添加一个学生
+     * @param student 待添加的学生
+     */
+    void saveStudent(Student student);
+}</code></pre>
+</li>
+<li><p>DAO实现</p>
+<pre><code class="java">package com.myimooc.springdata.jdbc.dao.impl;
+import com.myimooc.springdata.jdbc.dao.StudentDao;
+import com.myimooc.springdata.jdbc.domain.Student;
+import com.myimooc.springdata.jdbc.util.JDBCUtils;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+/**
+ * Student DAO访问接口实现类：通过最原始的JDBC的方式操作
+ */
+public class StudentDaoImpl implements StudentDao {
+    public List&lt;Student&gt; listStudent() {
+        List&lt;Student&gt; studentList = new ArrayList&lt;Student&gt;();
+
+        String sql = &quot;select id,name,age from student&quot;;
+        try (Connection connection = JDBCUtils.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql);
+             ResultSet resultSet = preparedStatement.executeQuery();) {
+            while(resultSet.next()) {
+                Student student = new Student();
+                student.setId(resultSet.getInt(&quot;id&quot;));
+                student.setName(resultSet.getString(&quot;name&quot;));
+                student.setAge(resultSet.getInt(&quot;age&quot;));
+                studentList.add(student);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.release(resultSet, preparedStatement, connection);
+        }
+        return studentList;
+    }
+
+    public void saveStudent(Student student) {
+        String sql = &quot;insert into student(name,age) values(?, ?)&quot;;
+
+        try (Connection connection = JDBCUtils.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
+            preparedStatement.setString(1, student.getName());
+            preparedStatement.setInt(2, student.getAge());
+            preparedStatement.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.release(resultSet,preparedStatement,connection);
+        }
+    }
+}</code></pre>
+</li>
+<li><p>单元测试</p>
+<pre><code class="java">@Test
+public void listStudentTest(){
+    StudentDao studentDao = new StudentDaoImpl();
+    List&lt;Student&gt;  studentList = studentDao.listStudent();
+    for(Student student : studentList){
+        System.out.println(student);
+    }
+}
+@Test
+public void saveStudentTest(){
+    StudentDao studentDao = new StudentDaoImpl();
+    Student student = new Student(&quot;test&quot;, 30);
+    studentDao.saveStudent(student);
+}</code></pre>
+</li>
+</ol>
+<h3 id="2-5-使用JdbcTemplate"><a href="#2-5-使用JdbcTemplate" class="headerlink" title="2-5 使用JdbcTemplate"></a>2-5 使用JdbcTemplate</h3><p>Spring JdbcTemplate</p>
+<ul>
+<li><p>添加maven依赖</p>
+<pre><code class="xml">&lt;!--spring--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
+    &lt;version&gt;4.3.5.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+    &lt;version&gt;4.3.5.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</li>
+<li><p>DataSource &amp; JdbcTemplate注入</p>
+<p>Spring配置文件</p>
+<pre><code class="xml">&lt;!-- beans.xml --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+
+    &lt;bean id=&quot;dataSource&quot; class=&quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot;&gt;
+        &lt;property name=&quot;driverClassName&quot; value=&quot;com.mysql.jdbc.Driver&quot;/&gt;
+        &lt;property name=&quot;username&quot; value=&quot;root&quot;/&gt;
+        &lt;property name=&quot;password&quot; value=&quot;root&quot;/&gt;
+        &lt;property name=&quot;url&quot; value=&quot;jdbc:mysql:///spring_data&quot;/&gt;
+    &lt;/bean&gt;
+
+    &lt;bean id=&quot;jdbcTemplate&quot; class=&quot;org.springframework.jdbc.core.JdbcTemplate&quot;&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;
+    &lt;/bean&gt;
+
+    &lt;bean id=&quot;studentDAO&quot; class=&quot;com.imooc.dao.StudentDAOSpringJdbcImpl&quot;&gt;
+        &lt;property name=&quot;jdbcTemplate&quot; ref=&quot;jdbcTemplate&quot;/&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;</code></pre>
+</li>
+<li><p>Test Case</p>
+<pre><code class="java">public class DataSourceTest {
+    private ApplicationContext ctx = null;
+    @Before
+    public void setup(){
+        System.out.println(&quot;setup&quot;);
+        ctx = new ClassPathXmlApplicationContext(&quot;beans.xml&quot;);
+    }
+    @After
+    public void tearDown(){
+        System.out.println(&quot;tearDown&quot;);
+        ctx = null;
+    }
+
+    @Test
+    public void testDataSource(){
+        System.out.println(&quot;testDataSource&quot;);
+        DataSource dataSource = (DataSource)ctx.getBean(&quot;dataSource&quot;);
+        Assert.notNull(dataSource);
+    }
+    @Test
+    public void testJdbcTemplate(){
+        System.out.println(&quot;testJdbcTemplate&quot;);
+        JdbcTemplate jdbcTemplate = (JdbcTemplate)ctx.getBean(&quot;jdbcTemplate&quot;);
+        Assert.notNull(jdbcTemplate);
+    }
+}
+</code></pre>
+</li>
+<li><p>Dao实现</p>
+<pre><code class="java">package com.imooc.dao;
+import com.imooc.domain.Student;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowCallbackHandler;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+/**
+ * StudentDAO访问接口实现类：通过Spring jdbc的方式操作
+ */
+@Data
+public class StudentDAOSpringJdbcImpl implements StudentDAO {
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    @Override
+    public List&lt;Student&gt; query() {
+        final List&lt;Student&gt; students = new ArrayList&lt;Student&gt;();
+        String sql = &quot;SELECT id, name, age FROM student&quot;;
+
+        jdbcTemplate.query(sql, new RowCallbackHandler() {
+            @Override
+            public void processRow(ResultSet rs) throws SQLException {
+                Student student = new Student();
+                student.setId(rs.getInt(&quot;id&quot;));
+                student.setName(rs.getString(&quot;name&quot;));
+                student.setAge(rs.getInt(&quot;age&quot;));
+                students.add(student);
+            }
+        });
+        return students;
+    }
+
+    @Override
+    public void save(Student student) {
+        String sql = &quot;INSERT INTO student(name, age) VALUES(?, ?)&quot;;
+        jdbcTemplate.update(sql, student.getName(), student.getAge());
+    }
+}
+</code></pre>
+</li>
+<li><p>单元测试</p>
+<pre><code class="java">public class StudentDAOSpringJdbcImplTest {
+    private ApplicationContext ctx = null;
+    private StudentDAO studentDAO = null;
+
+    @Before
+    public void setup(){
+        System.out.println(&quot;setup&quot;);
+        ctx = new ClassPathXmlApplicationContext(&quot;beans.xml&quot;);
+        studentDAO = (StudentDAO)ctx.getBean(&quot;studentDAO&quot;);
+    }
+    @After
+    public void tearDown(){
+        System.out.println(&quot;tearDown&quot;);
+        ctx = null;
+    }
+
+    @Test
+    public void testQuery() {
+        List&lt;Student&gt; students = studentDAO.query();
+        for (Student student : students) {
+            System.out.println(&quot;student:&quot; + student);
+        }
+    }
+    @Test
+    public void testSave() {
+        Student student = new Student(&quot;test-spring-jdbc&quot;, 40);
+        studentDAO.save(student);
+    }
+}</code></pre>
+<p>END</p>
+</li>
+</ul>
+<p>代码演示：</p>
+<ol>
+<li><p>创建DB配置文件</p>
+<pre><code class="properties">jdbc.url = jdbc:mysql:///springdata
+jdbc.username = root
+jdbc.password = root
+jdbc.driverClass = com.mysql.jdbc.Driver</code></pre>
+</li>
+<li><p>创建配置文件类</p>
+<pre><code class="java">package com.myimooc.springdata.jdbctemplate.config;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
+/**
+ * 配置参数类
+ */
+@Data
+@PropertySource(value=&quot;classpath:db.properties&quot;)
+@Component
+public class Properties {
+    @Value(&quot;${jdbc.driverClass}&quot;)
+    private String jdbcDriverClass;
+    @Value(&quot;${jdbc.url}&quot;)
+    private String jdbcUrl;
+    @Value(&quot;${jdbc.username}&quot;)
+    private String jdbcUser;
+    @Value(&quot;${jdbc.password}&quot;)
+    private String jdbcPassword;
+}</code></pre>
+</li>
+<li><p>配置DataSource、JdbcTemplate和Spring注解扫描</p>
+<pre><code class="java">package com.myimooc.springdata.jdbctemplate.config;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+@Configuration
+@ComponentScan(&quot;com.myimooc.springdata.jdbctemplate&quot;)
+public class SpringConfig {
+    @Autowired
+    private Properties properties;
+
+    @Bean
+    DriverManagerDataSource getDriverManagerDataSource(){
+        DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
+        driverManagerDataSource.setDriverClassName(properties.getJdbcDriverClass());
+        driverManagerDataSource.setUrl(properties.getJdbcUrl());
+        driverManagerDataSource.setUsername(properties.getJdbcUser());
+        driverManagerDataSource.setPassword(properties.getJdbcPassword());
+        return driverManagerDataSource;
+    }
+    @Bean
+    JdbcTemplate getJdbcTemplate(){
+        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+        jdbcTemplate.setDataSource(getDriverManagerDataSource());
+        return jdbcTemplate;
+    }
+}</code></pre>
+</li>
+<li><p>编写实体类</p>
+<pre><code class="java">package com.myimooc.springdata.jdbctemplate.domain;
+/**
+ * Student实体类
+ */
+@Data
+public class Student {
+    /** 主键ID */
+    private Integer id;
+    /** 姓名 */
+    private String name;
+    /** 年龄 */
+    private int age;
+}</code></pre>
+</li>
+<li><p>DAO接口</p>
+<pre><code class="java">package com.myimooc.springdata.jdbctemplate.dao;
+import com.myimooc.springdata.jdbctemplate.domain.Student;
+import java.util.List;
+/**
+ * StudentDAO访问接口
+ */
+public interface StudentDao {
+    /**
+     * 获取所有学生
+     * @return 所有学生
+     */
+    List&lt;Student&gt; listStudent();
+    /**
+     * 添加一个学生
+     * @param student 待添加的学生
+     */
+    void saveStudent(Student student);
+}</code></pre>
+</li>
+<li><p>DAO实现</p>
+<pre><code class="java">package com.myimooc.springdata.jdbctemplate.dao.impl;
+import com.myimooc.springdata.jdbctemplate.dao.StudentDao;
+import com.myimooc.springdata.jdbctemplate.domain.Student;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+/**
+ * StudentDAO访问接口实现类：通过 JdbcTemplate 的方式操作
+ */
+@Repository
+public class StudentDaoImpl implements StudentDao {
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    public List&lt;Student&gt; listStudent() {
+        List&lt;Student&gt; studentList = new ArrayList&lt;Student&gt;();
+        String sql = &quot;select id, name, age from student&quot;;
+        List&lt;Map&lt;String,Object&gt;&gt;  mapList = jdbcTemplate.queryForList(sql);
+        for (Map&lt;String,Object&gt; mapTemp : mapList) {
+            Integer id = Integer.parseInt(mapTemp.get(&quot;id&quot;).toString());
+            String name = mapTemp.get(&quot;name&quot;).toString();
+            Integer age = Integer.parseInt(mapTemp.get(&quot;age&quot;).toString());
+            Student student = new Student();
+            student.setId(id);
+            student.setName(name);
+            student.setAge(age);
+            studentList.add(student);
+        }
+        return studentList;
+    }
+
+    public void saveStudent(Student student) {
+        String sql = &quot;insert into student(name, age) value(?,?)&quot;;
+        jdbcTemplate.update(sql,student.getName(),student.getAge());
+    }
+}</code></pre>
+</li>
+<li><p>单元测试类</p>
+<pre><code class="java">package com.myimooc.springdata.jdbctemplate;
+import com.myimooc.springdata.jdbctemplate.config.SpringConfig;
+import com.myimooc.springdata.jdbctemplate.dao.StudentDao;
+import com.myimooc.springdata.jdbctemplate.domain.Student;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import javax.sql.DataSource;
+import java.util.List;
+/**
+ *  使用 JdbcTemplate 实现 StudentDao 单元测试类
+ */
+public class StudentDaoTest {
+    private ApplicationContext ctx = null;
+    private StudentDao studentDao;
+
+    @Before
+    public void init(){
+        ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
+        studentDao = ctx.getBean(StudentDao.class);
+    }
+    @After
+    public void destroy(){
+        ctx = null;
+    }
+
+    @Test
+    public void listStudentTest(){
+        List&lt;Student&gt; studentList = studentDao.listStudent();
+        for (Student student : studentList){
+            System.out.println(student.toString());
+        }
+    }
+    @Test
+    public void saveTest(){
+        Student student = new Student(&quot;test-spring-jdbcTemplate&quot;, 25);
+        studentDao.saveStudent(student);
+    }
+}</code></pre>
+</li>
+</ol>
+<h3 id="2-6-弊端分析"><a href="#2-6-弊端分析" class="headerlink" title="2-6 弊端分析"></a>2-6 弊端分析</h3><blockquote>
+<ul>
+<li>DAO里面代码量太多</li>
+<li>DAO的实现有很多重复代码</li>
+<li>开发分页和其它功能，需要重新进行封装</li>
+</ul>
+</blockquote>
+<h2 id="第3章-Spring-Data快速入门"><a href="#第3章-Spring-Data快速入门" class="headerlink" title="第3章 Spring Data快速入门"></a>第3章 Spring Data快速入门</h2><blockquote>
+<p>完成该框架的开发环境搭建及单元测试，本课我们将使用IDEA开发并使用Maven构建项目；</p>
+</blockquote>
+<h3 id="3-1-开发环境搭建"><a href="#3-1-开发环境搭建" class="headerlink" title="3-1 开发环境搭建"></a>3-1 开发环境搭建</h3><p>Spring Data JPA快速起步</p>
+<blockquote>
+<ol>
+<li>开发环境搭建</li>
+<li>Spring Data JPA HelloWorld开发</li>
+</ol>
+</blockquote>
+<ul>
+<li><p>添加maven依赖：</p>
+<pre><code class="xml">&lt;!--spring data jpa--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.data&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-data-jpa&lt;/artifactId&gt;
+    &lt;version&gt;1.8.0.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.hibernate&lt;/groupId&gt;
+    &lt;artifactId&gt;hibernate-entitymanager&lt;/artifactId&gt;
+    &lt;version&gt;4.3.6.Final&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</li>
+<li><p>DataSource &amp; JdbcTemplate注入</p>
+<p><strong>Spring配置文件</strong>：</p>
+<pre><code class="xml">&lt;!-- beans-new.xml --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;
+       xmlns:jpa=&quot;http://www.springframework.org/schema/data/jpa&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd&quot;&gt;
+    &lt;!-- Spring扫描 --&gt;
+    &lt;context:component-scan base-package=&quot;com.imooc&quot;/&gt;
+&lt;/beans&gt;</code></pre>
+<ol>
+<li><p>配置数据源</p>
+<pre><code class="xml">&lt;bean id=&quot;dataSource&quot; class=&quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot;&gt;
+    &lt;property name=&quot;driverClassName&quot; value=&quot;com.mysql.jdbc.Driver&quot;/&gt;
+    &lt;property name=&quot;username&quot; value=&quot;root&quot;/&gt;
+    &lt;property name=&quot;password&quot; value=&quot;root&quot;/&gt;
+    &lt;property name=&quot;url&quot; value=&quot;jdbc:mysql:///spring_data&quot;/&gt;
+&lt;/bean&gt;</code></pre>
+</li>
+<li><p>配置EntityManagerFactory</p>
+<pre><code class="xml">&lt;bean id=&quot;entityManagerFactory&quot; class=&quot;org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean&quot;&gt;
+    &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;
+    &lt;property name=&quot;jpaVendorAdapter&quot;&gt;
+        &lt;bean class=&quot;org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter&quot;/&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;packagesToScan&quot; value=&quot;com.imooc&quot;/&gt;
+    &lt;property name=&quot;jpaProperties&quot;&gt;
+        &lt;props&gt;
+            &lt;prop key=&quot;hibernate.ejb.naming_strategy&quot;&gt;org.hibernate.cfg.ImprovedNamingStrategy&lt;/prop&gt;
+            &lt;prop key=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQL5InnoDBDialect&lt;/prop&gt;
+            &lt;prop key=&quot;hibernate.show_sql&quot;&gt;true&lt;/prop&gt;
+            &lt;prop key=&quot;hibernate.format_sql&quot;&gt;true&lt;/prop&gt;
+            &lt;prop key=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/prop&gt;
+        &lt;/props&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;</code></pre>
+</li>
+<li><p>配置事务管理器</p>
+<pre><code class="xml">&lt;bean id=&quot;transactionManager&quot; class=&quot;org.springframework.orm.jpa.JpaTransactionManager&quot;&gt;
+    &lt;property name=&quot;entityManagerFactory&quot; ref=&quot;entityManagerFactory&quot;/&gt;
+&lt;/bean&gt;</code></pre>
+</li>
+<li><p>配置支持注解的事务</p>
+<pre><code class="xml">&lt;tx:annotation-driven transaction-manager=&quot;transactionManager&quot;/&gt;</code></pre>
+</li>
+<li><p>配置spring data</p>
+<pre><code class="xml">&lt;jpa:repositories base-package=&quot;com.imooc&quot; entity-manager-factory-ref=&quot;entityManagerFactory&quot;/&gt;</code></pre>
+</li>
+</ol>
+</li>
+<li><p>创建实体类</p>
+<pre><code class="java">/**
+ * 雇员:  先开发实体类===&gt;自动生成数据表
+ */
+@Data
+@Entity
+public class Employee {
+    @Id
+    @GeneratedValue
+    private Integer id;
+    @Column(length = 20, nullable = false)
+    private String name;
+    private Integer age;
+}</code></pre>
+</li>
+<li><p>单元测试</p>
+<pre><code class="java">public class SpringDataTest {
+    private ApplicationContext ctx = null;
+
+    @Before
+    public void setup(){
+        System.out.println(&quot;setup&quot;);
+        ctx = new ClassPathXmlApplicationContext(&quot;beans-new.xml&quot;);
+    }
+    @After
+    public void tearDown(){
+        System.out.println(&quot;tearDown&quot;);
+        ctx = null;
+    }
+
+    @Test
+    public void testEntityManagerFactory(){
+        // 运行单元测试，检查是否有生成一张数据表。有则成功，无则失败。
+    }
+}</code></pre>
+<p>END</p>
+</li>
+</ul>
+<p>代码演示：</p>
+<ol>
+<li><p>创建DB配置文件</p>
+<pre><code class="properties">jdbc.url = jdbc:mysql:///springdata
+jdbc.username = root
+jdbc.password = root
+jdbc.driverClass = com.mysql.jdbc.Driver</code></pre>
+</li>
+<li><p>创建配置文件类</p>
+<pre><code class="java">package com.myimooc.springdata.jpa.config;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
+@Data
+@Component
+@PropertySource(value=&quot;classpath:db.properties&quot;)
+public class PropertiesConfig {
+    @Value(&quot;${jdbc.driverClass}&quot;)
+    private String jdbcDriverClass;
+    @Value(&quot;${jdbc.url}&quot;)
+    private String jdbcUrl;
+    @Value(&quot;${jdbc.username}&quot;)
+    private String jdbcUser;
+    @Value(&quot;${jdbc.password}&quot;)
+    private String jdbcPassword;
+}</code></pre>
+</li>
+<li><p>配置TransactionManager、EntityManagerFactory和Spring自动扫描注入</p>
+<pre><code class="java">package com.myimooc.springdata.jpa.config;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.Database;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import java.util.Properties;
+/**
+ * Spring配置类
+ */
+// 声明为配置类
+@Configuration
+// 启用事务管理
+@EnableTransactionManagement
+// 启用自动扫描继承 JpaRepository 接口的类。
+// 注意，此注解需要配置 entityManagerFactory 和 transactionManager
+// 方式一：定义获取Bean方法名为 entityManagerFactory 和 transactionManager
+// 方式二：配置 @EnableJpaRepositories注解的 entityManagerFactoryRef 属性 为自定义获取Bean的方法名。
+@EnableJpaRepositories(basePackages = &quot;com.myimooc.springdata.jpa&quot;)
+// 启用自动扫描 @Component 注解的Bean
+@ComponentScan(basePackages = &quot;com.myimooc.springdata.jpa&quot;)
+public class SpringConfig {
+    @Autowired
+    private PropertiesConfig propertiesConfig;
+    /**
+     * 配置数据源
+     * @return
+     */
+    @Bean
+    public DriverManagerDataSource dataSource(){
+        DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
+        driverManagerDataSource.setDriverClassName(propertiesConfig.getJdbcDriverClass());
+        driverManagerDataSource.setUrl(propertiesConfig.getJdbcUrl());
+        driverManagerDataSource.setUsername(propertiesConfig.getJdbcUser());
+        driverManagerDataSource.setPassword(propertiesConfig.getJdbcPassword());
+        return driverManagerDataSource;
+    }
+    /**
+     * 配置事务管理器 JpaTransactionManager
+     * @return
+     */
+    @Bean(name=&quot;transactionManager&quot;)
+    public PlatformTransactionManager transactionManager(){
+        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setDataSource(this.dataSource());
+        transactionManager.setEntityManagerFactory(this.entityManagerFactory().getObject());
+        return transactionManager;
+//        return new DataSourceTransactionManager(this.dataSource());
+//        return new JpaTransactionManager(this.entityManagerFactory().getObject());
+    }
+    /**
+     * 配置JPA的 EntityManagerFactory
+     * @return
+     */
+    @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(){
+        LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
+        entityManagerFactory.setDataSource(dataSource());
+        HibernateJpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
+        jpaVendorAdapter.setGenerateDdl(true);
+        jpaVendorAdapter.setDatabase(Database.MYSQL);
+        entityManagerFactory.setJpaVendorAdapter(jpaVendorAdapter);
+        entityManagerFactory.setPackagesToScan(&quot;com.myimooc.springdata.jpa&quot;);
+        Properties jpaProperties = new Properties();
+//        jpaProperties.setProperty(&quot;hibernate.ejb.naming_strategy&quot;,&quot;org.hibernate.cfg.ImprovedNamingStrategy&quot;);
+        jpaProperties.setProperty(&quot;hibernate.dialect&quot;,&quot;org.hibernate.dialect.MySQL5InnoDBDialect&quot;);
+        jpaProperties.setProperty(&quot;hibernate.show_sql&quot;,&quot;true&quot;);
+        jpaProperties.setProperty(&quot;hibernate.format_sql&quot;,&quot;true&quot;);
+        jpaProperties.setProperty(&quot;hibernate.hbm2ddl.auto&quot;,&quot;update&quot;);
+
+        entityManagerFactory.setJpaProperties(jpaProperties);
+        return entityManagerFactory;
+    }
+}</code></pre>
+</li>
+<li><p>编写实体类：Employee</p>
+<pre><code class="java">package com.myimooc.springdata.jpa.domain;
+import javax.persistence.*;
+/**
+ * 雇员：先开发实体类，然后自动生成实体表
+ */
+@Data
+@Entity
+@Table(name = &quot;test_employee&quot;)
+public class Employee {
+    @Id
+    @GeneratedValue
+    private Integer id;
+    @Column(length = 20)
+    private String name;
+    private Integer age;
+}</code></pre>
+</li>
+</ol>
+<h3 id="3-2-起步程序开发"><a href="#3-2-起步程序开发" class="headerlink" title="3-2 起步程序开发"></a>3-2 起步程序开发</h3><ol>
+<li><p>编写EmployeeRepository接口</p>
+<pre><code class="java">package com.myimooc.springdata.jpa.repository;
+import com.myimooc.springdata.jpa.domain.Employee;
+import org.springframework.data.repository.Repository;
+/**
+ * 使用 Repository 接口
+ */
+// 方式二：使用 @RepositoryDefinition 注解
+//  @RepositoryDefinition(domainClass = Employee.class,idClass = Integer.class)
+public interface EmployeeRepository extends Repository&lt;Employee,Integer&gt; { //方式一：继承 Repository 接口
+    /**
+     * 获取雇员对象通过名称
+     */
+    Employee findByName(String name);
+}</code></pre>
+</li>
+<li><p>编写单元测试类：EmployeeRepositoryTest</p>
+<pre><code class="java">package com.myimooc.springdata.jpa.repository;
+import com.myimooc.springdata.jpa.config.SpringConfig;
+import com.myimooc.springdata.jpa.domain.Employee;
+import com.myimooc.springdata.jpa.repository.EmployeeRepository;
+import com.myimooc.springdata.jpa.service.EmployeeService;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import java.util.ArrayList;
+import java.util.List;
+/**
+ * EmployeeRepository单元测试类
+ */
+public class EmployeeRepositoryTest {
+    private ApplicationContext ctx = null;
+    private EmployeeRepository employeeRepository = null;
+
+    @Before
+    public void init(){
+        ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
+        employeeRepository = ctx.getBean(EmployeeRepository.class);
+    }
+    @After
+    public void destroy(){
+        ctx = null;
+    }
+
+    @Test
+    public void findByNameTest(){
+        // org.springframework.data.ipa.repository.support.SimpleJpaRepository@566
+        System.out.println(employeeRepository);
+        Employee employee = employeeRepository.findByName(&quot;cc&quot;);
+        System.out.println(employee.toString());
+    }
+}</code></pre>
+</li>
+</ol>
+<p>Repository</p>
+<blockquote>
+<p>Repository：Spring Data核心类<br>RepositoryDefinition：使用该注解进行配置<br>Repository Query Specification：查询时，方法命名不能乱写<br>Query Annotation：使用该注解，可以实现原生SQL查询<br>Update/Delete/Transaction：更新、删除操作，支持事务</p>
+</blockquote>
+<p>Repository Hierarchy：层次结构</p>
+<blockquote>
+<p>CrudRepository：内置了新增、更新、删除、查询方法<br>PagingAndSortingRespository：分页和排序<br>JpaRepository：<br>JpaSpecificationExcutor</p>
+</blockquote>
+<h2 id="第4章-Spring-Data-JPA进阶"><a href="#第4章-Spring-Data-JPA进阶" class="headerlink" title="第4章 Spring Data JPA进阶"></a>第4章 Spring Data JPA进阶</h2><blockquote>
+<p>使用Spring Data JPA完成CRUD操作</p>
+</blockquote>
+<h3 id="4-1-关于Repository接口"><a href="#4-1-关于Repository接口" class="headerlink" title="4-1 关于Repository接口"></a>4-1 关于Repository接口</h3><p>Repository接口详解</p>
+<blockquote>
+<p>Repository接口是Spring Data的核心接口，不提供任何方法<br>public interface Repository&lt;T, ID extends Serializable&gt;{}</p>
+<p>@RepositoryDefinition注解的使用<br>@RepositoryDefinition(domainClass = Employee.class, idClass = Integer.class)</p>
+</blockquote>
+<p>Repository类的定义：</p>
+<blockquote>
+<ul>
+<li><p>Repository是一个空接口，标记接口。没有包含方法声明的接口</p>
+</li>
+<li><p>如果我们定义的接口EmployeeRepository extends Repository，会被Spring管理。<br>如果我们自己的接口没有extends Repository，运行时会报错，没有这个Bean：</p>
+<pre><code class="java">org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type &#39;com.imooc.repository.EmployeeRepository&#39; available</code></pre>
+</li>
+<li><p>添加RepositoryDefinition注解能到达到不用extends Repository的功能</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="4-2-Repository子接口详解"><a href="#4-2-Repository子接口详解" class="headerlink" title="4-2 Repository子接口详解"></a>4-2 Repository子接口详解</h3><p>Repository子接口详解</p>
+<blockquote>
+<p>CrudRepository：继承Repository，实现了CRUD相关的方法<br>PagingAndSortingRepository：继承CrudRepository，实现了分页排序相关的方法<br>JpaRepository：继承PagingAndSortingRepositor，实现JPA规范相关的方法</p>
+</blockquote>
+<h3 id="4-3-查询方法定义规则和使用"><a href="#4-3-查询方法定义规则和使用" class="headerlink" title="4-3 查询方法定义规则和使用"></a>4-3 查询方法定义规则和使用</h3><p>Repository中查询方法定义规则和使用</p>
+<blockquote>
+<p>了解Spring Data中查询方法名称的定义规则<br>使用Spring Data完成复杂查询方法名称的命名</p>
+</blockquote>
+<p>查询方法定义规则</p>
+<table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th>Sample</th>
+<th>JPQL snippet</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>And</td>
+<td>findByLastnameAndFirstname</td>
+<td>where x.lastname=?1 and x.firstname=?2</td>
+</tr>
+<tr>
+<td>Or</td>
+<td>findByLastnameOrFirstname</td>
+<td>where x.lastname=?1 or x.firstname=?2</td>
+</tr>
+<tr>
+<td>Between</td>
+<td>findByStartDateBetween</td>
+<td>where x.startDate between 1? and ?2</td>
+</tr>
+<tr>
+<td>LessThan</td>
+<td>findByAgeLessThan</td>
+<td>where x.age&lt;?1</td>
+</tr>
+<tr>
+<td>GreaterThan</td>
+<td>findByAgeGreaterThan</td>
+<td>where x.age&gt;?1</td>
+</tr>
+<tr>
+<td>After</td>
+<td>findByStartDateAfter</td>
+<td>where x.startDate&gt;?1</td>
+</tr>
+<tr>
+<td>Before</td>
+<td>findByStartDateBefore</td>
+<td>where x.startDate&lt;?1</td>
+</tr>
+<tr>
+<td>IsNull</td>
+<td>findByAgelsNull</td>
+<td>where x.age is null</td>
+</tr>
+<tr>
+<td>IsNotNul, NotNull</td>
+<td>findByAge(Is)NotNull</td>
+<td>where x.age not null</td>
+</tr>
+<tr>
+<td>Like</td>
+<td>findByFirstnameLike</td>
+<td>where x.firstname like ?1</td>
+</tr>
+<tr>
+<td>Notlike</td>
+<td>findByFirstnameNotlike</td>
+<td>where x. firstname not like ?1</td>
+</tr>
+<tr>
+<td>StartingWith</td>
+<td>findByFirstnameStartingWith</td>
+<td>where x.firstname like ?1(parameter bound with appended %)</td>
+</tr>
+<tr>
+<td>EndingWith</td>
+<td>findByFirstnameEndingWith</td>
+<td>where x.firstname like ?1(parameter bound with prepended %)</td>
+</tr>
+<tr>
+<td>Containing</td>
+<td>findByFirstnameContaining</td>
+<td>where x.firstname like ?1(parameter bound wrapped in %)</td>
+</tr>
+<tr>
+<td>OrderBy</td>
+<td>findByAgeOrderByLastnameDesc</td>
+<td>where x.age=?1 order by x.lastname desc</td>
+</tr>
+<tr>
+<td>Not</td>
+<td>findByLastnameNot</td>
+<td>where x.lastname&lt;&gt;?1</td>
+</tr>
+<tr>
+<td>In</td>
+<td>findByAgeln(Collection<Age> ages)</td>
+<td>where x.age in ?1</td>
+</tr>
+<tr>
+<td>Notln</td>
+<td>findByAgeNotin(Collection<Age> age)</td>
+<td>where x.age not in ?1</td>
+</tr>
+<tr>
+<td>TRUE</td>
+<td>findByActiveTrue</td>
+<td>where x.active=true</td>
+</tr>
+<tr>
+<td>FALSE</td>
+<td>findByActiveFalse</td>
+<td>where x.active=false</td>
+</tr>
+</tbody></table>
+<p>代码演示：</p>
+<pre><code class="sql">-- 测试数据
+insert into employee (name, age) values (&quot;test1&quot;,20);
+insert into employee (name, age) values (&quot;test2&quot;,21);
+insert into employee (name, age) values (&quot;test3&quot;,22);
+insert into employee (name, age) values (&quot;test4&quot;,20);
+insert into employee (name, age) values (&quot;test5&quot;,21);
+insert into employee (name, age) values (&quot;test6&quot;,22);
+insert into employee (name, age) values (&quot;test16&quot;,22);</code></pre>
+<ol>
+<li><p>在EmployeeRepository接口编写以下代码</p>
+<pre><code class="java">// --- 使用JPA规范查询 ---
+// where name like ?% and age &lt; ?
+List&lt;Employee&gt; findByNameStartingWithAndAgeLessThan(String name,Integer age);
+
+// where name like %? and age &lt; ?
+List&lt;Employee&gt; findByNameEndingWithAndAgeLessThan(String name,Integer age);
+
+// where name in (?, ?...) or age &lt; ?
+List&lt;Employee&gt; findByNameInOrAgeLessThan(List&lt;String&gt; name,Integer age);
+
+// where name in (?, ?...) and age &lt; ?
+List&lt;Employee&gt; findByNameInAndAgeLessThan(List&lt;String&gt; name,Integer age);</code></pre>
+</li>
+<li><p>在EmployeeRepositoryTest单元测试类进行测试</p>
+<pre><code class="java">@Test
+public void findByNameStartingWithAndAgeLessThanTest(){
+    List&lt;Employee&gt; employees = employeeRepository.findByNameStartingWithAndAgeLessThan(&quot;test&quot;,22);
+
+    for (Employee employee : employees) {
+        System.out.println(employee.toString());
+    }
+}
+
+@Test
+public void findByNameEndingWithAndAgeLessThanTest(){
+    List&lt;Employee&gt; employees = employeeRepository.findByNameEndingWithAndAgeLessThan(&quot;6&quot;,23);
+
+    for (Employee employee : employees) {
+        System.out.println(employee.toString());
+    }
+}
+
+@Test
+public void findByNameInOrAgeLessThanTest(){
+    List&lt;String&gt; names = new ArrayList&lt;String&gt;();
+    names.add(&quot;test1&quot;);
+    names.add(&quot;test2&quot;);
+    names.add(&quot;test3&quot;);
+    List&lt;Employee&gt; employees = employeeRepository.findByNameInOrAgeLessThan(names,22);
+
+    for (Employee employee : employees) {
+        System.out.println(employee.toString());
+    }
+}
+
+@Test
+public void findByNameInAndAgeLessThanTest(){
+    List&lt;String&gt; names = new ArrayList&lt;String&gt;();
+    names.add(&quot;test1&quot;);
+    names.add(&quot;test2&quot;);
+    names.add(&quot;test3&quot;);
+    List&lt;Employee&gt; employees = employeeRepository.findByNameInAndAgeLessThan(names,22);
+
+    for (Employee employee : employees) {
+        System.out.println(employee.toString());
+    }
+}</code></pre>
+</li>
+</ol>
+<p>对于按照方法命名规则来使用的话，有弊端：</p>
+<blockquote>
+<p>1）方法名比较长：约定大于配置<br>2）对于一些复杂的查询，是很难实现。</p>
+</blockquote>
+<p>使用@Query注解来解决以上弊端。</p>
+<h3 id="4-4-Query注解使用"><a href="#4-4-Query注解使用" class="headerlink" title="4-4 Query注解使用"></a>4-4 Query注解使用</h3><p>Query注解使用</p>
+<blockquote>
+<ul>
+<li>在Respository方法中使用，不需要遵循查询方法命令规则</li>
+<li>只需要将@Query定义在Respository中的方法之上即可</li>
+<li>命名参数及索引参数的使用</li>
+<li>本地查询</li>
+</ul>
+</blockquote>
+<ol>
+<li><p>在EmployeeRepository接口编写以下代码</p>
+<pre><code class="java">// --- 使用@Query注解查询 ---
+// 自定义查询SQL。Employee为类名，不是表名
+@Query(&quot;select o from Employee o where id=(select max(id) from Employee t1)&quot;)
+Employee getEmployeeByMaxId();
+
+// 使用占位符进行参数绑定
+@Query(&quot;select o from Employee o where o.name=?1 and o.age=?2&quot;)
+List&lt;Employee&gt; listEmployeeByNameAndAge(String name, Integer age);
+
+// 使用命名参数进行参数绑定
+@Query(&quot;select o from Employee o where o.name=:name and o.age=:age&quot;)
+List&lt;Employee&gt; listEmployeeByNameAndAge2(@Param(&quot;name&quot;) String name, @Param(&quot;age&quot;)Integer age);
+
+// 自定义查询SQL，like,占位符进行参数绑定
+@Query(&quot;select o from Employee o where o.name like %?1%&quot;)
+List&lt;Employee&gt; listEmployeeByLikeName(String name);
+
+// 自定义查询SQL，like,命名参数进行参数绑定
+@Query(&quot;select o from Employee o where o.name like %:name%&quot;)
+List&lt;Employee&gt; listEmployeeByLikeName2(@Param(&quot;name&quot;) String name);
+
+// 使用原生态SQL查询。employee为表名
+@Query(nativeQuery = true,value = &quot;select count(1) from employee&quot;)
+long getCount();</code></pre>
+</li>
+<li><p>在EmployeeRepositoryTest单元测试类进行测试</p>
+<pre><code class="java">//  使用 @Query 注解查询
+@Test
+public void getEmployeeByMaxIdTest(){
+    Employee employee = employeeRepository.getEmployeeByMaxId();
+    System.out.println(employee);
+}
+
+@Test
+public void listEmployeeByNameAndAgeTest(){
+    List&lt;Employee&gt; employees = employeeRepository.listEmployeeByNameAndAge(&quot;zhangsan&quot;,20);
+    for (Employee employee : employees) {
+        System.out.println(employee);
+    }
+}
+
+@Test
+public void listEmployeeByNameAndAge2Test(){
+    List&lt;Employee&gt; employees = employeeRepository.listEmployeeByNameAndAge2(&quot;zhangsan&quot;,20);
+    for (Employee employee : employees) {
+        System.out.println(employee);
+    }
+}
+
+@Test
+public void listEmployeeByLikeNameTest(){
+    List&lt;Employee&gt; employees = employeeRepository.listEmployeeByLikeName(&quot;test1&quot;);
+    for (Employee employee : employees) {
+        System.out.println(employee);
+    }
+}
+
+@Test
+public void listEmployeeByLikeName2Test(){
+    List&lt;Employee&gt; employees = employeeRepository.listEmployeeByLikeName2(&quot;test&quot;);
+    for (Employee employee : employees) {
+        System.out.println(employee);
+    }
+}
+
+@Test
+public void getCountTest(){
+    long count = employeeRepository.getCount();
+    System.out.println(count);
+}</code></pre>
+</li>
+</ol>
+<h3 id="4-5-更新操作整合事务使用"><a href="#4-5-更新操作整合事务使用" class="headerlink" title="4-5 更新操作整合事务使用"></a>4-5 更新操作整合事务使用</h3><p>更新及删除操作整合事务的使用</p>
+<blockquote>
+<ul>
+<li>@Modifying注解使用</li>
+<li>@Modifying结合@Query注解执行更新操作</li>
+<li>@Transaction在Spring Data中的使用</li>
+</ul>
+</blockquote>
+<ol>
+<li><p>基于javaconfig在SpringConfig类进行事务配置</p>
+<pre><code class="java">package com.myimooc.springdata.jpa.config;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.Database;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import java.util.Properties;
+/**
+ * Spring配置类
+ */
+// 声明为配置类
+@Configuration
+// 启用事务管理
+@EnableTransactionManagement
+// 启用自动扫描继承 JpaRepository 接口的类。
+// 注意，此注解需要配置 entityManagerFactory 和 transactionManager
+// 方式一：定义获取Bean方法名为 entityManagerFactory 和 transactionManager
+// 方式二：配置 @EnableJpaRepositories注解的 entityManagerFactoryRef 属性 为自定义获取Bean的方法名。
+@EnableJpaRepositories(basePackages = &quot;com.myimooc.springdata.jpa&quot;)
+// 启用自动扫描 @Component 注解的Bean
+@ComponentScan(basePackages = &quot;com.myimooc.springdata.jpa&quot;)
+public class SpringConfig{
+
+    @Autowired
+    private PropertiesConfig propertiesConfig;
+
+    // 配置数据源
+    @Bean
+    public DriverManagerDataSource dataSource(){
+        DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
+        driverManagerDataSource.setDriverClassName(propertiesConfig.getJdbcDriverClass());
+        driverManagerDataSource.setUrl(propertiesConfig.getJdbcUrl());
+        driverManagerDataSource.setUsername(propertiesConfig.getJdbcUser());
+        driverManagerDataSource.setPassword(propertiesConfig.getJdbcPassword());
+        return driverManagerDataSource;
+    }
+
+    // 配置事务管理器 JpaTransactionManager
+    @Bean(name=&quot;transactionManager&quot;)
+    public PlatformTransactionManager transactionManager(){
+        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setDataSource(this.dataSource());
+        transactionManager.setEntityManagerFactory(this.entityManagerFactory().getObject());
+        return transactionManager;
+//        return new DataSourceTransactionManager(this.dataSource());
+//        return new JpaTransactionManager(this.entityManagerFactory().getObject());
+    }
+
+    // 配置JPA的 EntityManagerFactory
+    @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(){
+        LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
+        entityManagerFactory.setDataSource(dataSource());
+
+        HibernateJpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
+        jpaVendorAdapter.setGenerateDdl(true);
+        jpaVendorAdapter.setDatabase(Database.MYSQL);
+        entityManagerFactory.setJpaVendorAdapter(jpaVendorAdapter);
+        entityManagerFactory.setPackagesToScan(&quot;com.myimooc.springdata.jpa&quot;);
+
+        Properties jpaProperties = new Properties();
+//        jpaProperties.setProperty(&quot;hibernate.ejb.naming_strategy&quot;,&quot;org.hibernate.cfg.ImprovedNamingStrategy&quot;);
+        jpaProperties.setProperty(&quot;hibernate.dialect&quot;,&quot;org.hibernate.dialect.MySQL5InnoDBDialect&quot;);
+        jpaProperties.setProperty(&quot;hibernate.show_sql&quot;,&quot;true&quot;);
+        jpaProperties.setProperty(&quot;hibernate.format_sql&quot;,&quot;true&quot;);
+        jpaProperties.setProperty(&quot;hibernate.hbm2ddl.auto&quot;,&quot;update&quot;);
+
+        entityManagerFactory.setJpaProperties(jpaProperties);
+        return entityManagerFactory;
+    }
+}</code></pre>
+</li>
+<li><p>在EmployeeRepository接口编写以下代码</p>
+<pre><code class="java">// 更新数据，需添加@Modifying、@Transactional
+@Modifying
+@Query(&quot;update Employee o set o.age = :age where o.id = :id&quot;)
+void updateAgeById(@Param(&quot;id&quot;)Integer id,@Param(&quot;age&quot;)Integer age);</code></pre>
+</li>
+<li><p>定义Service层，实际开发中，需要定义接口，这里为了演示方便，直接使用类。</p>
+<pre><code class="java">package com.myimooc.springdata.jpa.service;
+import com.myimooc.springdata.jpa.domain.Employee;
+import com.myimooc.springdata.jpa.repository.EmployeeCrudRepository;
+import com.myimooc.springdata.jpa.repository.EmployeeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import java.util.List;
+
+@Service
+public class EmployeeService {
+    @Autowired
+    private EmployeeRepository employeeRepository;
+    @Autowired
+    private EmployeeCrudRepository employeeCrudRepository;
+
+    @Transactional
+    public void updateAgeById(Integer id, Integer age){
+        this.employeeRepository.updateAgeById(id,age);
+    };
+    @Transactional
+    public void save(List&lt;Employee&gt; employees){
+        this.employeeCrudRepository.save(employees);
+    }
+}</code></pre>
+</li>
+<li><p>编写EmployeeService单元测试类</p>
+<pre><code class="java">package com.myimooc.springdata.jpa.service;
+import com.myimooc.springdata.jpa.config.SpringConfig;
+import com.myimooc.springdata.jpa.repository.EmployeeRepository;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.transaction.PlatformTransactionManager;
+/**
+ * EmployeeService单元测试类
+ */
+public class EmployeeServiceTest {
+    private ApplicationContext ctx = null;
+    private EmployeeService employeeService = null;
+
+    @Before
+    public void init(){
+        ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
+        employeeService = ctx.getBean(EmployeeService.class);
+    }
+    @After
+    public void destroy(){
+        ctx = null;
+    }
+
+    @Test
+    public void transactionManagerTest(){
+        PlatformTransactionManager transactionManager = (PlatformTransactionManager)ctx.getBean(PlatformTransactionManager.class);
+        Assert.assertNotNull(transactionManager);
+    }
+    // 更新操作
+    @Test
+    public void updateAgeByIdTest(){
+        employeeService.updateAgeById(1,55);
+    }
+}</code></pre>
+</li>
+</ol>
+<p>事务在Spring data中的使用：</p>
+<blockquote>
+<ol>
+<li>事务一般是在Service层</li>
+<li>@Query、@Modifying、@Transaction的综合使用</li>
+</ol>
+</blockquote>
+<h2 id="第5章-Spring-Data-JPA高级"><a href="#第5章-Spring-Data-JPA高级" class="headerlink" title="第5章 Spring Data JPA高级"></a>第5章 Spring Data JPA高级</h2><blockquote>
+<p>详解Spring Data JPA的Repository核心接口的各种子类的使用</p>
+</blockquote>
+<h3 id="5-1-CrudRepository接口使用详解"><a href="#5-1-CrudRepository接口使用详解" class="headerlink" title="5-1 CrudRepository接口使用详解"></a>5-1 CrudRepository接口使用详解</h3><p>CrudRepository接口使用详解</p>
+<blockquote>
+<p>save(entity)：保存一个实体<br>save(entities)：保存多个实体<br>findOne(id)：找到一个对象<br>exists(id)：根据ID判断对象是否存在<br>findAll()：找到所有实体对象<br>delete(id)：根据ID删除实体对象<br>delete(entity)：根据实体对象删除实体对象<br>delete(entities)：删除多个实体对象<br>deleteAll()：删除所有实体对象</p>
+</blockquote>
+<ol>
+<li><p>编写EmployeeCrudRepository接口</p>
+<pre><code class="java">package com.myimooc.springdata.jpa.repository;
+import com.myimooc.springdata.jpa.domain.Employee;
+import org.springframework.data.repository.CrudRepository;
+/**
+ * 使用 CrudRepository 接口
+ */
+public interface EmployeeCrudRepository extends CrudRepository&lt;Employee,Integer&gt;{
+}</code></pre>
+</li>
+<li><p>编写EmployeeCrudRepositoryTest单元测试类</p>
+<pre><code class="java">package com.myimooc.springdata.jpa.repository;
+import com.myimooc.springdata.jpa.config.SpringConfig;
+import com.myimooc.springdata.jpa.domain.Employee;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import java.util.ArrayList;
+import java.util.List;
+/**
+ * EmployeeRepository单元测试类
+ */
+public class EmployeeCrudRepositoryTest {
+    private ApplicationContext ctx = null;
+    private EmployeeService employeeService = null;
+
+    @Before
+    public void init(){
+        ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
+        employeeCrudRepository = ctx.getBean(EmployeeService.class);
+    }
+    @After
+    public void destroy(){
+        ctx = null;
+    }
+
+    @Test
+    public void saveTest(){
+        List&lt;Employee&gt; employees = new ArrayList&lt;Employee&gt;();
+        Employee employee = null;
+        for(int i=0;i&lt;100;i++){
+            employee = new Employee();
+            employee.setName(&quot;test&quot;+i);
+            employee.setAge(100 - i);
+            employees.add(employee);
+        }
+        employeeService.save(employees);
+    }
+}</code></pre>
+</li>
+</ol>
+<h3 id="5-2-PagingAndSortingRespsitory接口使用详解-14-48"><a href="#5-2-PagingAndSortingRespsitory接口使用详解-14-48" class="headerlink" title="5-2 PagingAndSortingRespsitory接口使用详解 (14:48)"></a>5-2 PagingAndSortingRespsitory接口使用详解 (14:48)</h3><p>PagingAndSortingRespository接口使用详解</p>
+<blockquote>
+<ul>
+<li>该接口包含分页和排序的功能</li>
+<li>带排序的查询：findAll(Sort sort)</li>
+<li>带排序的分页查询：findAll(Pageable pageable)</li>
+</ul>
+</blockquote>
+<ol>
+<li><p>编写EmployeePagingAndSortingRepository接口</p>
+<pre><code class="java">package com.myimooc.springdata.jpa.repository;
+import com.myimooc.springdata.jpa.domain.Employee;
+import org.springframework.data.repository.PagingAndSortingRepository;
+/**
+ * 使用 PagingAndSortingRepository 实现分页和排序功能
+ */
+public interface EmployeePagingAndSortingRepository extends PagingAndSortingRepository&lt;Employee,Integer&gt; {
+}</code></pre>
+</li>
+<li><p>编写EmployeePagingAndSortingRepositoryTest单元测试类</p>
+<pre><code class="java">package com.myimooc.springdata.jpa.repository;
+import com.myimooc.springdata.jpa.config.SpringConfig;
+import com.myimooc.springdata.jpa.domain.Employee;
+import com.myimooc.springdata.jpa.repository.EmployeePagingAndSortingRepository;
+import com.myimooc.springdata.jpa.service.EmployeeService;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import java.util.ArrayList;
+import java.util.List;
+/**
+ * PagingAndSortingRepository 单元测试类
+ */
+public class EmployeePagingAndSortingRepositoryTest {
+    private ApplicationContext ctx = null;
+    private EmployeePagingAndSortingRepository employeePagingAndSortingRepository = null;
+
+    @Before
+    public void init(){
+        ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
+        employeePagingAndSortingRepository = ctx.getBean(EmployeePagingAndSortingRepository.class);
+    }
+    @After
+    public void destroy(){
+        ctx = null;
+    }
+
+    /**
+     * 分页功能测试
+     */
+    @Test
+    public void pageTest(){
+        // page: index是从0开始的，不是从1开始的
+        Pageable pageable = new PageRequest(0,9);// page,size
+        Page&lt;Employee&gt; employeePage = employeePagingAndSortingRepository.findAll(pageable);
+        System.out.println(&quot;查询的总页数：&quot;+employeePage.getTotalPages());
+        System.out.println(&quot;查询的总记录数：&quot;+employeePage.getTotalElements());
+        System.out.println(&quot;查询的当前第几页：&quot;+(employeePage.getNumber() + 1));
+        System.out.println(&quot;查询的当前页面的集合：&quot;+employeePage.getContent());
+        System.out.println(&quot;查询的当前页面的记录数：&quot;+employeePage.getNumberOfElements());
+
+    }
+    /**
+     * 分页和排序功能测试
+     */
+    @Test
+    public void pageAndSort(){
+        Sort.Order order = new Sort.Order(Sort.Direction.DESC,&quot;id&quot;);// 升/降序,规则字段
+        Sort sort = new Sort(order);
+        // page: index是从0开始的，不是从1开始的
+        Pageable pageable = new PageRequest(0,5,sort);// 先排序，再分页
+        Page&lt;Employee&gt; employeePage = employeePagingAndSortingRepository.findAll(pageable);
+        System.out.println(&quot;查询的总页数：&quot;+employeePage.getTotalPages());
+        System.out.println(&quot;查询的总记录数：&quot;+employeePage.getTotalElements());
+        System.out.println(&quot;查询的当前第几页：&quot;+(employeePage.getNumber() + 1));
+        System.out.println(&quot;查询的当前页面的集合：&quot;+employeePage.getContent());
+        System.out.println(&quot;查询的当前页面的记录数：&quot;+employeePage.getNumberOfElements());
+    }
+
+}</code></pre>
+</li>
+</ol>
+<h3 id="5-3-JpaRepository接口使用详解"><a href="#5-3-JpaRepository接口使用详解" class="headerlink" title="5-3 JpaRepository接口使用详解"></a>5-3 JpaRepository接口使用详解</h3><p>JpaRepository接口使用详解</p>
+<blockquote>
+<p>finaAll：查询所有记录<br>findAll(Sort sort)：查询所有记录并排序<br>save(entities)：保存多个实体对象<br>fiush：<br>deleteInBatch(entities)：一个批次里面删除那些实体</p>
+</blockquote>
+<ol>
+<li><p>编写EmployeeJpaRepository接口</p>
+<pre><code class="java">package com.myimooc.springdata.jpa.repository;
+import com.myimooc.springdata.jpa.domain.Employee;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
+/**
+ * 使用 JpaRepository 接口
+ */
+public interface EmployeeJpaRepository extends JpaRepository&lt;Employee,Integer&gt; {
+}</code></pre>
+</li>
+<li><p>编写EmployeeJpaRepositoryTest单元测试类</p>
+<pre><code class="java">package com.myimooc.springdata.jpa.repository;
+import com.myimooc.springdata.jpa.config.SpringConfig;
+import com.myimooc.springdata.jpa.domain.Employee;
+import com.myimooc.springdata.jpa.repository.EmployeeJpaRepository;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
+/**
+ * EmployeeJpaRepository 单元测试类
+ */
+public class EmployeeJpaRepositoryTest {
+    private ApplicationContext ctx = null;
+    private EmployeeJpaRepository employeeJpaRepository = null;
+
+    @Before
+    public void init(){
+        ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
+        employeeJpaRepository = ctx.getBean(EmployeeJpaRepository.class);
+    }
+    @After
+    public void destroy(){
+        ctx = null;
+    }
+
+    @Test
+    public void findTest(){
+        Employee employee = employeeJpaRepository.findOne(99);
+        System.out.println(&quot;employee&quot; + employee);
+        System.out.println(&quot;employee(10)&quot; + employeeJpaRepository.exists(10));// true
+        System.out.println(&quot;employee(102)&quot; + employeeJpaRepository.exists(102));// false
+    }
+}</code></pre>
+</li>
+</ol>
+<h3 id="5-4-JpaSpecificationExecutor接口使用详解"><a href="#5-4-JpaSpecificationExecutor接口使用详解" class="headerlink" title="5-4 JpaSpecificationExecutor接口使用详解"></a>5-4 JpaSpecificationExecutor接口使用详解</h3><p>JpaSpecificationExecutor接口使用详解（JPA规范执行者）</p>
+<blockquote>
+<p>Specification封装了JPA Criteria(JAP标准)查询条件</p>
+<p>Repository接口体系无法携带一些查询条件</p>
+</blockquote>
+<p>代码演示：</p>
+<ol>
+<li><p>编写EmployeeJpaSpecificationExecutor接口</p>
+<pre><code class="java">package com.myimooc.springdata.jpa.repository;
+import com.myimooc.springdata.jpa.domain.Employee;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+/**
+ * 使用 JpaSpecificationExecutor 接口
+ */
+public interface EmployeeJpaSpecificationExecutor extends JpaRepository&lt;Employee,Integer&gt; , JpaSpecificationExecutor&lt;Employee&gt;{
+}</code></pre>
+</li>
+<li><p>编写EmployeeJpaSpecificationExecutorTest单元测试类</p>
+<pre><code class="java">package com.myimooc.springdata.jpa.repository;
+import com.myimooc.springdata.jpa.config.SpringConfig;
+import com.myimooc.springdata.jpa.domain.Employee;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
+import javax.persistence.criteria.*;
+/**
+ * EmployeeJpaSpecificationExecutor 单元测试类
+ */
+public class EmployeeJpaSpecificationExecutorTest {
+    private ApplicationContext ctx = null;
+    private EmployeeJpaSpecificationExecutor employeeJpaSpecificationExecutor = null;
+
+    @Before
+    public void init(){
+        ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
+        employeeJpaSpecificationExecutor = ctx.getBean(EmployeeJpaSpecificationExecutor.class);
+    }
+    @After
+    public void destroy(){
+        ctx = null;
+    }
+
+    /**
+     * 1、分页
+     * 2、排序
+     * 3、查询条件:age &gt; 50
+     */
+    @Test
+    public void queryTest(){
+        Sort.Order order = new Sort.Order(Sort.Direction.DESC,&quot;id&quot;);
+        Sort sort = new Sort(order);
+        // page: index是从0开始的，不是从1开始的
+        Pageable pageable = new PageRequest(0,5,sort);
+        /**
+         * root : 就是我们要查询的类型 (Employee)
+         * query : 添加查询条件
+         * cb : 构建 Predicate
+         */
+        Specification&lt;Employee&gt; specification = new Specification&lt;Employee&gt;() {
+            // 查询条件
+            public Predicate toPredicate(Root&lt;Employee&gt; root,
+                                         CriteriaQuery&lt;?&gt; query,
+                                         CriteriaBuilder cb) 
+            {
+                // root (employee (age))
+                Path path = root.get(&quot;age&quot;);
+                return cb.gt(path,50);
+            }
+        };
+        Page&lt;Employee&gt; employeePage = employeeJpaSpecificationExecutor.findAll(specification,pageable);
+        System.out.println(&quot;查询的总页数：&quot; + employeePage.getTotalPages());
+        System.out.println(&quot;查询的总记录数：&quot; + employeePage.getTotalElements());
+        System.out.println(&quot;查询的当前第几页：&quot; + (employeePage.getNumber() + 1));
+        System.out.println(&quot;查询的当前页面的集合：&quot; + employeePage.getContent());
+        System.out.println(&quot;查询的当前页面的记录数：&quot; + employeePage.getNumberOfElements());
+    }
+}</code></pre>
+</li>
+</ol>
+<h2 id="第6章-课程总结"><a href="#第6章-课程总结" class="headerlink" title="第6章 课程总结"></a>第6章 课程总结</h2><blockquote>
+<p>课程总结</p>
+</blockquote>
+<h3 id="6-1-课程总结"><a href="#6-1-课程总结" class="headerlink" title="6-1 课程总结"></a>6-1 课程总结</h3><blockquote>
+<p>Spring Data概览<br>传统方式访问数据库<br>Spring Data快速起步<br>Spring Data JPA进阶<br>Spring Data JAP高级</p>
+</blockquote>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tuyrk@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>821-轻松愉快之玩转SpringData</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">8.1k</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="神秘的小岛岛">神秘的小岛岛</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-06-15, 23:14:34</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-05, 19:19:31</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/06/15/821-SpringData/" title="821-轻松愉快之玩转SpringData">https://tuyrk.cn/2019/06/15/821-SpringData/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '9f82f3d33fe6303f2632',
+            clientSecret: '64316477206edcf4f37118b5e0f003e91445ce2a',
+            repo: '766564616.github.io',
+            owner: '766564616',
+            admin: ['766564616'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2019 Tuyrk</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+备案号：蜀ICP备18020272号-1
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpeg" class="alipay" title="扫码支持">
+            <img src="/img/wxpay.jpeg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#vim','#git','#工具','#hexo','#性能测试','#LoadRunner','#github','#JMeter','#springboot','#docker','#elasticsearch','#springdata','#mycat','#vpn','#gitee','#mysql',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
