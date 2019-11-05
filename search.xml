@@ -220,6 +220,31 @@
     
     
     <entry>
+      <title>Mac OS配置OpenVPN之Tunnelblick</title>
+      <link href="/2019/10/10/MacOS-OpenVPN/"/>
+      <url>/2019/10/10/MacOS-OpenVPN/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>链接公司内网需要使用到OpenVPN，之前在Windows系统直接使用公司提供的<a href="https://openvpn.net/community-downloads/" target="_blank" rel="noopener">OpenVPN客户端</a>，但是似乎没有Mac版，所以使用了<a href="https://tunnelblick.net/index.html" target="_blank" rel="noopener">Tunnelblick工具</a>，下边记录一下在使用中遇到的一些问题。</p></blockquote><ol><li><p>下载⏬<a href="https://tunnelblick.net/index.html" target="_blank" rel="noopener">Tunnelblick工具</a>，安装</p></li><li><p>准备<code>*.ovpn</code>、<code>*.key</code>、<code>*.crt</code>在同一目录下</p><ul><li><p>问题一：<code>“comp-lzo” 在openvpn 2.4 中已弃用,将会在未来的版本中移除。</code></p><p>解决：<a href="https://github.com/Nyr/openvpn-install/issues/430" target="_blank" rel="noopener">https://github.com/Nyr/openvpn-install/issues/430</a></p><p>在<code>*.ovpn</code>使用<code>compress lzo</code>代替<code>comp-lzo</code> </p></li><li><p>问题二：<code>• &#39;ns-cert-type&#39; 这个选项在 OpenVPN 2.4 版本的配置中是过时的，已经在 OpenVPN 2.5 版本中移除。</code></p><p>解决：在<code>*.ovpn</code>使用<code>remote-cert-tls server</code>代替<code>ns-cert-type server</code></p></li><li><p>问题三：<code>unrecognized option or missing or extra parameter(s) ip-win32 (2.4.7)</code></p><p>解决：由于脚本是公司为Windows系统提供的，所以我在这里直接注释这个。</p><pre><code class="shell"># ip-win32 dynamic -1# route-method exe</code></pre></li></ul></li><li><p>点击<code>*.ovpn</code>、连接</p></li></ol><p><strong>==OpenVPN中不推荐使用的选项==</strong>：<a href="https://community.openvpn.net/openvpn/wiki/DeprecatedOptions" target="_blank" rel="noopener">https://community.openvpn.net/openvpn/wiki/DeprecatedOptions</a></p><p>OpenVPN客户端配置文件详解：<a href="https://blog.faystar.com/openvpn_client/" target="_blank" rel="noopener">https://blog.faystar.com/openvpn_client/</a></p><pre><code class="shell"># 定义是一个客户端client# 定义使用设备类型，与服务端一致;dev tapdev tun# 定义Windows下使用的网卡名称,linux不需要;dev-node 我的连接# 定义使用的协议，与服务端一致;proto tcpproto udp# 指定服务端地址和端口,可以用多行指定多台服务器# 实现负载均衡（从上往下尝试）remote 118.112.188.108 1194;remote my-server-2 1194# 若上面配置了多台服务器，让客户端随机连接;remote-random# 解析服务器域名# Keep trying indefinitely to resolve the# host name of the OpenVPN server.  Very useful# on machines which are not permanently connected# to the internet such as laptops.resolv-retry infinite# 客户端不需要绑定端口# Most clients do not need to bind to# a specific local port number.nobind# 也是为了让Openvpn也nobody运行（安全）# 注意：Windows不能设置;user nobody;group nobody# Try to preserve some state across restarts.persist-keypersist-tun# 若客户端通过HTTP Proxy，在这里设置# 要使用Proxy，不能使用UDP为VPN的通讯协议;http-proxy-retry # retry on connection failures;http-proxy [proxy server] [proxy port #]# 无线网络有很多多余的头文件，设置忽略它;mute-replay-warnings# 重点，就是指定ca和客户端的证书# 注意，下面的两个号是连在一起的，之间没有空格.需同时存在/注释ca &quot;ca.crt&quot;# cert &quot;test-1.crt&quot;# key &quot;test-1.key&quot;# 如果服务端打开了PAM认证模块，如mysql，LDAP数据库验证，客户端需要另其有效;auth-user-pass# 一些安全措施# Verify server certificate by checking# that the certicate has the nsCertType# field set to “server”.  This is an# important precaution to protect against# a potential attack discussed here:# http://openvpn.net/howto.html#mitm## To use this feature, you will need to generate# your server certificates with the nsCertType# field set to “server”.  The build-key-server# script in the easy-rsa folder will do this.remote-cert-tls server# 增强验证加密，如果你在服务器端生成了ta.key，那么这里就需要加上# then every client must also have the key.tls-auth ta.key 1# Select a cryptographic cipher.# If the cipher option is used on the server# then you must also specify it here.;cipher x# 使用lzo压缩，与服务端一致compress lzo# Set log file verbosity.verb 3# Silence repeating messages;mute 20#采用用户名密码方式验证,若不用证书的话,可以考虑这种方式,可以结合LDAP或者mysql;auth-user-pass#windows7上会报错,建议加上此行# route-method exe#强行指定添加路由前的延时route-delay 2#不存储验证缓存auth-nocache#设置IP地址过期时间# ip-win32 dynamic 0 7200</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vpn </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>714-性能测试之LoadRunner</title>
       <link href="/2019/09/29/714-LoadRunner/"/>
       <url>/2019/09/29/714-LoadRunner/</url>

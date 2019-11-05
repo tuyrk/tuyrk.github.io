@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>神秘的小岛岛</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="神秘的小岛岛">
+  <title>Mac OS配置OpenVPN之Tunnelblick | 神秘的小岛岛</title>
+  <meta name="keywords" content=" vpn ">
+  <meta name="description" content="Mac OS配置OpenVPN之Tunnelblick | 神秘的小岛岛">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="https:&#x2F;&#x2F;www.imooc.com&#x2F;learn&#x2F;1129 简介：Vim作为一个强大的编辑器，是很多巨佬的不二之选，但因为其较高的入门学习门槛劝退了很多人。中文的系统教程少之又少，讲vim插件使用的更是屈指可数，本课程从vim最基础的操作和概念开始讲起，带领大家学会使用和配置 vim，安装强大的 vim 插件，真正掌握编辑器之神 vim 的使用。  @[TOC] 第1章 玩转vim 从放弃">
 <meta name="keywords" content="vim">
@@ -58,7 +58,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpeg" />
@@ -455,12 +455,68 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-MacOS-OpenVPN" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于神秘的小岛岛"><span class="toc-text">关于神秘的小岛岛</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">Mac OS配置OpenVPN之Tunnelblick</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="工具">工具</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">vpn</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-11-05 17:46:33'>2019-10-10 11:23</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:891</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
     
 <style>
     .left-col .switch-btn,
@@ -473,36 +529,168 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>链接公司内网需要使用到OpenVPN，之前在Windows系统直接使用公司提供的<a href="https://openvpn.net/community-downloads/" target="_blank" rel="noopener">OpenVPN客户端</a>，但是似乎没有Mac版，所以使用了<a href="https://tunnelblick.net/index.html" target="_blank" rel="noopener">Tunnelblick工具</a>，下边记录一下在使用中遇到的一些问题。</p>
 </blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于神秘的小岛岛"><a href="#关于神秘的小岛岛" class="headerlink" title="关于神秘的小岛岛"></a>关于神秘的小岛岛</h2><p><strong>神秘的小岛岛</strong> 是涂元坤的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
+<ol>
+<li><p>下载⏬<a href="https://tunnelblick.net/index.html" target="_blank" rel="noopener">Tunnelblick工具</a>，安装</p>
+</li>
+<li><p>准备<code>*.ovpn</code>、<code>*.key</code>、<code>*.crt</code>在同一目录下</p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li><p>问题一：<code>“comp-lzo” 在openvpn 2.4 中已弃用,将会在未来的版本中移除。</code></p>
+<p>解决：<a href="https://github.com/Nyr/openvpn-install/issues/430" target="_blank" rel="noopener">https://github.com/Nyr/openvpn-install/issues/430</a></p>
+<p>在<code>*.ovpn</code>使用<code>compress lzo</code>代替<code>comp-lzo</code> </p>
+</li>
+<li><p>问题二：<code>• &#39;ns-cert-type&#39; 这个选项在 OpenVPN 2.4 版本的配置中是过时的，已经在 OpenVPN 2.5 版本中移除。</code></p>
+<p>解决：在<code>*.ovpn</code>使用<code>remote-cert-tls server</code>代替<code>ns-cert-type server</code></p>
+</li>
+<li><p>问题三：<code>unrecognized option or missing or extra parameter(s) ip-win32 (2.4.7)</code></p>
+<p>解决：由于脚本是公司为Windows系统提供的，所以我在这里直接注释这个。</p>
+<pre><code class="shell"># ip-win32 dynamic -1
+# route-method exe</code></pre>
+</li>
 </ul>
+</li>
+<li><p>点击<code>*.ovpn</code>、连接</p>
+</li>
+</ol>
+<p><strong>==OpenVPN中不推荐使用的选项==</strong>：<a href="https://community.openvpn.net/openvpn/wiki/DeprecatedOptions" target="_blank" rel="noopener">https://community.openvpn.net/openvpn/wiki/DeprecatedOptions</a></p>
+<p>OpenVPN客户端配置文件详解：<a href="https://blog.faystar.com/openvpn_client/" target="_blank" rel="noopener">https://blog.faystar.com/openvpn_client/</a></p>
+<pre><code class="shell"># 定义是一个客户端
+client
 
-        </article>
-        
-        <p>
-            <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+# 定义使用设备类型，与服务端一致
+;dev tap
+dev tun
+
+# 定义Windows下使用的网卡名称,linux不需要
+;dev-node 我的连接
+
+# 定义使用的协议，与服务端一致
+;proto tcp
+proto udp
+
+# 指定服务端地址和端口,可以用多行指定多台服务器
+# 实现负载均衡（从上往下尝试）
+remote 118.112.188.108 1194
+;remote my-server-2 1194
+
+# 若上面配置了多台服务器，让客户端随机连接
+;remote-random
+
+# 解析服务器域名
+# Keep trying indefinitely to resolve the
+# host name of the OpenVPN server.  Very useful
+# on machines which are not permanently connected
+# to the internet such as laptops.
+resolv-retry infinite
+
+# 客户端不需要绑定端口
+# Most clients do not need to bind to
+# a specific local port number.
+nobind
+
+# 也是为了让Openvpn也nobody运行（安全）
+# 注意：Windows不能设置
+;user nobody
+;group nobody
+
+# Try to preserve some state across restarts.
+persist-key
+persist-tun
+
+# 若客户端通过HTTP Proxy，在这里设置
+# 要使用Proxy，不能使用UDP为VPN的通讯协议
+;http-proxy-retry # retry on connection failures
+;http-proxy [proxy server] [proxy port #]
+
+# 无线网络有很多多余的头文件，设置忽略它
+;mute-replay-warnings
+
+# 重点，就是指定ca和客户端的证书
+# 注意，下面的两个号是连在一起的，之间没有空格.需同时存在/注释
+ca &quot;ca.crt&quot;
+# cert &quot;test-1.crt&quot;
+# key &quot;test-1.key&quot;
+
+# 如果服务端打开了PAM认证模块，如mysql，LDAP数据库验证，客户端需要另其有效
+;auth-user-pass
+
+# 一些安全措施
+# Verify server certificate by checking
+# that the certicate has the nsCertType
+# field set to “server”.  This is an
+# important precaution to protect against
+# a potential attack discussed here:
+# http://openvpn.net/howto.html#mitm
+#
+# To use this feature, you will need to generate
+# your server certificates with the nsCertType
+# field set to “server”.  The build-key-server
+# script in the easy-rsa folder will do this.
+remote-cert-tls server
+
+# 增强验证加密，如果你在服务器端生成了ta.key，那么这里就需要加上
+# then every client must also have the key.
+tls-auth ta.key 1
+
+# Select a cryptographic cipher.
+# If the cipher option is used on the server
+# then you must also specify it here.
+;cipher x
+
+# 使用lzo压缩，与服务端一致
+compress lzo
+
+# Set log file verbosity.
+verb 3
+
+# Silence repeating messages
+;mute 20
+
+#采用用户名密码方式验证,若不用证书的话,可以考虑这种方式,可以结合LDAP或者mysql
+;auth-user-pass
+
+#windows7上会报错,建议加上此行
+# route-method exe
+
+#强行指定添加路由前的延时
+route-delay 2
+
+#不存储验证缓存
+auth-nocache
+
+#设置IP地址过期时间
+# ip-win32 dynamic 0 7200</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tuyrk@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>Mac OS配置OpenVPN之Tunnelblick</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">891</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="神秘的小岛岛">神秘的小岛岛</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-10-10, 11:23:59</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-05, 17:46:33</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/10/MacOS-OpenVPN/" title="Mac OS配置OpenVPN之Tunnelblick">https://tuyrk.cn/2019/10/10/MacOS-OpenVPN/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -522,6 +710,13 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+
+
 
 
     </div>
