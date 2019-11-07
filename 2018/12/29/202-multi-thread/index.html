@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>hexo重新发布后GitPages自定义域名失效 | 神秘的小岛岛</title>
-  <meta name="keywords" content=" 工具 , hexo ">
-  <meta name="description" content="hexo重新发布后GitPages自定义域名失效 | 神秘的小岛岛">
+  <title>202-深入浅出Java多线程 | 神秘的小岛岛</title>
+  <meta name="keywords" content=" 多线程 ">
+  <meta name="description" content="202-深入浅出Java多线程 | 神秘的小岛岛">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="E8GsQvoy2O">
 <meta property="og:type" content="website">
@@ -529,9 +529,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hexo-gitpages-invalid" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-202-multi-thread" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">hexo重新发布后GitPages自定义域名失效</h1>
+        <h1 class="article-title">202-深入浅出Java多线程</h1>
     
     <div class="article-meta">
         
@@ -539,30 +539,26 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="工具">工具</a>/
-            
-                <a href="javascript:" data-rel="hexo">hexo</a>
+                <a href="javascript:" data-rel="慕课网">慕课网</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color3">工具</a>
-            
-            <a href="javascript:" class="color5">hexo</a>
+            <a href="javascript:" class="color4">多线程</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-01 15:09:28'>2019-10-29 13:37</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-06 15:53:52'>2018-12-29 21:38</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:169</span>
+        <span>字数:3.2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -592,7 +588,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-text">解决方案</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第1章-多线程背景知识介绍"><span class="toc-text">第1章 多线程背景知识介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第2章-Java-线程初体验"><span class="toc-text">第2章 Java 线程初体验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实例：隋唐演义"><span class="toc-text">实例：隋唐演义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第3章-Java-线程的正确停止"><span class="toc-text">第3章 Java 线程的正确停止</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第4章-线程交互"><span class="toc-text">第4章 线程交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第5章-进阶展望"><span class="toc-text">第5章 进阶展望</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -608,15 +604,251 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>使用 <code>Github Pages</code> 功能将博客托管在了 Github 上，并配置 <code>CNAME</code> 将自己的域名解析了过去，在 <code>Github</code> 的仓库设置中开始 <code>Custom domain</code> 的功能，这时候就可以直接使用自己的域名访问啦。</p>
-<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8felp76szj311g0u00u4.jpg" alt="GitHub Pages" style="zoom:40%;" />
+        <blockquote>
+<p><a href="https://www.imooc.com/learn/202" target="_blank" rel="noopener">https://www.imooc.com/learn/202</a></p>
+<p>简介：多线程是日常开发中的常用知识，也是难用知识。通过本视频，你可以了解Java中多线程相关的基本概念，如何创建，启动和停止线程？什么是正确的多线程，怎样编写多线程程序。在掌握基础之后，将为你展望进阶路线，为进一步的学习提供方向。</p>
+</blockquote>
+<p><div class='inner-toc'><h2>目录</h2><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第1章-多线程背景知识介绍"><span class="toc-text">第1章 多线程背景知识介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第2章-Java-线程初体验"><span class="toc-text">第2章 Java 线程初体验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实例：隋唐演义"><span class="toc-text">实例：隋唐演义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第3章-Java-线程的正确停止"><span class="toc-text">第3章 Java 线程的正确停止</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第4章-线程交互"><span class="toc-text">第4章 线程交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第5章-进阶展望"><span class="toc-text">第5章 进阶展望</span></a></li></ol></div></p>
+<h2 id="第1章-多线程背景知识介绍"><a href="#第1章-多线程背景知识介绍" class="headerlink" title="第1章 多线程背景知识介绍"></a>第1章 多线程背景知识介绍</h2><blockquote>
+<p>本章将介绍与多线程编程相关的背景概念</p>
+</blockquote>
+<p>进程  </p>
+<ol>
+<li><p>进程是程序（任务）的执行过程，是动态性的。</p>
+<p>放在磁盘文件中的文件并不是进程，只有在运行状态的才可称之为进程。</p>
+</li>
+<li><p>持有资源（共享内存，共享文件）和线程。进程是资源和线程的载体</p>
+</li>
+</ol>
+<p>线程</p>
+<ol>
+<li>线程是系统中最小的执行单元</li>
+<li>同一进程中有多个线程</li>
+<li>线程共享进程的资源</li>
+</ol>
+<p>线程的交互：多个线程需要正确的通信才能进行工作。</p>
+<blockquote>
+<p>交互方式有互斥和同步两种。</p>
+</blockquote>
+<ul>
+<li><p>互斥是当一个线程正在运行时其他的线程只能等待，只有在当前线程完成后才可以运行；</p>
+</li>
+<li><p>同步是两个或多个线程同时进行运行。</p>
+</li>
+</ul>
+<h2 id="第2章-Java-线程初体验"><a href="#第2章-Java-线程初体验" class="headerlink" title="第2章 Java 线程初体验"></a>第2章 Java 线程初体验</h2><blockquote>
+<p>Java 语言层面对线程的支持，如何创建，启动和停止线程。如何使用常用的线程方法。用隋唐演义理解线程的代码</p>
+</blockquote>
+<p>Java对线程的支持体现在<code>java.lang</code>的包下的class类<code>Thread</code>和interface接口<code>Runnable</code></p>
+<p>共通的方法是<code>public void run()</code>，为我们提供线程实际工作执行的代码</p>
+<p><strong>Thread常用方法：</strong></p>
+<ol>
+<li><p>线程的创建  </p>
+<pre><code class="java"> Thread();
+ Thread(String name);
+ Thread(Runnable target);
+ Thread(Runnable target, String name);</code></pre>
+</li>
+<li><p>线程的方法  </p>
+<pre><code class="java"> void start(); // 启动线程。Java虚拟机调用该线程的run()方法。
+ static void sleep(long millis); // 线程休眠(暂停执行) 。millis休眠的时间，单位是毫秒，可以精确到纳秒。此操作受到系统计时器和调度程序精度和准确性的影响。
+ static void sleep(long millis, int nanos);
+ void join(); // 使其他线程等待当前线程终止。指明其他线程必须等待当前结束后才能运行
+ void join(long millis); // 参数表示其他线程最长等待的时间
+ void join(long millis,int nanos);
+ static void yield(); // 当前运行线程释放处理器资源并且重新去竞争处理器资源</code></pre>
+</li>
+<li><p>获取线程引用  </p>
+<pre><code class="java"> static Thread currentThread(); // 返回当前运行的线程引用（静态方法，返回Thread类型）</code></pre>
+</li>
+<li><p>线程的信息<br> <code>.getName()</code>：返回线程的名字</p>
+<p> <code>.setName(String Name)</code>：改变线程的名字  </p>
+</li>
+</ol>
+<p><strong><code>Thread</code>类 和 <code>Runnable</code>接口的区别与联系：</strong>  </p>
+<ol>
+<li><code>Runnable</code>只是一个接口，它里面只有一个<code>run()</code>方法，没有<code>start()</code>方法， 所以即使实现了<code>Runnable</code>接口，那也无法启动线程，必须依托其他类。  </li>
+<li><code>Thread</code>类，有一个构造方法，参数是<code>Runnable</code>对象，也就是说可以通过<code>Thread</code>类来启动<code>Runnable</code>实现的多线程。  </li>
+</ol>
+<p>注：</p>
+<ul>
+<li><p>在同一时间内同一处理器或同一个核只能运行一条线程，当一条线程休眠之后，另一条线程才获得了我们处理器的时间</p>
+</li>
+<li><p>一个<code>.java</code>文件中可以有多个类，但是只能有一个<code>public</code>修饰的类</p>
+</li>
+<li><p><code>Runnable</code>接口之中没有<code>getName()</code>方法，我们可以使用<code>Thread</code>的静态方法<code>currentThreat().getName();</code>获取该对象的名字。</p>
+</li>
+<li><p>若实现<code>Runnable</code>接口通过<code>Thread.currentThread().getName()</code>方法获取当前线程名称，继承<code>Thread</code>类则<code>getName()</code>方法获取当前线程。</p>
+</li>
+</ul>
+<h3 id="实例：隋唐演义"><a href="#实例：隋唐演义" class="headerlink" title="实例：隋唐演义"></a>实例：隋唐演义</h3><blockquote>
+<p>历史是人民群众创建的，英雄可以推动历史的发展  </p>
+</blockquote>
+<p><strong>1. 演员简介：</strong></p>
+<ul>
+<li><p>军队 <code>ArmyRunnable</code></p>
+</li>
+<li><p>英雄 <code>KeyPersonThread</code></p>
+</li>
+<li><p>舞台 <code>Stage</code>  </p>
+<pre><code class="java">// 隋唐演义大戏舞台
+public class Stage extends Thread {
+    @Override
+    public void run() {
+        ArmyRunnable armyTaskOfSuiDynasty = new ArmyRunnable();
+        ArmyRunnable armyTaskOfArmyOfRevolt = new ArmyRunnable();
 
-
-
-<p>但是发现一个问题是，每次配置 <code>Custom domain</code> 之后，再次 <code>hexo deploy</code> 之后，<code>Custom domain</code> 会被重置失效。</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在 <code>hexo</code> 生成的博客的 <code>source</code> 目录下新建一个 <code>CNAME</code> 文件，然后在这个文件中填入你的域名，最后重新部署hexo。这样就不会每次发布之后，<code>Github pages</code> 里的 <code>Custom domain</code> 都被重置掉啦。</p>
-<pre><code class="shell">vim ource/CNAME</code></pre>
-<pre><code class="shell">www.tuyrk.cn</code></pre>
+        //使用 Runnable 接口创建线程
+        Thread armyOfSuiDynasty = new Thread(armyTaskOfSuiDynasty, &quot;隋军&quot;);
+        Thread armyOfRevolt = new Thread(armyTaskOfarmyOfRevolt, &quot;农民起义军&quot;);
+    }
+}</code></pre>
+</li>
+</ul>
+<p><strong>2. 军队：</strong>  </p>
+<ol>
+<li><p>加入<code>join()</code>是为了让舞台线程最后停止。</p>
+<p> 如果不加有可能舞台线程结束，军队线程还未停止，就好比导演喊停，演员还在演！</p>
+<p> 可以在<code>join()</code>后面加入测试语句<code>System.out.println(&quot;舞台结束!&quot;);</code>，然后去掉或者保留<code>join</code>观察效果。</p>
+</li>
+<li><p><code>volatile</code>关键字保证了线程可以正确地读取其他线程写入的值。</p>
+<p> 如果不写成<code>volatile</code>，由于可见性的问题，当前线程有可能读取不到这个值 //可见性JMM（JAVA内存模型）happens-before原则、可见性原则</p>
+<p> 用<code>volatile</code>修饰的变量，线程在每次使用变量的时候，都会读取变量修改后的值</p>
+</li>
+<li><p><code>Thread.yield();</code>当前线程让出处理器时间，公平竞争  </p>
+</li>
+</ol>
+<p><strong>3. 关键先生：</strong>  </p>
+<ol>
+<li><code>start()</code>开始线程。  </li>
+<li><code>sleep()</code>线程休眠。  </li>
+<li><code>yield()</code>让出当前线程的执行权限，随机选择线程执行。  </li>
+<li><code>join()</code>优先执行该线程，其他线程(包括主线程main)都暂停。  </li>
+</ol>
+<h2 id="第3章-Java-线程的正确停止"><a href="#第3章-Java-线程的正确停止" class="headerlink" title="第3章 Java 线程的正确停止"></a>第3章 Java 线程的正确停止</h2><blockquote>
+<p>本章讨论如何正确的停止一个线程，既要线程停得了，还得线程停得好。</p>
+</blockquote>
+<ol>
+<li><p>错误的停止线程方法：  </p>
+<ol>
+<li><p><code>stop()</code>方法会导致线程戛然而止，我们不清楚线程完成了什么，没完成什么，也没有时间来完成对应的线程运行的清理工作。</p>
+</li>
+<li><p><code>interrupt()</code>方法只能设置<code>interrupt</code>标志位（且在线程阻塞情况下，标志位会被清除，更无法设置中断标志位），无法停止线程</p>
+<blockquote>
+<ol>
+<li><code>Interrupted</code> 相当于 旗标 (isInterrupted ==&gt;true false) <ol start="2">
+<li>线程中使用<code>sleep</code>等方法造成线程堵塞时， 标志位被清除，<code>Interrupted</code>方式无效同时抛出<code>InterruptedException</code>（中断异常）</li>
+<li><code>interrupt</code>方法是用来唤醒被阻塞的线程的。如果线程使用了<code>wait</code>, <code>sleep</code>, <code>join</code>方法，那么线程就会进入阻塞状态，使用<code>interrupt</code>方法会终止这种状态，此时线程的<code>sleep</code>等方法下面的<code>catch</code>语句就会接收到这个打断，从而启动线程，继续做要做的事情。如果线程在阻塞之前使用<code>interrupt</code>方法，那么在阻塞的时候，会抛出异常，并把中断标志位设置成<code>false</code>。</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p>正确的停止线程方法：</p>
+<p> 在线程执行中设置状态标识，通过控制此状态标识，来控制线程的正常完整的结束。</p>
+<p> 另外，<code>volatile</code>关键字是保证所有其他线程里的变量的赋值都能同步到当前内存里变量的值。</p>
+<p> 这样做的好处是：线程有机会使得一个业务步骤被完整地执行，在执行完业务步骤后有充分的时间去做代码的清理工作，使得线程代码在实际中更安全</p>
+</li>
+</ol>
+<h2 id="第4章-线程交互"><a href="#第4章-线程交互" class="headerlink" title="第4章 线程交互"></a>第4章 线程交互</h2><blockquote>
+<p>争用条件，线程的交互，及死锁的成因及预防</p>
+</blockquote>
+<p><strong>争用条件：</strong></p>
+<ol>
+<li>定义：当多个线程同时共享访问同一数据（内存区域）时，每个线程都尝试操作该数据，从而导致数据被破坏（corrupted)，这种现象称为争用条件</li>
+<li>原因：每个线程在操作数据时，会先将数据初值读【取到自己获得的内存中】，然后在内存中进行运算后，重新赋值到数据。 </li>
+<li>争用条件：线程1在还【未重新将值赋回去时】，线程1阻塞，线程2开始访问该数据，然后进行了修改，之后被阻塞的线程1再获得资源，而将之前计算的值覆盖掉线程2所修改的值，就出现了数据丢失情况</li>
+</ol>
+<p><strong>互斥与同步：</strong></p>
+<ol>
+<li>互斥<br>同一时间，只能有一个线程访问关键数据或临界区</li>
+<li>同步<br>是一种通信机制，一个线程操作完成后，以某种方式通知其他线程</li>
+<li>实现方法<blockquote>
+<ol>
+<li>【互斥】构建锁对象<code>private final Object lockObj = new Object();</code></li>
+<li>通过<code>synchronized(lockObj){  互斥的代码块  }</code>加锁操作。加锁操作会开销系统资源，降低效率</li>
+<li>在某线程的条件不满足任务时，使用<code>lockObj.wait();</code>对线程进行阻挡，防止其继续竞争<code>CPU</code>资源，滞留在<code>wait set</code>中，等待唤醒，【唤醒后继续完成业务】</li>
+<li>【同步】在某一代码正确执行完业务后，通过<code>lockObj.notifyAll()</code>唤醒所有在<code>lockObj</code>对象等待的线程</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li><p>互斥：关键数据在一个时间被一个线程使用。</p>
+<p>互斥的实现：<code>private final Object lockObj = new Object()</code>、<code>synchronized(intrinsic lock) {}</code>  </p>
+</li>
+<li><p>同步：两个线程之间的一种交互的操作（一个线程发出消息另外一个线程响应）</p>
+<p>同步的实现：<code>wait();</code>、<code>notify();</code>、<code>notifyAll();</code>，都是属于Java中的<code>Object</code>对象的成员函数</p>
+</li>
+</ul>
+<p><strong>注：</strong> 调用<code>wait();</code>和<code>notifyAll();</code>方法使线程进入等待或者唤醒不是在同一个线程的同一次操作中执行的，当操作结束，唤醒了所有的等待线程之后，线程又将有着公平的机会竞争CPU资源。  </p>
+<p><code>wait set</code>类似于线程的休息室，访问共享数据的代码称为临界区<code>critical section</code>。<br>一个线程获取锁，然后进入临界区,发现某些条件不满足，然后调用锁对象上的<code>wait()</code>方法，然后线程释放掉锁资源，进入锁对象上的<code>wait set</code>。其他线程可以获取锁资源，然后执行，完了以后调用<code>notify()/notifyAll()</code>，通知锁对象上的等待线程。  </p>
+<h2 id="第5章-进阶展望"><a href="#第5章-进阶展望" class="headerlink" title="第5章 进阶展望"></a>第5章 进阶展望</h2><blockquote>
+<p>简单介绍 Java 并发相关的类，及常用的多线程编程模型</p>
+</blockquote>
+<p>要点回顾：</p>
+<ol>
+<li>线程如何创建以及线程的基本概念</li>
+<li>可见性以及<code>volatile</code>关键字</li>
+<li>争用条件</li>
+<li>如何通过<code>synchronized</code>让线程的互斥</li>
+<li>如何通过<code>wait/notify</code>、<code>notifyAll</code>让线程同步</li>
+</ol>
+<p><strong>展望：</strong></p>
+<ol>
+<li>Java Memory Mode:  <ul>
+<li>JMM描述了java线程如何通过内存进行交互</li>
+<li>了解happens-before</li>
+<li>synchronized,volatile &amp; final</li>
+</ul>
+</li>
+<li>Locks % Condition：<ul>
+<li>锁机制和等待条件的高层实现</li>
+<li>java.util.concurrent.locks</li>
+</ul>
+</li>
+<li>线程安全性<ul>
+<li>原子性与可见性</li>
+<li>java.util.concurrent.atomic</li>
+<li>synchronized &amp; volatile</li>
+<li>DeadLocks(死锁)</li>
+</ul>
+</li>
+<li>多线程常用的交互模型<ul>
+<li>Producer-Consumer模型</li>
+<li>Read-Write Lock模型</li>
+<li>Future模型</li>
+<li>Worker Thread模型</li>
+<li>了解哪些类实现了这些模型可以用来直接使用</li>
+</ul>
+</li>
+<li>Java5中并发编程工具：<ul>
+<li>java.util.concurrent</li>
+<li>线程池ExecutorService</li>
+<li>Callable &amp; Future</li>
+<li>BlockingQueue</li>
+</ul>
+</li>
+<li>推荐书本<ul>
+<li>CoreJava</li>
+<li>Java Concurrency In Practice</li>
+</ul>
+</li>
+</ol>
+<p><strong>Java多线程特性：</strong></p>
+<ol>
+<li><p>原子性：<code>Java</code>内存模型只保证了基本读取和赋值是原子性操作，如果要实现更大范围操作的原子性，可以通过<code>synchronized</code>和<code>Lock</code>来实现。由于<code>synchronized</code>和<code>Lock</code>能够保证任一时刻只有一个线程执行该代码块，那么自然就不存在原子性问题了，从而保证了原子性。</p>
+</li>
+<li><p>可见性：对于可见性，<code>Java</code>提供了<code>volatile</code>关键字来保证可见性。当一个共享变量被<code>volatile</code>修饰时，它会保证修改的值会立即被更新到主存，当有其他线程需要读取时，它会去内存中读取新值。而普通的共享变量不能保证可见性，因为普通共享变量被修改之后，什么时候被写入主存是不确定的，当其他线程去读取时，此时内存中可能还是原来的旧值，因此无法保证可见性。</p>
+<p>另外，通过<code>synchronized</code>和<code>Lock</code>也能够保证可见性，<code>synchronized</code>和<code>Lock</code>能保证同一时刻只有一个线程获取锁然后执行同步代码，并且在释放锁之前会将对变量的修改刷新到主存当中。因此可以保证可见性。</p>
+</li>
+<li><p>有序性：在<code>Java</code>内存模型中，允许编译器和处理器对指令进行重排序，但是重排序过程不会影响到单线程程序的执行，却会影响到多线程并发执行的正确性。</p>
+<p> 在<code>Java</code>里面，可以通过<code>volatile</code>关键字来保证一定的“有序性”。另外可以通过<code>synchronized</code>和<code>Lock</code>来保证有序性，很显然，<code>synchronized</code>和<code>Lock</code>保证每个时刻只有一个线程执行同步代码，相当于是让线程顺序执行同步代码，自然就保证了有序性。</p>
+<p> 另外，<code>Java</code>内存模型具备一些先天的“有序性”，即不需要通过任何手段就能够得到保证的有序性，这个通常也称为<code>happens-before</code>原则。如果两个操作的执行次序无法从<code>happens-before</code>原则推导出来，那么它们就不能保证它们的有序性，虚拟机可以随意地对它们进行重排序。</p>
+</li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tuyrk@qq.com </span>
@@ -630,12 +862,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>hexo重新发布后GitPages自定义域名失效</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">169</span></p>
+    <p><span class="copy-title">文章标题:</span>202-深入浅出Java多线程</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">3.2k</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="神秘的小岛岛">神秘的小岛岛</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-29, 13:37:25</p>
-    <p><span class="copy-title">最后更新:</span>2019-11-01, 15:09:28</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/29/hexo-gitpages-invalid/" title="hexo重新发布后GitPages自定义域名失效">https://www.tuyrk.cn/2019/10/29/hexo-gitpages-invalid/</a>
+    <p><span class="copy-title">发布时间:</span>2018-12-29, 21:38:49</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-06, 15:53:52</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2018/12/29/202-multi-thread/" title="202-深入浅出Java多线程">https://www.tuyrk.cn/2018/12/29/202-multi-thread/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>hexo重新发布后GitPages自定义域名失效 | 神秘的小岛岛</title>
-  <meta name="keywords" content=" 工具 , hexo ">
-  <meta name="description" content="hexo重新发布后GitPages自定义域名失效 | 神秘的小岛岛">
+  <title>202-深入浅出Java多线程 | 神秘的小岛岛</title>
+  <meta name="keywords" content=" 多线程 ">
+  <meta name="description" content="202-深入浅出Java多线程 | 神秘的小岛岛">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="E8GsQvoy2O">
 <meta property="og:type" content="website">
@@ -529,9 +529,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hexo-gitpages-invalid" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-312-thread-runnable" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">hexo重新发布后GitPages自定义域名失效</h1>
+        <h1 class="article-title">202-深入浅出Java多线程</h1>
     
     <div class="article-meta">
         
@@ -539,30 +539,26 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="工具">工具</a>/
-            
-                <a href="javascript:" data-rel="hexo">hexo</a>
+                <a href="javascript:" data-rel="慕课网">慕课网</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color3">工具</a>
-            
-            <a href="javascript:" class="color5">hexo</a>
+            <a href="javascript:" class="color4">多线程</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-01 15:09:28'>2019-10-29 13:37</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-06 20:10:09'>2018-12-30 10:25</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:169</span>
+        <span>字数:1.7k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -592,7 +588,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-text">解决方案</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第1章-课前准备"><span class="toc-text">第1章 课前准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第2章-Thread-VS-Runnable"><span class="toc-text">第2章 Thread VS Runnable</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-回顾线程创建的两种方式"><span class="toc-text">2-1 回顾线程创建的两种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-应用Thread模拟卖票"><span class="toc-text">2-2 应用Thread模拟卖票</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第3章-线程的生命周期和守护线程"><span class="toc-text">第3章 线程的生命周期和守护线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-线程的生命周期"><span class="toc-text">3-1 线程的生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-守护线程理论知识"><span class="toc-text">3-2 守护线程理论知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-守护线程代码示例"><span class="toc-text">3-3 守护线程代码示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-使用jstack生成线程快照"><span class="toc-text">3-4 使用jstack生成线程快照</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第4章-课程总结"><span class="toc-text">第4章 课程总结</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -608,15 +604,209 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>使用 <code>Github Pages</code> 功能将博客托管在了 Github 上，并配置 <code>CNAME</code> 将自己的域名解析了过去，在 <code>Github</code> 的仓库设置中开始 <code>Custom domain</code> 的功能，这时候就可以直接使用自己的域名访问啦。</p>
-<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8felp76szj311g0u00u4.jpg" alt="GitHub Pages" style="zoom:40%;" />
+        <blockquote>
+<p><a href="https://www.imooc.com/learn/312" target="_blank" rel="noopener">https://www.imooc.com/learn/312</a></p>
+<p>简介：本课程将带领大家更加深入地学习Java多线程的机制，深入理解创建线程的两种方式Thread和Runnable之间的差异，掌握线程的生命周期和守护线程的概念，以及如何使用jstack生成线程快照。</p>
+</blockquote>
+<p><div class='inner-toc'><h2>目录</h2><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第1章-课前准备"><span class="toc-text">第1章 课前准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第2章-Thread-VS-Runnable"><span class="toc-text">第2章 Thread VS Runnable</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-回顾线程创建的两种方式"><span class="toc-text">2-1 回顾线程创建的两种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-应用Thread模拟卖票"><span class="toc-text">2-2 应用Thread模拟卖票</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第3章-线程的生命周期和守护线程"><span class="toc-text">第3章 线程的生命周期和守护线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-线程的生命周期"><span class="toc-text">3-1 线程的生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-守护线程理论知识"><span class="toc-text">3-2 守护线程理论知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-守护线程代码示例"><span class="toc-text">3-3 守护线程代码示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-使用jstack生成线程快照"><span class="toc-text">3-4 使用jstack生成线程快照</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第4章-课程总结"><span class="toc-text">第4章 课程总结</span></a></li></ol></div></p>
+<h2 id="第1章-课前准备"><a href="#第1章-课前准备" class="headerlink" title="第1章 课前准备"></a>第1章 课前准备</h2><blockquote>
+<p>了解学习本课程前的必备知识</p>
+</blockquote>
+<p><a href="https://www.imooc.com/learn/202" target="_blank" rel="noopener">《深入浅出Java多线程》</a></p>
+<blockquote>
+<p>比较Thread和Runnable这两种线程创建的方式，需要知道Thread和Runnable的基本创建方式。</p>
+</blockquote>
+<p>课程目标和学习内容</p>
+<ul>
+<li>线程创建的两种方式比较</li>
+<li>线程的生命周期</li>
+<li>线程的守护神：守护线程</li>
+</ul>
+<h2 id="第2章-Thread-VS-Runnable"><a href="#第2章-Thread-VS-Runnable" class="headerlink" title="第2章 Thread VS Runnable"></a>第2章 <code>Thread</code> VS <code>Runnable</code></h2><blockquote>
+<p>本章首先回顾了线程创建的两种方式，而后通过一个程序案例，深入比较了这两种创建线程的方式。</p>
+</blockquote>
+<h3 id="2-1-回顾线程创建的两种方式"><a href="#2-1-回顾线程创建的两种方式" class="headerlink" title="2-1 回顾线程创建的两种方式"></a>2-1 回顾线程创建的两种方式</h3><ol>
+<li><p>继承<code>Thread</code>类</p>
+<pre><code class="java"> class MyThread extents Thread {
+     // ...
+     @Override
+     public void run() {
+         // ...
+     }
+ }
 
+ MyThread mt = new MyThread(); // 创建线程
+ mt.start(); // 启动线程</code></pre>
+</li>
+<li><p>实现<code>Runnable</code>接口</p>
+<pre><code class="java"> class MyRunnable implements Runnable {
+     // ...
+     @Override
+     public void run() {
+         // ...
+     }
+ }
 
+ MyRunnable mr = new MyRunnable();
+ Thread td = new Thread(mr); // 创建线程
+ td.start(); // 启动线程</code></pre>
+<h3 id="2-2-应用Thread模拟卖票"><a href="#2-2-应用Thread模拟卖票" class="headerlink" title="2-2 应用Thread模拟卖票"></a>2-2 应用<code>Thread</code>模拟卖票</h3><p><code>Thread</code>与<code>Runnable</code>的区别：</p>
+</li>
+<li><p><code>Runnable</code>方式可以避免<code>Thread</code>方式由于<code>Java</code>单继承特性带来的缺陷</p>
+<p>单继承：Java语言中只能继承一个父类，而可以实现多个接口</p>
+</li>
+<li><p><code>Runnable</code>的实例对象可以被多个线程（<code>Thread</code>实例）共享，适合于多个线程处理<strong>同一资源</strong></p>
+</li>
+</ol>
+<p>针对Thread和Runnable对于同一资源处理：</p>
+<pre><code class="java">class MyThread extends Thread{}
+class MyRunnable implements Runnable{}
 
-<p>但是发现一个问题是，每次配置 <code>Custom domain</code> 之后，再次 <code>hexo deploy</code> 之后，<code>Custom domain</code> 会被重置失效。</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在 <code>hexo</code> 生成的博客的 <code>source</code> 目录下新建一个 <code>CNAME</code> 文件，然后在这个文件中填入你的域名，最后重新部署hexo。这样就不会每次发布之后，<code>Github pages</code> 里的 <code>Custom domain</code> 都被重置掉啦。</p>
-<pre><code class="shell">vim ource/CNAME</code></pre>
-<pre><code class="shell">www.tuyrk.cn</code></pre>
+public static void main(String[] args) {
+    // 注意：此时t1,t2,t3是堆内存中实例出的三个对象，对于它们所有属性也独立的
+    MyThread t1 = new MyThread();
+    MyThread t2 = new MyThread();
+    MyThread t3 = new MyThread();
+
+    // 注意：t1,t2,t3虽然是堆中的三个不同对象，但是此时的r是一个，所以三个线程引用r中的资源也是共有的
+    MyRunnable r = new MyRunnable();
+    Thread t1 = new Thread(r);
+    Thread t2 = new Thread(r);
+    Thread t3 = new Thread(r);
+}</code></pre>
+<p>结论：Runnable可以实现资源共享，而Thread资源独立</p>
+<p>注：</p>
+<ul>
+<li><code>a--</code>、<code>a++</code>、<code>++a</code>、<code>--a</code>、<code>a+=1</code>等为非原子操作（non-atomic operation），需要加锁</li>
+</ul>
+<h2 id="第3章-线程的生命周期和守护线程"><a href="#第3章-线程的生命周期和守护线程" class="headerlink" title="第3章 线程的生命周期和守护线程"></a>第3章 线程的生命周期和守护线程</h2><blockquote>
+<p>本章归纳总结了线程的生命周期，讲解了守护线程，并演示了如何使用jstack生成线程快照</p>
+</blockquote>
+<h3 id="3-1-线程的生命周期"><a href="#3-1-线程的生命周期" class="headerlink" title="3-1 线程的生命周期"></a>3-1 线程的生命周期</h3><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8odd59oopj30zk0k0gmb.jpg" style="zoom:50%;" />
+
+<ol>
+<li><p>创建：新建一个线程对象，如<code>Thread thd = new Thread()</code></p>
+</li>
+<li><p>就绪：创建了线程对象后，调用了线程的<code>start()</code>方法（注意：此时线程只是进入了线程队列，等待获取<code>CPU</code>服务，具备了运行的条件，但并不一定已经开始运行了）</p>
+</li>
+<li><p>运行：处于就绪状态的线程，一旦获取了<code>CPU</code>资源，便进入到运行状态，开始执行<code>run()</code>方法里面的逻辑</p>
+</li>
+<li><p>终止：线程的<code>run()</code>方法执行完毕，或者调用线程的<code>stop()</code>方法（该方法已经废弃），线程便进入终止状态</p>
+</li>
+<li><p>阻塞：一个正在执行的线程在某种情况下，由于某种原因而暂时让出了<code>CPU</code>资源，暂停了自己的执行，便进入了阻塞状态，如调用了<code>sleep()</code>、<code>wait()</code>、<code>yield()</code>等方法</p>
+<h3 id="3-2-守护线程理论知识"><a href="#3-2-守护线程理论知识" class="headerlink" title="3-2 守护线程理论知识"></a>3-2 守护线程理论知识</h3><p><code>Java</code>线程分两类：</p>
+</li>
+<li><p>用户线程：运行在前台，执行具体任务</p>
+<p>例如：程序的主线程，连接网络的子线程等</p>
+</li>
+<li><p>守护线程：运行在后台，为其他前台线程服务</p>
+<p>特点：一旦所有用户线程都结束运行，守护线程会随<code>JVM</code>一起结束工作</p>
+<p>应用：</p>
+<ol>
+<li>数据库连接池中的监测线程</li>
+<li><code>JVM</code>虚拟机启动后的监测线程<ul>
+<li>垃圾回收线程</li>
+<li>监测内存使用的线程</li>
+<li>监测程序锁持有的线程  </li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p>如何设置守护线程：</p>
+<ul>
+<li>可以通过调用<code>Thread</code>类的<code>setDaemon(true)</code>方法来设置当前的线程为守护线程  </li>
+</ul>
+<p><strong>注意事项</strong>：</p>
+<ul>
+<li><code>setDaemon(true)</code>必须在<code>start()</code>方法之前调用，否则会抛出<code>IllegalThreadStateException</code>异常</li>
+<li>在守护线程中产生的新线程也是守护线程</li>
+<li>不是所有的任务都可以分配给守护线程来执行，比如读写操作或者计算逻辑<h3 id="3-3-守护线程代码示例"><a href="#3-3-守护线程代码示例" class="headerlink" title="3-3 守护线程代码示例"></a>3-3 守护线程代码示例</h3><pre><code class="java">public static void main(String[] args) {
+  System.out.println(&quot;进入主线程&quot; + Thread.currentThread().getName());
+  DaemonThread daemonThread = new DaemonThread();
+  Thread thread = new Thread(daemonThread);
+  thread.setDaemon(true);//设置为守护线程
+  thread.start();
+  Scanner scanner = new Scanner(System.in);
+  scanner.next();
+  // 主线程为唯一用户线程
+  // thread为守护线程
+  // 主线程退出导致数据的不完整性
+  System.out.println(&quot;退出主线程&quot; + Thread.currentThread().getName());
+}</code></pre>
+</li>
+</ul>
+<p>thread线程运行完成后程序不会立刻终止，此时thread守护线程需等待main主用户线程scanner之后才会结束运行。</p>
+<h3 id="3-4-使用jstack生成线程快照"><a href="#3-4-使用jstack生成线程快照" class="headerlink" title="3-4 使用jstack生成线程快照"></a>3-4 使用jstack生成线程快照</h3><p>位置：<code>jdk/bin/jstack.exe</code></p>
+<table>
+<thead>
+<tr>
+<th align="center">程序</th>
+<th align="center">工具作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">jstack</td>
+<td align="center">生成JVM线程快照</td>
+</tr>
+<tr>
+<td align="center">jstat.exe</td>
+<td align="center">监测虚拟机的运行状态</td>
+</tr>
+<tr>
+<td align="center">jconsole.exe</td>
+<td align="center">Java监视和管理控制台GUI</td>
+</tr>
+<tr>
+<td align="center">jvisualvm.exe</td>
+<td align="center">界面化工局</td>
+</tr>
+<tr>
+<td align="center">jmap.exe</td>
+<td align="center">生成堆快照</td>
+</tr>
+<tr>
+<td align="center">虚拟机的运行状态：内存的使用情况、类加载情况、锁持有的情况</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p><code>jstack</code></p>
+<ul>
+<li>作用：生成<code>JVM</code>当前时刻线程的快照（<code>threaddump</code>，即当前进程中所有线程的信息）</li>
+<li>目的：帮助定位程序问题出现的原因(查找一些程序问题)，如长时间停顿、<code>CPU</code>占用率过高、死锁、阻塞等；看出哪些是守护线程，哪些是用户线程</li>
+<li>使用：<code>jstack -l &lt;pid&gt;</code>—-其中<code>&lt;pid&gt;</code>可以通过任务栏管理器查看<ol>
+<li>可以通过线程名后是否有<code>daemon</code>判断是否为守护线程，有-是、无-否</li>
+<li>查看线程的状态<code>java.lang.Thread.State</code>帮助定位程序出现的一系列问题(死锁、阻塞)</li>
+<li><code>tid</code>、<code>nid</code>可以帮助查找<code>CPU</code>占有率很高的线程</li>
+<li><code>prio</code>代表优先级</li>
+</ol>
+</li>
+</ul>
+<p>线程状态：  </p>
+<ul>
+<li><code>New</code>尚未启动的线程（创建）；</li>
+<li><code>Runnable</code>在<code>Java</code>虚拟机中执行的线程，即将或正在运行的线程（就绪，运行）；</li>
+<li><code>Terminated</code>已退出的线程（终止）；</li>
+<li><code>Blocked</code>、<code>Waiting</code>、<code>Timed_Waiting</code>对应阻塞状态。<ol>
+<li><code>Blocked</code>：等待监视器锁定的线程，如被<code>synchronized</code>阻塞的线程。</li>
+<li><code>Waiting</code>：无限期等待另一个线程执行特定操作的线程，调用<code>join</code>方法时。</li>
+<li><code>Timed_Waiting</code>：等待另一个线程在指定等待时间内执行操作的线程，如<code>sleep</code>方法。</li>
+</ol>
+</li>
+</ul>
+<h2 id="第4章-课程总结"><a href="#第4章-课程总结" class="headerlink" title="第4章 课程总结"></a>第4章 课程总结</h2><blockquote>
+<p>课程总结</p>
+</blockquote>
+<p>建议：使用实现<code>Runnable</code>接口的方式创建线程</p>
+<p>补充：</p>
+<ol>
+<li><p>程序中的同一资源指的是同一个<code>Runnable</code>对象</p>
+<p>如果把其他类的对象也作为共享资源，则<code>Thread</code>和<code>Runnable</code>都是可以用来处理同一资源</p>
+</li>
+<li><p>安全的卖票程序中需要加入同步（<code>synchronized</code>）</p>
+</li>
+</ol>
+<p>Thread vs Runnable，线程的生命周期，守护线程，jstack生成线程快照</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tuyrk@qq.com </span>
@@ -630,12 +820,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>hexo重新发布后GitPages自定义域名失效</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">169</span></p>
+    <p><span class="copy-title">文章标题:</span>202-深入浅出Java多线程</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.8k</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="神秘的小岛岛">神秘的小岛岛</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-29, 13:37:25</p>
-    <p><span class="copy-title">最后更新:</span>2019-11-01, 15:09:28</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/29/hexo-gitpages-invalid/" title="hexo重新发布后GitPages自定义域名失效">https://www.tuyrk.cn/2019/10/29/hexo-gitpages-invalid/</a>
+    <p><span class="copy-title">发布时间:</span>2018-12-30, 10:25:38</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-06, 20:10:09</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2018/12/30/312-thread-runnable/" title="202-深入浅出Java多线程">https://www.tuyrk.cn/2018/12/30/312-thread-runnable/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
