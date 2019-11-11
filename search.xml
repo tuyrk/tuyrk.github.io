@@ -4,6 +4,141 @@
   
     
     <entry>
+      <title>104-线程生命周期以及start方法源码剖析</title>
+      <link href="/2019/11/11/104-thread-lifecycle/"/>
+      <url>/2019/11/11/104-thread-lifecycle/</url>
+      
+        <content type="html"><![CDATA[<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8u9nc9l7qj30y20fewgo.jpg" alt="线程生命周期简图" style="zoom:50%;" /><p>线程生命周期共有6种状态：</p><ol><li><p>初始(NEW)：新创建了一个线程对象，但还没有调用start()方法。</p></li><li><p>运行(RUNNABLE)：Java线程中将就绪（ready）和运行中（running）两种状态笼统的称为“运行”。<br> 线程对象创建后，其他线程(比如main线程）调用了该对象的start()方法。该状态的线程位于可运行线程池中，等待被线程调度选中，获取CPU的使用权，此时处于就绪状态（ready）。就绪状态的线程在获得CPU时间片后变为运行中状态（running）。</p></li><li><p>阻塞(BLOCKED)：表示线程阻塞于锁。</p></li><li><p>等待(WAITING)：进入该状态的线程需要等待其他线程做出一些特定动作（通知或中断）。</p></li><li><p>超时等待(TIMED_WAITING)：该状态不同于WAITING，它可以在指定的时间后自行返回。</p></li><li><p>终止(TERMINATED)：表示该线程已经执行完毕。</p> <img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8uagny1khj30w30lf0tx.jpg" alt="线程状态图" style="zoom:80%;" /> <img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8uafgd9wbj30sx0eejrw.jpg" alt="线程生命周期" style="zoom:80%;" /></li></ol><p><code>start()</code></p><blockquote><pre><code class="java">public void start()</code></pre><p>Causes this thread to begin execution; the Java Virtual Machine calls the <code>run</code> method of this thread.</p><p>The result is that two threads are running concurrently: the current thread (which returns from the call to the <code>start</code> method) and the other thread (which executes its <code>run</code> method).</p><p><strong>It is never legal to start a thread more than once.</strong> In particular, a thread may not be restarted once it has completed execution.</p></blockquote><ul><li>程序启动会创建两个线程：main主线程、run用户子线程</li><li><code>start()</code>不能被执行两次：IllegalThreadStateException</li></ul><p>不执行<code>start()</code>方法，而直接执行<code>run()</code>方法，此时没有启动线程，只是调用了一个实例方法而已。这是使用了模版方法的技巧。</p><pre><code class="java">Thread t1 = new Thread(&quot;READ-Thread&quot;) {  @Override  public void run() {    println(Thread.currentThread().getName());    readFromDataBase();  }};t1.run();</code></pre><p>此时输出的线程名称为：<code>main</code></p><p>模版方法：</p><p>例：在实际程序中，算法已经基本固定，但是其中有一些逻辑可能是多变的，此时将其抽象出去并让子类去实现。</p><pre><code class="java">public abstract class BaseTemplateMethod {    public static void main(String[] args) {        BaseTemplateMethod t1 = new BaseTemplateMethod() {            @Override            protected void wrapPrint(String message) {                System.out.println(&quot;*&quot; + message + &quot;*&quot;);            }        };        t1.print(&quot;Hello Thread&quot;);        BaseTemplateMethod t2 = new BaseTemplateMethod() {            @Override            protected void wrapPrint(String message) {                System.out.println(&quot;+&quot; + message + &quot;+&quot;);            }        };        t2.print(&quot;Hello Thread&quot;);    }    public final void print(String message) {        System.out.println(&quot;#####################&quot;);        wrapPrint(message);        System.out.println(&quot;#####################&quot;);    }    protected abstract void wrapPrint(String message);}</code></pre><p>注：真正的Template方法需要写成抽象类，并把<code>print()</code>方法写成<code>final</code>方法（必须为<code>final</code>方法），<code>wrapPrint()</code>方法写成抽象方法。</p><p>总结：</p><ol><li>Java应用程序的main函数是一个线程，是被JVM启动的时候调用，线程的名字叫main</li><li>实现一个线程必须创建Thread实例，override重写<code>run()</code>方法，并且调用<code>start()</code>方法</li><li>在JVM启动后，实际上有多个线程，但是至少有一个非守护线程（main线程）</li><li>当你调用一个线程的<code>start()</code>方法的时候，此时至少有两个线程，一个是调用你的线程（main方法），还有一个是执行<code>run()</code>方法的线程</li><li>线程的生命周期分为：New、Runnable、Running、Block、Terminate</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 汪文君 </category>
+          
+          <category> 多线程第一季 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>103-创建并启动线程</title>
+      <link href="/2019/11/11/103-create-thread/"/>
+      <url>/2019/11/11/103-create-thread/</url>
+      
+        <content type="html"><![CDATA[<pre><code class="java">/** * 读数据 */private static void readFromDataBase() {    // read data from database and handle it    try {        println(&quot;Begin read data from db.&quot;);        Thread.sleep(1000 * 5L);        println(&quot;Read data done and start handle it.&quot;);    } catch (InterruptedException e) {        e.printStackTrace();    }    println(&quot;The data handle finish and successfully.&quot;);}</code></pre><pre><code class="java">/** * 写数据 */private static void writeDataToFile() {    // write data to file    try {        println(&quot;Begin write data to file.&quot;);        Thread.sleep(1000 * 10L);        println(&quot;Write data done and start handle it.&quot;);    } catch (InterruptedException e) {        e.printStackTrace();    }    println(&quot;The data handle finish and successfully.&quot;);}</code></pre><ol><li><p>顺序执行，而非交替执行</p><pre><code class="java">// 例1readFromDataBase();writeDataToFile();// 例2for (int i = 0; i &lt; 100; i++) {    println(&quot;Task i=&gt;&quot; + i);}for (int j = 0; j &lt; 100; j++) {    println(&quot;Task j=&gt;&quot; + j);}</code></pre></li><li><p>交替执行</p><pre><code class="java">Thread t1 = new Thread(&quot;Custom-Thread&quot;) {    @Override    public void run() {        for (int i = 0; i &lt; 100; i++) {            println(&quot;Task i=&gt;&quot; + i);            try {                Thread.sleep(1000 * 1L);            } catch (InterruptedException e) {                e.printStackTrace();            }        }    }};t1.start();for (int j = 0; j &lt; 100; j++) {    println(&quot;Task j=&gt;&quot; + j);}</code></pre><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8u68chvj9j30p00kwgnk.jpg" alt="Custom-Thread线程情况" style="zoom:50%;" /></li><li><p>交替执行读写操作</p><pre><code class="java">new Thread(&quot;READ-Thread&quot;) {    @Override    public void run() {        readFromDataBase();    }}.start();new Thread(&quot;WRITE-Thread&quot;) {    @Override    public void run() {        writeDataToFile();    }}.start();</code></pre></li></ol><ul><li><p>创建线程后不调用<code>start()</code>方法，此时他是一个线程么？</p><p>不是。涉及到线程的生命周期。Thread被new出来之后只是一个Java实例，和其他普通Java实例一模一样。只有<code>.start()</code>启动之后才会变为一个线程，而且启动是立即返回的，不是BLOCKED阻塞。</p></li></ul><p>JDK文档：<a href="https://docs.oracle.com/javase/8/docs/api/" target="_blank" rel="noopener">https://docs.oracle.com/javase/8/docs/api/</a></p><p>查看<code>java.lang.Thread</code></p><p>A <em>thread</em> is a thread of execution in a program. The Java Virtual Machine allows an application to have multiple threads of execution running concurrently.</p><p>Every thread has a priority. Threads with higher priority are executed in preference to threads with lower priority. Each thread may or may not also be marked as a daemon.</p><p>When a Java Virtual Machine starts up, there is usually a single non-daemon thread (which typically calls the method named <code>main</code> of some designated class).</p><p>There are two ways to create a new thread of execution. One is to declare a class to be a subclass of <code>Thread</code>. This subclass should override the <code>run</code> method of class <code>Thread</code>. An instance of the subclass can then be allocated and started. </p><p>验证启动程序后JVM会自动创建main线程：</p><ol><li><p>编写程序并运行</p><pre><code class="java">public static void main(String[] args) {    try {        Thread.sleep(1000 * 100L);    } catch (InterruptedException e) {        e.printStackTrace();    }}</code></pre></li><li><p>显示当前所有Java进程pid</p><pre><code class="shell">jps</code></pre></li><li><p>基于JMX的可视化监视、管理工具。实时的监控Java程序在运行过程中的内存、CPU、线程的使用情况，并可以对加载的相关类进行分析</p><pre><code class="shell">jconsole &lt;thread_pid&gt;</code></pre><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8u5g8s2ucj30p00kumz4.jpg" a lt="jconsole查看线程" style="zoom:50%;" /></li><li><p>总结：</p><p>JVM启动时：</p><ul><li>非守护线程：<code>main()</code>整个程序的入口。</li><li>守护线程：<code>Finalizer()</code>垃圾回收器、<code>Reference Handler</code>引用具柄、<code>Signal Dispatcher</code>接收系统信号命令、JMX、RMI</li></ul></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 汪文君 </category>
+          
+          <category> 多线程第一季 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>102-简单介绍什么是线程</title>
+      <link href="/2019/11/11/102-what-is-thread/"/>
+      <url>/2019/11/11/102-what-is-thread/</url>
+      
+        <content type="html"><![CDATA[<p>课程大纲：</p><ol><li>线程介绍</li><li>创建并启动线程</li><li>线程的生命周期</li><li>Runnable接口介绍</li><li>Thread API详细介绍</li><li>线程同步，锁技术</li><li>如何优雅的停止线程</li><li>线程间通讯</li><li>线程组详细介绍</li><li>线程池原理以及实现一个简单的线程池</li><li>线程异常捕获以及线程堆栈信息详细讲解</li><li>FIFO队列以及多线程环境下的运行</li><li>BoolenLock锁实现</li><li>常用设计模式在多线程环境下的使用</li><li>查缺补漏</li></ol><p>其他课程：</p><ol><li>PowerMock实战视频（10集）</li><li>Concordion实战视频（10集）</li><li>Apache Sqoop实战视频（12集）</li><li>Apache Flume实战视频（42集）</li><li>Java 8 实战视频（40集）</li><li>Scala实战视频（160集）</li></ol><p>进程-线程-协程</p><p>线程（Thread）是操作系统能够进行运算调度的最小单位，是独立调度和分派的基本单位。它被包含在进程之中，是进程中的实际运作单位。</p><p>一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。在单个程序中同时运行多个线程完成不同的工作，成为多线程。</p><p>并行：多核操作系统中，一个CPU执行一个线程</p><p>并发：程序同时（时间段非时间点）执行多个线程，有线程上下文切换</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 汪文君 </category>
+          
+          <category> 多线程第一季 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>101-课程大纲及主要内容介绍</title>
+      <link href="/2019/11/11/101-syllabus/"/>
+      <url>/2019/11/11/101-syllabus/</url>
+      
+        <content type="html"><![CDATA[<ol><li>Java多线程介绍</li><li>多线程编程入门</li><li>线程创建与启动以及线程状态</li><li>Runnable接口详细详解</li><li>线程优先级以及守护线程详解</li><li>线程同步</li><li>线程间通讯</li><li>线程组详解</li><li>自运行对象详解</li><li>线程异常回调</li><li>线程池详解</li><li>等待线程完成任务</li><li>阻塞IO和多线程详解</li><li>如何优雅的结束线程</li><li>自定义线程锁详解</li><li>FIFO队列与线程</li><li>多线程API查漏补缺</li></ol><p>例子：</p><ol><li><p>需求：一个系统去采集其他所有服务器节点的IO、磁盘等连接情况。</p><p>分析：这里不可能去一个一个地采集，应该用到多线程。每一个线程采集一个服务器节点。每一轮采集完成都需要将数据写入到DB数据库。</p><p>总表：批次、采集开始时间，采集结束时间</p><p>详情表：节点ID，CPU、内存、IO、应用进程数等，关联ID</p><p>思考：</p><ul><li><p>多个线程如何得到唯一的采集结束时间？</p></li><li><p>如果服务器节点数目达到100台，那么则需要100个线程？此时系统会因为线程过多出现CPU、内存、系统资源分配不足而崩溃</p><p>始终保持20个线程去执行任务，每当一个线程执行完成任务，则新开启一个任务再去采集其他服务器节点</p></li><li><p>启动主线程如何知道子线程是否调用成功，回调。</p></li></ul></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 汪文君 </category>
+          
+          <category> 多线程第一季 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>100-Java多线程基础知识目录</title>
+      <link href="/2019/11/11/100-catalog/"/>
+      <url>/2019/11/11/100-catalog/</url>
+      
+        <content type="html"><![CDATA[<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8szj5cfvoj31600sd11b.jpg" alt="Java并发编程" style="zoom:100%;" /><ol><li>课程大纲及主要内容介绍</li><li>简单介绍什么是线程</li><li>创建并启动线程</li><li>线程生命周期以及start方法源码剖析</li><li>采用多线程方式模拟银行排队叫号</li><li>用Runnable接口将线程的逻辑执行单元从控制中抽取出来</li><li>策略模式在Thread和Runnable中的应用分析</li><li>构造Thread对象你也许不知道的几件事</li><li>多线程与JVM内存结构的关系，虚拟机栈实验</li><li>Thread构造函数StackSize详细讲解</li><li>Thread构造函数StackSize详细讲解-续</li><li>Daemon线程的创建以及使用场景分析</li><li>线程ID，优先级讲解</li><li>Thread的join方法详细介绍，结合一个典型案例</li><li>Thread中断Interrupt方法详细讲解</li><li>采用优雅的方式结束线程生命周期</li><li>Thread API综合实战，编写ThreadService实现暴力结束线程的综合实战</li><li>数据同步的引入与Synchronized的简单介绍</li><li>结合jconsole,jstack以及汇编指令认识synchronized关键字</li><li>同步代码块以及同步方法之间的区别和关系</li><li>通过实验分析This锁的存在</li><li>通过实验分析Class锁的存在</li><li>多线程死锁分析，案例介绍</li><li>线程间通信快速入门，使用wait和notify进行线程间的数据通信</li><li>多Produce多Consume之间的通讯导致出现程序假死的原因分析</li><li>多线程下的生产者消费者模型，以及详细介绍notifyAll方法</li><li>wait和sleep的本质区别是什么，深入分析（面试常见问题）</li><li>线程生产者消费者的综合实战结合Java8语法</li><li>如何实现一个自己的显式锁Lock精讲上</li><li>如何实现一个自己的显式锁Lock精讲下（让锁具备超时功能）</li><li>如何给你的应用程序注入钩子程序，Linux下演示</li><li>如何捕获线程运行期间的异常</li><li>ThreadGroup API介绍之一</li><li>ThreadGroup API介绍之二</li><li>线程池原理与自定义线程池</li><li>自定义个简单的线程池并且测试</li><li>给线程池增加拒绝策略以及停止方法</li><li>给线程池增加自动扩充线程数量，以及闲时自动回收的功能</li><li>课程结束，内容回顾，下季内容预告</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 汪文君 </category>
+          
+          <category> 多线程第一季 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>1186-Java并发编程的“基石”——多线程概念初识</title>
       <link href="/2019/11/09/1186-thread-base/"/>
       <url>/2019/11/09/1186-thread-base/</url>
