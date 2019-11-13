@@ -4,6 +4,195 @@
   
     
     <entry>
+      <title>111-Thread构造函数StackSize详细讲解-续</title>
+      <link href="/2019/11/13/111-thread-stacksize2/"/>
+      <url>/2019/11/13/111-thread-stacksize2/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>Thread(ThreadGroup group, Runnable target, String name, long stackSize)</p></blockquote><p>默认的stackSize是多大呢？</p><ul><li>JDK源码中stackSize默认为0，代表该变量值被忽略。把传入的stackSize赋值给类变量，然后在代码中未找到引用，可能是在JVM中被引用了。</li></ul><p>构造Thread的时候传入stackSize代表着该线程占用的stack的大小。如果没有指定stackSize的大小，默认是0，0代表着会忽略该参数，该参数会被JNI函数去使用。需要注意：该参数在某些平台（操作系统）可能无效。通过JVM参数显式设置：<code>-Xss10M</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 汪文君 </category>
+          
+          <category> 多线程第一季 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>110-Thread构造函数StackSize详细讲解</title>
+      <link href="/2019/11/12/110-thread-stacksize1/"/>
+      <url>/2019/11/12/110-thread-stacksize1/</url>
+      
+        <content type="html"><![CDATA[<p>不要过分压榨应用的性能，应用服务压力建议最大达到应用性能峰值的80%。超过80%可以通过横向扩展应用以减缓压力。现在分布式应用那么普遍。</p><p>验证：JVM启动时创建的栈空间不变，由于线程的栈空间占用了很大虚拟机栈内存，所以在main主线程里，JVM能允许创建的线程数也会相应减少。</p><pre><code class="java">public class CreateThread5 {    private static int counter = 0;    public static void main(String[] args) {        try {            // 不断循环创建Thread            for (int i = 0; i &lt; Integer.MAX_VALUE; i++) {                counter++;                // 1. 默认stackSize。                /*new Thread(() -&gt; {                    // 增大栈针的宽度                    byte[] data = new byte[1024 * 1024 * 2];                    while (true) {}                }).start();*/                // 2. 修改stackSize。                new Thread(null, () -&gt; {                    // 增大栈针的宽度                    byte[] data = new byte[1024 * 1024 * 2];                    while (true) {}                }, &quot;stackSizeTest&quot;, 1 &lt;&lt; 32).start();            }        } catch (Error e) {            e.printStackTrace();        }        System.out.println(&quot;Total create thread nums =&gt; &quot; + counter);    }}</code></pre><p>输出结果：</p><ol><li><p>默认stackSize。</p><pre><code class="shell">java.lang.OutOfMemoryError: unable to create new native thread    at java.lang.Thread.start0(Native Method)    at java.lang.Thread.start(Thread.java:717)    at com.tuyrk.chapter03.CreateThread5.main(CreateThread5.java:28)Total create thread nums =&gt; 4060</code></pre></li><li><p>stackSize = 1 &lt;&lt; 32</p><pre><code class="shell">java.lang.OutOfMemoryError: unable to create new native thread    at java.lang.Thread.start0(Native Method)    at java.lang.Thread.start(Thread.java:717)    at com.tuyrk.chapter03.CreateThread5.main(CreateThread5.java:28)Total create thread nums =&gt; 4060</code></pre></li></ol><p>结论：<strong>有待考证。暂认不成立</strong>。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 汪文君 </category>
+          
+          <category> 多线程第一季 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>109-多线程与JVM内存结构的关系，虚拟机栈实验</title>
+      <link href="/2019/11/12/109-thread-with-memory/"/>
+      <url>/2019/11/12/109-thread-with-memory/</url>
+      
+        <content type="html"><![CDATA[<p>Java内存结构-简：</p><ul><li>栈（非堆）</li><li>堆</li></ul><p>栈存储基本数据类型，引用类型</p><p>堆存储对象</p><p>Java内存结构</p><p>栈：</p><ul><li>方法区（线程共享）</li><li>虚拟机栈（线程私有）<ul><li>栈针（若干）：局部变量表、操作栈、动态链接库、方法出口/入口</li></ul></li><li>本地方法区C++：执行引擎、本地库接口<code>.so</code>、本地方法</li><li>程序计数器</li></ul><p>堆内存</p><ul><li>对象实体（栈只保存变量的引用）</li></ul><p>不断压栈操作将会导致栈溢出，从而程序崩溃并抛出<code>java.lang.StackOverflowError</code></p><ul><li><p>main主线程</p><pre><code class="java">/** * Java多线程与内存堆栈关系。虚拟机栈 */public class CreateThread3 {    private static int counter = 0;    // JVM will create a thread named &quot;main&quot;    public static void main(String[] args) {        // create a JVM stack        try {            add(0);        } catch (Error e) {            e.printStackTrace();// java.lang.StackOverflowError            System.out.println(counter);// 21325        }    }    private static void add(int i) {        counter++;        add(i + 1);    }}</code></pre></li><li><p>用户子线程</p><pre><code class="java">public class CreateThread4 {    private static int counter = 0;    public static void main(String[] args) {        Thread t = new Thread(new Runnable() {            @Override            public void run() {                try {                    add(0);                } catch (Error e) {                    e.printStackTrace();// java.lang.StackOverflowError                    System.out.println(counter);// 18455                }            }            private void add(int i) {                counter++;                add(i + 1);            }        });        t.start();    }}</code></pre></li></ul><p>通过stackSize构造方法改变线程的栈内存大小，避免抛出<code>java.lang.StackOverflowError</code>。<del>但是JVM启动时创建的栈空间不变，由于线程的栈空间占用了很大虚拟机栈内存，所以在main主线程里，JVM能允许创建的线程数也会相应减少。</del></p><pre><code class="java">public class CreateThread4 {    private static int counter = 0;    public static void main(String[] args) {        Thread t = new Thread(null, new Runnable() {            @Override            public void run() {                try {                    add(0);                } catch (Error e) {                    e.printStackTrace();                    System.out.println(counter);                }            }            private void add(int i) {                counter++;                add(i + 1);            }        }, &quot;stackSizeTest&quot;, 1 &lt;&lt; 24);        t.start();    }}</code></pre><p>扩展：</p><ol><li><p>编写一个抛出<code>java.lang.StackOverflowError</code>的例子</p></li><li><p>编写一个抛出<code>java.lang.OutOfMemoryError</code>的例子</p></li><li><p>JVM之–Java内存结构</p><p><a href="https://blog.csdn.net/wangwenjun69/article/details/9747207" target="_blank" rel="noopener">JVM之–Java内存结构（第一篇）</a></p><p><a href="https://blog.csdn.net/wangwenjun69/article/details/9751487" target="_blank" rel="noopener">JVM之—Java内存结构（第二篇）</a></p><p><a href="https://blog.csdn.net/wangwenjun69/article/details/9774579" target="_blank" rel="noopener">JVM之—Java内存结构（第三篇）</a></p><p><a href="https://blog.csdn.net/wangwenjun69/article/details/10044575" target="_blank" rel="noopener">JVM之—Java内存分配参数（第四篇）</a></p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 汪文君 </category>
+          
+          <category> 多线程第一季 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>108-构造Thread对象你也许不知道的几件事</title>
+      <link href="/2019/11/12/108-construct-thread/"/>
+      <url>/2019/11/12/108-construct-thread/</url>
+      
+        <content type="html"><![CDATA[<p>构造函数：</p><ul><li>构造方法没有传入ThreadGroup，是否会创建默认的ThreadGroup</li><li>如果传入ThreadGroup为null，是否会使用其他默认的ThreadGroup</li><li>ThreadGroup和Thread之间的关系是什么</li><li>线程和栈的关系</li></ul><pre><code class="java">Thread()Thread(String name)Thread(Runnable target)Thread(Runnable target, String name)Thread(ThreadGroup group, String name)Thread(ThreadGroup group, Runnable target)Thread(ThreadGroup group, Runnable target, String name)Thread(ThreadGroup group, Runnable target, String name, long stackSize)</code></pre><ul><li><p>Thread()</p><p>创建线程对象Thread，默认有一个线程名，以Thread-开头，从0开始计数</p><pre><code class="java">Thread t1 = new Thread();</code></pre><p>如果在构造Thread的时候没有传递Runnable或者没有复写Thread的<code>run()</code>方法，该Thread将不会调用任何东西，如果传递了Runnable的实例，或者复写了Thread的<code>run()</code>方法，则会执行该方法的逻辑单元（逻辑代码）</p><pre><code class="java">Thread t2 = new Thread() {    @Override    public void run() {        System.out.println(&quot;================&quot;);    }};</code></pre><p>如果构造线程对象时未传入ThreadGroup，Thread会默认获取父线程的ThreadGroup作为该线程的ThreadGroup。此时子线程和父线程将会在同一个ThreadGroup中。</p><pre><code class="java">System.out.println(t1.getThreadGroup()); // mainSystem.out.println(Thread.currentThread().getName()); // mainSystem.out.println(Thread.currentThread().getThreadGroup().getName()); // main</code></pre><p>通过ThreadGroup对象可以获得该线程组中有多少个线程</p><pre><code class="java">ThreadGroup threadGroup = Thread.currentThread().getThreadGroup();Thread[] threads = new Thread[threadGroup.activeCount()];threadGroup.enumerate(threads);Arrays.stream(threads).forEach(System.out::println);// main,Thread-0,Monitor</code></pre></li><li><p>Thread(String name)</p><pre><code class="java">Thread t3 = new Thread(&quot;MyName&quot;);</code></pre></li><li><p>Thread(Runnable target)</p><pre><code class="java">Thread t4 = new Thread(() -&gt; {    System.out.println(&quot;Runnable...&quot;);});</code></pre></li><li><p>Thread(Runnable target, String name)</p><pre><code class="java">Thread t5 = new Thread(() -&gt; {    System.out.println(&quot;Runnable...&quot; + Thread.currentThread().getName());}, &quot;RunnableThread&quot;);</code></pre></li><li><p>Thread(ThreadGroup group, Runnable target, String name, long stackSize)</p><p>stackSize：The stack size is the approximate number of bytes of address space that the virtual machine is to allocate for this thread’s stack.<strong>The effect of the <code>stackSize</code> parameter, if any, is highly platform dependent.On some platforms, the value of the <code>stackSize</code> parameter may have no effect whatsoever.</strong></p><p>构造Thread的时候传入stackSize代表着该线程占用的stack的大小。如果没有指定stackSize的大小，默认是0，0代表着会忽略该参数，该参数会被JNI函数去使用。需要注意：该参数在某些平台（操作系统）可能无效。通过JVM参数显式设置：<code>-Xss10M</code></p><pre><code class="java">Thread t = new Thread(null, new Runnable() {    @Override    public void run() {        try {            add(0);        } catch (Error e) {            e.printStackTrace();            System.out.println(counter);        }    }    private void add(int i) {        counter++;        add(i + 1);    }}, &quot;stackSizeTest&quot;, 1 &lt;&lt; 24);</code></pre></li></ul><p><strong>总结</strong>：</p><ol><li>创建线程对象Thread，默认有一个线程名，以Thread-开头，从0开始计数</li><li>如果在构造Thread的时候没有传递Runnable或者没有复写Thread的<code>run()</code>方法，该Thread将不会调用任何东西，如果传递了Runnable的实例，或者复写了Thread的<code>run()</code>方法，则会执行该方法的逻辑单元（逻辑代码）</li><li>如果构造线程对象时未传入ThreadGroup，Thread会默认获取父线程的ThreadGroup作为该线程的ThreadGroup。此时子线程和父线程将会在同一个ThreadGroup中。</li><li>构造Thread的时候传入stackSize代表着该线程占用的stack的大小。如果没有指定stackSize的大小，默认是0，0代表着会忽略该参数，该参数会被JNI函数去使用。需要注意：该参数在某些平台（操作系统）可能无效。通过JVM参数显式设置：<code>-Xss10M</code></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 汪文君 </category>
+          
+          <category> 多线程第一季 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>107-策略模式在Thread和Runnable中的应用分析</title>
+      <link href="/2019/11/12/107-Strategy-in-thread/"/>
+      <url>/2019/11/12/107-Strategy-in-thread/</url>
+      
+        <content type="html"><![CDATA[<p>Runnable接口与多线程中的哪种设计模式比较接近？</p><ul><li>策略模式</li></ul><p>举例：税收计算器。需多看代码示例，深入理解策略模式。</p><pre><code class="java">@FunctionalInterfacepublic interface CalculatorStrategy {    /**     * @param salary 薪水     * @param bonus 奖金     * @return 税收     */    double calculate(double salary, double bonus);}</code></pre><pre><code class="java">/** * 计算税率：工资*0.1 + 奖金*0.15 */public class SimpleCalculatorStrategy implements CalculatorStrategy {    private final static double SALARY_RATE = 0.1;    private final static double BONUS_RATE = 0.15;    @Override    public double calculate(double salary, double bonus) {        return salary * SALARY_RATE + bonus * BONUS_RATE;    }}</code></pre><pre><code class="java">/** * 税务计算器。Runnable与多线程设计模式 */@Datapublic class TaxCalculator {    // 薪水    private final double salary;    // 奖金    private final double bonus;    private CalculatorStrategy calculatorStrategy;    public TaxCalculator(double salary, double bonus) {        this.salary = salary;        this.bonus = bonus;    }    public TaxCalculator(double salary, double bonus, CalculatorStrategy calculatorStrategy) {        this.salary = salary;        this.bonus = bonus;        this.calculatorStrategy = calculatorStrategy;    }    // 计算税率    protected double calcTax() {        return calculatorStrategy.calculate(salary, bonus);    }    // 计算    public double calculate() {        return this.calcTax();    }}</code></pre><pre><code class="java">/** * 计算税率：工资*0.1 + 奖金*0.15 */public class TaxCalculatorMain {    public static void main(String[] args) {        // 1. 模版方法        /*TaxCalculator calculator = new TaxCalculator(10000d, 2000d) {            @Override            protected double calcTax() {                return getSalary() * 0.1 + getBonus() * 0.15;            }        };        System.out.println(calculator.calculate());*/        // 2.1 策略模式        /*TaxCalculator calculator = new TaxCalculator(10000d, 2000d);        CalculatorStrategy strategy = new SimpleCalculatorStrategy();        calculator.setCalculatorStrategy(strategy);        System.out.println(calculator.calculate());*/        // 2.2 策略模式-Java8Lambda        /*TaxCalculator calculator = new TaxCalculator(10000d, 2000d);        calculator.setCalculatorStrategy((s, b) -&gt; s * 0.1 + b * 0.15);        System.out.println(calculator.calculate());*/        TaxCalculator calculator = new TaxCalculator(10000d, 2000d, (s, b) -&gt; s * 0.1 + b * 0.15);        System.out.println(calculator.calculate());    }}</code></pre><p>通过策略模式的思想改造<code>BankRunnable.java</code></p><pre><code class="java">/** * 银行大厅 */public class BankRunnable {    private final static int MAX = 50;    private int index = 1;    public static void main(String[] args) {        // 1. 一个runnable实例被多个线程共享        /*TicketWindowRunnable ticketWindow = new TicketWindowRunnable();*/        // 2. 策略模式思想改造runnable实例线程        Runnable ticketWindow = new BankRunnable().getTicketWindow();        Thread windowThread1 = new Thread(ticketWindow, &quot;一号窗口&quot;);        Thread windowThread2 = new Thread(ticketWindow, &quot;二号窗口&quot;);        Thread windowThread3 = new Thread(ticketWindow, &quot;三号窗口&quot;);        windowThread1.start();        windowThread2.start();        windowThread3.start();    }    private Runnable getTicketWindow() {        return () -&gt; {            while (index &lt;= MAX) {                System.out.println(Thread.currentThread() + &quot; 的号码是:&quot; + (index++));                Thread.sleep(100);            }        };    }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 汪文君 </category>
+          
+          <category> 多线程第一季 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>106-用Runnable接口将线程的逻辑执行单元从控制中抽取出来</title>
+      <link href="/2019/11/12/106-runnable-bank-queue/"/>
+      <url>/2019/11/12/106-runnable-bank-queue/</url>
+      
+        <content type="html"><![CDATA[<p>课程目标：</p><ul><li><p><strong>让业务数据和线程逻辑分离</strong>。Runnable。@FunctionalInterface</p><p><code>run()</code>方法为线程的逻辑代码块</p></li></ul><pre><code class="java">/** * 叫号机。继承Runnable接口 */public class TicketWindowRunnable implements Runnable {    private int index = 1;    private static final int MAX = 50;    @Override    public void run() {        while (index &lt;= MAX) {            System.out.println(Thread.currentThread().getName() + &quot; 的号码是：&quot; + (index++));        }    }}</code></pre><pre><code class="java">/** * 银行大厅，柜台，业务处理窗口。 */public class BankRunnable {    public static void main(String[] args) {        TicketWindowRunnable ticketWindow1 = new TicketWindowRunnable();        Thread windowThread1 = new Thread(ticketWindow1, &quot;一号窗口&quot;);        Thread windowThread2 = new Thread(ticketWindow1, &quot;二号窗口&quot;);        Thread windowThread3 = new Thread(ticketWindow1, &quot;三号窗口&quot;);        windowThread1.start();        windowThread2.start();        windowThread3.start();    }}</code></pre><p>不管定义多少个线程，业务逻辑的数据实例只有一个，不像Thread类中业务逻辑数据和线程混淆在一起，每一次<code>new Thread()</code>就会新创建一份业务逻辑数据。</p><p>三个线程使用同一份业务数据实例，此时很有可能发生数据安全问题。比如，将MAX=1，可能有以下输出：</p><pre><code class="shell">一号窗口 的号码是：1二号窗口 的号码是：2</code></pre><p>想一想Runnable接口与多线程中的哪种设计模式比较接近？</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 汪文君 </category>
+          
+          <category> 多线程第一季 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>105-采用多线程方式模拟银行排队叫号</title>
+      <link href="/2019/11/12/105-thread-bank-queue/"/>
+      <url>/2019/11/12/105-thread-bank-queue/</url>
+      
+        <content type="html"><![CDATA[<p>课程目标：</p><ul><li>通过继承Thread类实现线程的创建</li><li>并且知道使用Runnable的必要性，使用它的原因是什么。</li></ul><p>案例：</p><blockquote><p>实现银行排队叫号功能（粗糙版）。银行有多个柜台，当一个人需要去办理业务的时候，先到叫号机上领取一个号码。当银行柜员处理完成当前客户就会使用叫号器呼叫下一位客户到窗口办理业务。</p></blockquote><pre><code class="java">/** * 叫号机。实现Thread类 */public class TicketWindowThread extends Thread {    private final String name;    private static final int MAX = 50;    private static int index = 1;    public TicketWindowThread(String name) {        this.name = name;    }    @Override    public void run() {        // 当当前号码数小于最大号码时，进行售票操作        while (index &lt;= MAX) {            System.out.println(&quot;柜台：&quot; + name + &quot;，当前的号码是：&quot; + (index++));        }    }}</code></pre><pre><code class="java">/** * 银行大厅，柜台，业务处理窗口 */public class BankThread {    public static void main(String[] args) {        TicketWindowThread ticketWindow1 = new TicketWindowThread(&quot;一号柜台&quot;);        ticketWindow1.start();        TicketWindowThread ticketWindow2 = new TicketWindowThread(&quot;二号柜台&quot;);        ticketWindow2.start();        TicketWindowThread ticketWindow3 = new TicketWindowThread(&quot;三号柜台&quot;);        ticketWindow3.start();    }}</code></pre><p>此时三个线程出现的结果是：线程线程分别执行0-50号，拥有独立的index，并没有达到三个线程共同使用一个index的效果。</p><p>怎们达到共享index变量，使用同一份资源的效果呢？</p><ol><li><p>给index设置为静态变量static。此时始终只会实例化一次。</p><p>使用static实现了共享变量的效果，但是static也有一个问题。就是static生命周期较长，伴随JVM的启动，一直到销毁；从类加载就会开始存在，即使是类实例销毁之后也不会销毁，static不是在类中堆栈空间的信息，它有自己独立的一份存储空间。<a href="https://www.cnblogs.com/hf-cherish/p/4970267.html" target="_blank" rel="noopener">java 静态变量生命周期（类生命周期）</a></p></li></ol><p>本节通过继承Thread类实现了多线程方式模拟银行排队叫号的粗糙版，接下来将会实现比较友好的银行排队叫号功能，<strong>把业务和线程分离出来</strong>。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 汪文君 </category>
+          
+          <category> 多线程第一季 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>104-线程生命周期以及start方法源码剖析</title>
       <link href="/2019/11/11/104-thread-lifecycle/"/>
       <url>/2019/11/11/104-thread-lifecycle/</url>
