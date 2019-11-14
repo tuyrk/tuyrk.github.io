@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.tuyrk.cn/2019/11/13/115-thread-interrupt/</loc>
+    
+    <lastmod>2019-11-14T03:12:38.482Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/2019/11/13/113-thread-id-priority/</loc>
+    
+    <lastmod>2019-11-13T08:26:58.162Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/2019/11/13/114-thread-join/</loc>
+    
+    <lastmod>2019-11-13T08:20:12.700Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/2019/11/13/112-daemon/</loc>
+    
+    <lastmod>2019-11-13T03:54:07.877Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.tuyrk.cn/2019/11/13/111-thread-stacksize2/</loc>
     
     <lastmod>2019-11-13T02:13:40.006Z</lastmod>

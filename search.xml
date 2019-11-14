@@ -4,6 +4,114 @@
   
     
     <entry>
+      <title>115-Thread中断Interrupt方法详细讲解</title>
+      <link href="/2019/11/13/115-thread-interrupt/"/>
+      <url>/2019/11/13/115-thread-interrupt/</url>
+      
+        <content type="html"><![CDATA[<ul><li><p>interrupt()</p><p>中断此线程</p></li><li><p>interrupted()</p><p>测试<strong>当前线程</strong>是否已被中断。</p></li><li><p>isInterrupted()</p><p>测试<strong>此线程</strong>是否已被中断。</p></li></ul><p><code>interrupt()</code>仅仅是修改interrupt的状态。必须是<code>wait()</code>、<code>join()</code>、<code>sleep()</code>的时候才会抛出异常中断线程。</p><pre><code class="java">Thread t1 = new Thread(&quot;t1&quot;) {    @Override    public void run() {        while (true) {            //// todo.        }    }};t1.start();// start之后处于runnable，并不一定马上就会running。所以设置短暂休眠等待t1启动Thread.sleep(100);System.out.println(t1.isInterrupted());t1.interrupt();System.out.println(t1.isInterrupted());</code></pre><ol><li><p>线程状态改变，不会捕获到打断信号</p><pre><code class="java">System.out.println(&quot;&gt;&gt;&quot; + this.isInterrupted());</code></pre></li><li><p><code>sleep()</code>。线程状态改变，且捕获到打断信号</p><pre><code class="java">try {    Thread.sleep(1_000);} catch (InterruptedException e) {    System.out.println(&quot;收到打断信号。&quot;);    e.printStackTrace();}</code></pre></li><li><p><code>wait()</code>。线程状态改变，且捕获到打断信号</p><p>使用<code>wait()</code>必须给一个monitor，monitor需使用synchronized包裹。</p><pre><code class="java">private static final Object MONITOR = new Object();</code></pre><pre><code class="java">synchronized (MONITOR) {    try {        MONITOR.wait(1_000);    } catch (InterruptedException e) {        e.printStackTrace();    }}</code></pre></li><li><p><code>join()</code>。线程状态改变，且捕获到打断信号</p><p>注意：<code>t3.join();</code>这里join的不是t3线程，而是main线程。所以需要对main线程进行<code>interrupt()</code></p><pre><code class="java">Thread t3 = new Thread(() -&gt; {    while (true) {}}, &quot;t3&quot;);t3.start();Thread main = Thread.currentThread();Thread t31 = new Thread(() -&gt; {    try {        Thread.sleep(100);    } catch (InterruptedException e) {        e.printStackTrace();    }    main.interrupt();});t31.start();try {    // 这里join的不是t3线程，而是main线程    t3.join();} catch (InterruptedException e) {    e.printStackTrace();}</code></pre></li></ol><p>非静态<code>isInterrupted()</code>和静态<code>interrupted()</code>区别：</p><ul><li><p>在实现Runnable接口创建任务实例时，<code>isInterrupted()</code>将不能被</p><pre><code class="java">Thread t2 = new Thread(() -&gt; {    while (true) {        synchronized (MONITOR) {            try {                MONITOR.wait(1_000);            } catch (InterruptedException e) {                // 获取不到                // System.out.println(&quot;wait()-&gt;&quot; + isInterrupted());                System.out.println(&quot;wait()-&gt;&quot; + Thread.interrupted());                e.printStackTrace();            }        }    }}, &quot;t2&quot;);</code></pre></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 汪文君 </category>
+          
+          <category> 多线程第一季 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>114-Thread的join方法详细介绍，结合一个典型案例</title>
+      <link href="/2019/11/13/114-thread-join/"/>
+      <url>/2019/11/13/114-thread-join/</url>
+      
+        <content type="html"><![CDATA[<p><code>join()</code>方法</p><blockquote><p>调用线程一直等待被调用线程的执行，直到被调用线程死亡。</p></blockquote><pre><code class="java">Thread t1 = new Thread(() -&gt; {    IntStream.range(1, 1000).forEach(i -&gt;            System.out.println(Thread.currentThread().getName() + &quot;-&gt;&quot; + i)    );}, &quot;t1&quot;);t1.start();t1.join();IntStream.range(1, 1000).forEach(i -&gt;        System.out.println(Thread.currentThread().getName() + &quot;-&gt;&quot; + i));</code></pre><p>注：<code>join()</code>必须放在<code>start()</code>之后。</p><pre><code class="java">Thread t1 = new Thread(() -&gt; {    IntStream.range(1, 9000).forEach(i -&gt;            System.out.println(Thread.currentThread().getName() + &quot;-&gt;&quot; + i)    );}, &quot;t1&quot;);Thread t2 = new Thread(() -&gt; {    IntStream.range(1, 9000).forEach(i -&gt;            System.out.println(Thread.currentThread().getName() + &quot;-&gt;&quot; + i)    );}, &quot;t2&quot;);t1.start();t2.start();t1.join();t2.join();Optional.of(&quot;All of tasks finish done.&quot;).ifPresent(System.out::println);IntStream.range(1, 1000).forEach(i -&gt;        System.out.println(Thread.currentThread().getName() + &quot;-&gt;&quot; + i));</code></pre><p>注意：</p><ul><li><p>t1、t2交替执行</p><pre><code class="java">t1.start();t2.start();t1.join();t2.join();</code></pre></li><li><p>先执行t1，在执行t2。此时t1加入join，t2还没启动。</p><pre><code class="java">t1.start();t1.join();t2.start();t2.join();</code></pre></li></ul><p>问题：一些嵌入式的HTTP Server，比如jetty，为什么把任务启动，一会之后会自动挂掉？<br>原因：在主线程退出之后会把http server挂掉（守护线程），避免占用端口、浪费资源。<br>解决：使用<code>Thread.currentThread().join();</code>。让当前线程执行，直到当前线程死掉</p><pre><code class="java">public static void main(String[] args) {    // 一直等待main线程结束,直到main线程结束。    // 结果main线程一直运行。    Thread.currentThread().join();}</code></pre><p>例：采集服务器节点的信息的例子。</p><p>问题：多个线程如何得到唯一的采集结束时间？</p><p>提示：使用<code>join()</code>方法</p><pre><code class="java">public class ThreadJoin3 {    public static void main(String[] args) throws InterruptedException {        long startTimestamp = System.currentTimeMillis();        // 假设有三台机器，开启三个线程。        Thread m1 = new Thread(new CaptureRunnable(&quot;M1&quot;, 10_000L));        Thread m2 = new Thread(new CaptureRunnable(&quot;M2&quot;, 30_000L));        Thread m3 = new Thread(new CaptureRunnable(&quot;M3&quot;, 15_000L));        m1.start();m2.start();m3.start();        m1.join();m2.join();m3.join();        long endTimestamp = System.currentTimeMillis();        System.out.printf(&quot;Save data begin timestamp is %s, end timestamp is %s\n&quot;, startTimestamp, endTimestamp);        System.out.printf(&quot;Spend time is %s&quot;, endTimestamp - startTimestamp);    }}/** * 采集服务器节点的任务。 */@Dataclass CaptureRunnable implements Runnable {    // 机器节点的名称    private String machineName;    // 采集花费时间    private long spendTime;    public CaptureRunnable(String machineName, long spendTime) {        this.machineName = machineName;        this.spendTime = spendTime;    }    @Override    public void run() {        // do the really capture data.        Thread.sleep(spendTime);        System.out.printf(machineName + &quot; completed data capture at timestamp [%s] and successful.\n&quot;, System.currentTimeMillis());    }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 汪文君 </category>
+          
+          <category> 多线程第一季 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>113-线程ID，优先级讲解</title>
+      <link href="/2019/11/13/113-thread-id-priority/"/>
+      <url>/2019/11/13/113-thread-id-priority/</url>
+      
+        <content type="html"><![CDATA[<p>Thread中一些简单的API</p><pre><code class="java">Thread t1 = new Thread(() -&gt; {    Optional.of(&quot;Hello&quot;).ifPresent(System.out::println);    try {        Thread.sleep(1_000);    } catch (InterruptedException e) {        e.printStackTrace();    }}, &quot;t1&quot;);</code></pre><pre><code class="java">// 线程名称。Optional.of(t1.getName()).ifPresent(System.out::println);// 线程ID。++threadSeqNumberOptional.of(t1.getId()).ifPresent(System.out::println);// 线程优先级，默认为5.Optional.of(t1.getPriority()).ifPresent(System.out::println);</code></pre><p>线程优先级范围是1-10，默认为5，通过修改线程优先级可以企图改变线程的执行顺序。</p><p>线程不一定会按照指定的优先级执行。</p><pre><code class="java">Thread.MAX_PRIORITY// 最高优先级，10Thread.NORM_PRIORITY// 默认优先级，5Thread.MIN_PRIORITY// 最低优先级，1</code></pre><p>线程t1、t2、t3交替运行。</p><pre><code class="java">Thread t1 = new Thread(() -&gt; {    for (int i = 0; i &lt; 1000; i++) {        Optional.of(Thread.currentThread().getName() + &quot;-Index-&quot; + i).ifPresent(System.out::println);    }}, &quot;t1&quot;);t1.setPriority(Thread.MAX_PRIORITY);Thread t2 = new Thread(() -&gt; {    for (int i = 0; i &lt; 1000; i++) {        Optional.of(Thread.currentThread().getName() + &quot;-Index-&quot; + i).ifPresent(System.out::println);    }}, &quot;t2&quot;);t2.setPriority(Thread.NORM_PRIORITY);Thread t3 = new Thread(() -&gt; {    for (int i = 0; i &lt; 1000; i++) {        Optional.of(Thread.currentThread().getName() + &quot;-Index-&quot; + i).ifPresent(System.out::println);    }}, &quot;t3&quot;);t3.setPriority(Thread.MIN_PRIORITY);t1.start();t2.start();t3.start();</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 汪文君 </category>
+          
+          <category> 多线程第一季 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>112-Daemon线程的创建以及使用场景分析</title>
+      <link href="/2019/11/13/112-daemon/"/>
+      <url>/2019/11/13/112-daemon/</url>
+      
+        <content type="html"><![CDATA[<p>Runnable不是线程，它只是一个接口，只是一个任务执行单元。它的作用是把线程控制和业务逻辑分开。真正代表线程的只有Thread。</p><p>ThreadGroup的好处：可以统一管理Thread线程。</p><p>在JDK1.7之后可以将数据<code>10000</code>写为<code>10_000</code></p><ol><li><p>main线程此时逻辑单元已经结束，为什么还没有退出程序呢？</p><p>因为此时ThreadGroup中还有线程Thread-0处于active状态。</p><pre><code class="java">public class DeamonThread {    public static void main(String[] args) throws InterruptedException {        // new        Thread t = new Thread() {            @Override            public void run() {                System.out.println(Thread.currentThread().getName() + &quot; running&quot;);                Thread.sleep(1_000_000);                System.out.println(Thread.currentThread().getName() + &quot; done&quot;);            }        };        // runnable -&gt; running| -&gt; blocked -&gt; dead        t.start();        System.out.println(Thread.currentThread().getName());    }}</code></pre></li><li><p><code>t.setDaemon(true);</code>在main结束后自动结束所有线程</p><p>守护线程Daemon有什么作用呢？</p><blockquote><p>例：建立网络连接。<br>从A到B建立了一个长连接，长连接在一定间隔时间会发送心跳包以证明连接是可用的。比如A为客户端，B为服务器，A不断向B发送心跳包，B向A返回心跳响应。<br>当前工作线程创建了一个连接后，要维护这个长连接，但是当前工作线程的业务逻辑、发送数据等操作与维护连接并没有关系，此时就可以创建一个守护线程daemonThread来进行心跳检测工作。<br>当工作线程已经结束工作而死亡，非守护线程并不会自动死亡，而此时再去进行长连接心跳检测并没有任何意义，所以将其设置为守护线程可以在工作线程死亡时自动死亡。</p></blockquote></li></ol><p>思考：</p><ol><li><p>在非守护线程A里创建守护线程B，当线程A结束后，线程B会自动结束么？</p><p>线程B会自动结束</p></li><li><p>在非守护线程A里创建非守护线程B，当线程A结束后，线程B会自动结束么，JVM可以正常退出么？</p><p>线程B不会自动结束，仍然在运行。</p></li><li><p>在守护线程A里创建守护线程B，当线程A结束后，线程B会自动结束么？</p><p>会。</p></li><li><p>在守护线程A里创建非守护线程B，当线程A结束后，线程B会自动结束么，JVM可以正常退出么？</p><p>会。</p><pre><code class="java">Thread thread = new Thread(() -&gt; {    Thread innerThread = new Thread(() -&gt; {        while (true) {            System.out.println(&quot;innerThread do something for health check.&quot;);            Thread.sleep(1_000);        }    }, &quot;innerThread&quot;);    // innerThread.setDaemon(true);    innerThread.start();    Thread.sleep(1_000);    System.out.println(&quot;thread finish done.&quot;);}, &quot;thread&quot;);// innerThread.setDaemon(true);thread.start();</code></pre></li></ol><p>总结：</p><ol><li>线程默认为非守护线程。其实main线程也就是非守护线程。</li><li>当仅运行的所有线程都是守护程序线程时，Java虚拟机将退出。 </li></ol><p>注意：必须在线程<code>start()</code>启动之前调用<code>setDaemon()</code>方法。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 汪文君 </category>
+          
+          <category> 多线程第一季 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>111-Thread构造函数StackSize详细讲解-续</title>
       <link href="/2019/11/13/111-thread-stacksize2/"/>
       <url>/2019/11/13/111-thread-stacksize2/</url>
