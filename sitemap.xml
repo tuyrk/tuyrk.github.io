@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.tuyrk.cn/2019/11/18/1043-Kafka/</loc>
+    
+    <lastmod>2019-11-22T16:19:51.971Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/2018/12/30/312-thread-runnable/</loc>
+    
+    <lastmod>2019-11-18T15:13:26.738Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.tuyrk.cn/2019/11/16/1193-node-base/</loc>
     
     <lastmod>2019-11-17T16:42:37.407Z</lastmod>
@@ -138,13 +152,6 @@
     <loc>https://www.tuyrk.cn/2019/01/05/352-volatile/</loc>
     
     <lastmod>2019-11-07T07:31:32.428Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.tuyrk.cn/2018/12/30/312-thread-runnable/</loc>
-    
-    <lastmod>2019-11-07T07:03:28.502Z</lastmod>
     
   </url>
   
