@@ -1,11 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.tuyrk.cn/2019/12/01/alibaba-p3c-exam/</loc>
+    <lastmod>2019-12-02</lastmod>
+  </url>  <url>
     <loc>https://www.tuyrk.cn/2019/11/28/macOS-update-git/</loc>
     <lastmod>2019-12-02</lastmod>
   </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/12/01/129-custom-lock/</loc>
+    <lastmod>2019-12-01</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/12/01/128-prod-cons-case/</loc>
+    <lastmod>2019-12-01</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/12/01/127-wait-sleep/</loc>
+    <lastmod>2019-12-01</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/11/30/126-multi-thread-notifyall/</loc>
+    <lastmod>2019-12-01</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/11/30/125-multi-prod-cons/</loc>
+    <lastmod>2019-11-30</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/11/30/124-wait-notify/</loc>
+    <lastmod>2019-11-30</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/11/30/123-deadlock-case/</loc>
+    <lastmod>2019-11-30</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/11/24/119-synchronized/</loc>
+    <lastmod>2019-11-30</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/11/27/122-class-lock/</loc>
+    <lastmod>2019-11-30</lastmod>
+  </url>  <url>
     <loc>https://www.tuyrk.cn/2019/10/29/git-manage-github-gitee/</loc>
     <lastmod>2019-11-30</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/11/27/121-this-lock/</loc>
+    <lastmod>2019-11-28</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/11/24/120-sync-codeblock-method/</loc>
+    <lastmod>2019-11-24</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/11/24/118-sync-base/</loc>
+    <lastmod>2019-11-24</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/11/23/117-force-stop-thread/</loc>
+    <lastmod>2019-11-24</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/11/23/116-graceful-stop-thread/</loc>
+    <lastmod>2019-11-23</lastmod>
   </url>  <url>
     <loc>https://www.tuyrk.cn/2019/11/18/1043-Kafka/</loc>
     <lastmod>2019-11-22</lastmod>
