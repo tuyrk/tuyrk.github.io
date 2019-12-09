@@ -1,0 +1,2256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>889-ElasticSearch入门 | 神秘的小岛岛</title>
+  <meta name="keywords" content=" elasticsearch ">
+  <meta name="description" content="889-ElasticSearch入门 | 神秘的小岛岛">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="E8GsQvoy2O">
+<meta property="og:type" content="website">
+<meta property="og:title" content="神秘的小岛岛">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.tuyrk.cn&#x2F;baidu_verify_E8GsQvoy2O.html">
+<meta property="og:site_name" content="神秘的小岛岛">
+<meta property="og:description" content="E8GsQvoy2O">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-06T02:29:00.537Z">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpeg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpeg" />
+</a>
+<div class="author">
+    <span>神秘的小岛岛</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+        <a title="github" href="https://github.com/tuyrk" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="weibo" href="https://weibo.com/u/5669532599" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/25d3e037d782" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/tu-yuan-kun/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="csdn" href="https://me.csdn.net/tyk766564616" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-csdn"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:tuyrk@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=766564616&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=437322403" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(77)</small></div></li>
+    
+        
+            
+            <li><div data-rel="工具"><i class="fold iconfont icon-right"></i>工具<small>(5)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="git">git<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="hexo">hexo<small>(2)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="java">java<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="慕课网"><i class="fold iconfont icon-right"></i>慕课网<small>(35)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="219-Docker环境下的前后端分离项目部署与运维">219-Docker环境下的前后端分离项目部署与运维<small>(10)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="汪文君"><i class="fold iconfont icon-right"></i>汪文君<small>(34)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="多线程第一季">多线程第一季<small>(34)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="77">
+<input type="hidden" id="yelog_site_word_count" value="134.3k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">vpn</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">代码规范</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">github</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">gitee</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">编码</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">vim</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">多线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">node</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">kafka</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">性能测试</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">LoadRunner</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">JMeter</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">springboot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">springdata</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mycat</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">elasticsearch</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mysql</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a  class="工具 hexo "
+           href="/2019/10/29/3-hexo-shortcuts/"
+           data-tag="工具,hexo"
+           data-author="" >
+            <span class="post-title" title="3-hexo快捷键说明">3-hexo快捷键说明</span>
+            <span class="post-date" title="2019-10-29 10:22:08">2019/10/29</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2019/10/10/MacOS-OpenVPN/"
+           data-tag="vpn"
+           data-author="" >
+            <span class="post-title" title="Mac OS配置OpenVPN之Tunnelblick">Mac OS配置OpenVPN之Tunnelblick</span>
+            <span class="post-date" title="2019-10-10 11:23:59">2019/10/10</span>
+        </a>
+        
+        <a  class="java "
+           href="/2019/12/02/code-rules-object-model/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="Java中DO、BO、DTO、VO、AO、PO">Java中DO、BO、DTO、VO、AO、PO</span>
+            <span class="post-date" title="2019-12-02 21:36:33">2019/12/02</span>
+        </a>
+        
+        <a  class="工具 git "
+           href="/2019/10/29/git-manage-github-gitee/"
+           data-tag="git,github,gitee"
+           data-author="" >
+            <span class="post-title" title="git 同时管理Github和Gitee">git 同时管理Github和Gitee</span>
+            <span class="post-date" title="2019-10-29 13:12:16">2019/10/29</span>
+        </a>
+        
+        <a  class="工具 hexo "
+           href="/2019/10/29/hexo-gitpages-invalid/"
+           data-tag="工具,hexo"
+           data-author="" >
+            <span class="post-title" title="hexo重新发布后GitPages自定义域名失效">hexo重新发布后GitPages自定义域名失效</span>
+            <span class="post-date" title="2019-10-29 13:37:25">2019/10/29</span>
+        </a>
+        
+        <a  class="java "
+           href="/2019/12/02/alibaba-p3c-exam/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="阿里巴巴代码规范考试试题">阿里巴巴代码规范考试试题</span>
+            <span class="post-date" title="2019-12-02 21:36:33">2019/12/02</span>
+        </a>
+        
+        <a  class="工具 git "
+           href="/2019/11/28/macOS-update-git/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="xcrun:error:invalid active developer path">xcrun:error:invalid active developer path</span>
+            <span class="post-date" title="2019-11-28 23:13:09">2019/11/28</span>
+        </a>
+        
+        <a  class="java "
+           href="/2019/12/04/utf8bom-to-utf8/"
+           data-tag="编码"
+           data-author="" >
+            <span class="post-title" title="UTF-8带BOM转UTF-8无BOM格式编码">UTF-8带BOM转UTF-8无BOM格式编码</span>
+            <span class="post-date" title="2019-12-04 11:49:40">2019/12/04</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/11/04/imooc/1049-vim/"
+           data-tag="vim"
+           data-author="" >
+            <span class="post-title" title="1049-优雅玩转Vim">1049-优雅玩转Vim</span>
+            <span class="post-date" title="2019-11-04 22:34:45">2019/11/04</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/11/01/imooc/1052-Git/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="1052-Git入门">1052-Git入门</span>
+            <span class="post-date" title="2019-11-01 14:46:32">2019/11/01</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/03/20/imooc/1086-synchronized/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="1086-Java高并发之魂：synchronized深度解析">1086-Java高并发之魂：synchronized深度解析</span>
+            <span class="post-date" title="2019-03-20 22:15:42">2019/03/20</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/11/09/imooc/1186-thread-base/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="1186-Java并发编程的“基石”——多线程概念初识">1186-Java并发编程的“基石”——多线程概念初识</span>
+            <span class="post-date" title="2019-11-09 19:14:46">2019/11/09</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/11/16/imooc/1193-node-base/"
+           data-tag="node"
+           data-author="" >
+            <span class="post-title" title="1193-前端面试加分福音--node基础">1193-前端面试加分福音--node基础</span>
+            <span class="post-date" title="2019-11-16 21:34:53">2019/11/16</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/11/18/imooc/1043-Kafka/"
+           data-tag="kafka"
+           data-author="" >
+            <span class="post-title" title="1043-Kafka流处理平台">1043-Kafka流处理平台</span>
+            <span class="post-date" title="2019-11-18 22:34:45">2019/11/18</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2018/12/29/imooc/202-multi-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="202-深入浅出Java多线程">202-深入浅出Java多线程</span>
+            <span class="post-date" title="2018-12-29 21:38:49">2018/12/29</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2018/12/30/imooc/312-thread-runnable/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="312-细说多线程之Thread VS Runnable">312-细说多线程之Thread VS Runnable</span>
+            <span class="post-date" title="2018-12-30 10:25:38">2018/12/30</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/11/01/imooc/208-Git/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="208-版本管理工具介绍—Git篇">208-版本管理工具介绍—Git篇</span>
+            <span class="post-date" title="2019-11-01 14:20:34">2019/11/01</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/01/05/imooc/352-volatile/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="352-细说Java多线程之内存可见性">352-细说Java多线程之内存可见性</span>
+            <span class="post-date" title="2019-01-05 17:00:16">2019/01/05</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/12/09/imooc/328-2Hours-SpringBoot/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="2小时Spring Boot红包程序 尽显极客浪漫Style">2小时Spring Boot红包程序 尽显极客浪漫Style</span>
+            <span class="post-date" title="2019-12-09 20:46:54">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/11/01/imooc/390-Github/"
+           data-tag="git,github"
+           data-author="" >
+            <span class="post-title" title="390-版本控制入门 – 搬进 Github">390-版本控制入门 – 搬进 Github</span>
+            <span class="post-date" title="2019-11-01 14:45:49">2019/11/01</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/09/29/imooc/714-LoadRunner/"
+           data-tag="性能测试,LoadRunner"
+           data-author="" >
+            <span class="post-title" title="714-性能测试之LoadRunner">714-性能测试之LoadRunner</span>
+            <span class="post-date" title="2019-09-29 22:39:54">2019/09/29</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/09/28/imooc/735-JMeter/"
+           data-tag="性能测试,JMeter"
+           data-author="" >
+            <span class="post-title" title="735-JMeter性能测试入门篇">735-JMeter性能测试入门篇</span>
+            <span class="post-date" title="2019-09-28 23:42:43">2019/09/28</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/06/05/imooc/767-2Hours-SringBoot/"
+           data-tag="springboot"
+           data-author="" >
+            <span class="post-title" title="767-2小时学会Spring Boot">767-2小时学会Spring Boot</span>
+            <span class="post-date" title="2019-06-05 23:54:25">2019/06/05</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/09/27/imooc/791-JMeterHTTP/"
+           data-tag="性能测试,JMeter"
+           data-author="" >
+            <span class="post-title" title="719-JMeter之HTTP协议接口性能测试">719-JMeter之HTTP协议接口性能测试</span>
+            <span class="post-date" title="2019-09-27 23:57:49">2019/09/27</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/06/09/imooc/810-SpringBoot-Web/"
+           data-tag="springboot"
+           data-author="" >
+            <span class="post-title" title="810-Spring Boot进阶之Web进阶">810-Spring Boot进阶之Web进阶</span>
+            <span class="post-date" title="2019-06-09 20:59:01">2019/06/09</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/06/21/imooc/824-docker-java/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="824-第一个docker化的java应用">824-第一个docker化的java应用</span>
+            <span class="post-date" title="2019-06-21 19:32:49">2019/06/21</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/06/15/imooc/821-SpringData/"
+           data-tag="springdata"
+           data-author="" >
+            <span class="post-title" title="821-轻松愉快之玩转SpringData">821-轻松愉快之玩转SpringData</span>
+            <span class="post-date" title="2019-06-15 23:14:34">2019/06/15</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/06/29/imooc/867-Docker/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="867-Docker入门">867-Docker入门</span>
+            <span class="post-date" title="2019-06-29 21:48:19">2019/06/29</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/07/06/imooc/945-mini-app/"
+           data-tag="springboot"
+           data-author="" >
+            <span class="post-title" title="945-SpringBoot+MyBatis搭建迷你小程序">945-SpringBoot+MyBatis搭建迷你小程序</span>
+            <span class="post-date" title="2019-07-06 23:20:09">2019/07/06</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/07/09/imooc/951-MyCat/"
+           data-tag="mycat"
+           data-author="" >
+            <span class="post-title" title="951-MyCAT入门及应用">951-MyCAT入门及应用</span>
+            <span class="post-date" title="2019-07-09 21:49:07">2019/07/09</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/08/13/imooc/889-ElasticSearch/"
+           data-tag="elasticsearch"
+           data-author="" >
+            <span class="post-title" title="889-ElasticSearch入门">889-ElasticSearch入门</span>
+            <span class="post-date" title="2019-08-13 00:25:32">2019/08/13</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/11/wang-thread/100-catalog/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="100-Java多线程基础知识目录">100-Java多线程基础知识目录</span>
+            <span class="post-date" title="2019-11-11 11:09:10">2019/11/11</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/11/wang-thread/102-what-is-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="102-简单介绍什么是线程">102-简单介绍什么是线程</span>
+            <span class="post-date" title="2019-11-11 14:39:53">2019/11/11</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/11/wang-thread/101-syllabus/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="101-课程大纲及主要内容介绍">101-课程大纲及主要内容介绍</span>
+            <span class="post-date" title="2019-11-11 11:12:08">2019/11/11</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/12/wang-thread/105-thread-bank-queue/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="105-采用多线程方式模拟银行排队叫号">105-采用多线程方式模拟银行排队叫号</span>
+            <span class="post-date" title="2019-11-12 09:12:07">2019/11/12</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/11/wang-thread/103-create-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="103-创建并启动线程">103-创建并启动线程</span>
+            <span class="post-date" title="2019-11-11 15:13:57">2019/11/11</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/07/05/imooc/993-MySQL-PXC/"
+           data-tag="mysql"
+           data-author="" >
+            <span class="post-title" title="993-MySQL集群（PXC）入门">993-MySQL集群（PXC）入门</span>
+            <span class="post-date" title="2019-07-05 22:21:12">2019/07/05</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/11/wang-thread/104-thread-lifecycle/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="104-线程生命周期以及start方法源码剖析">104-线程生命周期以及start方法源码剖析</span>
+            <span class="post-date" title="2019-11-11 16:30:09">2019/11/11</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/12/wang-thread/106-runnable-bank-queue/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="106-用Runnable接口将线程的逻辑执行单元从控制中抽取出来">106-用Runnable接口将线程的逻辑执行单元从控制中抽取出来</span>
+            <span class="post-date" title="2019-11-12 10:08:08">2019/11/12</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/12/wang-thread/107-Strategy-in-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="107-策略模式在Thread和Runnable中的应用分析">107-策略模式在Thread和Runnable中的应用分析</span>
+            <span class="post-date" title="2019-11-12 10:51:03">2019/11/12</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/13/wang-thread/111-thread-stacksize2/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="111-Thread构造函数StackSize详细讲解-续">111-Thread构造函数StackSize详细讲解-续</span>
+            <span class="post-date" title="2019-11-13 09:55:54">2019/11/13</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/12/wang-thread/109-thread-with-memory/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="109-多线程与JVM内存结构的关系，虚拟机栈实验">109-多线程与JVM内存结构的关系，虚拟机栈实验</span>
+            <span class="post-date" title="2019-11-12 16:35:42">2019/11/12</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/12/wang-thread/108-construct-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="108-构造Thread对象你也许不知道的几件事">108-构造Thread对象你也许不知道的几件事</span>
+            <span class="post-date" title="2019-11-12 14:58:25">2019/11/12</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/12/wang-thread/110-thread-stacksize1/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="110-Thread构造函数StackSize详细讲解">110-Thread构造函数StackSize详细讲解</span>
+            <span class="post-date" title="2019-11-12 19:04:06">2019/11/12</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/13/wang-thread/113-thread-id-priority/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="113-线程ID，优先级讲解">113-线程ID，优先级讲解</span>
+            <span class="post-date" title="2019-11-13 12:55:03">2019/11/13</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/13/wang-thread/114-thread-join/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="114-Thread的join方法详细介绍，结合一个典型案例">114-Thread的join方法详细介绍，结合一个典型案例</span>
+            <span class="post-date" title="2019-11-13 14:22:15">2019/11/13</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/13/wang-thread/112-daemon/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="112-Daemon线程的创建以及使用场景分析">112-Daemon线程的创建以及使用场景分析</span>
+            <span class="post-date" title="2019-11-13 10:22:21">2019/11/13</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/23/wang-thread/116-graceful-stop-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="116-采用优雅的方式结束线程生命周期">116-采用优雅的方式结束线程生命周期</span>
+            <span class="post-date" title="2019-11-23 21:10:30">2019/11/23</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/23/wang-thread/117-force-stop-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="117-Thread API综合实战，编写ThreadService实现暴力结束线程的综合实战">117-Thread API综合实战，编写ThreadService实现暴力结束线程的综合实战</span>
+            <span class="post-date" title="2019-11-23 21:59:41">2019/11/23</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/24/wang-thread/118-sync-base/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="118-数据同步的引入与Synchronized的简单介绍">118-数据同步的引入与Synchronized的简单介绍</span>
+            <span class="post-date" title="2019-11-24 16:35:28">2019/11/24</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/14/wang-thread/115-thread-interrupt/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="115-Thread中断Interrupt方法详细讲解">115-Thread中断Interrupt方法详细讲解</span>
+            <span class="post-date" title="2019-11-14 09:12:31">2019/11/14</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/24/wang-thread/120-sync-codeblock-method/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="120-同步代码块以及同步方法之间的区别和关系">120-同步代码块以及同步方法之间的区别和关系</span>
+            <span class="post-date" title="2019-11-24 17:59:20">2019/11/24</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/27/wang-thread/121-this-lock/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="121-通过实验分析This锁的存在">121-通过实验分析This锁的存在</span>
+            <span class="post-date" title="2019-11-27 21:33:01">2019/11/27</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/24/wang-thread/119-synchronized/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="119-结合jconsole,jstack以及汇编指令认识synchronized关键字">119-结合jconsole,jstack以及汇编指令认识synchronized关键字</span>
+            <span class="post-date" title="2019-11-24 17:10:49">2019/11/24</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/27/wang-thread/122-class-lock/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="122-通过实验分析Class锁的存在">122-通过实验分析Class锁的存在</span>
+            <span class="post-date" title="2019-11-27 22:18:27">2019/11/27</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/30/wang-thread/124-wait-notify/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="124-线程间通信快速入门，使用wait和notify进行线程间的数据通信">124-线程间通信快速入门，使用wait和notify进行线程间的数据通信</span>
+            <span class="post-date" title="2019-11-30 15:28:42">2019/11/30</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/30/wang-thread/123-deadlock-case/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="123-多线程死锁分析，案例介绍">123-多线程死锁分析，案例介绍</span>
+            <span class="post-date" title="2019-11-30 14:37:24">2019/11/30</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/30/wang-thread/125-multi-prod-cons/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="125-多Produce多Consume之间的通讯导致出现程序假死的原因分析">125-多Produce多Consume之间的通讯导致出现程序假死的原因分析</span>
+            <span class="post-date" title="2019-11-30 17:06:59">2019/11/30</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/11/30/wang-thread/126-multi-thread-notifyall/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="126-多线程下的生产者消费者模型，以及详细介绍notifyAll方法">126-多线程下的生产者消费者模型，以及详细介绍notifyAll方法</span>
+            <span class="post-date" title="2019-11-30 17:33:41">2019/11/30</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/12/01/wang-thread/127-wait-sleep/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="127-wait和sleep的本质区别是什么，深入分析（面试常见问题）">127-wait和sleep的本质区别是什么，深入分析（面试常见问题）</span>
+            <span class="post-date" title="2019-12-01 16:15:27">2019/12/01</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/12/01/wang-thread/128-prod-cons-case/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="128-线程生产者消费者的综合实战结合Java8语法">128-线程生产者消费者的综合实战结合Java8语法</span>
+            <span class="post-date" title="2019-12-01 17:09:25">2019/12/01</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/12/01/wang-thread/130-custom-lock-timedout/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="130-如何实现一个自己的显式锁Lock精讲下（让锁具备超时功能）">130-如何实现一个自己的显式锁Lock精讲下（让锁具备超时功能）</span>
+            <span class="post-date" title="2019-12-01 22:29:09">2019/12/01</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/12/07/wang-thread/132-catch-thread-exception/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="132-如何捕获线程运行期间的异常">132-如何捕获线程运行期间的异常</span>
+            <span class="post-date" title="2019-12-07 20:04:16">2019/12/07</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/12/07/wang-thread/131-hook-processor/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="131-如何给你的应用程序注入钩子程序，Linux下演示">131-如何给你的应用程序注入钩子程序，Linux下演示</span>
+            <span class="post-date" title="2019-12-07 18:40:12">2019/12/07</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/12/01/wang-thread/129-custom-lock/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="129-如何实现一个自己的显式锁Lock精讲上">129-如何实现一个自己的显式锁Lock精讲上</span>
+            <span class="post-date" title="2019-12-01 18:19:58">2019/12/01</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/2019/12/07/wang-thread/133-thread-group-api1/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="133-ThreadGroup API介绍之一">133-ThreadGroup API介绍之一</span>
+            <span class="post-date" title="2019-12-07 23:28:30">2019/12/07</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/2019/11/05/imooc/1129-vim/"
+           data-tag="vim"
+           data-author="" >
+            <span class="post-title" title="1129-玩转Vim 从放弃到爱不释手">1129-玩转Vim 从放弃到爱不释手</span>
+            <span class="post-date" title="2019-11-05 15:52:21">2019/11/05</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/2019/12/09/imooc/219-docker/01-introduce/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第01章-课程介绍">第01章-课程介绍</span>
+            <span class="post-date" title="2019-12-09 19:58:21">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/2019/12/09/imooc/219-docker/00-script/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="课程脚本">课程脚本</span>
+            <span class="post-date" title="2019-12-09 20:40:23">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/2019/12/09/imooc/219-docker/07-homework/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第07章-课后作业">第07章-课后作业</span>
+            <span class="post-date" title="2019-12-09 20:35:50">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/2019/12/09/imooc/219-docker/03-linux-base/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第03章-Linux基础知识强化">第03章-Linux基础知识强化</span>
+            <span class="post-date" title="2019-12-09 20:28:15">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/2019/12/09/imooc/219-docker/02-renren-fast/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第02章-人人开源前后端分离项目下载与配置">第02章-人人开源前后端分离项目下载与配置</span>
+            <span class="post-date" title="2019-12-09 20:27:41">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/2019/12/09/imooc/219-docker/06-front-back-deploy/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第06章-部署前后端分离项目">第06章-部署前后端分离项目</span>
+            <span class="post-date" title="2019-12-09 20:34:26">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/2019/12/09/imooc/219-docker/09-summary/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第09章-课程总结">第09章-课程总结</span>
+            <span class="post-date" title="2019-12-09 20:38:40">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/2019/12/09/imooc/219-docker/08-cloud-deploy/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第08章-云平台部署前后端分离">第08章-云平台部署前后端分离</span>
+            <span class="post-date" title="2019-12-09 20:37:44">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/2019/12/09/imooc/219-docker/04-mysql-cluster/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第04章-搭建MySQL集群">第04章-搭建MySQL集群</span>
+            <span class="post-date" title="2019-12-09 20:29:18">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/2019/12/09/imooc/219-docker/05-redis-cluster/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第05章-搭建Redis集群">第05章-搭建Redis集群</span>
+            <span class="post-date" title="2019-12-09 20:30:57">2019/12/09</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-imooc/889-ElasticSearch" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">889-ElasticSearch入门</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="慕课网">慕课网</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">elasticsearch</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-11-05 19:09:51'>2019-08-13 00:25</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3.8k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第1章-课程介绍"><span class="toc-text">第1章 课程介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-课程介绍"><span class="toc-text"> 1-1 课程介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第2章-安装"><span class="toc-text">第2章 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-ES版本历史和选择"><span class="toc-text"> 2-1 ES版本历史和选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-单实例安装"><span class="toc-text"> 2-2 单实例安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-插件安装"><span class="toc-text"> 2-3 插件安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-分布式安装"><span class="toc-text"> 2-4 分布式安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第3章-基础概念"><span class="toc-text">第3章 基础概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-基础概念"><span class="toc-text"> 3-1 基础概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第4章-基本用法"><span class="toc-text">第4章 基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-索引创建"><span class="toc-text"> 4-1 索引创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-插入"><span class="toc-text"> 4-2 插入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-修改"><span class="toc-text"> 4-3 修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-删除"><span class="toc-text"> 4-4 删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-查询"><span class="toc-text"> 4-5 查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第5章-高级查询"><span class="toc-text">第5章 高级查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-query"><span class="toc-text"> 5-1 query</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-filter"><span class="toc-text"> 5-2 filter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-复合查询"><span class="toc-text"> 5-3 复合查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第6章-Spring-Boot集成ES"><span class="toc-text">第6章 Spring Boot集成ES</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-SpringBoot集成ElasticSearch"><span class="toc-text"> 6-1 SpringBoot集成ElasticSearch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-查询接口开发"><span class="toc-text"> 6-2 查询接口开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-增加接口开发"><span class="toc-text"> 6-3 增加接口开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-删除接口开发"><span class="toc-text"> 6-4 删除接口开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-更新接口开发"><span class="toc-text"> 6-5 更新接口开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-6-复合查询接口开发"><span class="toc-text"> 6-6 复合查询接口开发</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第7章-课程总结"><span class="toc-text">第7章 课程总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-课程总结"><span class="toc-text"> 7-1 课程总结</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><a href="https://www.imooc.com/learn/889" target="_blank" rel="noopener">https://www.imooc.com/learn/889</a></p>
+<p>简介：ElasticSearch是一个分布式、可扩展、实时的搜索与数据分析引擎，它能从项目一开始就赋予你的数据以搜索、分析和探索的能力。通过本课程的学习，你可以了解到，ElasticSearch在互联网行业里的火热程度，也可以了解到它的实际应用场景。本课程会通过理论与实践相结合的方式，带领你一步一步走进ElasticSearch的世界，使你轻松掌握ElasticSearch的基本概念，学习ElasticSearch的服务搭建，了解ElasticSearch的常用技巧，并通过案例项目让你拥有实际的应用能力。 老师实战课程已经上线：<a href="http://coding.imooc.com/class/167.html" target="_blank" rel="noopener">http://coding.imooc.com/class/167.html</a> ElasticSearch+MySQL+Kafka强力组合，更有ES结合百度地图，Nginx等高级应用。</p>
+</blockquote>
+<p><div class='inner-toc'><h2>目录</h2><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第1章-课程介绍"><span class="toc-text">第1章 课程介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-课程介绍"><span class="toc-text"> 1-1 课程介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第2章-安装"><span class="toc-text">第2章 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-ES版本历史和选择"><span class="toc-text"> 2-1 ES版本历史和选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-单实例安装"><span class="toc-text"> 2-2 单实例安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-插件安装"><span class="toc-text"> 2-3 插件安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-分布式安装"><span class="toc-text"> 2-4 分布式安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第3章-基础概念"><span class="toc-text">第3章 基础概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-基础概念"><span class="toc-text"> 3-1 基础概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第4章-基本用法"><span class="toc-text">第4章 基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-索引创建"><span class="toc-text"> 4-1 索引创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-插入"><span class="toc-text"> 4-2 插入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-修改"><span class="toc-text"> 4-3 修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-删除"><span class="toc-text"> 4-4 删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-查询"><span class="toc-text"> 4-5 查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第5章-高级查询"><span class="toc-text">第5章 高级查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-query"><span class="toc-text"> 5-1 query</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-filter"><span class="toc-text"> 5-2 filter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-复合查询"><span class="toc-text"> 5-3 复合查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第6章-Spring-Boot集成ES"><span class="toc-text">第6章 Spring Boot集成ES</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-SpringBoot集成ElasticSearch"><span class="toc-text"> 6-1 SpringBoot集成ElasticSearch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-查询接口开发"><span class="toc-text"> 6-2 查询接口开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-增加接口开发"><span class="toc-text"> 6-3 增加接口开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-删除接口开发"><span class="toc-text"> 6-4 删除接口开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-更新接口开发"><span class="toc-text"> 6-5 更新接口开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-6-复合查询接口开发"><span class="toc-text"> 6-6 复合查询接口开发</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第7章-课程总结"><span class="toc-text">第7章 课程总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-课程总结"><span class="toc-text"> 7-1 课程总结</span></a></li></ol></li></ol></div></p>
+<h2 id="第1章-课程介绍"><a href="#第1章-课程介绍" class="headerlink" title="第1章 课程介绍"></a>第1章 课程介绍</h2><blockquote>
+<p>介绍Elastic Search的由来，应用场景，课程需要的前置知识，环境要求，介绍课程安排</p>
+</blockquote>
+<h3 id="1-1-课程介绍"><a href="#1-1-课程介绍" class="headerlink" title=" 1-1 课程介绍"></a><a href="https://www.imooc.com/video/15762" target="_blank" rel="noopener"> 1-1 课程介绍</a></h3><p>什么是ElasticSearch？</p>
+<ul>
+<li><p>基于Apache Lucene构建的开源搜索引擎</p>
+<p>Lucene相对复杂，需要深厚的搜索理论知识，难以集成</p>
+</li>
+<li><p>采用Java编写，提供简单易用的RESTFul API</p>
+</li>
+<li><p>轻松的横向扩展，可支持PB级的结构化或非结构化 数据处理</p>
+</li>
+</ul>
+<p>应用场景：</p>
+<ul>
+<li>海量数据分析引擎</li>
+<li>站内搜索引擎</li>
+<li>数据仓库</li>
+</ul>
+<p>一线公司实际应用场景：</p>
+<ul>
+<li>英国卫报-实时分析公众对文章的回应</li>
+<li>维基百科、Github-站内实时搜索</li>
+<li>百度-实时日志监控平台</li>
+<li>阿里巴巴、Google、京东等等</li>
+</ul>
+<p>前置知识</p>
+<ul>
+<li>熟悉用Maven构建项目</li>
+<li>了解Spring Boot的基本使用</li>
+</ul>
+<p>环境要求：</p>
+<ul>
+<li>IDE工具：Intellij IDEA、Eclipse等常用IDE即可</li>
+<li>Java：JDK1.8</li>
+<li>其他依赖：Maven、NodeJS(6.0以上)</li>
+</ul>
+<p>课程简介：</p>
+<ul>
+<li>安装=》基础概念=》基本用法=》高级查询=》实战演练=》课程总结</li>
+</ul>
+<h2 id="第2章-安装"><a href="#第2章-安装" class="headerlink" title="第2章 安装"></a>第2章 安装</h2><blockquote>
+<p>先从单个节点的安装讲起，然后把插件安装流程走一遍，并说一下插件的主要作用，最后把分布式安装简单的介绍一下</p>
+</blockquote>
+<h3 id="2-1-ES版本历史和选择"><a href="#2-1-ES版本历史和选择" class="headerlink" title=" 2-1 ES版本历史和选择"></a><a href="https://www.imooc.com/video/15763" target="_blank" rel="noopener"> 2-1 ES版本历史和选择</a></h3><ul>
+<li>版本历史 1.x -&gt; 2.x -&gt; 5.x</li>
+<li>版本选择 5.x以上</li>
+</ul>
+<p>安装</p>
+<ul>
+<li>单实例安装</li>
+<li>实用插件Head安装</li>
+<li>分布式安装</li>
+</ul>
+<h3 id="2-2-单实例安装"><a href="#2-2-单实例安装" class="headerlink" title=" 2-2 单实例安装"></a><a href="https://www.imooc.com/video/15764" target="_blank" rel="noopener"> 2-2 单实例安装</a></h3><blockquote>
+<p><a href="https://www.elastic.co/cn/" target="_blank" rel="noopener">ElasticSearch官网首页</a> </p>
+</blockquote>
+<pre><code class="shell"># 下载
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.3.1-linux-x86_64.tar.gz
+# 解压
+tar -zvxf elasticsearch-7.3.1-linux-x86_64.tar.gz
+# 进入HOME目录
+cd elasticsearch-7.3.1-linux-x86_64
+# 运行ElasticSearch程序
+sh ./bin/elasticsearch
+# 获取ElasticSearch服务信息
+curl http://localhost:9200/</code></pre>
+<h3 id="2-3-插件安装"><a href="#2-3-插件安装" class="headerlink" title=" 2-3 插件安装"></a><a href="https://www.imooc.com/video/15765" target="_blank" rel="noopener"> 2-3 插件安装</a></h3><blockquote>
+<p><a href="https://github.com/mobz/elasticsearch-head" target="_blank" rel="noopener">Github主页</a></p>
+</blockquote>
+<pre><code class="shell"># 下载
+wget https://github.com/mobz/elasticsearch-head/archive/master.zip
+# 解压
+unzip master.zip
+# 进入HOME目录
+cd elasticsearch-head-master
+# 编译源码
+npm install
+# 运行程序
+npm run start
+# 访问服务地址
+open http://localhost:9100/</code></pre>
+<ul>
+<li><p>修改ElasticSearch配置</p>
+<pre><code class="shell">vim config/elasticsearch.yml</code></pre>
+<pre><code class="yaml">http.cors.enabled: true
+http.cors.allow-origin: &quot;*&quot;</code></pre>
+<p>重启ElasticSearch、Head</p>
+</li>
+</ul>
+<h3 id="2-4-分布式安装"><a href="#2-4-分布式安装" class="headerlink" title=" 2-4 分布式安装"></a><a href="https://www.imooc.com/video/15766" target="_blank" rel="noopener"> 2-4 分布式安装</a></h3><p>修改ElasticSearch配置</p>
+<ul>
+<li><p>主节点：</p>
+<pre><code class="shell">vim config/elasticsearch.yml
+# -import ~~master~~
+# 查看进程
+ps -ef | grep `pwd`
+# 后台启动ElasticSearch
+./bin/elasticsearch -d</code></pre>
+<pre><code class="yaml"># ~~master~~
+cluster.name: wali
+node.name: master
+node.master: true
+
+network.host: 127.0.0.1</code></pre>
+</li>
+<li><p>从节点</p>
+<pre><code class="shell"># 创建子节点目录
+mkdir es_slave
+# 拷贝ElasticSearch
+cp elasticsearch-7.3.1-linux-x86_64.tar.gz es_slave
+# 解压
+tar -zvxf elasticsearch-7.3.1-linux-x86_64.tar.gz
+# 复制两份子节点程序
+cp -r elasticsearch-7.3.1-linux-x86_64 es_slave1
+cp -r elasticsearch-7.3.1-linux-x86_64 es_slave2
+
+cd es_slave1
+vi config/elasticsearch.yml
+# -import ~~es_slave1~~
+# 后台启动ElasticSearch
+./bin/elasticsearch -d
+
+cd es_slave2
+vi config/elasticsearch.yml
+# -import ~~es_slave2~~
+# 后台启动ElasticSearch
+./bin/elasticsearch -d</code></pre>
+<pre><code class="yaml"># ~~es_slave1~~
+cluster.name: wali
+node.name: slave1
+
+network.host: 127.0.0.1
+http.port: 8001</code></pre>
+<pre><code class="yaml"># ~~es_slave2~~
+cluster.name: wali
+node.name: slave2
+
+network.host: 127.0.0.1
+http.port: 8002</code></pre>
+</li>
+</ul>
+<h2 id="第3章-基础概念"><a href="#第3章-基础概念" class="headerlink" title="第3章 基础概念"></a>第3章 基础概念</h2><blockquote>
+<p>结合Head插件，简单的讲解集群、节点的概念，重点讲解索引及其重要性，分片和备份属于索引的附属概念，一笔带过，类型、文档简单讲解下，并将索引、类型、文档三者的关系讲解清楚</p>
+</blockquote>
+<h3 id="3-1-基础概念"><a href="#3-1-基础概念" class="headerlink" title=" 3-1 基础概念"></a><a href="https://www.imooc.com/video/15767" target="_blank" rel="noopener"> 3-1 基础概念</a></h3><p>集群和节点：</p>
+<ul>
+<li>节点1+节点2+…+…+节点N ==》集群</li>
+</ul>
+<p>基础概念</p>
+<ul>
+<li><p>索引：含有相同属性的文档集合</p>
+</li>
+<li><p>类型：索引可以定义一个或多个类型，文档必须属于一个类型</p>
+</li>
+<li><p>文档：文档是可以被索引的基本数据单位</p>
+</li>
+<li><p>分片：每个索引都有多个分片，每个分片是一个Lucene索引</p>
+</li>
+<li><p>备份：拷贝一份分片就可以完成了分片的备份</p>
+</li>
+</ul>
+<h2 id="第4章-基本用法"><a href="#第4章-基本用法" class="headerlink" title="第4章 基本用法"></a>第4章 基本用法</h2><blockquote>
+<p>本章节主要带领学生一起学习ElasticSearch的基本使用方法，并了解常用的REST API，讲解过程中要将命令行与head插件相结合以演示相应操作。</p>
+</blockquote>
+<h3 id="4-1-索引创建"><a href="#4-1-索引创建" class="headerlink" title=" 4-1 索引创建"></a><a href="https://www.imooc.com/video/15768" target="_blank" rel="noopener"> 4-1 索引创建</a></h3><blockquote>
+<ul>
+<li>非结构化创建</li>
+<li>结构化创建</li>
+</ul>
+</blockquote>
+<p>RESTFul API：</p>
+<ul>
+<li><p>API基本格式</p>
+<pre><code>http://&lt;ip&gt;:&lt;port&gt;/&lt;索引&gt;/&lt;类型&gt;/&lt;文档ID&gt;</code></pre></li>
+<li><p>常用HTTP动词：GET/PUT/POST/DELETE</p>
+</li>
+</ul>
+<p>Head插件创建索引（非结构化）：</p>
+<ol>
+<li><p>访问Head服务地址：<a href="http://127.0.0.1:9100" target="_blank" rel="noopener">http://127.0.0.1:9100</a></p>
+</li>
+<li><p>索引-新建索引</p>
+</li>
+<li><p>概览</p>
+<p>粗线框为主分片，旁边细线框为分片备份</p>
+</li>
+</ol>
+<p>Head插件创建索引（结构化）：</p>
+<ol>
+<li><p>复合查询-查询</p>
+</li>
+<li><p>参数信息</p>
+<pre><code>http://127.0.0.1:9200/
+book/novel/_mappings POST</code></pre><pre><code class="json">{
+    &quot;novel&quot;: {
+        &quot;properties&quot;: {
+            &quot;title&quot;:{
+                &quot;type&quot;: &quot;text&quot;
+            }
+        }
+    }
+}</code></pre>
+</li>
+<li><p>验证JSON-提交请求</p>
+</li>
+<li><p>概览-刷新-信息-索引信息-mappings</p>
+</li>
+</ol>
+<p>Postman创建索引</p>
+<ol>
+<li><pre><code>PUT http://127.0.0.1:9200/people</code></pre></li>
+<li><pre><code>{
+    &quot;settings&quot;: {
+        &quot;number_of_shards&quot;: 3,
+        &quot;number_of_replicas&quot;: 1
+    },
+    &quot;mappings&quot;: {
+        &quot;man&quot;: {
+            &quot;properties&quot;: {
+                &quot;name&quot;: {&quot;type&quot;: &quot;text&quot;},
+                &quot;country&quot;: {&quot;type&quot;: &quot;keyword&quot;},
+                &quot;age&quot;: {
+                    &quot;type&quot;: &quot;integer&quot;
+                },
+                &quot;date&quot;: {
+                    &quot;type&quot;: &quot;date&quot;,
+                    &quot;format&quot;: &quot;yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis&quot;
+                }
+            }
+        },
+        &quot;woman&quot;: {
+
+        }
+    }
+}</code></pre></li>
+</ol>
+<h3 id="4-2-插入"><a href="#4-2-插入" class="headerlink" title=" 4-2 插入"></a><a href="https://www.imooc.com/video/15769" target="_blank" rel="noopener"> 4-2 插入</a></h3><blockquote>
+<ul>
+<li>指定文档ID插入</li>
+<li>自动产生文档ID插入</li>
+</ul>
+</blockquote>
+<p>文档ID：唯一索引值，指向文档数据</p>
+<p>指定文档ID插入：</p>
+<ol>
+<li><pre><code>PUT http://127.0.0.1:9200/people/man/1</code></pre></li>
+<li><pre><code class="json">{
+    &quot;name&quot;: &quot;瓦力&quot;,
+ &quot;country&quot;: &quot;China&quot;,
+    &quot;age&quot;: 30,
+    &quot;date&quot;: &quot;1987-03-07&quot;
+}</code></pre>
+</li>
+<li><p>概览-docs：索引下所有文档的数量值</p>
+</li>
+<li><p>数据浏览</p>
+</li>
+</ol>
+<p>自动产生文档ID插入：</p>
+<ol>
+<li><pre><code>POST http://127.0.0.1:9200/people/man</code></pre></li>
+<li><pre><code class="json">{
+    &quot;name&quot;: &quot;瓦力&quot;,
+    &quot;country&quot;: &quot;China&quot;,
+    &quot;age&quot;: 30,
+    &quot;date&quot;: &quot;1987-03-07&quot;
+}</code></pre>
+</li>
+</ol>
+<h3 id="4-3-修改"><a href="#4-3-修改" class="headerlink" title=" 4-3 修改"></a><a href="https://www.imooc.com/video/15770" target="_blank" rel="noopener"> 4-3 修改</a></h3><blockquote>
+<ul>
+<li>直接修改文档</li>
+<li>脚本修改文档</li>
+</ul>
+</blockquote>
+<p>直接修改文档</p>
+<ol>
+<li><pre><code>POST http://127.0.0.1:9200/people/man/1/_update</code></pre></li>
+<li><pre><code class="json">{
+    &quot;doc&quot;: {
+        &quot;name&quot;: &quot;谁是瓦力&quot;
+    }
+}</code></pre>
+</li>
+</ol>
+<p>脚本修改文档</p>
+<ol>
+<li><pre><code>POST http://127.0.0.1:9200/people/man/1/_update</code></pre></li>
+<li><pre><code class="json">{
+    &quot;script&quot;: {
+        &quot;lang&quot;: &quot;painless&quot;,
+        &quot;inline&quot;: &quot;ctx._source.age += 10&quot;
+    }
+}</code></pre>
+<pre><code class="json">{
+    &quot;script&quot;: {
+        &quot;lang&quot;: &quot;painless&quot;,
+        &quot;inline&quot;: &quot;ctx._source.age += params.age&quot;,
+        &quot;params&quot;: {
+            &quot;age&quot;: 100
+        }
+    }
+}</code></pre>
+</li>
+</ol>
+<h3 id="4-4-删除"><a href="#4-4-删除" class="headerlink" title=" 4-4 删除"></a><a href="https://www.imooc.com/video/15771" target="_blank" rel="noopener"> 4-4 删除</a></h3><blockquote>
+<ul>
+<li>删除文档</li>
+<li>删除索引</li>
+</ul>
+</blockquote>
+<p>删除文档</p>
+<pre><code>DELETE http://127.0.0.1:9200/people/man/1</code></pre><p>删除索引</p>
+<ul>
+<li><p>Head插件删除</p>
+<p>概览-动作-删除-输入删除-确定</p>
+</li>
+<li><p>Postman删除</p>
+<pre><code>DELETE http://127.0.0.1:9200/people</code></pre></li>
+</ul>
+<p>删除索引是一个非常危险的操作。</p>
+<h3 id="4-5-查询"><a href="#4-5-查询" class="headerlink" title=" 4-5 查询"></a><a href="https://www.imooc.com/video/15772" target="_blank" rel="noopener"> 4-5 查询</a></h3><blockquote>
+<ul>
+<li>简单查询</li>
+<li>条件查询</li>
+<li>聚合查询</li>
+</ul>
+</blockquote>
+<p>事先创建索引book：</p>
+<pre><code>PUT http://127.0.0.1:9200/book</code></pre><pre><code class="json">{
+    &quot;settings&quot;: {
+        &quot;number_of_shards&quot;: 3,
+        &quot;number_of_replicas&quot;: 1
+    },
+    &quot;mappings&quot;: {
+        &quot;novel&quot;: {
+            &quot;properties&quot;: {
+                &quot;word_count&quot;: {
+                    &quot;type&quot;: &quot;integer&quot;
+                },
+                &quot;author&quot;: {
+                    &quot;type&quot;: &quot;keyword&quot;
+                },
+                &quot;title&quot;: {
+                    &quot;type&quot;: &quot;text&quot;
+                },
+                &quot;publish_date&quot;: {
+                    &quot;format&quot;: &quot;yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis&quot;,
+                    &quot;type&quot;: &quot;date&quot;
+                }
+            }
+        }
+    }
+}</code></pre>
+<p>插入数据：</p>
+<pre><code>PUT http://127.0.0.1:9200/book/novel/1</code></pre><pre><code class="json">{
+    &quot;word_count&quot;: &quot;5000&quot;,
+    &quot;author&quot;: &quot;王五&quot;,
+    &quot;title&quot;: &quot;菜谱&quot;,
+    &quot;publish_date&quot;: &quot;2002-10-01&quot;
+}</code></pre>
+<p>book novel 5  1 王五 菜谱                    5000  2002-10-01<br>book novel 8  1 瓦力 ElasticSearch入门       3000  2017-08-20<br>book novel 9  1 很胖的瓦力 ElasticSearch精通 3000  2017-08-15<br>book novel 10 1 牛魔王 芭蕉扇                1000  2000-10-01<br>book novel 2  1 李三 Java入门                2000  2010-10-01<br>book novel 4  1 李四 ElasticSearch大法好     1000  2017-08-01<br>book novel 6  1 赵六 剑谱                    10000 1997-01-01<br>book novel 1  1 张三 移魂大法                1000  2000-10-01<br>book novel 7  1 张三丰 太极拳                1000  1997-01-01<br>book novel 3  1 张四 Python入门              2000  2005-10-01<br>book novel 11 1 孙悟空 七十二变              1000  2000-10-01</p>
+<p>简单查询：</p>
+<pre><code>GET http://127.0.0.1:9200/book/novel/1</code></pre><p>条件查询：</p>
+<ul>
+<li><p>查询所有</p>
+<pre><code>POST http://127.0.0.1:9200/book/_search</code></pre><pre><code class="json">{
+    &quot;query&quot;: {
+        &quot;match_all&quot;: {}
+    },
+    &quot;form&quot;: 1,
+    &quot;size&quot;: 1
+}</code></pre>
+<p>关键词查询</p>
+<pre><code class="json">{
+    &quot;query&quot;: {
+        &quot;match&quot;: {
+            &quot;title&quot;: &quot;ElasticSearch&quot;
+        }
+    },
+    &quot;sort&quot;: [
+        {&quot;publish_date&quot;: {&quot;order&quot;: &quot;desc&quot;}}
+    ]
+}</code></pre>
+</li>
+<li><p>条件查询</p>
+<pre><code>POST http://127.0.0.1:9200/book/_search</code></pre><pre><code class="json">{
+    &quot;aggs&quot;: {
+        &quot;group_by_word_count&quot;: {
+            &quot;terms&quot;: {
+                &quot;field&quot;: &quot;word_count&quot;
+            }
+        },
+        &quot;group_by_publish_date&quot;: {
+            &quot;terms&quot;: {
+                &quot;field&quot;: &quot;publish_date&quot;
+            }
+        }
+    }
+}</code></pre>
+</li>
+<li><p>聚合查询</p>
+<pre><code>POST http://127.0.0.1:9200/book/_search</code></pre><pre><code class="json">{
+    &quot;aggs&quot;: {
+        &quot;grades_word_count&quot;: {
+            &quot;stats&quot;: {
+                &quot;field&quot;: word_count
+            }
+        }
+    }
+}</code></pre>
+<pre><code class="json">{
+    &quot;aggs&quot;: {
+        &quot;grades_word_count&quot;: {
+            &quot;min&quot;: {
+                &quot;field&quot;: word_count
+            }
+        }
+    }
+}</code></pre>
+</li>
+</ul>
+<h2 id="第5章-高级查询"><a href="#第5章-高级查询" class="headerlink" title="第5章 高级查询"></a>第5章 高级查询</h2><blockquote>
+<p>将query与filter分开讲解，并把相应的关键词列举一些，结合实例操作，最后将query与filter组合起来，讲解实例</p>
+</blockquote>
+<h3 id="5-1-query"><a href="#5-1-query" class="headerlink" title=" 5-1 query"></a><a href="https://www.imooc.com/video/15759" target="_blank" rel="noopener"> 5-1 query</a></h3><p>高级查询：</p>
+<ul>
+<li>子条件查询：特定字段查询所指特定值</li>
+<li>复合条件查询：以一定的逻辑组合子条件查询</li>
+</ul>
+<p>子条件查询</p>
+<ul>
+<li>Query context</li>
+<li>Filter context</li>
+</ul>
+<p>Query Context</p>
+<blockquote>
+<p>在查询过程中，除了判断文档是否满足查询条件外，ES还会计算一个_score来标识匹配的程度，旨在判断目标文档和查询条件匹配的有多好。</p>
+</blockquote>
+<p>常用查询：</p>
+<ul>
+<li>全文本查询：针对文本类型数据</li>
+<li>字段级别查询：针对结构化数据，如数字、日期等</li>
+</ul>
+<pre><code>POST http://127.0.0.1:9200/book/_search</code></pre><ul>
+<li><p>模糊匹配(匹配：ElasticSearch+入门)</p>
+<pre><code class="json">{
+    &quot;query&quot;: {
+        &quot;match&quot;: {
+            &quot;title&quot;: &quot;ElasticSearch入门&quot;
+        }
+    }
+}</code></pre>
+</li>
+<li><p>习语匹配(匹配：ElasticSearch入门)</p>
+<pre><code class="json">{
+    &quot;query&quot;: {
+        &quot;match_phrase&quot;: {
+            &quot;title&quot;: &quot;ElasticSearch入门&quot;
+        }
+    }
+}</code></pre>
+</li>
+<li><p>多字段模糊匹配</p>
+<pre><code class="json">{
+    &quot;query&quot;: {
+        &quot;multi_match&quot;: {
+            &quot;query&quot;: &quot;瓦力&quot;,
+            &quot;fields&quot;: [&quot;author&quot;, &quot;title&quot;]
+        }
+    }
+}</code></pre>
+</li>
+<li><p>语法匹配</p>
+<pre><code class="json">{
+    &quot;query&quot;: {
+        &quot;query_string&quot;: {
+            &quot;query&quot;: &quot;ElasticSearch AND 大法&quot;
+        }
+    }
+}</code></pre>
+<pre><code class="json">{
+    &quot;query&quot;: {
+        &quot;query_string&quot;: {
+            &quot;query&quot;: &quot;(ElasticSearch AND 大法) OR Python&quot;
+        }
+    }
+}</code></pre>
+</li>
+<li><p>多字段语法匹配</p>
+<pre><code class="json">{
+    &quot;query&quot;: {
+        &quot;query_string&quot;: {
+            &quot;query&quot;: &quot;瓦力 OR ElasticSearch&quot;,
+            &quot;fields&quot;: [&quot;title&quot;, &quot;author&quot;]
+        }
+    }
+}</code></pre>
+</li>
+<li><p>字段匹配</p>
+<pre><code class="json">{
+    &quot;query&quot;: {
+        &quot;term&quot;: {
+            &quot;word_count&quot;: 1000
+        }
+    }
+}</code></pre>
+<pre><code class="json">{
+    &quot;query&quot;: {
+        &quot;term&quot;: {
+            &quot;author&quot;: &quot;瓦力&quot;
+        }
+    }
+}</code></pre>
+</li>
+<li><p>范围匹配（数字、日期）</p>
+<pre><code class="json">{
+    &quot;query&quot;: {
+        &quot;range&quot;: {
+            &quot;word_count&quot;: {
+                &quot;gte&quot;: 1000,
+                &quot;lte&quot;: 2000
+            }
+        }
+    }
+}</code></pre>
+<pre><code class="json">{
+    &quot;query&quot;: {
+        &quot;range&quot;: {
+            &quot;publish_date&quot;: {
+                &quot;gt&quot;: &quot;2019-08-29&quot;,
+                &quot;lte&quot;: &quot;now&quot;
+            }
+        }
+    }
+}</code></pre>
+<p>now：代表当前时间</p>
+</li>
+</ul>
+<h3 id="5-2-filter"><a href="#5-2-filter" class="headerlink" title=" 5-2 filter"></a><a href="https://www.imooc.com/video/15760" target="_blank" rel="noopener"> 5-2 filter</a></h3><p>Filter Context</p>
+<blockquote>
+<p>在查询过程中，只判断该文档是否满足条件，只有Yes或者No</p>
+</blockquote>
+<pre><code>POST http://127.0.0.1:9200/book/_search</code></pre><pre><code class="json">{
+    &quot;query&quot;: {
+        &quot;bool&quot;: {
+            &quot;filter&quot;: {
+                &quot;term&quot;: {
+                    &quot;word_count&quot;: 1000
+                }
+            }
+        }
+    }
+}</code></pre>
+<p>filter做数据过滤的，并且会对查询结果进行缓存，所以filter比query要快一些。</p>
+<h3 id="5-3-复合查询"><a href="#5-3-复合查询" class="headerlink" title=" 5-3 复合查询"></a><a href="https://www.imooc.com/video/15761" target="_blank" rel="noopener"> 5-3 复合查询</a></h3><p>常用查询：</p>
+<ul>
+<li>固定分数查询</li>
+<li>布尔查询</li>
+</ul>
+<pre><code>POST http://127.0.0.1:9200/book/_search</code></pre><pre><code class="json">{
+    &quot;query&quot;: {
+        &quot;match&quot;: {
+            &quot;title&quot;: &quot;ElasticSearch&quot;
+        }
+    }
+}</code></pre>
+<pre><code class="json">{
+    &quot;query&quot;: {
+        &quot;constant_score&quot;: {
+            &quot;filter&quot;: {
+                &quot;match&quot;: {
+                    &quot;title&quot;: &quot;ElasticSearch&quot;
+                }
+            },
+            &quot;boost&quot;: 2
+        }
+    }
+}</code></pre>
+<pre><code class="json">{
+    &quot;query&quot;: {
+        &quot;bool&quot;: {
+            &quot;should&quot;: [
+                {
+                    &quot;match&quot;: {
+                        &quot;author&quot;: &quot;瓦力&quot;
+                    }
+                },
+                {
+                    &quot;match&quot;: {
+                        &quot;title&quot;: &quot;ElasticSearch&quot;
+                    }
+                }
+            ]
+        }
+    }
+}</code></pre>
+<pre><code class="json">{
+    &quot;query&quot;: {
+        &quot;bool&quot;: {
+            &quot;must&quot;: [
+                {
+                    &quot;match&quot;: {
+                        &quot;author&quot;: &quot;瓦力&quot;
+                    }
+                },
+                {
+                    &quot;match&quot;: {
+                        &quot;title&quot;: &quot;ElasticSearch&quot;
+                    }
+                }
+            ],
+            &quot;filter&quot;: [
+                {
+                    &quot;term&quot;: {
+                        &quot;word_count&quot;: 1000
+                    }
+                }
+            ]
+        }
+    }
+}</code></pre>
+<pre><code class="json">{
+    &quot;query&quot;: {
+        &quot;bool&quot;: {
+            &quot;must_not&quot;: {
+                &quot;term&quot;: {
+                    &quot;author&quot;: &quot;瓦力&quot;
+                }
+            }
+        }
+    }
+}</code></pre>
+<p>固定分数查询不支持match，只支持filter</p>
+<h2 id="第6章-Spring-Boot集成ES"><a href="#第6章-Spring-Boot集成ES" class="headerlink" title="第6章 Spring Boot集成ES"></a>第6章 Spring Boot集成ES</h2><blockquote>
+<p>直接演示SpringBoot集成ES，做接口开发</p>
+<p>以下使用ElasticSearch7.3.1做演示</p>
+</blockquote>
+<h3 id="6-1-SpringBoot集成ElasticSearch"><a href="#6-1-SpringBoot集成ElasticSearch" class="headerlink" title=" 6-1 SpringBoot集成ElasticSearch"></a><a href="https://www.imooc.com/video/15758" target="_blank" rel="noopener"> 6-1 SpringBoot集成ElasticSearch</a></h3><p>实战演练：</p>
+<ul>
+<li>Spring Boot集成ES</li>
+<li>图书信息管理接口开发</li>
+</ul>
+<p>Pom.xml</p>
+<pre><code class="xml">&lt;dependency&gt;
+  &lt;groupId&gt;org.elasticsearch&lt;/groupId&gt;
+  &lt;artifactId&gt;elasticsearch&lt;/artifactId&gt;
+  &lt;version&gt;${elasticsearch.version}&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.elasticsearch.client&lt;/groupId&gt;
+  &lt;artifactId&gt;elasticsearch-rest-high-level-client&lt;/artifactId&gt;
+  &lt;version&gt;${elasticsearch.version}&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.elasticsearch.client&lt;/groupId&gt;
+  &lt;artifactId&gt;elasticsearch-rest-client&lt;/artifactId&gt;
+  &lt;version&gt;${elasticsearch.version}&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.elasticsearch.client&lt;/groupId&gt;
+  &lt;artifactId&gt;elasticsearch-rest-client-sniffer&lt;/artifactId&gt;
+  &lt;version&gt;${elasticsearch.version}&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+<p>配置Spring Bean</p>
+<pre><code class="java">@Configuration
+public class ESConfig {
+    @Bean
+    public RestHighLevelClient client() throws UnknownHostException {
+        RestHighLevelClient client = new RestHighLevelClient(
+                RestClient.builder(
+                        new HttpHost(&quot;127.0.0.1&quot;, 9200, &quot;http&quot;)));
+        return client;
+    }
+}</code></pre>
+<p>ESController</p>
+<pre><code class="java">@RestController
+@RequestMapping(&quot;/novel&quot;)
+public class ESController {
+  @Autowired
+  private RestHighLevelClient client;
+  // todo 
+}</code></pre>
+<p>运行</p>
+<pre><code class="shell">mvn spring-boot:run</code></pre>
+<h3 id="6-2-查询接口开发"><a href="#6-2-查询接口开发" class="headerlink" title=" 6-2 查询接口开发"></a><a href="https://www.imooc.com/video/15773" target="_blank" rel="noopener"> 6-2 查询接口开发</a></h3><p>接口开发：</p>
+<ul>
+<li>新增图书信息功能开发</li>
+<li>修改图书信息功能开发</li>
+<li>删除功能开发</li>
+<li>综合查询接口开发</li>
+</ul>
+<pre><code class="java">@GetMapping(&quot;/{id}&quot;)
+public ResponseEntity get(@PathVariable(name = &quot;id&quot;) String id) {
+  if (id.isEmpty()) {
+    return new ResponseEntity(HttpStatus.NOT_FOUND);
+  }
+  GetRequest novelRequest = new GetRequest(&quot;novel&quot;, id);
+  try {
+    GetResponse novelResponse = this.client.get(novelRequest, RequestOptions.DEFAULT);
+    if (novelResponse.isExists()) {
+      System.out.println(novelResponse);
+      return new ResponseEntity(novelResponse.getSource(), HttpStatus.OK);
+    }
+  } catch (IOException e) {
+    e.printStackTrace();
+    return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+  }
+  return new ResponseEntity(HttpStatus.NOT_FOUND);
+}</code></pre>
+<p>运行：</p>
+<pre><code class="shell">mvn spring-boot:run
+GET http://127.0.0.1:8080/novel/1</code></pre>
+<h3 id="6-3-增加接口开发"><a href="#6-3-增加接口开发" class="headerlink" title=" 6-3 增加接口开发"></a><a href="https://www.imooc.com/video/15775" target="_blank" rel="noopener"> 6-3 增加接口开发</a></h3><pre><code class="java">@PostMapping(&quot;&quot;)
+public ResponseEntity add(@RequestBody Novel novel) {
+  try {
+    Gson gson = new Gson();
+    Map novelMap = gson.fromJson(gson.toJson(novel), Map.class);
+    IndexRequest novelRequest = new IndexRequest(&quot;novel&quot;).id(UUID.randomUUID().toString()).source(novelMap);
+    IndexResponse novelResponse = this.client.index(novelRequest, RequestOptions.DEFAULT);
+    System.out.println(novelResponse);
+    return new ResponseEntity(novelResponse.getId(), HttpStatus.OK);
+  } catch (IOException e) {
+    e.printStackTrace();
+    return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+  }
+}</code></pre>
+<pre><code class="java">@Data
+public class Novel {
+    private String title;
+    private String author;
+    @JsonProperty(value = &quot;word_count&quot;)
+    private String wordCount;
+    @JsonProperty(value = &quot;publish_date&quot;)
+    @DateTimeFormat(pattern = &quot;yyyy-MM-dd&quot;)
+    private Date publishDate;
+}</code></pre>
+<p>运行</p>
+<pre><code>POST http://127.0.0.1:8080/novel</code></pre><pre><code class="json">{
+    &quot;title&quot;: &quot;大话西游&quot;,
+    &quot;author&quot;: &quot;刘镇伟&quot;,
+    &quot;word_count&quot;: &quot;1008&quot;,
+    &quot;publish_date&quot;: &quot;2019-09-08&quot;
+}</code></pre>
+<h3 id="6-4-删除接口开发"><a href="#6-4-删除接口开发" class="headerlink" title=" 6-4 删除接口开发"></a><a href="https://www.imooc.com/video/15774" target="_blank" rel="noopener"> 6-4 删除接口开发</a></h3><pre><code class="java">@DeleteMapping(&quot;/{id}&quot;)
+public ResponseEntity delete(@PathVariable(name = &quot;id&quot;) String id) {
+  DeleteRequest novelRequest = new DeleteRequest(&quot;novel&quot;, id);
+  try {
+    DeleteResponse novelResponse = this.client.delete(novelRequest, RequestOptions.DEFAULT);
+    System.out.println(novelResponse);
+    return new ResponseEntity(novelResponse.getResult().toString(),HttpStatus.OK);
+  } catch (IOException e) {
+    e.printStackTrace();
+    return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+  }
+}</code></pre>
+<p>运行</p>
+<pre><code>DELETE http://127.0.0.1:8080/novel/1</code></pre><h3 id="6-5-更新接口开发"><a href="#6-5-更新接口开发" class="headerlink" title=" 6-5 更新接口开发"></a><a href="https://www.imooc.com/video/15776" target="_blank" rel="noopener"> 6-5 更新接口开发</a></h3><pre><code class="java">@PutMapping(&quot;/{id}&quot;)
+public ResponseEntity update(@PathVariable(name = &quot;id&quot;) String id, @RequestBody Novel novel) {
+  try {
+    Gson gson = new Gson();
+    Map map = gson.fromJson(gson.toJson(novel), Map.class);
+    UpdateRequest novelRequest = new UpdateRequest(&quot;novel&quot;, id).doc(map);
+    UpdateResponse novelResponse = this.client.update(novelRequest, RequestOptions.DEFAULT);
+    System.out.println(novelResponse);
+    return new ResponseEntity(novelResponse.getResult().toString(), HttpStatus.OK);
+  } catch (IOException e) {
+    e.printStackTrace();
+    return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+  }
+}</code></pre>
+<p>运行</p>
+<pre><code>PUT http://127.0.0.1:8080/novel/1</code></pre><pre><code class="json">{
+    &quot;title&quot;: &quot;大话西游&quot;,
+    &quot;author&quot;: &quot;刘镇伟&quot;,
+    &quot;word_count&quot;: &quot;1008&quot;,
+    &quot;publish_date&quot;: &quot;2019-09-08&quot;
+}</code></pre>
+<h3 id="6-6-复合查询接口开发"><a href="#6-6-复合查询接口开发" class="headerlink" title=" 6-6 复合查询接口开发"></a><a href="https://www.imooc.com/video/15777" target="_blank" rel="noopener"> 6-6 复合查询接口开发</a></h3><pre><code class="java">@GetMapping(&quot;&quot;)
+public ResponseEntity query(@RequestParam(value = &quot;author&quot;, required = false) String author,
+                            @RequestParam(value = &quot;title&quot;, required = false) String title,
+                            @RequestParam(value = &quot;gt_word_count&quot;, defaultValue = &quot;0&quot;) Integer gtWordCount,
+                            @RequestParam(value = &quot;lt_word_count&quot;, required = false) Integer ltWordCount) {
+    BoolQueryBuilder boolQueryBuilder = QueryBuilders.boolQuery();
+    if (author != null) {
+        boolQueryBuilder.must(QueryBuilders.matchQuery(&quot;author&quot;, author));
+    }
+    if (title != null) {
+        boolQueryBuilder.must(QueryBuilders.matchQuery(&quot;title&quot;, title));
+    }
+    RangeQueryBuilder wordCountRangeQuery = QueryBuilders.rangeQuery(&quot;word_count&quot;)
+            .from(gtWordCount);
+    if (ltWordCount != null &amp;&amp; 0 &lt; ltWordCount) {
+        wordCountRangeQuery.to(ltWordCount);
+    }
+    boolQueryBuilder.filter(wordCountRangeQuery);
+
+    SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder()
+            .query(boolQueryBuilder)
+            .from(0)
+            .size(10);
+    SearchRequest novelSearchRequest = new SearchRequest(&quot;novel&quot;)
+            .source(searchSourceBuilder)
+            .searchType(SearchType.DFS_QUERY_THEN_FETCH);
+    System.out.println(novelSearchRequest.source());
+    try {
+        SearchResponse novelSearchResponse = this.client.search(novelSearchRequest, RequestOptions.DEFAULT);
+        System.out.println(novelSearchResponse);
+        ArrayList&lt;Map&lt;String, Object&gt;&gt; result = new ArrayList&lt;&gt;();
+        novelSearchResponse.getHits().forEach(e -&gt; {
+            result.add(e.getSourceAsMap());
+        });
+        return new ResponseEntity(result, HttpStatus.OK);
+    } catch (IOException e) {
+        e.printStackTrace();
+        return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+}</code></pre>
+<h2 id="第7章-课程总结"><a href="#第7章-课程总结" class="headerlink" title="第7章 课程总结"></a>第7章 课程总结</h2><blockquote>
+<p>课程总结</p>
+</blockquote>
+<h3 id="7-1-课程总结"><a href="#7-1-课程总结" class="headerlink" title=" 7-1 课程总结"></a><a href="https://www.imooc.com/video/15757" target="_blank" rel="noopener"> 7-1 课程总结</a></h3><ol>
+<li><p>ES简介</p>
+<p>ES使用场景例子</p>
+<p>ES的火热程度-重要性</p>
+</li>
+<li><p>安装</p>
+<p>ES使用插件HEAD</p>
+<p>ES分布式安装，实现了ES的横向扩容</p>
+</li>
+<li><p>基础概念</p>
+</li>
+<li><p>基本用法</p>
+<p>增删查改功能</p>
+</li>
+<li><p>高级查询</p>
+</li>
+<li><p>实战演练</p>
+<p>将ES集成到SpringBoot</p>
+</li>
+</ol>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tuyrk@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>889-ElasticSearch入门</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">4k</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="神秘的小岛岛">神秘的小岛岛</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-08-13, 00:25:32</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-05, 19:09:51</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/13/imooc/889-ElasticSearch/" title="889-ElasticSearch入门">https://www.tuyrk.cn/2019/08/13/imooc/889-ElasticSearch/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '9f82f3d33fe6303f2632',
+            clientSecret: '64316477206edcf4f37118b5e0f003e91445ce2a',
+            repo: 'tuyrk.github.io',
+            owner: 'tuyrk',
+            admin: ['tuyrk'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019 神秘的小岛岛</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+备案号：蜀ICP备18020272号-1
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpeg" class="alipay" title="扫码支持">
+            <img src="/img/wxpay.jpeg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#工具','#hexo','#vpn','#代码规范','#git','#github','#gitee','#编码','#vim','#多线程','#node','#kafka','#性能测试','#LoadRunner','#JMeter','#springboot','#docker','#springdata','#mycat','#elasticsearch','#mysql',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
