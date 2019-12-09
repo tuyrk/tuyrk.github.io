@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.tuyrk.cn/2019/12/01/alibaba-p3c-exam/</loc>
+    <loc>https://www.tuyrk.cn/2019/12/07/132-catch-thread-exception/</loc>
+    <lastmod>2019-12-08</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/12/07/133-thread-group-api1/</loc>
+    <lastmod>2019-12-08</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/12/07/131-hook-processor/</loc>
+    <lastmod>2019-12-07</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/12/01/130-custom-lock-timedout/</loc>
+    <lastmod>2019-12-07</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/12/04/utf8bom-to-utf8/</loc>
+    <lastmod>2019-12-04</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/12/02/code-rules-object-model/</loc>
+    <lastmod>2019-12-02</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/2019/12/02/alibaba-p3c-exam/</loc>
     <lastmod>2019-12-02</lastmod>
   </url>  <url>
     <loc>https://www.tuyrk.cn/2019/11/28/macOS-update-git/</loc>
