@@ -1,0 +1,2383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>867-Docker入门 | 神秘的小岛岛</title>
+  <meta name="keywords" content=" docker ">
+  <meta name="description" content="867-Docker入门 | 神秘的小岛岛">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="E8GsQvoy2O">
+<meta property="og:type" content="website">
+<meta property="og:title" content="神秘的小岛岛">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.tuyrk.cn&#x2F;baidu_verify_E8GsQvoy2O.html">
+<meta property="og:site_name" content="神秘的小岛岛">
+<meta property="og:description" content="E8GsQvoy2O">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-06T02:29:00.537Z">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpeg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpeg" />
+</a>
+<div class="author">
+    <span>神秘的小岛岛</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+        <a title="github" href="https://github.com/tuyrk" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="weibo" href="https://weibo.com/u/5669532599" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/25d3e037d782" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/tu-yuan-kun/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="csdn" href="https://me.csdn.net/tyk766564616" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-csdn"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:tuyrk@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=766564616&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=437322403" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(105)</small></div></li>
+    
+        
+            
+            <li><div data-rel="工具"><i class="fold iconfont icon-right"></i>工具<small>(5)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="git">git<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="hexo">hexo<small>(2)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="java"><i class="fold iconfont icon-right"></i>java<small>(25)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="p3c">p3c<small>(23)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="慕课网"><i class="fold iconfont icon-right"></i>慕课网<small>(35)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="219-Docker环境下的前后端分离项目部署与运维">219-Docker环境下的前后端分离项目部署与运维<small>(10)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="汪文君"><i class="fold iconfont icon-right"></i>汪文君<small>(40)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="多线程第一季">多线程第一季<small>(40)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="105">
+<input type="hidden" id="yelog_site_word_count" value="157.7k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">vpn</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">代码规范</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">github</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">gitee</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">编码</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">kafka</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">vim</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">多线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">node</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">性能测试</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">LoadRunner</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">JMeter</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">springboot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">springdata</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">elasticsearch</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mycat</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mysql</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a  class="工具 hexo "
+           href="/3-hexo-shortcuts/"
+           data-tag="工具,hexo"
+           data-author="" >
+            <span class="post-title" title="3-hexo快捷键说明">3-hexo快捷键说明</span>
+            <span class="post-date" title="2019-10-29 10:22:08">2019/10/29</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/MacOS-OpenVPN/"
+           data-tag="vpn"
+           data-author="" >
+            <span class="post-title" title="Mac OS配置OpenVPN之Tunnelblick">Mac OS配置OpenVPN之Tunnelblick</span>
+            <span class="post-date" title="2019-10-10 11:23:59">2019/10/10</span>
+        </a>
+        
+        <a  class="java "
+           href="/code-rules-object-model/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="Java中DO、BO、DTO、VO、AO、PO">Java中DO、BO、DTO、VO、AO、PO</span>
+            <span class="post-date" title="2019-12-02 21:36:33">2019/12/02</span>
+        </a>
+        
+        <a  class="工具 git "
+           href="/git-manage-github-gitee/"
+           data-tag="git,github,gitee"
+           data-author="" >
+            <span class="post-title" title="git 同时管理Github和Gitee">git 同时管理Github和Gitee</span>
+            <span class="post-date" title="2019-10-29 13:12:16">2019/10/29</span>
+        </a>
+        
+        <a  class="工具 hexo "
+           href="/hexo-gitpages-invalid/"
+           data-tag="工具,hexo"
+           data-author="" >
+            <span class="post-title" title="hexo重新发布后GitPages自定义域名失效">hexo重新发布后GitPages自定义域名失效</span>
+            <span class="post-date" title="2019-10-29 13:37:25">2019/10/29</span>
+        </a>
+        
+        <a  class="工具 git "
+           href="/macOS-update-git/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="xcrun:error:invalid active developer path">xcrun:error:invalid active developer path</span>
+            <span class="post-date" title="2019-11-28 23:13:09">2019/11/28</span>
+        </a>
+        
+        <a  class="java "
+           href="/utf8bom-to-utf8/"
+           data-tag="编码"
+           data-author="" >
+            <span class="post-title" title="UTF-8带BOM转UTF-8无BOM格式编码">UTF-8带BOM转UTF-8无BOM格式编码</span>
+            <span class="post-date" title="2019-12-04 11:49:40">2019/12/04</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/12-const-define/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="1.2-常量定义">1.2-常量定义</span>
+            <span class="post-date" title="2019-12-14 20:09:13">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/11-naming-style/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="1.1-命名风格">1.1-命名风格</span>
+            <span class="post-date" title="2019-12-14 20:08:35">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/13-code-format/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="1.3-代码格式">1.3-代码格式</span>
+            <span class="post-date" title="2019-12-14 20:09:49">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/14-oop-statute/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="1.4-OOP规约">1.4-OOP规约</span>
+            <span class="post-date" title="2019-12-14 20:10:09">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/15-collection/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="1.5-集合处理">1.5-集合处理</span>
+            <span class="post-date" title="2019-12-14 20:10:32">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/16-concurrent/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="1.6-并发处理">1.6-并发处理</span>
+            <span class="post-date" title="2019-12-14 20:11:14">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/17-control-statement/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="1.7-控制语句">1.7-控制语句</span>
+            <span class="post-date" title="2019-12-14 20:11:42">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/18-annotation-statute/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="1.8-注释规约">1.8-注释规约</span>
+            <span class="post-date" title="2019-12-14 20:12:03">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/19-other/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="1.9-其他">1.9-其他</span>
+            <span class="post-date" title="2019-12-14 20:12:27">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/21-exception/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="2.1-异常日志">2.1-异常日志</span>
+            <span class="post-date" title="2019-12-14 20:12:58">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/22-log-statute/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="2.2-日志规约">2.2-日志规约</span>
+            <span class="post-date" title="2019-12-14 20:13:39">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/31-unit-test/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="3.1-单元测试">3.1-单元测试</span>
+            <span class="post-date" title="2019-12-14 20:14:08">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/41-security-statute/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="4.1-安全规约">4.1-安全规约</span>
+            <span class="post-date" title="2019-12-14 20:14:35">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/51-create-table-statute/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="5.1-建表规约">5.1-建表规约</span>
+            <span class="post-date" title="2019-12-14 20:14:56">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/53-sql/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="5.3-SQL语句">5.3-SQL语句</span>
+            <span class="post-date" title="2019-12-14 20:15:14">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/52-dbi-statute/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="5.2-索引规约">5.2-索引规约</span>
+            <span class="post-date" title="2019-12-14 20:15:14">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/54-orm/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="5.4-ORM映射">5.4-ORM映射</span>
+            <span class="post-date" title="2019-12-14 20:16:29">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/61-app-layer/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="6.1-工程结构">6.1-工程结构</span>
+            <span class="post-date" title="2019-12-14 20:16:59">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/62-lib-depend/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="6.2-二方库依赖">6.2-二方库依赖</span>
+            <span class="post-date" title="2019-12-14 20:17:09">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/63-server/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="6.3-服务器">6.3-服务器</span>
+            <span class="post-date" title="2019-12-14 20:17:41">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/71-history-version/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="7.1-版本历史">7.1-版本历史</span>
+            <span class="post-date" title="2019-12-14 20:18:10">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/72-proper-noun/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="7.2-本手册专有名词">7.2-本手册专有名词</span>
+            <span class="post-date" title="2019-12-14 20:18:31">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/alibaba-p3c-exam/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="阿里巴巴代码规范考试试题">阿里巴巴代码规范考试试题</span>
+            <span class="post-date" title="2019-12-02 21:36:33">2019/12/02</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/1043-Kafka/"
+           data-tag="kafka"
+           data-author="" >
+            <span class="post-title" title="1043-Kafka流处理平台">1043-Kafka流处理平台</span>
+            <span class="post-date" title="2019-11-18 22:34:45">2019/11/18</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/1049-vim/"
+           data-tag="vim"
+           data-author="" >
+            <span class="post-title" title="1049-优雅玩转Vim">1049-优雅玩转Vim</span>
+            <span class="post-date" title="2019-11-04 22:34:45">2019/11/04</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/1052-Git/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="1052-Git入门">1052-Git入门</span>
+            <span class="post-date" title="2019-11-01 14:46:32">2019/11/01</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/1186-thread-base/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="1186-Java并发编程的“基石”——多线程概念初识">1186-Java并发编程的“基石”——多线程概念初识</span>
+            <span class="post-date" title="2019-11-09 19:14:46">2019/11/09</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/1086-synchronized/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="1086-Java高并发之魂：synchronized深度解析">1086-Java高并发之魂：synchronized深度解析</span>
+            <span class="post-date" title="2019-03-20 22:15:42">2019/03/20</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/1193-node-base/"
+           data-tag="node"
+           data-author="" >
+            <span class="post-title" title="1193-前端面试加分福音--node基础">1193-前端面试加分福音--node基础</span>
+            <span class="post-date" title="2019-11-16 21:34:53">2019/11/16</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/202-multi-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="202-深入浅出Java多线程">202-深入浅出Java多线程</span>
+            <span class="post-date" title="2018-12-29 21:38:49">2018/12/29</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/208-Git/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="208-版本管理工具介绍—Git篇">208-版本管理工具介绍—Git篇</span>
+            <span class="post-date" title="2019-11-01 14:20:34">2019/11/01</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/1129-vim/"
+           data-tag="vim"
+           data-author="" >
+            <span class="post-title" title="1129-玩转Vim 从放弃到爱不释手">1129-玩转Vim 从放弃到爱不释手</span>
+            <span class="post-date" title="2019-11-05 15:52:21">2019/11/05</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/312-thread-runnable/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="312-细说多线程之Thread VS Runnable">312-细说多线程之Thread VS Runnable</span>
+            <span class="post-date" title="2018-12-30 10:25:38">2018/12/30</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/328-2Hours-SpringBoot/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="2小时Spring Boot红包程序 尽显极客浪漫Style">2小时Spring Boot红包程序 尽显极客浪漫Style</span>
+            <span class="post-date" title="2019-12-09 20:46:54">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/352-volatile/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="352-细说Java多线程之内存可见性">352-细说Java多线程之内存可见性</span>
+            <span class="post-date" title="2019-01-05 17:00:16">2019/01/05</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/390-Github/"
+           data-tag="git,github"
+           data-author="" >
+            <span class="post-title" title="390-版本控制入门 – 搬进 Github">390-版本控制入门 – 搬进 Github</span>
+            <span class="post-date" title="2019-11-01 14:45:49">2019/11/01</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/714-LoadRunner/"
+           data-tag="性能测试,LoadRunner"
+           data-author="" >
+            <span class="post-title" title="714-性能测试之LoadRunner">714-性能测试之LoadRunner</span>
+            <span class="post-date" title="2019-09-29 22:39:54">2019/09/29</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/735-JMeter/"
+           data-tag="性能测试,JMeter"
+           data-author="" >
+            <span class="post-title" title="735-JMeter性能测试入门篇">735-JMeter性能测试入门篇</span>
+            <span class="post-date" title="2019-09-28 23:42:43">2019/09/28</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/767-2Hours-SringBoot/"
+           data-tag="springboot"
+           data-author="" >
+            <span class="post-title" title="767-2小时学会Spring Boot">767-2小时学会Spring Boot</span>
+            <span class="post-date" title="2019-06-05 23:54:25">2019/06/05</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/791-JMeterHTTP/"
+           data-tag="性能测试,JMeter"
+           data-author="" >
+            <span class="post-title" title="719-JMeter之HTTP协议接口性能测试">719-JMeter之HTTP协议接口性能测试</span>
+            <span class="post-date" title="2019-09-27 23:57:49">2019/09/27</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/810-SpringBoot-Web/"
+           data-tag="springboot"
+           data-author="" >
+            <span class="post-title" title="810-Spring Boot进阶之Web进阶">810-Spring Boot进阶之Web进阶</span>
+            <span class="post-date" title="2019-06-09 20:59:01">2019/06/09</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/824-docker-java/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="824-第一个docker化的java应用">824-第一个docker化的java应用</span>
+            <span class="post-date" title="2019-06-21 19:32:49">2019/06/21</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/821-SpringData/"
+           data-tag="springdata"
+           data-author="" >
+            <span class="post-title" title="821-轻松愉快之玩转SpringData">821-轻松愉快之玩转SpringData</span>
+            <span class="post-date" title="2019-06-15 23:14:34">2019/06/15</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/867-Docker/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="867-Docker入门">867-Docker入门</span>
+            <span class="post-date" title="2019-06-29 21:48:19">2019/06/29</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/889-ElasticSearch/"
+           data-tag="elasticsearch"
+           data-author="" >
+            <span class="post-title" title="889-ElasticSearch入门">889-ElasticSearch入门</span>
+            <span class="post-date" title="2019-08-13 00:25:32">2019/08/13</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/945-mini-app/"
+           data-tag="springboot"
+           data-author="" >
+            <span class="post-title" title="945-SpringBoot+MyBatis搭建迷你小程序">945-SpringBoot+MyBatis搭建迷你小程序</span>
+            <span class="post-date" title="2019-07-06 23:20:09">2019/07/06</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/951-MyCat/"
+           data-tag="mycat"
+           data-author="" >
+            <span class="post-title" title="951-MyCAT入门及应用">951-MyCAT入门及应用</span>
+            <span class="post-date" title="2019-07-09 21:49:07">2019/07/09</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/993-MySQL-PXC/"
+           data-tag="mysql"
+           data-author="" >
+            <span class="post-title" title="993-MySQL集群（PXC）入门">993-MySQL集群（PXC）入门</span>
+            <span class="post-date" title="2019-07-05 22:21:12">2019/07/05</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/100-catalog/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="100-Java多线程基础知识目录">100-Java多线程基础知识目录</span>
+            <span class="post-date" title="2019-11-11 11:09:10">2019/11/11</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/101-syllabus/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="101-课程大纲及主要内容介绍">101-课程大纲及主要内容介绍</span>
+            <span class="post-date" title="2019-11-11 11:12:08">2019/11/11</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/102-what-is-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="102-简单介绍什么是线程">102-简单介绍什么是线程</span>
+            <span class="post-date" title="2019-11-11 14:39:53">2019/11/11</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/103-create-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="103-创建并启动线程">103-创建并启动线程</span>
+            <span class="post-date" title="2019-11-11 15:13:57">2019/11/11</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/104-thread-lifecycle/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="104-线程生命周期以及start方法源码剖析">104-线程生命周期以及start方法源码剖析</span>
+            <span class="post-date" title="2019-11-11 16:30:09">2019/11/11</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/106-runnable-bank-queue/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="106-用Runnable接口将线程的逻辑执行单元从控制中抽取出来">106-用Runnable接口将线程的逻辑执行单元从控制中抽取出来</span>
+            <span class="post-date" title="2019-11-12 10:08:08">2019/11/12</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/108-construct-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="108-构造Thread对象你也许不知道的几件事">108-构造Thread对象你也许不知道的几件事</span>
+            <span class="post-date" title="2019-11-12 14:58:25">2019/11/12</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/110-thread-stacksize1/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="110-Thread构造函数StackSize详细讲解">110-Thread构造函数StackSize详细讲解</span>
+            <span class="post-date" title="2019-11-12 19:04:06">2019/11/12</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/107-Strategy-in-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="107-策略模式在Thread和Runnable中的应用分析">107-策略模式在Thread和Runnable中的应用分析</span>
+            <span class="post-date" title="2019-11-12 10:51:03">2019/11/12</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/105-thread-bank-queue/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="105-采用多线程方式模拟银行排队叫号">105-采用多线程方式模拟银行排队叫号</span>
+            <span class="post-date" title="2019-11-12 09:12:07">2019/11/12</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/109-thread-with-memory/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="109-多线程与JVM内存结构的关系，虚拟机栈实验">109-多线程与JVM内存结构的关系，虚拟机栈实验</span>
+            <span class="post-date" title="2019-11-12 16:35:42">2019/11/12</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/111-thread-stacksize2/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="111-Thread构造函数StackSize详细讲解-续">111-Thread构造函数StackSize详细讲解-续</span>
+            <span class="post-date" title="2019-11-13 09:55:54">2019/11/13</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/112-daemon/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="112-Daemon线程的创建以及使用场景分析">112-Daemon线程的创建以及使用场景分析</span>
+            <span class="post-date" title="2019-11-13 10:22:21">2019/11/13</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/114-thread-join/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="114-Thread的join方法详细介绍，结合一个典型案例">114-Thread的join方法详细介绍，结合一个典型案例</span>
+            <span class="post-date" title="2019-11-13 14:22:15">2019/11/13</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/113-thread-id-priority/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="113-线程ID，优先级讲解">113-线程ID，优先级讲解</span>
+            <span class="post-date" title="2019-11-13 12:55:03">2019/11/13</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/115-thread-interrupt/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="115-Thread中断Interrupt方法详细讲解">115-Thread中断Interrupt方法详细讲解</span>
+            <span class="post-date" title="2019-11-14 09:12:31">2019/11/14</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/116-graceful-stop-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="116-采用优雅的方式结束线程生命周期">116-采用优雅的方式结束线程生命周期</span>
+            <span class="post-date" title="2019-11-23 21:10:30">2019/11/23</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/117-force-stop-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="117-Thread API综合实战，编写ThreadService实现暴力结束线程的综合实战">117-Thread API综合实战，编写ThreadService实现暴力结束线程的综合实战</span>
+            <span class="post-date" title="2019-11-23 21:59:41">2019/11/23</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/118-sync-base/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="118-数据同步的引入与Synchronized的简单介绍">118-数据同步的引入与Synchronized的简单介绍</span>
+            <span class="post-date" title="2019-11-24 16:35:28">2019/11/24</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/119-synchronized/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="119-结合jconsole,jstack以及汇编指令认识synchronized关键字">119-结合jconsole,jstack以及汇编指令认识synchronized关键字</span>
+            <span class="post-date" title="2019-11-24 17:10:49">2019/11/24</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/120-sync-codeblock-method/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="120-同步代码块以及同步方法之间的区别和关系">120-同步代码块以及同步方法之间的区别和关系</span>
+            <span class="post-date" title="2019-11-24 17:59:20">2019/11/24</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/121-this-lock/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="121-通过实验分析This锁的存在">121-通过实验分析This锁的存在</span>
+            <span class="post-date" title="2019-11-27 21:33:01">2019/11/27</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/122-class-lock/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="122-通过实验分析Class锁的存在">122-通过实验分析Class锁的存在</span>
+            <span class="post-date" title="2019-11-27 22:18:27">2019/11/27</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/123-deadlock-case/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="123-多线程死锁分析，案例介绍">123-多线程死锁分析，案例介绍</span>
+            <span class="post-date" title="2019-11-30 14:37:24">2019/11/30</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/124-wait-notify/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="124-线程间通信快速入门，使用wait和notify进行线程间的数据通信">124-线程间通信快速入门，使用wait和notify进行线程间的数据通信</span>
+            <span class="post-date" title="2019-11-30 15:28:42">2019/11/30</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/125-multi-prod-cons/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="125-多Produce多Consume之间的通讯导致出现程序假死的原因分析">125-多Produce多Consume之间的通讯导致出现程序假死的原因分析</span>
+            <span class="post-date" title="2019-11-30 17:06:59">2019/11/30</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/126-multi-thread-notifyall/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="126-多线程下的生产者消费者模型，以及详细介绍notifyAll方法">126-多线程下的生产者消费者模型，以及详细介绍notifyAll方法</span>
+            <span class="post-date" title="2019-11-30 17:33:41">2019/11/30</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/127-wait-sleep/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="127-wait和sleep的本质区别是什么，深入分析（面试常见问题）">127-wait和sleep的本质区别是什么，深入分析（面试常见问题）</span>
+            <span class="post-date" title="2019-12-01 16:15:27">2019/12/01</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/128-prod-cons-case/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="128-线程生产者消费者的综合实战结合Java8语法">128-线程生产者消费者的综合实战结合Java8语法</span>
+            <span class="post-date" title="2019-12-01 17:09:25">2019/12/01</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/129-custom-lock/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="129-如何实现一个自己的显式锁Lock精讲上">129-如何实现一个自己的显式锁Lock精讲上</span>
+            <span class="post-date" title="2019-12-01 18:19:58">2019/12/01</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/130-custom-lock-timedout/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="130-如何实现一个自己的显式锁Lock精讲下（让锁具备超时功能）">130-如何实现一个自己的显式锁Lock精讲下（让锁具备超时功能）</span>
+            <span class="post-date" title="2019-12-01 22:29:09">2019/12/01</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/131-hook-processor/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="131-如何给你的应用程序注入钩子程序，Linux下演示">131-如何给你的应用程序注入钩子程序，Linux下演示</span>
+            <span class="post-date" title="2019-12-07 18:40:12">2019/12/07</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/133-thread-group-api1/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="133-ThreadGroup API介绍之一">133-ThreadGroup API介绍之一</span>
+            <span class="post-date" title="2019-12-07 23:28:30">2019/12/07</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/132-catch-thread-exception/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="132-如何捕获线程运行期间的异常">132-如何捕获线程运行期间的异常</span>
+            <span class="post-date" title="2019-12-07 20:04:16">2019/12/07</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/135-thread-pool-theory/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="135-线程池原理与自定义线程池">135-线程池原理与自定义线程池</span>
+            <span class="post-date" title="2019-12-09 22:05:18">2019/12/09</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/134-thread-group-api2/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="134-ThreadGroup API介绍之二">134-ThreadGroup API介绍之二</span>
+            <span class="post-date" title="2019-12-08 11:20:45">2019/12/08</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/136-costum-thread-pool/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="136-自定义个简单的线程池并且测试">136-自定义个简单的线程池并且测试</span>
+            <span class="post-date" title="2019-12-09 23:36:27">2019/12/09</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/137-thread-pool-discard/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="137-给线程池增加拒绝策略以及停止方法">137-给线程池增加拒绝策略以及停止方法</span>
+            <span class="post-date" title="2019-12-10 23:16:53">2019/12/10</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/138-thread-pool-expan/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="138-给线程池增加自动扩充线程数量，以及闲时自动回收的功能">138-给线程池增加自动扩充线程数量，以及闲时自动回收的功能</span>
+            <span class="post-date" title="2019-12-11 00:26:01">2019/12/11</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/139-summary/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="139-课程结束，内容回顾，下季内容预告">139-课程结束，内容回顾，下季内容预告</span>
+            <span class="post-date" title="2019-12-14 00:50:52">2019/12/14</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/01-introduce/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第01章-课程介绍">第01章-课程介绍</span>
+            <span class="post-date" title="2019-12-09 19:58:21">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/02-renren-fast/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第02章-人人开源前后端分离项目下载与配置">第02章-人人开源前后端分离项目下载与配置</span>
+            <span class="post-date" title="2019-12-09 20:27:41">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/05-redis-cluster/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第05章-搭建Redis集群">第05章-搭建Redis集群</span>
+            <span class="post-date" title="2019-12-09 20:30:57">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/07-homework/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第07章-课后作业">第07章-课后作业</span>
+            <span class="post-date" title="2019-12-09 20:35:50">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/00-script/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="课程脚本">课程脚本</span>
+            <span class="post-date" title="2019-12-09 20:40:23">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/04-mysql-cluster/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第04章-搭建MySQL集群">第04章-搭建MySQL集群</span>
+            <span class="post-date" title="2019-12-09 20:29:18">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/06-front-back-deploy/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第06章-部署前后端分离项目">第06章-部署前后端分离项目</span>
+            <span class="post-date" title="2019-12-09 20:34:26">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/09-summary/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第09章-课程总结">第09章-课程总结</span>
+            <span class="post-date" title="2019-12-09 20:38:40">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/08-cloud-deploy/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第08章-云平台部署前后端分离">第08章-云平台部署前后端分离</span>
+            <span class="post-date" title="2019-12-09 20:37:44">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/03-linux-base/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第03章-Linux基础知识强化">第03章-Linux基础知识强化</span>
+            <span class="post-date" title="2019-12-09 20:28:15">2019/12/09</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-imooc/867-Docker" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">867-Docker入门</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="慕课网">慕课网</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color2">docker</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-11-05 16:42:45'>2019-06-29 21:48</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3.4k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第1章-课程简介"><span class="toc-text">第1章 课程简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-课程介绍"><span class="toc-text">1-1 课程介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Docker介绍"><span class="toc-text">1-2 Docker介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-docker-mac安装"><span class="toc-text">1-3 docker mac安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-docker-linux安装"><span class="toc-text">1-4 docker linux安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-docker-windows安装"><span class="toc-text">1-5 docker windows安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第2章-实践第一步"><span class="toc-text">第2章 实践第一步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-docker架构介绍与实战"><span class="toc-text">2-1 docker架构介绍与实战</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第3章-Dockerfile介绍"><span class="toc-text">第3章 Dockerfile介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-dockerfile介绍"><span class="toc-text">3-1 dockerfile介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-dockerfile实战"><span class="toc-text">3-2 dockerfile实战</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-镜像分层"><span class="toc-text">3-3 镜像分层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第4章-存储"><span class="toc-text">第4章 存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-volume介绍"><span class="toc-text">4-1 volume介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-volume操作"><span class="toc-text">4-2 volume操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第5章-镜像仓库"><span class="toc-text">第5章 镜像仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-registry介绍"><span class="toc-text">5-1 registry介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-registry实战"><span class="toc-text">5-2 registry实战</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第6章-多容器app"><span class="toc-text">第6章 多容器app</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-compose介绍"><span class="toc-text">6-1 compose介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-compose-install-linux"><span class="toc-text">6-2 compose-install-linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-compose实战"><span class="toc-text">6-3 compose实战</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-章节回顾"><span class="toc-text">6-4 章节回顾</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第7章-总结"><span class="toc-text">第7章 总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-课程总结"><span class="toc-text">7-1 课程总结</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><a href="https://www.imooc.com/learn/867" target="_blank" rel="noopener">https://www.imooc.com/learn/867</a></p>
+<p>简介：本课程从最基础的安装开始，通过大量的实际操作循序渐进地介绍Docker基本知识。从最基本的镜像、容器开始，学习Dockerfile编写，容器操作，到完成一个多容器的应用。</p>
+</blockquote>
+<p><div class='inner-toc'><h2>目录</h2><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第1章-课程简介"><span class="toc-text">第1章 课程简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-课程介绍"><span class="toc-text">1-1 课程介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Docker介绍"><span class="toc-text">1-2 Docker介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-docker-mac安装"><span class="toc-text">1-3 docker mac安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-docker-linux安装"><span class="toc-text">1-4 docker linux安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-docker-windows安装"><span class="toc-text">1-5 docker windows安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第2章-实践第一步"><span class="toc-text">第2章 实践第一步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-docker架构介绍与实战"><span class="toc-text">2-1 docker架构介绍与实战</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第3章-Dockerfile介绍"><span class="toc-text">第3章 Dockerfile介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-dockerfile介绍"><span class="toc-text">3-1 dockerfile介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-dockerfile实战"><span class="toc-text">3-2 dockerfile实战</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-镜像分层"><span class="toc-text">3-3 镜像分层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第4章-存储"><span class="toc-text">第4章 存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-volume介绍"><span class="toc-text">4-1 volume介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-volume操作"><span class="toc-text">4-2 volume操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第5章-镜像仓库"><span class="toc-text">第5章 镜像仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-registry介绍"><span class="toc-text">5-1 registry介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-registry实战"><span class="toc-text">5-2 registry实战</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第6章-多容器app"><span class="toc-text">第6章 多容器app</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-compose介绍"><span class="toc-text">6-1 compose介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-compose-install-linux"><span class="toc-text">6-2 compose-install-linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-compose实战"><span class="toc-text">6-3 compose实战</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-章节回顾"><span class="toc-text">6-4 章节回顾</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第7章-总结"><span class="toc-text">第7章 总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-课程总结"><span class="toc-text">7-1 课程总结</span></a></li></ol></li></ol></div></p>
+<h2 id="第1章-课程简介"><a href="#第1章-课程简介" class="headerlink" title="第1章 课程简介"></a>第1章 课程简介</h2><blockquote>
+<p>介绍Docker以及安装方式</p>
+</blockquote>
+<h3 id="1-1-课程介绍"><a href="#1-1-课程介绍" class="headerlink" title="1-1 课程介绍"></a>1-1 课程介绍</h3><p>Docker简介：</p>
+<blockquote>
+<p>Docker是容器技术的代表。<br>容器技术本质上是<strong>将程序隔离、打包的一个技术</strong>。</p>
+</blockquote>
+<p>解决问题：</p>
+<blockquote>
+<p><strong>解决软件包安装的问题</strong><br>理顺了开发与运维环境的差异，使开发和运维可以使用同一种语言进行沟通</p>
+</blockquote>
+<p>Docker入门教程</p>
+<blockquote>
+<p>Docker简介：什么是Docker<br>镜像与容器<br>容器存储<br>Registry<br>多容器app</p>
+</blockquote>
+<p>面向用户</p>
+<blockquote>
+<p>对docker感兴趣的。开发、测试、运维</p>
+</blockquote>
+<p>预备知识</p>
+<blockquote>
+<p>linux命令行<br>bash shell脚本</p>
+</blockquote>
+<h3 id="1-2-Docker介绍"><a href="#1-2-Docker介绍" class="headerlink" title="1-2 Docker介绍"></a>1-2 Docker介绍</h3><p>什么是Docker</p>
+<blockquote>
+<p>Docker: an open source project to pack, ship and run any application as a lightweight container.<br>是一个开源的项目，可以使任何应用以轻量级的形式打包、发布和运行</p>
+<p>Node. js: allows to package an application with all of its dependencies into a standardized unit.<br>允许一个应用程序及其所有依赖以一种标准的单位来进行打包</p>
+</blockquote>
+<blockquote>
+<p>Docker 是一个开源的应用容器引擎，开发者可以打包他们的应用以及依赖包到一个可移植的容器中，<br>然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。<br>容器是完全使用沙箱机制，相互之间不会有任何接口。</p>
+</blockquote>
+<p>与现有技术进行类比</p>
+<blockquote>
+<p>可以粗糙地理解为轻量级的虚拟机<br>开挂的chroot（chroot：对应用程序作了文件系统的分离）</p>
+</blockquote>
+<p>Docker与虚拟机：</p>
+<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8gif4j6saj30mq0dbdgu.jpg"  width="450" alt="Docker与虚拟机"/>
+
+<p>注：</p>
+<ul>
+<li>左边为虚拟机，右边为Docker</li>
+<li>Hypervisor层：虚拟出硬件</li>
+<li>Guest OS：硬件上安装完全独立的Guest OS</li>
+<li>Docker Engine：利用Namespace、Control Group将应用程序分离</li>
+<li>Docker没有Hypervisor虚拟层，会轻量很多</li>
+</ul>
+<h3 id="1-3-docker-mac安装"><a href="#1-3-docker-mac安装" class="headerlink" title="1-3 docker mac安装"></a>1-3 docker mac安装</h3><ul>
+<li><p>下载</p>
+<blockquote>
+<p>官网地址：<a href="https://www.docker.com/" target="_blank" rel="noopener">https://www.docker.com/</a><br>下载安装包：<a href="https://www.docker.com/docker-windows" target="_blank" rel="noopener">https://www.docker.com/docker-windows</a></p>
+</blockquote>
+</li>
+<li><p>安装</p>
+<blockquote>
+<p>打开docker<br>open Docker.dmg或双击Docker.dmg<br>将Docker拖到Applications里面</p>
+<p>验证安装：docker info</p>
+</blockquote>
+</li>
+<li><p>配置</p>
+<blockquote>
+<p>镜像加速：</p>
+<p>【Preferences…】=&gt;【Advanced】=&gt;【Registry mirrors】</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="1-4-docker-linux安装"><a href="#1-4-docker-linux安装" class="headerlink" title="1-4 docker linux安装"></a>1-4 docker linux安装</h3><pre><code class="shell">## Ubuntu
+# 安装docker本身
+sudo wget -qO- https://get.docker.com | sh
+# 允许非root用户运行docker
+sudo usermod -aG docker tyk
+# 验证安装
+docker info</code></pre>
+<p>注：</p>
+<ul>
+<li>-q：标识输出要简单</li>
+<li>O-：标识标准输出，而不是输出到文件</li>
+</ul>
+<pre><code class="shell">## CentOS7
+# 系统 CentOS-Extras 库中已带 Docker，可以直接安装：
+sudo yum install docker
+# 安装之后启动Docker服务，并让它随系统启动自动加载。
+sudo service docker start
+sudo chkconfig docker on</code></pre>
+<h3 id="1-5-docker-windows安装"><a href="#1-5-docker-windows安装" class="headerlink" title="1-5 docker windows安装"></a>1-5 docker windows安装</h3><ul>
+<li><p>下载</p>
+<blockquote>
+<p>官网地址：<a href="https://www.docker.com/" target="_blank" rel="noopener">https://www.docker.com/</a><br>下载安装包：<a href="https://www.docker.com/docker-windows" target="_blank" rel="noopener">https://www.docker.com/docker-windows</a></p>
+</blockquote>
+</li>
+<li><p>安装</p>
+<blockquote>
+<p>执行安装包：Docker for Windows Installer.exe</p>
+<p>验证安装：docker info</p>
+</blockquote>
+</li>
+<li><p>配置</p>
+<blockquote>
+<p>镜像加速：</p>
+<p>【settings】=&gt;【Daemon】=&gt;【Registry mirrors】</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="第2章-实践第一步"><a href="#第2章-实践第一步" class="headerlink" title="第2章 实践第一步"></a>第2章 实践第一步</h2><blockquote>
+<p>创建第一个Hello world</p>
+</blockquote>
+<h3 id="2-1-docker架构介绍与实战"><a href="#2-1-docker架构介绍与实战" class="headerlink" title="2-1 docker架构介绍与实战"></a>2-1 docker架构介绍与实战</h3><p>Docker架构：</p>
+<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8gif53qczj30mm0cowfg.jpg"  width="600" alt="Docker架构"/>
+
+<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8gif5kicqj30ha0b63yu.jpg"  width="400" alt="Docker架构"/>
+
+
+
+<p> 使用ubuntu镜像，在里面运行了echo hello docker这个命令，输出就是hello docker</p>
+<pre><code class="shell">docker run ubuntu echo hello docker    </code></pre>
+<p>运行NGINX服务器：</p>
+<pre><code class="shell">docker run nginx</code></pre>
+<p>查看本地镜像：</p>
+<pre><code class="shell">docker images</code></pre>
+<p>运行daocloud.io/nginx镜像：</p>
+<pre><code class="shell">docker run -d -p 8080:80 daocloud.io/nginx</code></pre>
+<p>注：</p>
+<ul>
+<li>-d：使用守护进程启动</li>
+<li>-p：端口映射，将nginx的80端口映射到本地的8080端口</li>
+</ul>
+<p>查看当前正在运行的容器：</p>
+<pre><code class="shell">docker ps</code></pre>
+<p>显示Docker相关信息的页面：</p>
+<pre><code class="shell"># 将文件拷贝到Docker容器。
+# 将index.html文件拷贝到容器ID为17asdasdasa容器内部，路径为//usr/share/nginx/html
+# docker cp 文件 容器ID:容器内部文件路径
+docker cp index.html 17add7bbc58c://usr/share/nginx/html</code></pre>
+<p>停止指定容器：</p>
+<pre><code class="shell">docker stop 容器ID</code></pre>
+<p><a href="https://www.runoob.com/docker/docker-commit-command.html" target="_blank" rel="noopener"><strong>保存容器为镜像</strong></a>：</p>
+<blockquote>
+<p>Docker在容器内的改动都是暂时的，没有被保存</p>
+</blockquote>
+<pre><code class="shell"># 
+# 保存容器为镜像，镜像名为nginx-fun
+docker commit -m &#39;fun&#39; 容器ID nginx-fun</code></pre>
+<p>删除指定镜像：</p>
+<pre><code class="shell">docker rmi 镜像ID</code></pre>
+<p>查看所有容器（正在运行和停止运行）：</p>
+<pre><code class="shell">docker ps -a</code></pre>
+<p>删除指定容器：</p>
+<pre><code class="shell">docker rm 容器ID</code></pre>
+<p>命令小结：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>docker pull</td>
+<td>获取image</td>
+</tr>
+<tr>
+<td>docker build</td>
+<td>创建image</td>
+</tr>
+<tr>
+<td>docker images</td>
+<td>列出image</td>
+</tr>
+<tr>
+<td>docker run</td>
+<td>运行container</td>
+</tr>
+<tr>
+<td>docker ps</td>
+<td>列出正在运行的container</td>
+</tr>
+<tr>
+<td>docker rm</td>
+<td>删除container</td>
+</tr>
+<tr>
+<td>docker rmi</td>
+<td>删除image</td>
+</tr>
+<tr>
+<td>docker cp</td>
+<td>在host和container之间拷贝文件</td>
+</tr>
+<tr>
+<td>docker commit</td>
+<td>保存改动为新的image</td>
+</tr>
+</tbody></table>
+<h2 id="第3章-Dockerfile介绍"><a href="#第3章-Dockerfile介绍" class="headerlink" title="第3章 Dockerfile介绍"></a>第3章 Dockerfile介绍</h2><blockquote>
+<p>编写dockerfile</p>
+</blockquote>
+<h3 id="3-1-dockerfile介绍"><a href="#3-1-dockerfile介绍" class="headerlink" title="3-1 dockerfile介绍"></a>3-1 dockerfile介绍</h3><blockquote>
+<p>通过编写简单的文件自创docker镜像</p>
+</blockquote>
+<p>第一个Dockerfile：</p>
+<pre><code class="dockerfile">FROM alpine:latest
+MAINTAINER tyk 766564616@qq.com
+CMD echo &#39;hello docker&#39;</code></pre>
+<p>注：</p>
+<ul>
+<li>依赖于基础镜像alpine:latest</li>
+<li>标识镜像信息</li>
+<li>需要运行的命令</li>
+</ul>
+<pre><code class="shell">mkdir dockerfile1
+cd dockerfile1
+# 产生一个Dockerfile文件
+touch Dockerfile
+# 编辑Dockerfile文件
+vim Dockerfile
+# 构建docker镜像
+docker build -t hello_docker .
+# 查看已安装Docker镜像
+docker images hello_docker
+# 运行Docker镜像
+docker run hello_docker</code></pre>
+<p>注：</p>
+<ul>
+<li>-t：参数指定镜像名称</li>
+<li>最后面的点（.）表示构建镜像文件的路径</li>
+</ul>
+<h3 id="3-2-dockerfile实战"><a href="#3-2-dockerfile实战" class="headerlink" title="3-2 dockerfile实战"></a>3-2 dockerfile实战</h3><p>第二个Dockerfile：</p>
+<pre><code class="dockerfile"># 依赖于基础镜像ubuntu
+FROM ubuntu
+# 标识镜像信息
+MAINTAINER tyk 766564616@qq.com
+# 运行ubuntu命令，新增一个软件仓库镜像地址
+RUN sed -i &#39;s/archive.ubuntu.com/mirrors.ustc.edu.cn/g&#39; /etc/apt/sources.list
+# 运行ubuntu命令，更新软件
+RUN apt-get update
+# 运行ubuntu命令，安装nginx。-y：默认yes不询问
+RUN apt-get install -y nginx
+# 拷贝本地文件到镜像内部
+COPY index.html /var/www/html
+# 将NGINX在前台启动
+ENTRYPOINT [&quot;/usr/sbin/nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
+# 镜像暴露服务的端口
+EXPOSE 80</code></pre>
+<pre><code class="shell">mkdir dockerfile2
+cd dockerfile2
+touch Dockerfile
+vim Dockerfile
+touch index.html
+vim index.html
+docker build -t 766564616/hello-nginx .
+docker run -d -p 80:80 766564616/hello-nginx
+使用curl进行测试
+curl http://localhost</code></pre>
+<p>Dockerfile语法：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用途</th>
+<th>说明</th>
+<th>是否必填</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FROM</td>
+<td>base_image</td>
+<td>指明基础镜像名称。</td>
+<td>必填</td>
+</tr>
+<tr>
+<td>RUN</td>
+<td>执行命令</td>
+<td>用于执行命令，当RUN执行完毕后，将产生一个新的文件层。</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>ADD</td>
+<td>添加文件</td>
+<td>向镜像添加文件。可以添加远程文件</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>COPY</td>
+<td>拷贝文件</td>
+<td>从主机向镜像复制文件。</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>CMD</td>
+<td>执行命令</td>
+<td>指定此镜像启动时默认执行命令。容器执行入口</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>EXPOSE</td>
+<td>暴露端口</td>
+<td>用于指定需要暴露的网络端口号。</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>WORKDIR</td>
+<td>指定路径</td>
+<td>设定此镜像后续操作的默认工作目录。</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>MAINTAINER</td>
+<td>维护者</td>
+<td>可用于提供作者、版本及气他备注信息。</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>ENV</td>
+<td>设定环境变量</td>
+<td>用于在镜像中添加环境变量。</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>ENTRYPOINT</td>
+<td>容器入口</td>
+<td>在镜像中设定默认执行的二进制程序。容器执行入口</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>USER</td>
+<td>指定用户</td>
+<td>在镜像构建过程中，生成或者切换到另一个用户。</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>VOLUME</td>
+<td>mount point</td>
+<td>向镜像中挂载一个卷组。</td>
+<td>可选</td>
+</tr>
+</tbody></table>
+<h3 id="3-3-镜像分层"><a href="#3-3-镜像分层" class="headerlink" title="3-3 镜像分层"></a>3-3 镜像分层</h3><blockquote>
+<p>Dockerfile中的每一行都产生一个新层</p>
+</blockquote>
+<pre><code class="dockerfile">FROM alpine:latest        4dffsd5454wq
+MAINTAINER tyk766564616   fbdfasdfasfd554
+CMD echo &#39;hello docker&#39;   3df545dfad4a</code></pre>
+<p>每个命令都是单独保存的一层。只有容器层是RW，镜像中的各层都是RO</p>
+<p>分层的好处：假如有很多container或者很多的Image，相同的镜像层会复用共享。一定程度上减小了储存空间的使用，运行起来方便。</p>
+<h2 id="第4章-存储"><a href="#第4章-存储" class="headerlink" title="第4章 存储"></a>第4章 存储</h2><blockquote>
+<p>对volume进行介绍</p>
+</blockquote>
+<h3 id="4-1-volume介绍"><a href="#4-1-volume介绍" class="headerlink" title="4-1 volume介绍"></a>4-1 volume介绍</h3><blockquote>
+<p>提供独立于容器之外的持久化存储</p>
+</blockquote>
+<p>应用场景：</p>
+<blockquote>
+<p>比如数据库，可以将数据存储在容器外的分卷。</p>
+<p>可以提供容器跟容器之间的数据共享。</p>
+</blockquote>
+<h3 id="4-2-volume操作"><a href="#4-2-volume操作" class="headerlink" title="4-2 volume操作"></a>4-2 volume操作</h3><p>第一种形式：</p>
+<blockquote>
+<p>Docker虚拟路径挂载到容器里面的路径</p>
+</blockquote>
+<pre><code class="shell">docker run -v 容器内部地址 镜像名称</code></pre>
+<pre><code class="shell"># 运行nginx容器，通过-v挂载一个卷组
+docker run -d --name nginx -v /usr/share/nginx/html nginx
+# 查看指定容器信息
+# docker inspect 容器名称
+docker inspect nginx
+# 查看Mounts节点下的Sources节点和Destination节点信息
+# 该容器把宿主机的Sources对应目录挂载到容器内部的Destination的目录地址
+
+cd Sources对应的目录路径
+# 修改index.html文件
+echo &quot;it&#39;s 2016&quot; &gt; index.html
+
+# 进入到容器内部
+# docker exec -it 容器名称 /bin/bash
+docker exec -it nginx /bin/bash
+# cd Destination对应的路径路径
+# 查看index.html文件
+cat index.html
+# 打印出刚刚修改后的内容，即挂载成功，映射关系正确</code></pre>
+<p>第二种形式：</p>
+<blockquote>
+<p>本地目录挂载到容器里面的路径</p>
+</blockquote>
+<pre><code class="shell">docker run -v $PWD/code:/var/www/html nginx</code></pre>
+<pre><code class="shell">docker run -d -p 80:80 -v $PWD/html:/usr/share/nginx/html nginx
+# 查看本地文件的内容
+cat html/index.html
+
+# 进入到容器内部
+docker exec -it 容器名称 /bin/bash
+# 发现其内容和本地文件的内容一致，即映射关系正确
+cat /usr/share/nginx/html/index.html</code></pre>
+<p>第三种形式</p>
+<blockquote>
+<p>创建数据卷容器，将其挂载到其他容器</p>
+</blockquote>
+<pre><code class="shell">docker run --volumes-from 卷容器ID</code></pre>
+<p>好处：</p>
+<blockquote>
+<p>可以多个容器挂载一个数据容器，实现数据共享</p>
+</blockquote>
+<pre><code class="shell">mkdir data
+# 产生一个仅有数据的容器
+docker create -v $PWD/data:/var/mydata --name data_container ubuntu
+# 从另外一个容器挂载， 运行并直接进入容器内部
+docker run -it --volumes-from data_container ubuntu /bin/base
+mount
+touch /var/mydatawhatever.txt
+exit
+
+# 查看本地data目录下是否有whatever.txt文件
+ls data</code></pre>
+<h2 id="第5章-镜像仓库"><a href="#第5章-镜像仓库" class="headerlink" title="第5章 镜像仓库"></a>第5章 镜像仓库</h2><blockquote>
+<p>registry介绍与实战</p>
+</blockquote>
+<h3 id="5-1-registry介绍"><a href="#5-1-registry介绍" class="headerlink" title="5-1 registry介绍"></a>5-1 registry介绍</h3><p>Docker相关术语：</p>
+<table>
+<thead>
+<tr>
+<th>English</th>
+<th>中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>host</td>
+<td>宿主机</td>
+</tr>
+<tr>
+<td>image</td>
+<td>镜像</td>
+</tr>
+<tr>
+<td>container</td>
+<td>容器</td>
+</tr>
+<tr>
+<td>registry</td>
+<td>镜像仓库</td>
+</tr>
+<tr>
+<td>daemon</td>
+<td>守护程序</td>
+</tr>
+<tr>
+<td>client</td>
+<td>客户端</td>
+</tr>
+</tbody></table>
+<p>Registry相关命令：</p>
+<pre><code class="shell"># 从镜像仓库中搜索指定镜像
+docker search image_name
+# 从镜像仓库中拉取指定镜像
+docker pull image_name
+# 将本地镜像推送到镜像仓库
+docker push image_name</code></pre>
+<p>国内的一些镜像仓库：</p>
+<blockquote>
+<p>daocloud<br>时速云<br>阿里云</p>
+</blockquote>
+<h3 id="5-2-registry实战"><a href="#5-2-registry实战" class="headerlink" title="5-2 registry实战"></a>5-2 registry实战</h3><pre><code class="shell"># 在镜像仓库中搜索whalesay
+docker search whalesay
+
+# 从镜像仓库中拉取镜像docker/whalesay到本地
+docker pull docker/whalesay
+# 查看本地镜像信息
+docker images
+
+# 运行docker/whalesay镜像，并指定参数
+docker run docker/whalesay cowsay Docker so fun
+
+# 在push之前，需要登录。默认登录到docker hub
+docker login
+
+# 依赖docker/whalesay镜像产生新的766564616/whalesay镜像（类似复制）
+docker tag docker/whalesay 766564616/whalesay
+# 将镜像766564616/whalesay推送到镜像仓库
+docker push 766564616/whalesay
+
+# 到dockerhub官方地址，查看到自己push的镜像
+# https://hub.docker.com/</code></pre>
+<h2 id="第6章-多容器app"><a href="#第6章-多容器app" class="headerlink" title="第6章 多容器app"></a>第6章 多容器app</h2><blockquote>
+<p>介绍多容器app与实例</p>
+</blockquote>
+<h3 id="6-1-compose介绍"><a href="#6-1-compose介绍" class="headerlink" title="6-1 compose介绍"></a>6-1 compose介绍</h3><p>多容器app</p>
+<blockquote>
+<p>编写文本文件，文件描述多容器APP的结构然后通过工具docker-compose把它拉起来</p>
+</blockquote>
+<blockquote>
+<p>docker-compose是独立的软件</p>
+</blockquote>
+<p>docker-compose安装：</p>
+<blockquote>
+<p>Mac/Windows：自带</p>
+<p>Linux：curl <a href="https://github.com/docker/compose" target="_blank" rel="noopener">https://github.com/docker/compose</a></p>
+</blockquote>
+<h3 id="6-2-compose-install-linux"><a href="#6-2-compose-install-linux" class="headerlink" title="6-2 compose-install-linux"></a>6-2 compose-install-linux</h3><p><a href="https://github.com/docker/compose/releases" target="_blank" rel="noopener">https://github.com/docker/compose/releases</a></p>
+<pre><code class="shell"># 下载docker-compose包到/usr/local/bin/docker-compose
+curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/docker-compose
+# 给/usr/local/bin/docker-compose授可执行权限
+chmod +x /usr/local/docker-compose    
+# 验证安装
+docker-compose --version</code></pre>
+<pre><code class="shell">uname -s
+# Linux
+$ uname -m
+# x86_64</code></pre>
+<h3 id="6-3-compose实战"><a href="#6-3-compose实战" class="headerlink" title="6-3 compose实战"></a>6-3 compose实战</h3><p>实战案例介绍</p>
+<blockquote>
+<p>app名称：ghost<br>是一个博客平台程序，安装之后，可自己写文章或别人发布<br>架构：nginx、ghost app、mysql<br>分别分为三个容器</p>
+</blockquote>
+<p>docker-compose.yml文件</p>
+<pre><code class="yaml">ghost-app: 
+  build: ghost
+  depends_on: 
+    - db
+  ports: 
+    - &quot;2368:2368&quot;
+nginx: 
+  build: nginx
+  ports: 
+    - &quot;80:80&quot;
+  depends_on: 
+    - ghost-app
+db: 
+  images: &quot;mysql:5.7.15&quot;</code></pre>
+<p>实战操作：</p>
+<pre><code class="shell"># ghost根路径
+mkdir ghost
+cd ghost
+# 存放Dockerfile和配置文件用来构建镜像
+mkdir ghost
+mkdir nginx
+# 存放博客的数据
+mkdir data</code></pre>
+<ol>
+<li><p>ghost镜像构建</p>
+<pre><code class="shell"># /ghost
+# ghost镜像构建
+cd ghost
+touch Dockerfile
+vim Dockerfile
+...
+touch config.js
+vim config.js
+...</code></pre>
+<pre><code class="dockerfile">### Dockerfile ###
+# 依赖ghost官方镜像
+FROM ghost
+# 拷贝本地配置文件到镜像中
+COPY ./config.js /var/lib/ghost/config.js
+# 声明暴露服务的端口
+EXPOSE 2368
+# 执行启动命令。ghost为node.js程序，所以使用npm命令
+CMD [&quot;npm&quot;,&quot;start&quot;,&quot;--production&quot;]</code></pre>
+<pre><code class="javascript">&lt;!-- config.js --&gt;
+var path = require(&#39;path&#39;),
+config;
+config = {
+    production: {
+        url:&#39;http://mytestblog.com&#39;,
+        mail: {},
+        database: {
+            client: &#39;mysql&#39;,
+            connection: {
+                host: &#39;db&#39;,
+                user: &#39;ghost&#39;,
+                password: &#39;ghost&#39;,
+                database: &#39;ghost&#39;,
+                port: &#39;3306&#39;,
+                charset: &#39;utf8&#39;
+            },
+            debug: false
+        },
+        paths: {
+            contentPath: path.join(process.env.GHOST_CONTENT,&#39;/&#39;)
+        },
+        server: {
+            host: &#39;0.0.0.0&#39;,
+            port: &#39;2368&#39;
+        }
+    }
+};
+module.exports = config;</code></pre>
+</li>
+<li><p>NGINX镜像构建</p>
+<pre><code class="shell"># /ghost
+cd nginx
+touch Dockerfile
+vim Dockerfile
+...
+touch nginx.conf
+vim nginx.conf
+...</code></pre>
+<pre><code class="dockerfile">### Dockerfile ###
+# 依赖nginx官方镜像
+FROM nginx
+# 拷贝本地配置文件到镜像中
+COPY nginx.conf /etc/nginx/nginx.conf
+# 声明暴露服务的端口
+EXPOSE 80</code></pre>
+<pre><code class="nginx">### nginx.conf ###
+worker_processes 4;
+events {worker_connections 1024;}
+http {
+    server {
+        listen 80;
+        location / {
+            proxy_pass http://ghost-app:2368;
+        }
+    }
+}</code></pre>
+</li>
+<li><p>准备compose文件，用于描述整个系统的架构</p>
+<pre><code class="shell"># /ghost
+touch docker-compose.yml
+vim docker-compose.yml</code></pre>
+<pre><code class="yaml">### docker-compose.yml ###
+version: &#39;2&#39;
+networks: 
+    ghost: 
+services: 
+    ghost-app: 
+        build: ghost
+        networks: 
+            - ghost
+        depends_on: 
+            - db
+        ports: 
+            - &quot;2368:2368&quot;
+
+    nginx: 
+        build: nginx
+        networks: 
+            - ghost
+        depends_on: 
+            - ghost-app
+        ports: 
+            - &quot;80:80&quot;
+
+    db: 
+        image: &quot;mysql:5.7.15&quot;
+        networks: 
+            - ghost
+        environment: 
+            MYSQL_ROOT_PASSWORD: 123456
+            MYSQL_USER: ghost
+            MYSQL_PASSWORD: ghost
+        volumes: 
+            - $PWD/data:/var/lib/mysql
+        ports: 
+            - &quot;3306:3306&quot;</code></pre>
+</li>
+<li><p>拉起系统</p>
+<pre><code class="shell"># /ghost
+# 启动
+docker-compose up -d
+# 关闭
+docker-compose stop
+# 删除
+docker-compose rm
+# 构建
+docker-compose build</code></pre>
+</li>
+<li><p>访问<a href="http://localhost、http://localhost/ghost" target="_blank" rel="noopener">http://localhost、http://localhost/ghost</a></p>
+</li>
+</ol>
+<h3 id="6-4-章节回顾"><a href="#6-4-章节回顾" class="headerlink" title="6-4 章节回顾"></a>6-4 章节回顾</h3><p>docker-compose.yml常用命令：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>build</td>
+<td>本地创建镜像</td>
+</tr>
+<tr>
+<td>command</td>
+<td>覆盖缺省命令</td>
+</tr>
+<tr>
+<td>depends_on</td>
+<td>连接容器，服务依赖</td>
+</tr>
+<tr>
+<td>ports</td>
+<td>暴露端口</td>
+</tr>
+<tr>
+<td>volumes</td>
+<td>挂载卷组</td>
+</tr>
+<tr>
+<td>image</td>
+<td>拉取镜像</td>
+</tr>
+</tbody></table>
+<p>docker-compose命令：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>up</td>
+<td>启动服务</td>
+</tr>
+<tr>
+<td>stop</td>
+<td>停止服务</td>
+</tr>
+<tr>
+<td>rm</td>
+<td>删除服务中的各个容器</td>
+</tr>
+<tr>
+<td>logs</td>
+<td>观察各个容器中的日志</td>
+</tr>
+<tr>
+<td>ps</td>
+<td>列出服务相关的容器</td>
+</tr>
+</tbody></table>
+<h2 id="第7章-总结"><a href="#第7章-总结" class="headerlink" title="第7章 总结"></a>第7章 总结</h2><blockquote>
+<p>课程总结</p>
+</blockquote>
+<h3 id="7-1-课程总结"><a href="#7-1-课程总结" class="headerlink" title="7-1 课程总结"></a>7-1 课程总结</h3><blockquote>
+<p>Docker介绍：容器、镜像<br>如何制作镜像<br>如何分享镜像<br>如何持久化容器数据<br>如何编排一个多容器的应用</p>
+</blockquote>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tuyrk@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>867-Docker入门</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">3.5k</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="神秘的小岛岛">神秘的小岛岛</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-06-29, 21:48:19</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-05, 16:42:45</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/imooc/867-Docker/" title="867-Docker入门">https://www.tuyrk.cn/imooc/867-Docker/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '9f82f3d33fe6303f2632',
+            clientSecret: '64316477206edcf4f37118b5e0f003e91445ce2a',
+            repo: 'tuyrk.github.io',
+            owner: 'tuyrk',
+            admin: ['tuyrk'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019 神秘的小岛岛</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+备案号：蜀ICP备18020272号-1
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpeg" class="alipay" title="扫码支持">
+            <img src="/img/wxpay.jpeg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#工具','#hexo','#vpn','#代码规范','#git','#github','#gitee','#编码','#kafka','#vim','#多线程','#node','#性能测试','#LoadRunner','#JMeter','#springboot','#docker','#springdata','#elasticsearch','#mycat','#mysql',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
