@@ -1,0 +1,2262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>415-观察者模式 | 神秘的小岛岛</title>
+  <meta name="keywords" content=" 设计模式 ">
+  <meta name="description" content="415-观察者模式 | 神秘的小岛岛">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="E8GsQvoy2O">
+<meta property="og:type" content="website">
+<meta property="og:title" content="神秘的小岛岛">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.tuyrk.cn&#x2F;baidu_verify_E8GsQvoy2O.html">
+<meta property="og:site_name" content="神秘的小岛岛">
+<meta property="og:description" content="E8GsQvoy2O">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-06T02:29:00.537Z">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpeg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpeg" />
+</a>
+<div class="author">
+    <span>神秘的小岛岛</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+        <a title="github" href="https://github.com/tuyrk" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="weibo" href="https://weibo.com/u/5669532599" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/25d3e037d782" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/tu-yuan-kun/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="csdn" href="https://me.csdn.net/tyk766564616" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-csdn"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:tuyrk@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=766564616&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=437322403" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(117)</small></div></li>
+    
+        
+            
+            <li><div data-rel="工具"><i class="fold iconfont icon-right"></i>工具<small>(6)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="hexo">hexo<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="git">git<small>(3)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="java"><i class="fold iconfont icon-right"></i>java<small>(25)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="p3c">p3c<small>(23)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="慕课网"><i class="fold iconfont icon-right"></i>慕课网<small>(45)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="219-Docker环境下的前后端分离项目部署与运维">219-Docker环境下的前后端分离项目部署与运维<small>(10)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="SQL">SQL<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="汪文君"><i class="fold iconfont icon-right"></i>汪文君<small>(40)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="多线程第一季">多线程第一季<small>(40)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="117">
+<input type="hidden" id="yelog_site_word_count" value="177.6k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">github</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">vpn</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">代码规范</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">gitee</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">编码</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">kafka</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">设计模式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">vim</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">多线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">node</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">性能测试</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">LoadRunner</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">JMeter</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">springboot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">springdata</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">elasticsearch</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">SQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mycat</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mysql</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a  class="工具 hexo "
+           href="/3-hexo-shortcuts/"
+           data-tag="工具,hexo"
+           data-author="" >
+            <span class="post-title" title="3-hexo快捷键说明">3-hexo快捷键说明</span>
+            <span class="post-date" title="2019-10-29 10:22:08">2019/10/29</span>
+        </a>
+        
+        <a  class="工具 git "
+           href="/changing-author-info/"
+           data-tag="git,github"
+           data-author="" >
+            <span class="post-title" title="更改作者信息">更改作者信息</span>
+            <span class="post-date" title="2019-12-18 23:16:10">2019/12/18</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/MacOS-OpenVPN/"
+           data-tag="vpn"
+           data-author="" >
+            <span class="post-title" title="Mac OS配置OpenVPN之Tunnelblick">Mac OS配置OpenVPN之Tunnelblick</span>
+            <span class="post-date" title="2019-10-10 11:23:59">2019/10/10</span>
+        </a>
+        
+        <a  class="java "
+           href="/code-rules-object-model/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="Java中DO、BO、DTO、VO、AO、PO">Java中DO、BO、DTO、VO、AO、PO</span>
+            <span class="post-date" title="2019-12-02 21:36:33">2019/12/02</span>
+        </a>
+        
+        <a  class="工具 git "
+           href="/git-manage-github-gitee/"
+           data-tag="git,github,gitee"
+           data-author="" >
+            <span class="post-title" title="git 同时管理Github和Gitee">git 同时管理Github和Gitee</span>
+            <span class="post-date" title="2019-10-29 13:12:16">2019/10/29</span>
+        </a>
+        
+        <a  class="工具 hexo "
+           href="/hexo-gitpages-invalid/"
+           data-tag="工具,hexo"
+           data-author="" >
+            <span class="post-title" title="hexo重新发布后GitPages自定义域名失效">hexo重新发布后GitPages自定义域名失效</span>
+            <span class="post-date" title="2019-10-29 13:37:25">2019/10/29</span>
+        </a>
+        
+        <a  class="工具 git "
+           href="/macOS-update-git/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="xcrun:error:invalid active developer path">xcrun:error:invalid active developer path</span>
+            <span class="post-date" title="2019-11-28 23:13:09">2019/11/28</span>
+        </a>
+        
+        <a  class="java "
+           href="/utf8bom-to-utf8/"
+           data-tag="编码"
+           data-author="" >
+            <span class="post-title" title="UTF-8带BOM转UTF-8无BOM格式编码">UTF-8带BOM转UTF-8无BOM格式编码</span>
+            <span class="post-date" title="2019-12-04 11:49:40">2019/12/04</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/15-collection/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="1.5-集合处理">1.5-集合处理</span>
+            <span class="post-date" title="2019-12-14 20:10:32">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/12-const-define/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="1.2-常量定义">1.2-常量定义</span>
+            <span class="post-date" title="2019-12-14 20:09:13">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/11-naming-style/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="1.1-命名风格">1.1-命名风格</span>
+            <span class="post-date" title="2019-12-14 20:08:35">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/13-code-format/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="1.3-代码格式">1.3-代码格式</span>
+            <span class="post-date" title="2019-12-14 20:09:49">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/14-oop-statute/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="1.4-OOP规约">1.4-OOP规约</span>
+            <span class="post-date" title="2019-12-14 20:10:09">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/16-concurrent/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="1.6-并发处理">1.6-并发处理</span>
+            <span class="post-date" title="2019-12-14 20:11:14">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/18-annotation-statute/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="1.8-注释规约">1.8-注释规约</span>
+            <span class="post-date" title="2019-12-14 20:12:03">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/17-control-statement/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="1.7-控制语句">1.7-控制语句</span>
+            <span class="post-date" title="2019-12-14 20:11:42">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/19-other/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="1.9-其他">1.9-其他</span>
+            <span class="post-date" title="2019-12-14 20:12:27">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/21-exception/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="2.1-异常日志">2.1-异常日志</span>
+            <span class="post-date" title="2019-12-14 20:12:58">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/41-security-statute/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="4.1-安全规约">4.1-安全规约</span>
+            <span class="post-date" title="2019-12-14 20:14:35">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/31-unit-test/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="3.1-单元测试">3.1-单元测试</span>
+            <span class="post-date" title="2019-12-14 20:14:08">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/22-log-statute/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="2.2-日志规约">2.2-日志规约</span>
+            <span class="post-date" title="2019-12-14 20:13:39">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/51-create-table-statute/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="5.1-建表规约">5.1-建表规约</span>
+            <span class="post-date" title="2019-12-14 20:14:56">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/52-dbi-statute/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="5.2-索引规约">5.2-索引规约</span>
+            <span class="post-date" title="2019-12-14 20:15:14">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/53-sql/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="5.3-SQL语句">5.3-SQL语句</span>
+            <span class="post-date" title="2019-12-14 20:15:14">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/54-orm/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="5.4-ORM映射">5.4-ORM映射</span>
+            <span class="post-date" title="2019-12-14 20:16:29">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/61-app-layer/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="6.1-工程结构">6.1-工程结构</span>
+            <span class="post-date" title="2019-12-14 20:16:59">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/62-lib-depend/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="6.2-二方库依赖">6.2-二方库依赖</span>
+            <span class="post-date" title="2019-12-14 20:17:09">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/71-history-version/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="7.1-版本历史">7.1-版本历史</span>
+            <span class="post-date" title="2019-12-14 20:18:10">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/72-proper-noun/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="7.2-本手册专有名词">7.2-本手册专有名词</span>
+            <span class="post-date" title="2019-12-14 20:18:31">2019/12/14</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/63-server/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="6.3-服务器">6.3-服务器</span>
+            <span class="post-date" title="2019-12-14 20:17:41">2019/12/14</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/1043-Kafka/"
+           data-tag="kafka"
+           data-author="" >
+            <span class="post-title" title="1043-Kafka流处理平台">1043-Kafka流处理平台</span>
+            <span class="post-date" title="2019-11-18 22:34:45">2019/11/18</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/112-singleton-mode/"
+           data-tag="设计模式"
+           data-author="" >
+            <span class="post-title" title="112-模式的秘密---单例模式">112-模式的秘密---单例模式</span>
+            <span class="post-date" title="2019-12-14 12:24:49">2019/12/14</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/1049-vim/"
+           data-tag="vim"
+           data-author="" >
+            <span class="post-title" title="1049-优雅玩转Vim">1049-优雅玩转Vim</span>
+            <span class="post-date" title="2019-11-04 22:34:45">2019/11/04</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/1052-Git/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="1052-Git入门">1052-Git入门</span>
+            <span class="post-date" title="2019-11-01 14:46:32">2019/11/01</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/1180-decorator-mode/"
+           data-tag="设计模式"
+           data-author="" >
+            <span class="post-title" title="1180-装饰者模式">1180-装饰者模式</span>
+            <span class="post-date" title="2020-01-01 15:53:25">2020/01/01</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/1086-synchronized/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="1086-Java高并发之魂：synchronized深度解析">1086-Java高并发之魂：synchronized深度解析</span>
+            <span class="post-date" title="2019-03-20 22:15:42">2019/03/20</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/145-template-mode/"
+           data-tag="设计模式"
+           data-author="" >
+            <span class="post-title" title="145-模式的秘密---模板方法模式">145-模式的秘密---模板方法模式</span>
+            <span class="post-date" title="2019-12-29 22:04:13">2019/12/29</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/146-adapter-mode/"
+           data-tag="设计模式"
+           data-author="" >
+            <span class="post-title" title="146-模式的秘密---适配器模式">146-模式的秘密---适配器模式</span>
+            <span class="post-date" title="2019-12-20 08:56:13">2019/12/20</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/165-strategy-mode/"
+           data-tag="设计模式"
+           data-author="" >
+            <span class="post-title" title="165-模式的秘密---策略模式">165-模式的秘密---策略模式</span>
+            <span class="post-date" title="2019-12-28 12:55:19">2019/12/28</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/1193-node-base/"
+           data-tag="node"
+           data-author="" >
+            <span class="post-title" title="1193-前端面试加分福音--node基础">1193-前端面试加分福音--node基础</span>
+            <span class="post-date" title="2019-11-16 21:34:53">2019/11/16</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/18-java-mode/"
+           data-tag="设计模式"
+           data-author="" >
+            <span class="post-title" title="18-模式宗师养成宝典之Java版">18-模式宗师养成宝典之Java版</span>
+            <span class="post-date" title="2020-01-05 14:16:53">2020/01/05</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/214-proxy-mode/"
+           data-tag="设计模式"
+           data-author="" >
+            <span class="post-title" title="214-模式的秘密---代理模式">214-模式的秘密---代理模式</span>
+            <span class="post-date" title="2019-12-15 19:39:05">2019/12/15</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/1129-vim/"
+           data-tag="vim"
+           data-author="" >
+            <span class="post-title" title="1129-玩转Vim 从放弃到爱不释手">1129-玩转Vim 从放弃到爱不释手</span>
+            <span class="post-date" title="2019-11-05 15:52:21">2019/11/05</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/202-multi-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="202-深入浅出Java多线程">202-深入浅出Java多线程</span>
+            <span class="post-date" title="2018-12-29 21:38:49">2018/12/29</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/1186-thread-base/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="1186-Java并发编程的“基石”——多线程概念初识">1186-Java并发编程的“基石”——多线程概念初识</span>
+            <span class="post-date" title="2019-11-09 19:14:46">2019/11/09</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/208-Git/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="208-版本管理工具介绍—Git篇">208-版本管理工具介绍—Git篇</span>
+            <span class="post-date" title="2019-11-01 14:20:34">2019/11/01</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/257-responsibility-mode/"
+           data-tag="设计模式"
+           data-author="" >
+            <span class="post-title" title="257-模式的秘密---责任链模式">257-模式的秘密---责任链模式</span>
+            <span class="post-date" title="2019-12-26 00:11:32">2019/12/26</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/261-factory-mode/"
+           data-tag="设计模式"
+           data-author="" >
+            <span class="post-title" title="261-模式的秘密---工厂模式">261-模式的秘密---工厂模式</span>
+            <span class="post-date" title="2019-12-15 11:57:46">2019/12/15</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/328-2Hours-SpringBoot/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="2小时Spring Boot红包程序 尽显极客浪漫Style">2小时Spring Boot红包程序 尽显极客浪漫Style</span>
+            <span class="post-date" title="2019-12-09 20:46:54">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/415-observer-mode/"
+           data-tag="设计模式"
+           data-author="" >
+            <span class="post-title" title="415-观察者模式">415-观察者模式</span>
+            <span class="post-date" title="2019-12-20 21:23:55">2019/12/20</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/312-thread-runnable/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="312-细说多线程之Thread VS Runnable">312-细说多线程之Thread VS Runnable</span>
+            <span class="post-date" title="2018-12-30 10:25:38">2018/12/30</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/352-volatile/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="352-细说Java多线程之内存可见性">352-细说Java多线程之内存可见性</span>
+            <span class="post-date" title="2019-01-05 17:00:16">2019/01/05</span>
+        </a>
+        
+        <a  class="java p3c "
+           href="/alibaba-p3c/alibaba-p3c-exam/"
+           data-tag="代码规范"
+           data-author="" >
+            <span class="post-title" title="阿里巴巴代码规范考试试题">阿里巴巴代码规范考试试题</span>
+            <span class="post-date" title="2019-12-02 21:36:33">2019/12/02</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/390-Github/"
+           data-tag="git,github"
+           data-author="" >
+            <span class="post-title" title="390-版本控制入门 – 搬进 Github">390-版本控制入门 – 搬进 Github</span>
+            <span class="post-date" title="2019-11-01 14:45:49">2019/11/01</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/714-LoadRunner/"
+           data-tag="性能测试,LoadRunner"
+           data-author="" >
+            <span class="post-title" title="714-性能测试之LoadRunner">714-性能测试之LoadRunner</span>
+            <span class="post-date" title="2019-09-29 22:39:54">2019/09/29</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/735-JMeter/"
+           data-tag="性能测试,JMeter"
+           data-author="" >
+            <span class="post-title" title="735-JMeter性能测试入门篇">735-JMeter性能测试入门篇</span>
+            <span class="post-date" title="2019-09-28 23:42:43">2019/09/28</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/791-JMeterHTTP/"
+           data-tag="性能测试,JMeter"
+           data-author="" >
+            <span class="post-title" title="719-JMeter之HTTP协议接口性能测试">719-JMeter之HTTP协议接口性能测试</span>
+            <span class="post-date" title="2019-09-27 23:57:49">2019/09/27</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/810-SpringBoot-Web/"
+           data-tag="springboot"
+           data-author="" >
+            <span class="post-title" title="810-Spring Boot进阶之Web进阶">810-Spring Boot进阶之Web进阶</span>
+            <span class="post-date" title="2019-06-09 20:59:01">2019/06/09</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/767-2Hours-SringBoot/"
+           data-tag="springboot"
+           data-author="" >
+            <span class="post-title" title="767-2小时学会Spring Boot">767-2小时学会Spring Boot</span>
+            <span class="post-date" title="2019-06-05 23:54:25">2019/06/05</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/821-SpringData/"
+           data-tag="springdata"
+           data-author="" >
+            <span class="post-title" title="821-轻松愉快之玩转SpringData">821-轻松愉快之玩转SpringData</span>
+            <span class="post-date" title="2019-06-15 23:14:34">2019/06/15</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/824-docker-java/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="824-第一个docker化的java应用">824-第一个docker化的java应用</span>
+            <span class="post-date" title="2019-06-21 19:32:49">2019/06/21</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/867-Docker/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="867-Docker入门">867-Docker入门</span>
+            <span class="post-date" title="2019-06-29 21:48:19">2019/06/29</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/889-ElasticSearch/"
+           data-tag="elasticsearch"
+           data-author="" >
+            <span class="post-title" title="889-ElasticSearch入门">889-ElasticSearch入门</span>
+            <span class="post-date" title="2019-08-13 00:25:32">2019/08/13</span>
+        </a>
+        
+        <a  class="SQL "
+           href="/sql/paging-query-sql/"
+           data-tag="SQL"
+           data-author="" >
+            <span class="post-title" title="ORACLE分页查询SQL语句">ORACLE分页查询SQL语句</span>
+            <span class="post-date" title="2019-12-25 09:11:45">2019/12/25</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/945-mini-app/"
+           data-tag="springboot"
+           data-author="" >
+            <span class="post-title" title="945-SpringBoot+MyBatis搭建迷你小程序">945-SpringBoot+MyBatis搭建迷你小程序</span>
+            <span class="post-date" title="2019-07-06 23:20:09">2019/07/06</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/951-MyCat/"
+           data-tag="mycat"
+           data-author="" >
+            <span class="post-title" title="951-MyCAT入门及应用">951-MyCAT入门及应用</span>
+            <span class="post-date" title="2019-07-09 21:49:07">2019/07/09</span>
+        </a>
+        
+        <a  class="慕课网 "
+           href="/imooc/993-MySQL-PXC/"
+           data-tag="mysql"
+           data-author="" >
+            <span class="post-title" title="993-MySQL集群（PXC）入门">993-MySQL集群（PXC）入门</span>
+            <span class="post-date" title="2019-07-05 22:21:12">2019/07/05</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/102-what-is-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="102-简单介绍什么是线程">102-简单介绍什么是线程</span>
+            <span class="post-date" title="2019-11-11 14:39:53">2019/11/11</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/101-syllabus/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="101-课程大纲及主要内容介绍">101-课程大纲及主要内容介绍</span>
+            <span class="post-date" title="2019-11-11 11:12:08">2019/11/11</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/100-catalog/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="100-Java多线程基础知识目录">100-Java多线程基础知识目录</span>
+            <span class="post-date" title="2019-11-11 11:09:10">2019/11/11</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/108-construct-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="108-构造Thread对象你也许不知道的几件事">108-构造Thread对象你也许不知道的几件事</span>
+            <span class="post-date" title="2019-11-12 14:58:25">2019/11/12</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/104-thread-lifecycle/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="104-线程生命周期以及start方法源码剖析">104-线程生命周期以及start方法源码剖析</span>
+            <span class="post-date" title="2019-11-11 16:30:09">2019/11/11</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/105-thread-bank-queue/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="105-采用多线程方式模拟银行排队叫号">105-采用多线程方式模拟银行排队叫号</span>
+            <span class="post-date" title="2019-11-12 09:12:07">2019/11/12</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/110-thread-stacksize1/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="110-Thread构造函数StackSize详细讲解">110-Thread构造函数StackSize详细讲解</span>
+            <span class="post-date" title="2019-11-12 19:04:06">2019/11/12</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/103-create-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="103-创建并启动线程">103-创建并启动线程</span>
+            <span class="post-date" title="2019-11-11 15:13:57">2019/11/11</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/109-thread-with-memory/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="109-多线程与JVM内存结构的关系，虚拟机栈实验">109-多线程与JVM内存结构的关系，虚拟机栈实验</span>
+            <span class="post-date" title="2019-11-12 16:35:42">2019/11/12</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/111-thread-stacksize2/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="111-Thread构造函数StackSize详细讲解-续">111-Thread构造函数StackSize详细讲解-续</span>
+            <span class="post-date" title="2019-11-13 09:55:54">2019/11/13</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/106-runnable-bank-queue/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="106-用Runnable接口将线程的逻辑执行单元从控制中抽取出来">106-用Runnable接口将线程的逻辑执行单元从控制中抽取出来</span>
+            <span class="post-date" title="2019-11-12 10:08:08">2019/11/12</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/107-Strategy-in-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="107-*策略模式在Thread和Runnable中的应用分析">107-*策略模式在Thread和Runnable中的应用分析</span>
+            <span class="post-date" title="2019-11-12 10:51:03">2019/11/12</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/114-thread-join/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="114-Thread的join方法详细介绍，结合一个典型案例">114-Thread的join方法详细介绍，结合一个典型案例</span>
+            <span class="post-date" title="2019-11-13 14:22:15">2019/11/13</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/112-daemon/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="112-Daemon线程的创建以及使用场景分析">112-Daemon线程的创建以及使用场景分析</span>
+            <span class="post-date" title="2019-11-13 10:22:21">2019/11/13</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/113-thread-id-priority/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="113-线程ID，优先级讲解">113-线程ID，优先级讲解</span>
+            <span class="post-date" title="2019-11-13 12:55:03">2019/11/13</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/116-graceful-stop-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="116-采用优雅的方式结束线程生命周期">116-采用优雅的方式结束线程生命周期</span>
+            <span class="post-date" title="2019-11-23 21:10:30">2019/11/23</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/115-thread-interrupt/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="115-Thread中断Interrupt方法详细讲解">115-Thread中断Interrupt方法详细讲解</span>
+            <span class="post-date" title="2019-11-14 09:12:31">2019/11/14</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/118-sync-base/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="118-数据同步的引入与Synchronized的简单介绍">118-数据同步的引入与Synchronized的简单介绍</span>
+            <span class="post-date" title="2019-11-24 16:35:28">2019/11/24</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/119-synchronized/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="119-结合jconsole,jstack以及汇编指令认识synchronized关键字">119-结合jconsole,jstack以及汇编指令认识synchronized关键字</span>
+            <span class="post-date" title="2019-11-24 17:10:49">2019/11/24</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/117-force-stop-thread/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="117-Thread API综合实战，编写ThreadService实现暴力结束线程的综合实战">117-Thread API综合实战，编写ThreadService实现暴力结束线程的综合实战</span>
+            <span class="post-date" title="2019-11-23 21:59:41">2019/11/23</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/121-this-lock/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="121-通过实验分析This锁的存在">121-通过实验分析This锁的存在</span>
+            <span class="post-date" title="2019-11-27 21:33:01">2019/11/27</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/122-class-lock/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="122-通过实验分析Class锁的存在">122-通过实验分析Class锁的存在</span>
+            <span class="post-date" title="2019-11-27 22:18:27">2019/11/27</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/125-multi-prod-cons/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="125-多Produce多Consume之间的通讯导致出现程序假死的原因分析">125-多Produce多Consume之间的通讯导致出现程序假死的原因分析</span>
+            <span class="post-date" title="2019-11-30 17:06:59">2019/11/30</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/123-deadlock-case/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="123-多线程死锁分析，案例介绍">123-多线程死锁分析，案例介绍</span>
+            <span class="post-date" title="2019-11-30 14:37:24">2019/11/30</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/124-wait-notify/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="124-线程间通信快速入门，使用wait和notify进行线程间的数据通信">124-线程间通信快速入门，使用wait和notify进行线程间的数据通信</span>
+            <span class="post-date" title="2019-11-30 15:28:42">2019/11/30</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/120-sync-codeblock-method/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="120-同步代码块以及同步方法之间的区别和关系">120-同步代码块以及同步方法之间的区别和关系</span>
+            <span class="post-date" title="2019-11-24 17:59:20">2019/11/24</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/126-multi-thread-notifyall/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="126-多线程下的生产者消费者模型，以及详细介绍notifyAll方法">126-多线程下的生产者消费者模型，以及详细介绍notifyAll方法</span>
+            <span class="post-date" title="2019-11-30 17:33:41">2019/11/30</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/127-wait-sleep/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="127-wait和sleep的本质区别是什么，深入分析（面试常见问题）">127-wait和sleep的本质区别是什么，深入分析（面试常见问题）</span>
+            <span class="post-date" title="2019-12-01 16:15:27">2019/12/01</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/130-custom-lock-timedout/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="130-如何实现一个自己的显式锁Lock精讲下（让锁具备超时功能）">130-如何实现一个自己的显式锁Lock精讲下（让锁具备超时功能）</span>
+            <span class="post-date" title="2019-12-01 22:29:09">2019/12/01</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/129-custom-lock/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="129-如何实现一个自己的显式锁Lock精讲上">129-如何实现一个自己的显式锁Lock精讲上</span>
+            <span class="post-date" title="2019-12-01 18:19:58">2019/12/01</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/128-prod-cons-case/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="128-线程生产者消费者的综合实战结合Java8语法">128-线程生产者消费者的综合实战结合Java8语法</span>
+            <span class="post-date" title="2019-12-01 17:09:25">2019/12/01</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/132-catch-thread-exception/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="132-如何捕获线程运行期间的异常">132-如何捕获线程运行期间的异常</span>
+            <span class="post-date" title="2019-12-07 20:04:16">2019/12/07</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/135-thread-pool-theory/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="135-线程池原理与自定义线程池">135-线程池原理与自定义线程池</span>
+            <span class="post-date" title="2019-12-09 22:05:18">2019/12/09</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/131-hook-processor/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="131-如何给你的应用程序注入钩子程序，Linux下演示">131-如何给你的应用程序注入钩子程序，Linux下演示</span>
+            <span class="post-date" title="2019-12-07 18:40:12">2019/12/07</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/133-thread-group-api1/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="133-ThreadGroup API介绍之一">133-ThreadGroup API介绍之一</span>
+            <span class="post-date" title="2019-12-07 23:28:30">2019/12/07</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/134-thread-group-api2/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="134-ThreadGroup API介绍之二">134-ThreadGroup API介绍之二</span>
+            <span class="post-date" title="2019-12-08 11:20:45">2019/12/08</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/136-costum-thread-pool/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="136-自定义个简单的线程池并且测试">136-自定义个简单的线程池并且测试</span>
+            <span class="post-date" title="2019-12-09 23:36:27">2019/12/09</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/138-thread-pool-expan/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="138-给线程池增加自动扩充线程数量，以及闲时自动回收的功能">138-给线程池增加自动扩充线程数量，以及闲时自动回收的功能</span>
+            <span class="post-date" title="2019-12-11 00:26:01">2019/12/11</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/137-thread-pool-discard/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="137-给线程池增加拒绝策略以及停止方法">137-给线程池增加拒绝策略以及停止方法</span>
+            <span class="post-date" title="2019-12-10 23:16:53">2019/12/10</span>
+        </a>
+        
+        <a  class="汪文君 多线程第一季 "
+           href="/wang-thread/139-summary/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="139-课程结束，内容回顾，下季内容预告">139-课程结束，内容回顾，下季内容预告</span>
+            <span class="post-date" title="2019-12-14 00:50:52">2019/12/14</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/02-renren-fast/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第02章-人人开源前后端分离项目下载与配置">第02章-人人开源前后端分离项目下载与配置</span>
+            <span class="post-date" title="2019-12-09 20:27:41">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/03-linux-base/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第03章-Linux基础知识强化">第03章-Linux基础知识强化</span>
+            <span class="post-date" title="2019-12-09 20:28:15">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/01-introduce/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第01章-课程介绍">第01章-课程介绍</span>
+            <span class="post-date" title="2019-12-09 19:58:21">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/05-redis-cluster/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第05章-搭建Redis集群">第05章-搭建Redis集群</span>
+            <span class="post-date" title="2019-12-09 20:30:57">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/00-script/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="课程脚本">课程脚本</span>
+            <span class="post-date" title="2019-12-09 20:40:23">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/07-homework/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第07章-课后作业">第07章-课后作业</span>
+            <span class="post-date" title="2019-12-09 20:35:50">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/08-cloud-deploy/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第08章-云平台部署前后端分离">第08章-云平台部署前后端分离</span>
+            <span class="post-date" title="2019-12-09 20:37:44">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/09-summary/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第09章-课程总结">第09章-课程总结</span>
+            <span class="post-date" title="2019-12-09 20:38:40">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/06-front-back-deploy/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第06章-部署前后端分离项目">第06章-部署前后端分离项目</span>
+            <span class="post-date" title="2019-12-09 20:34:26">2019/12/09</span>
+        </a>
+        
+        <a  class="慕课网 219-Docker环境下的前后端分离项目部署与运维 "
+           href="/imooc/219-docker/04-mysql-cluster/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="第04章-搭建MySQL集群">第04章-搭建MySQL集群</span>
+            <span class="post-date" title="2019-12-09 20:29:18">2019/12/09</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-imooc/415-observer-mode" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">415-观察者模式</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="慕课网">慕课网</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color5">设计模式</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-12-26 00:02:05'>2019-12-20 21:23</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3.7k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第1章-概述"><span class="toc-text">第1章 概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-课程简介-07-29"><span class="toc-text">1-1 课程简介 (07:29)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第2章-观察者模式实战"><span class="toc-text">第2章 观察者模式实战</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-观察者模式的结构和说明-02-00"><span class="toc-text">2-1 观察者模式的结构和说明 (02:00)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-学习观察者模式通用代码-14-25"><span class="toc-text">2-2 学习观察者模式通用代码 (14:25)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-改造通用代码解决场景问题-18-14"><span class="toc-text">2-3 改造通用代码解决场景问题 (18:14)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第3章-观察者模式详解"><span class="toc-text">第3章 观察者模式详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-认识观察者模式-06-32"><span class="toc-text">3-1 认识观察者模式 (06:32)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-实现的两种方式：推模型和拉模型-07-50"><span class="toc-text">3-2 实现的两种方式：推模型和拉模型 (07:50)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-利用Java提供的观察者实现-16-56"><span class="toc-text">3-3 利用Java提供的观察者实现 (16:56)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-观察者优缺点-03-46"><span class="toc-text">3-4 观察者优缺点 (03:46)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-何时使用观察者模式-03-33"><span class="toc-text">3-5 何时使用观察者模式 (03:33)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第4章-观察者模式衍生"><span class="toc-text">第4章 观察者模式衍生</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-区别对待观察者场景问题-03-41"><span class="toc-text">4-1 区别对待观察者场景问题 (03:41)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-代码示例解决场景问题-07-52"><span class="toc-text">4-2 代码示例解决场景问题 (07:52)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-观察者接口-01-38"><span class="toc-text">4-3 观察者接口 (01:38)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-目标实现类-07-24"><span class="toc-text">4-4 目标实现类 (07:24)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-观察者接口类的实现-05-01"><span class="toc-text">4-5 观察者接口类的实现 (05:01)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-测试-06-24"><span class="toc-text">4-6 测试 (06:24)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第5章-课程总结"><span class="toc-text">第5章 课程总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-课程总结-02-16"><span class="toc-text">5-1 课程总结 (02:16)</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><a href="http://www.imooc.com/learn/415" target="_blank" rel="noopener">http://www.imooc.com/learn/415</a></p>
+<p>简介：本课程通过一个天气预报的发布和订阅案例，来讲解观察者模式在Java项目中的应用。主要包括观察者模式的结构，观察者模式的两种实现方式推模型和拉模型，以及何时使用观察者模式等内容。</p>
+</blockquote>
+<p><div class='inner-toc'><h2>目录</h2><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第1章-概述"><span class="toc-text">第1章 概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-课程简介-07-29"><span class="toc-text">1-1 课程简介 (07:29)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第2章-观察者模式实战"><span class="toc-text">第2章 观察者模式实战</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-观察者模式的结构和说明-02-00"><span class="toc-text">2-1 观察者模式的结构和说明 (02:00)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-学习观察者模式通用代码-14-25"><span class="toc-text">2-2 学习观察者模式通用代码 (14:25)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-改造通用代码解决场景问题-18-14"><span class="toc-text">2-3 改造通用代码解决场景问题 (18:14)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第3章-观察者模式详解"><span class="toc-text">第3章 观察者模式详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-认识观察者模式-06-32"><span class="toc-text">3-1 认识观察者模式 (06:32)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-实现的两种方式：推模型和拉模型-07-50"><span class="toc-text">3-2 实现的两种方式：推模型和拉模型 (07:50)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-利用Java提供的观察者实现-16-56"><span class="toc-text">3-3 利用Java提供的观察者实现 (16:56)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-观察者优缺点-03-46"><span class="toc-text">3-4 观察者优缺点 (03:46)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-何时使用观察者模式-03-33"><span class="toc-text">3-5 何时使用观察者模式 (03:33)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第4章-观察者模式衍生"><span class="toc-text">第4章 观察者模式衍生</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-区别对待观察者场景问题-03-41"><span class="toc-text">4-1 区别对待观察者场景问题 (03:41)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-代码示例解决场景问题-07-52"><span class="toc-text">4-2 代码示例解决场景问题 (07:52)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-观察者接口-01-38"><span class="toc-text">4-3 观察者接口 (01:38)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-目标实现类-07-24"><span class="toc-text">4-4 目标实现类 (07:24)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-观察者接口类的实现-05-01"><span class="toc-text">4-5 观察者接口类的实现 (05:01)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-测试-06-24"><span class="toc-text">4-6 测试 (06:24)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第5章-课程总结"><span class="toc-text">第5章 课程总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-课程总结-02-16"><span class="toc-text">5-1 课程总结 (02:16)</span></a></li></ol></li></ol></div></p>
+<h2 id="第1章-概述"><a href="#第1章-概述" class="headerlink" title="第1章 概述"></a>第1章 概述</h2><blockquote>
+<p>本章首先介绍了课程的学习内容和观察者的概念，然后介绍了一个应用观察者模式的场景，该场景将作为案例贯穿整个课程。</p>
+</blockquote>
+<h3 id="1-1-课程简介-07-29"><a href="#1-1-课程简介-07-29" class="headerlink" title="1-1 课程简介 (07:29)"></a>1-1 课程简介 (07:29)</h3><p>观察者模式的定义</p>
+<blockquote>
+<p>定义对象间的一种一对多的依赖关系。当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。</p>
+</blockquote>
+<p>案例流程图</p>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga5usfsg9uj30xq0h8k0e.jpg" alt="观察者模式流程图" style="zoom:35%;" />
+
+<h2 id="第2章-观察者模式实战"><a href="#第2章-观察者模式实战" class="headerlink" title="第2章 观察者模式实战"></a>第2章 观察者模式实战</h2><blockquote>
+<p>本章介绍观察者模式的结构，以及如何用通用代码实现第一章给出的场景问题。</p>
+</blockquote>
+<h3 id="2-1-观察者模式的结构和说明-02-00"><a href="#2-1-观察者模式的结构和说明-02-00" class="headerlink" title="2-1 观察者模式的结构和说明 (02:00)"></a>2-1 观察者模式的结构和说明 (02:00)</h3><p>观察者模式结构</p>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga5uyn7ge2j312w09qgrf.jpg" alt="观察者模式结构" style="zoom:35%;" />
+
+<p>观察者模式类图</p>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga5uzsfjttj30pc0fwjyz.jpg" alt="观察者模式类图" style="zoom:40%;" />
+
+<p>ConcreteSubject是Subject接口的实现类<br>ConcreteObserver是Observer接口的实现类</p>
+<h3 id="2-2-学习观察者模式通用代码-14-25"><a href="#2-2-学习观察者模式通用代码-14-25" class="headerlink" title="2-2 学习观察者模式通用代码 (14:25)"></a>2-2 学习观察者模式通用代码 (14:25)</h3><p>实现步骤</p>
+<blockquote>
+<ol>
+<li>目标对象的定义</li>
+<li>具体的目标对象的定义</li>
+<li>观察者的接口定义</li>
+<li>观察者的具体实现</li>
+</ol>
+</blockquote>
+<p>代码编写：</p>
+<ol>
+<li><p>目标类，目标对象Subject.java</p>
+<blockquote>
+<p>它知道观察它的观察者，并提供注册（添加）和删除观察者的接口</p>
+</blockquote>
+<pre><code class="java">public class Subject {
+    // 用来保存注册的观察者对象
+    private List&lt;Observer&gt; observers = new ArrayList&lt;&gt;();
+
+    // 增加观察者
+    public void attach(Observer observer) {
+        observers.add(observer);
+    }
+    // 删除集合中指定的观察者
+    public void detach(Observer observer) {
+        observers.remove(observer);
+    }
+
+    // 通知所有注册的观察者对象
+    protected void notifyObserver() {
+        observers.forEach(observer -&gt; observer.update(this));
+    }
+}</code></pre>
+</li>
+<li><p>观察者接口Observer.java</p>
+<blockquote>
+<p>定义一个更新的接口给那些在目标对象发生改变的时候被通知的对象</p>
+</blockquote>
+<pre><code class="java">public interface Observer {
+    /**
+     * 更新的接口
+     *
+     * @param subject 传入的目标对象，方便获取相应的目标对象的状态
+     */
+    void update(Subject subject);
+}</code></pre>
+</li>
+<li><p>具体的目标对象ConcreteSubject.java</p>
+<blockquote>
+<p>负责把有关状态存入到相应的观察者对象中</p>
+</blockquote>
+<pre><code class="java">@Getter
+public class ConcreteSubject extends Subject {
+    // 目标对象的状态
+    private String subjectState;
+
+    public void setSubjectState(String subjectState) {
+        this.subjectState = subjectState;
+        // 当状态发生改变时，通知观察者
+        this.notifyObserver();
+    }
+}</code></pre>
+</li>
+<li><p>具体的观察者对象ConcreteObserver.java</p>
+<blockquote>
+<p>实现更新的方法，使自身的状态和目标的状态保持一致</p>
+</blockquote>
+<pre><code class="java">@Getter
+public class ConcreteObserver implements Observer {
+    // 观察者的状态
+    private String observerState;
+
+    /**
+     * 获取目标类的状态，同步到观察者的状态中
+     *
+     * @param subject 传入的目标对象，方便获取相应的目标对象的状态
+     */
+    @Override
+    public void update(Subject subject) {
+        observerState = ((ConcreteSubject) subject).getSubjectState();
+    }
+}</code></pre>
+</li>
+</ol>
+<h3 id="2-3-改造通用代码解决场景问题-18-14"><a href="#2-3-改造通用代码解决场景问题-18-14" class="headerlink" title="2-3 改造通用代码解决场景问题 (18:14)"></a>2-3 改造通用代码解决场景问题 (18:14)</h3><blockquote>
+<p>订阅天气</p>
+</blockquote>
+<p>代码编写：</p>
+<ol>
+<li><p>管理订阅者列表WeatherSubject.java</p>
+<pre><code class="java">public class WeatherSubject {
+    // 订阅者列表
+    private List&lt;Observer&gt; observers = new ArrayList&lt;&gt;();
+
+    // 把订阅天气的人增加到订阅者列表中
+    public void attach(Observer observer) {
+        observers.add(observer);
+    }
+    // 删除集合中的指定订阅天气的人
+    public void detach(Observer observer) {
+        observers.remove(observer);
+    }
+
+    // 通知所有已经订阅天气的人
+    protected void notifyObserver() {
+        observers.forEach(observer -&gt; observer.update(this));
+    }
+}</code></pre>
+</li>
+<li><p>观察者接口Observer.java</p>
+<blockquote>
+<p>定义一个更新的接口，给那些在目标对象发生改变的时候被通知的对象</p>
+</blockquote>
+<pre><code class="java">public interface Observer {
+    /**
+     * 更新的接口
+     *
+     * @param subject 传入的目标对象，方便获取相应的目标对象的状态
+     */
+    void update(WeatherSubject subject);
+}</code></pre>
+</li>
+<li><p>具体的目标对象ConcreteWeatherSubject.java</p>
+<blockquote>
+<p>负责把有关状态存入到相应的观察者对象中</p>
+</blockquote>
+<pre><code class="java">@Getter
+public class ConcreteWeatherSubject extends WeatherSubject {
+    // 获取天气的内容信息
+    private String weatherContent;
+
+    public void setWeatherContent(String weatherContent) {
+        this.weatherContent = weatherContent;
+        // 内容有了，说明天气更新了，通知所有订阅的人
+        this.notifyObserver();
+    }
+}</code></pre>
+</li>
+<li><p>具体的观察者对象ConcreteObserver.java</p>
+<blockquote>
+<p>实现更新的方法，使自身的状态和目标的状态保持一致</p>
+</blockquote>
+<pre><code class="java">@Data
+public class ConcreteObserver implements Observer {
+    // 观察者的名称，是谁收到了这个信息
+    private String observerName;
+    // 天气的内容信息，这个消息从目标处获取
+    private String weatherContent;
+    // 提醒的内容，不同的观察者提醒不同的内容
+    private String remindThing;
+
+    /**
+     * 获取目标类的状态，同步到观察者的对象中
+     *
+     * @param subject 传入的目标对象，方便获取相应的目标对象的状态
+     */
+    @Override
+    public void update(WeatherSubject subject) {
+        this.weatherContent = ((ConcreteWeatherSubject) subject).getWeatherContent();
+        System.out.println(observerName + &quot;收到了天气信息：&quot; + weatherContent + &quot;，准备去做：&quot; + remindThing);
+    }
+}</code></pre>
+</li>
+<li><p>订阅天气-测试类Client.java</p>
+<pre><code class="java">public class Client {
+    public static void main(String[] args) {
+        // 1. 创建目标
+        ConcreteWeatherSubject weather = new ConcreteWeatherSubject();
+        // 2. 创建观察者
+        ConcreteObserver girlObserver = new ConcreteObserver();
+        girlObserver.setObserverName(&quot;女朋友&quot;);
+        girlObserver.setRemindThing(&quot;约会&quot;);
+
+        ConcreteObserver mumObserver = new ConcreteObserver();
+        mumObserver.setObserverName(&quot;老妈&quot;);
+        mumObserver.setRemindThing(&quot;超市打折&quot;);
+        // 3. 注册观察者
+        weather.attach(girlObserver);
+        weather.attach(mumObserver);
+        // 4. 目标发布天气
+        weather.setWeatherContent(&quot;明天天气晴朗&quot;);
+    }
+}</code></pre>
+</li>
+</ol>
+<h2 id="第3章-观察者模式详解"><a href="#第3章-观察者模式详解" class="headerlink" title="第3章 观察者模式详解"></a>第3章 观察者模式详解</h2><blockquote>
+<p>本章主要介绍观察者模式实现的两种方式推模型和拉模型，利用Java提供的观察者实现第一章的场景问题，观察者模式的优缺点，以及何时使用观察者模式。</p>
+</blockquote>
+<h3 id="3-1-认识观察者模式-06-32"><a href="#3-1-认识观察者模式-06-32" class="headerlink" title="3-1 认识观察者模式 (06:32)"></a>3-1 认识观察者模式 (06:32)</h3><p>目标与观察者之间的关系</p>
+<blockquote>
+<p>一对多的关系<br>一对一的关系（如果观察者只有一个）<br>多对一的关系：如果目标有多个，即一个观察者订阅多个目标，此时不应该只使用一个update方法，应该一个目标对应一个update方法。</p>
+</blockquote>
+<p>单向依赖</p>
+<blockquote>
+<p>在观察者模式中，观察者和目标是单向依赖，只有观察者依赖目标，而不是目标依赖观察者。<br>主动权掌握在目标手中，只有目标知道什么时候需要通知观察者。</p>
+</blockquote>
+<p>命名建议</p>
+<blockquote>
+<p>观察者模式又被称为发布订阅模式<br>目标接口的定义，建议在名称后面跟Subject<br>观察者接口的定义，建议在名称后面跟Observer<br>观察者接口的更新方法，建议名称为update</p>
+</blockquote>
+<p>触发通知的时机</p>
+<blockquote>
+<p>一般情况下，是在完成了状态维护后触发。<br>因为通知会传递数据，不能先通知，后改数据，这会导致观察者和目标对象状态不一致。</p>
+</blockquote>
+<p>观察者模式的调用顺序示意图</p>
+<ul>
+<li><p>准备阶段</p>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga5x8a3zbcj30q00fcaeb.jpg" alt="观察者模式的调用顺序示意图-准备阶段" style="zoom:40%;" />
+</li>
+<li><p>运行阶段</p>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga5x9yj30xj30t80f0gpl.jpg" alt="观察者模式的调用顺序示意图-运行阶段" style="zoom:40%;" />
+
+</li>
+</ul>
+<p>通知的顺序</p>
+<blockquote>
+<p>从理论上来说，当目标对象的状态发生改变时，通知所有观察者的时候，顺序是不确定的。<br>因此，观察者实现的功能，绝对不能依赖于通知的顺序<br>也就是说，多个观察者之间的顺序是平行的，相互不应该有先后依赖的关系。</p>
+</blockquote>
+<h3 id="3-2-实现的两种方式：推模型和拉模型-07-50"><a href="#3-2-实现的两种方式：推模型和拉模型-07-50" class="headerlink" title="3-2 实现的两种方式：推模型和拉模型 (07:50)"></a>3-2 实现的两种方式：推模型和拉模型 (07:50)</h3><p>推模型</p>
+<blockquote>
+<p>目标对象主动向观察者推送目标的详细信息<br>推送的信息通常是目标对象的全部或部分数据<br>相当于在广播通讯</p>
+</blockquote>
+<p>拉模型（第二章的实现属于拉模型）</p>
+<blockquote>
+<p>目标对象在通知观察者的时候，只传递少量信息<br>如果观察者需要更具体的信息，由观察者主动到目标对象中获取<br>相当于是观察者从目标对象中拉数据<br>一般这种模型的实现中，会把目标对象自身通过update方法传递给观察者</p>
+</blockquote>
+<p>两种模型的区别</p>
+<blockquote>
+<p>推模型是假定目标对象知道观察者需要的数据<br>推模型会使观察者对象难以复用。update方法是按需定制的，可能没有兼顾未考虑到的情况。</p>
+<p>拉模型是目标对象不知道观察者具体需要什么数据，因此把自身传递给观察者，由观察者来取值<br>拉模型下，update方法的参数是目标对象本身，基本上可以适应各种情况的需要</p>
+</blockquote>
+<h3 id="3-3-利用Java提供的观察者实现-16-56"><a href="#3-3-利用Java提供的观察者实现-16-56" class="headerlink" title="3-3 利用Java提供的观察者实现 (16:56)"></a>3-3 利用Java提供的观察者实现 (16:56)</h3><p>Java实现与自己实现的对比</p>
+<blockquote>
+<ol>
+<li>不需要再定义观察者和目标的接口，JDK已定义</li>
+<li>具体的目标实现里面不需要再维护观察者的注册信息，JDK在Observable类里面已实现</li>
+<li>触发通知的方式有一点变化，要先调用setChanged方法，这是为了实现更精确的触发控制</li>
+<li>具体观察者的实现里面，update方法能<strong>同时支持</strong>推模型和拉模型</li>
+</ol>
+</blockquote>
+<p>代码编写</p>
+<blockquote>
+<p>使用JDK实现观察者模式</p>
+</blockquote>
+<ol>
+<li><p>天气目标具体实现类ConcreteWeatherSubject.java</p>
+<pre><code class="java">@Getter
+public class ConcreteWeatherSubject extends Observable {
+    // 天气情况的内容
+    private String content;
+
+    public void setContent(String content) {
+        this.content = content;
+        // 天气情况有了，就要通知所有的观察者
+        // 在Java中使用Observer模式时，需要先调用setChanged方法
+        this.setChanged();
+
+        // 调用通知方法-推模型
+        this.notifyObservers(content);
+        // 调用通知方法-拉模型
+        /*this.notifyObservers();*/
+    }
+}</code></pre>
+</li>
+<li><p>具体的观察者对象ConcreteObserver.java</p>
+<pre><code class="java">@Data
+public class ConcreteObserver implements Observer {
+    // 观察者的名称，是谁收到了这个信息
+    private String observerName;
+
+    @Override
+    public void update(Observable o, Object arg) {
+        // 推模型
+        System.out.println(observerName + &quot;收到了消息，目标对象推送过来的是：&quot; + arg);
+        // 拉模型
+        ConcreteWeatherSubject weatherSubject = (ConcreteWeatherSubject) o;
+        System.out.println(observerName + &quot;收到了消息，主动到目标对象中去拉：&quot; + weatherSubject.getContent());
+    }
+}</code></pre>
+</li>
+<li><p>订阅天气-测试类Client.java</p>
+<pre><code class="java">public class Client {
+    public static void main(String[] args) {
+        // 1. 创建目标
+        ConcreteWeatherSubject weather = new ConcreteWeatherSubject();
+        // 2. 创建观察者
+        ConcreteObserver girlObserver = new ConcreteObserver();
+        girlObserver.setObserverName(&quot;女朋友&quot;);
+
+        ConcreteObserver mumObserver = new ConcreteObserver();
+        mumObserver.setObserverName(&quot;老妈&quot;);
+        // 3. 注册观察者
+        weather.addObserver(girlObserver);
+        weather.addObserver(mumObserver);
+        // 4. 目标发布天气
+        weather.setContent(&quot;明天天气晴朗&quot;);
+    }
+}</code></pre>
+</li>
+</ol>
+<h3 id="3-4-观察者优缺点-03-46"><a href="#3-4-观察者优缺点-03-46" class="headerlink" title="3-4 观察者优缺点 (03:46)"></a>3-4 观察者优缺点 (03:46)</h3><p>优点</p>
+<blockquote>
+<p>观察者模式实现了观察者和目标之间的抽象耦合</p>
+<p>观察者模式实现了动态联动（所谓联动是指做一个操作会引起其他相关的操作）</p>
+<p>观察者模式支持广播通信</p>
+</blockquote>
+<p>缺点</p>
+<blockquote>
+<p>可能会引起无谓的操作</p>
+</blockquote>
+<h3 id="3-5-何时使用观察者模式-03-33"><a href="#3-5-何时使用观察者模式-03-33" class="headerlink" title="3-5 何时使用观察者模式 (03:33)"></a>3-5 何时使用观察者模式 (03:33)</h3><p>观察者模式的本质：<strong>触发联动</strong></p>
+<p>建议在以下情况中选用观察者模式</p>
+<blockquote>
+<ol>
+<li>当一个抽象模型有两个方面，其中一个方面的操作依赖于另一个方面的状态变化</li>
+<li>如果在更改一个对象的时候，需要同时连带改变其他的对象，而且不知道究竟应该有多少对象需要被连带改变</li>
+<li>当一个对象必须通知其他对象，但是又希望这个对象和被它通知的对象是松散耦合的</li>
+</ol>
+</blockquote>
+<h2 id="第4章-观察者模式衍生"><a href="#第4章-观察者模式衍生" class="headerlink" title="第4章 观察者模式衍生"></a>第4章 观察者模式衍生</h2><blockquote>
+<p>本章主要介绍如何区别对待观察者场景问题以及代码实现。</p>
+</blockquote>
+<h3 id="4-1-区别对待观察者场景问题-03-41"><a href="#4-1-区别对待观察者场景问题-03-41" class="headerlink" title="4-1 区别对待观察者场景问题 (03:41)"></a>4-1 区别对待观察者场景问题 (03:41)</h3><p>需求总结</p>
+<blockquote>
+<p>区别对待观察者<br>根据需要，不同的天气情况来通知不同的观察者</p>
+<p>女朋友只想接收「下雨」的天气预报<br>老妈想要接收「下雨」或「下雪」的天气预报</p>
+</blockquote>
+<p>解决思路</p>
+<blockquote>
+<p>当天气更新时，在目标天气中进行判断，如果不符合观察者的条件，则不进行通知</p>
+</blockquote>
+<p>实现步骤</p>
+<blockquote>
+<ol>
+<li>定义目标的抽象类和观察者的接口</li>
+<li>实现目标的类和观察者接口</li>
+<li>编写测试类进行测试</li>
+</ol>
+</blockquote>
+<h3 id="4-2-代码示例解决场景问题-07-52"><a href="#4-2-代码示例解决场景问题-07-52" class="headerlink" title="4-2 代码示例解决场景问题 (07:52)"></a>4-2 代码示例解决场景问题 (07:52)</h3><ol>
+<li><p>天气目标抽象类AbstractWeatherSubject.java</p>
+<pre><code class="java">public abstract class AbstractWeatherSubject {
+    // 用来保存注册的观察者对象
+    protected List&lt;Observer&gt; observers = new ArrayList&lt;&gt;();
+
+    // 增加观察者添加到订阅列表中
+    public void attach(Observer observer) {
+        observers.add(observer);
+    }
+    // 删除集合中指定的观察者
+    public void detach(Observer observer) {
+        observers.remove(observer);
+    }
+
+    // 区别通知观察者-由子类实现
+    protected abstract void notifyObservers();
+}</code></pre>
+</li>
+</ol>
+<h3 id="4-3-观察者接口-01-38"><a href="#4-3-观察者接口-01-38" class="headerlink" title="4-3 观察者接口 (01:38)"></a>4-3 观察者接口 (01:38)</h3><ol start="2">
+<li><p>观察者接口</p>
+<blockquote>
+<p>定义一个更新的接口方法，给那些在目标对象发生改变的时候被通知的观察者对象调用</p>
+</blockquote>
+<pre><code class="java">public interface Observer {
+    /**
+     * 更新的接口
+     *
+     * @param weatherSubject 传入的目标对象，方便获取相应的目标对象的状态
+     */
+    void update(AbstractWeatherSubject weatherSubject);
+
+    // 获取观察者名称
+    String getObserverName();
+    // 设置观察者名称
+    void setObserverName(String observerName);
+}</code></pre>
+</li>
+</ol>
+<h3 id="4-4-目标实现类-07-24"><a href="#4-4-目标实现类-07-24" class="headerlink" title="4-4 目标实现类 (07:24)"></a>4-4 目标实现类 (07:24)</h3><ol start="3">
+<li><p>天气目标的实现类ConcreteWeatherSubject.java</p>
+<pre><code class="java">@Getter
+public class ConcreteWeatherSubject extends AbstractWeatherSubject {
+    // 目标对象的状态
+    // 天气情况：晴天、下雨、下雪
+    private String weatherContent;
+    public void setWeatherContent(String weatherContent) {
+        this.weatherContent = weatherContent;
+        this.notifyObservers();
+    }
+
+    @Override
+    protected void notifyObservers() {
+        // 遍历所有注册的观察者
+        this.observers.forEach(observer -&gt; {
+            /*
+            规则是：
+                1. 「女朋友」需要「下雨」的条件通知，其他条件不通知
+                2. 「老妈」需要「下雨」或「下雪」的条件通知，其他条件不通知
+             */
+
+            // 1. 如果天气是晴天
+            // do nothing...
+
+            // 2. 如果天气是下雨
+            if (Objects.equals(&quot;下雨&quot;, this.getWeatherContent())) {
+                if (Objects.equals(&quot;女朋友&quot;, observer.getObserverName())) {
+                    observer.update(this);
+                }
+                if (Objects.equals(&quot;老妈&quot;, observer.getObserverName())) {
+                    observer.update(this);
+                }
+            }
+
+            // 3. 如果天气是下雪
+            if (Objects.equals(&quot;下雪&quot;, this.getWeatherContent())) {
+                if (Objects.equals(&quot;老妈&quot;, observer.getObserverName())) {
+                    observer.update(this);
+                }
+            }
+        });
+    }
+}</code></pre>
+</li>
+</ol>
+<h3 id="4-5-观察者接口类的实现-05-01"><a href="#4-5-观察者接口类的实现-05-01" class="headerlink" title="4-5 观察者接口类的实现 (05:01)"></a>4-5 观察者接口类的实现 (05:01)</h3><ol start="4">
+<li><p>观察者的实现类ConcreteObserver.java</p>
+<pre><code class="java">@Data
+public class ConcreteObserver implements Observer {
+    // 观察者的名称，是谁收到了这个消息
+    private String observerName;
+    // 天气的内容信息，这个消息从目标处获取
+    private String weatherContent;
+    // 提醒的内容，不同的观察者提醒不同的内容
+    private String remindThing;
+
+    /**
+     * 获取目标类的状态，同步到观察者的状态中
+     *
+     * @param weatherSubject 传入的目标对象，方便获取相应的目标对象的状态
+     */
+    @Override
+    public void update(AbstractWeatherSubject weatherSubject) {
+        this.weatherContent = ((ConcreteWeatherSubject) weatherSubject).getWeatherContent();
+        System.out.println(observerName + &quot;收到了天气信息&quot; + weatherContent + &quot;，准备去做&quot; + remindThing);
+    }
+}</code></pre>
+</li>
+</ol>
+<h3 id="4-6-测试-06-24"><a href="#4-6-测试-06-24" class="headerlink" title="4-6 测试 (06:24)"></a>4-6 测试 (06:24)</h3><ol start="5">
+<li><p>区别对待观察者-测试类Client.java</p>
+<pre><code class="java">public class Client {
+    @Test
+    public void test1() {
+        // 1. 创建目标
+        ConcreteWeatherSubject weatherSubject = new ConcreteWeatherSubject();
+        // 2. 创建观察者
+        ConcreteObserver girlObserver = new ConcreteObserver();
+        girlObserver.setObserverName(&quot;女朋友&quot;);
+        girlObserver.setRemindThing(&quot;宅在家里&quot;);
+        ConcreteObserver mumObserver = new ConcreteObserver();
+        mumObserver.setObserverName(&quot;老妈&quot;);
+        mumObserver.setRemindThing(&quot;收衣服啦&quot;);
+        // 3. 注册观察者
+        weatherSubject.attach(girlObserver);
+        weatherSubject.attach(mumObserver);
+        // 4. 目标发布天气
+        weatherSubject.setWeatherContent(&quot;下雪&quot;);
+        weatherSubject.setWeatherContent(&quot;下雨&quot;);
+        weatherSubject.setWeatherContent(&quot;下冰雹&quot;);
+    }
+}</code></pre>
+</li>
+</ol>
+<h2 id="第5章-课程总结"><a href="#第5章-课程总结" class="headerlink" title="第5章 课程总结"></a>第5章 课程总结</h2><blockquote>
+<p>本章对本课程学习的内容进行总结，帮助小伙伴们巩固所学知识。</p>
+</blockquote>
+<h3 id="5-1-课程总结-02-16"><a href="#5-1-课程总结-02-16" class="headerlink" title="5-1 课程总结 (02:16)"></a>5-1 课程总结 (02:16)</h3><blockquote>
+<p>观察者模式简介：场景描述<br>观察者模式实战：模式原理<br>观察者模式详解：推拉模型、JDK实现、优缺点、何时使用<br>观察者模式衍生：区别对待观察者</p>
+</blockquote>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tuyrk@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>415-观察者模式</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">3.9k</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="神秘的小岛岛">神秘的小岛岛</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-12-20, 21:23:55</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-26, 00:02:05</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/imooc/415-observer-mode/" title="415-观察者模式">https://www.tuyrk.cn/imooc/415-observer-mode/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '9f82f3d33fe6303f2632',
+            clientSecret: '64316477206edcf4f37118b5e0f003e91445ce2a',
+            repo: 'tuyrk.github.io',
+            owner: 'tuyrk',
+            admin: ['tuyrk'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019 神秘的小岛岛</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+备案号：蜀ICP备18020272号-1
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpeg" class="alipay" title="扫码支持">
+            <img src="/img/wxpay.jpeg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#工具','#hexo','#git','#github','#vpn','#代码规范','#gitee','#编码','#kafka','#设计模式','#vim','#多线程','#node','#性能测试','#LoadRunner','#JMeter','#springboot','#springdata','#docker','#elasticsearch','#SQL','#mycat','#mysql',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

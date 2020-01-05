@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.tuyrk.cn/imooc/18-java-mode/</loc>
+    <lastmod>2020-01-05</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/1180-decorator-mode/</loc>
+    <lastmod>2020-01-05</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/145-template-mode/</loc>
+    <lastmod>2020-01-01</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/165-strategy-mode/</loc>
+    <lastmod>2019-12-29</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/257-responsibility-mode/</loc>
+    <lastmod>2019-12-28</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/415-observer-mode/</loc>
+    <lastmod>2019-12-25</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/wang-thread/115-thread-interrupt/</loc>
+    <lastmod>2019-12-25</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/wang-thread/114-thread-join/</loc>
+    <lastmod>2019-12-25</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/wang-thread/113-thread-id-priority/</loc>
+    <lastmod>2019-12-25</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/sql/paging-query-sql/</loc>
+    <lastmod>2019-12-25</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/wang-thread/112-daemon/</loc>
+    <lastmod>2019-12-24</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/wang-thread/111-thread-stacksize2/</loc>
+    <lastmod>2019-12-24</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/wang-thread/109-thread-with-memory/</loc>
+    <lastmod>2019-12-24</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/wang-thread/108-construct-thread/</loc>
+    <lastmod>2019-12-24</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/wang-thread/107-Strategy-in-thread/</loc>
+    <lastmod>2019-12-24</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/wang-thread/106-runnable-bank-queue/</loc>
+    <lastmod>2019-12-24</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/wang-thread/105-thread-bank-queue/</loc>
+    <lastmod>2019-12-23</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/146-adapter-mode/</loc>
+    <lastmod>2019-12-20</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/214-proxy-mode/</loc>
+    <lastmod>2019-12-19</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/changing-author-info/</loc>
+    <lastmod>2019-12-18</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/261-factory-mode/</loc>
+    <lastmod>2019-12-15</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/112-singleton-mode/</loc>
+    <lastmod>2019-12-15</lastmod>
+  </url>  <url>
     <loc>https://www.tuyrk.cn/alibaba-p3c/62-lib-depend/</loc>
     <lastmod>2019-12-14</lastmod>
   </url>  <url>
@@ -196,37 +262,7 @@
     <loc>https://www.tuyrk.cn/imooc/1193-node-base/</loc>
     <lastmod>2019-11-17</lastmod>
   </url>  <url>
-    <loc>https://www.tuyrk.cn/wang-thread/115-thread-interrupt/</loc>
-    <lastmod>2019-11-14</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/wang-thread/113-thread-id-priority/</loc>
-    <lastmod>2019-11-13</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/wang-thread/114-thread-join/</loc>
-    <lastmod>2019-11-13</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/wang-thread/112-daemon/</loc>
-    <lastmod>2019-11-13</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/wang-thread/111-thread-stacksize2/</loc>
-    <lastmod>2019-11-13</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/wang-thread/108-construct-thread/</loc>
-    <lastmod>2019-11-13</lastmod>
-  </url>  <url>
     <loc>https://www.tuyrk.cn/wang-thread/110-thread-stacksize1/</loc>
-    <lastmod>2019-11-12</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/wang-thread/109-thread-with-memory/</loc>
-    <lastmod>2019-11-12</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/wang-thread/106-runnable-bank-queue/</loc>
-    <lastmod>2019-11-12</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/wang-thread/107-Strategy-in-thread/</loc>
-    <lastmod>2019-11-12</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/wang-thread/105-thread-bank-queue/</loc>
     <lastmod>2019-11-12</lastmod>
   </url>  <url>
     <loc>https://www.tuyrk.cn/wang-thread/104-thread-lifecycle/</loc>
