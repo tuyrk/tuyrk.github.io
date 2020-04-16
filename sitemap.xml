@@ -2,6 +2,160 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.tuyrk.cn/imooc/1196-lambda/</loc>
+    
+    <lastmod>2020-04-16T14:57:05.038Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/74-vue-sell-1/06-header-component/</loc>
+    
+    <lastmod>2020-04-07T03:43:59.098Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/05-wonderful-content/</loc>
+    
+    <lastmod>2020-04-06T10:50:30.821Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/03-03-kafka-api/</loc>
+    
+    <lastmod>2020-04-06T09:36:43.656Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/04-kafka-log-collect/</loc>
+    
+    <lastmod>2020-04-06T09:24:49.842Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/04-12-watcher-base/</loc>
+    
+    <lastmod>2020-04-03T09:39:55.557Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/04-06-logstash-base/</loc>
+    
+    <lastmod>2020-04-03T07:53:36.875Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/889-ElasticSearch/</loc>
+    
+    <lastmod>2020-04-03T05:59:59.325Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/03-kafka/</loc>
+    
+    <lastmod>2020-03-28T07:20:28.877Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/02-mq-cognition/</loc>
+    
+    <lastmod>2020-03-27T15:55:29.169Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/1043-Kafka/</loc>
+    
+    <lastmod>2020-03-27T13:01:16.983Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/74-vue-sell-1/05-page-skeleton/</loc>
+    
+    <lastmod>2020-03-27T08:20:27.801Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/03-02-kafka-concept/</loc>
+    
+    <lastmod>2020-03-26T14:35:32.247Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/02-6-rocket-mq/</loc>
+    
+    <lastmod>2020-03-26T14:01:42.798Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/02-4-active-mq/</loc>
+    
+    <lastmod>2020-03-26T14:01:10.168Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/00-catalog/</loc>
+    
+    <lastmod>2020-03-26T14:00:54.042Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/01-guiding/</loc>
+    
+    <lastmod>2020-03-24T16:37:14.367Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/74-vue-sell-1/04-preparation/</loc>
+    
+    <lastmod>2020-03-24T02:39:31.123Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/74-vue-sell-1/03-vue-cli/</loc>
+    
+    <lastmod>2020-03-22T07:29:17.322Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/74-vue-sell-1/02-introduce/</loc>
+    
+    <lastmod>2020-03-21T09:12:04.418Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/74-vue-sell-1/01-synopsis/</loc>
+    
+    <lastmod>2020-03-20T07:43:04.247Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.tuyrk.cn/imooc/74-vue-sell-1/00-catalog/</loc>
+    
+    <lastmod>2020-03-20T06:27:29.821Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.tuyrk.cn/imooc/214-proxy-mode/</loc>
     
     <lastmod>2020-01-05T06:38:29.418Z</lastmod>
@@ -590,13 +744,6 @@
   </url>
   
   <url>
-    <loc>https://www.tuyrk.cn/imooc/1043-Kafka/</loc>
-    
-    <lastmod>2019-11-22T16:19:51.971Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.tuyrk.cn/imooc/312-thread-runnable/</loc>
     
     <lastmod>2019-11-18T15:13:26.738Z</lastmod>
@@ -719,13 +866,6 @@
     <loc>https://www.tuyrk.cn/imooc/767-2Hours-SringBoot/</loc>
     
     <lastmod>2019-11-05T11:15:03.012Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.tuyrk.cn/imooc/889-ElasticSearch/</loc>
-    
-    <lastmod>2019-11-05T11:09:51.651Z</lastmod>
     
   </url>
   
