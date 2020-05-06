@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.tuyrk.cn/imooc/337-hashmap/337-hashmap/</loc>
+    <lastmod>2020-04-28</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/356-springcloud/08-summary/</loc>
+    <lastmod>2020-04-28</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/356-springcloud/06-user-server/</loc>
+    <lastmod>2020-04-28</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/356-springcloud/07-system-test/</loc>
+    <lastmod>2020-04-28</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/356-springcloud/03-structure/</loc>
+    <lastmod>2020-04-28</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/356-springcloud/05-course-server/</loc>
+    <lastmod>2020-04-28</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/356-springcloud/04-common-model/</loc>
+    <lastmod>2020-04-27</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/356-springcloud/02-introduce/</loc>
+    <lastmod>2020-04-25</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/356-springcloud/01-guide/</loc>
+    <lastmod>2020-04-25</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/356-springcloud/00-catalog/</loc>
+    <lastmod>2020-04-25</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/05-wonderful-content/</loc>
+    <lastmod>2020-04-25</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/04-12-watcher-base/</loc>
+    <lastmod>2020-04-25</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/04-06-logstash-base/</loc>
+    <lastmod>2020-04-25</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/04-kafka-log-collect/</loc>
+    <lastmod>2020-04-25</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/03-03-kafka-api/</loc>
+    <lastmod>2020-04-25</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/03-02-kafka-concept/</loc>
+    <lastmod>2020-04-25</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/03-kafka/</loc>
+    <lastmod>2020-04-25</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/02-6-rocket-mq/</loc>
+    <lastmod>2020-04-25</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/02-4-active-mq/</loc>
+    <lastmod>2020-04-25</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/02-mq-cognition/</loc>
+    <lastmod>2020-04-25</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/01-guiding/</loc>
+    <lastmod>2020-04-25</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/00-catalog/</loc>
+    <lastmod>2020-04-25</lastmod>
+  </url>  <url>
     <loc>https://www.tuyrk.cn/imooc/553-jdk11&12/</loc>
     <lastmod>2020-04-25</lastmod>
   </url>  <url>
@@ -10,50 +76,14 @@
     <loc>https://www.tuyrk.cn/imooc/74-vue-sell-1/06-header-component/</loc>
     <lastmod>2020-04-07</lastmod>
   </url>  <url>
-    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/05-wonderful-content/</loc>
-    <lastmod>2020-04-06</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/03-03-kafka-api/</loc>
-    <lastmod>2020-04-06</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/04-kafka-log-collect/</loc>
-    <lastmod>2020-04-06</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/04-12-watcher-base/</loc>
-    <lastmod>2020-04-03</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/04-06-logstash-base/</loc>
-    <lastmod>2020-04-03</lastmod>
-  </url>  <url>
     <loc>https://www.tuyrk.cn/imooc/889-ElasticSearch/</loc>
     <lastmod>2020-04-03</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/03-kafka/</loc>
-    <lastmod>2020-03-28</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/02-mq-cognition/</loc>
-    <lastmod>2020-03-27</lastmod>
   </url>  <url>
     <loc>https://www.tuyrk.cn/imooc/1043-Kafka/</loc>
     <lastmod>2020-03-27</lastmod>
   </url>  <url>
     <loc>https://www.tuyrk.cn/imooc/74-vue-sell-1/05-page-skeleton/</loc>
     <lastmod>2020-03-27</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/03-02-kafka-concept/</loc>
-    <lastmod>2020-03-26</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/02-6-rocket-mq/</loc>
-    <lastmod>2020-03-26</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/02-4-active-mq/</loc>
-    <lastmod>2020-03-26</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/00-catalog/</loc>
-    <lastmod>2020-03-26</lastmod>
-  </url>  <url>
-    <loc>https://www.tuyrk.cn/imooc/1297-MQ-Kafka/01-guiding/</loc>
-    <lastmod>2020-03-24</lastmod>
   </url>  <url>
     <loc>https://www.tuyrk.cn/imooc/74-vue-sell-1/04-preparation/</loc>
     <lastmod>2020-03-24</lastmod>

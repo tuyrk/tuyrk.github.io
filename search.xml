@@ -4,6 +4,276 @@
   
     
     <entry>
+      <title>337-透视HashMap</title>
+      <link href="/imooc/337-hashmap/337-hashmap/"/>
+      <url>/imooc/337-hashmap/337-hashmap/</url>
+      
+        <content type="html"><![CDATA[<p>@[TOC]</p><blockquote><p><a href="https://coding.imooc.com/class/337.html" target="_blank" rel="noopener">https://coding.imooc.com/class/337.html</a></p></blockquote><h2 id="第1章-学前必看【不看错过一个亿】"><a href="#第1章-学前必看【不看错过一个亿】" class="headerlink" title="第1章 学前必看【不看错过一个亿】"></a><del>第1章 学前必看【不看错过一个亿】</del></h2><blockquote><p>介绍大纲、重点、目标和收获。三部分：面试加薪点、剖析HashMap源码、重塑编程习惯。首先【面试加薪点】hash冲突，降低冲突，解决冲突妙招：“红黑树”。其次【剖析源码】：增删改查、扩容、序列化。最后重塑编程习惯：位运算与二进制才是内功。…</p></blockquote><h3 id="1-1【开始的开始】前情提要"><a href="#1-1【开始的开始】前情提要" class="headerlink" title="1-1【开始的开始】前情提要"></a>1-1【开始的开始】前情提要</h3><ul><li>图解数据结构<ul><li>图解说明基础数据结构</li><li>图解说明HashMap原理</li></ul></li><li>JDK8源码分析<ul><li>源码分析HashMap的创建以及扩容</li><li>节点的插入、查询与删除</li><li>如何提高散列以及冲突的解决方法</li><li>序列化与反序列化</li></ul></li></ul><h2 id="第2章-图解数据结构【有图有真相】"><a href="#第2章-图解数据结构【有图有真相】" class="headerlink" title="第2章 图解数据结构【有图有真相】"></a><del>第2章 图解数据结构【有图有真相】</del></h2><blockquote><p>再复杂的问题背后也都是由简单的问题组成的，本章节通过图示了解各数据结构的优缺点，然后将其组合成我们课程的主题-HashMap，可以直观的了解到HashMap的实现原理，最后掌握面试常考，工作常用的HashMap冲突解决办法。</p></blockquote><h3 id="2-1【数据结构内功】图解数组和单链表"><a href="#2-1【数据结构内功】图解数组和单链表" class="headerlink" title="2-1【数据结构内功】图解数组和单链表"></a>2-1【数据结构内功】图解数组和单链表</h3><ul><li><p>数组</p><p>优点：连续的内存，通过下标可以快速寻址</p><p>缺点：插入节点困难</p></li><li><p>单链表</p><p>优点：插入和删除数据方便</p><p>缺点：查询效率低</p></li></ul><h3 id="2-2【原来源码的内部设计如此精良】图解HashMap"><a href="#2-2【原来源码的内部设计如此精良】图解HashMap" class="headerlink" title="2-2【原来源码的内部设计如此精良】图解HashMap"></a>2-2【原来源码的内部设计如此精良】图解HashMap</h3><p>HashMap数据结构：数组+链表/树</p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge9yuzy3ldj30hh08jjvq.jpg" alt="HashMap数据结构" style="zoom:80%;" /><h2 id="第3章-HashMap源码解读【向源码致敬-最高效学编程姿势】"><a href="#第3章-HashMap源码解读【向源码致敬-最高效学编程姿势】" class="headerlink" title="第3章 HashMap源码解读【向源码致敬-最高效学编程姿势】"></a>第3章 HashMap源码解读【向源码致敬-最高效学编程姿势】</h2><blockquote><p>本章带深入分析源码，掌握HashMap的创建、扩容、序列化以及增删改查的操作的具体实现。每一个小小的操作都有一种别有洞天的感觉，之前的自己写的代码和源码比较起来，立刻无地自容，顿时感觉理想和现实还是有一定距离，想说：源码，爱你不容易。…</p></blockquote><h3 id="3-1【面试必问】初始容量为2的倍数"><a href="#3-1【面试必问】初始容量为2的倍数" class="headerlink" title="3-1【面试必问】初始容量为2的倍数"></a>3-1【面试必问】初始容量为2的倍数</h3><p>HashMap为什么是以2为倍数进行扩容？</p><ol><li>计算机擅长使用位移运算，左移1位正好为2倍</li><li></li><li>3</li></ol><h3 id="3-2【适用于面试高级考察】hash函数如何降低冲突"><a href="#3-2【适用于面试高级考察】hash函数如何降低冲突" class="headerlink" title="3-2【适用于面试高级考察】hash函数如何降低冲突"></a>3-2【适用于面试高级考察】hash函数如何降低冲突</h3><h3 id="3-3【面试回答上可加薪】冲突解决办法"><a href="#3-3【面试回答上可加薪】冲突解决办法" class="headerlink" title="3-3【面试回答上可加薪】冲突解决办法"></a>3-3【面试回答上可加薪】冲突解决办法</h3><h3 id="3-4【适用于涨姿势】扩容与扩容后的内存排布"><a href="#3-4【适用于涨姿势】扩容与扩容后的内存排布" class="headerlink" title="3-4【适用于涨姿势】扩容与扩容后的内存排布"></a>3-4【适用于涨姿势】扩容与扩容后的内存排布</h3><h3 id="3-5【工作常用】查询与删除"><a href="#3-5【工作常用】查询与删除" class="headerlink" title="3-5【工作常用】查询与删除"></a>3-5【工作常用】查询与删除</h3><h3 id="3-6【工作须知】序列化与反序列化"><a href="#3-6【工作须知】序列化与反序列化" class="headerlink" title="3-6【工作须知】序列化与反序列化"></a>3-6【工作须知】序列化与反序列化</h3><h2 id="第4章-总结梳理【温故而知新】"><a href="#第4章-总结梳理【温故而知新】" class="headerlink" title="第4章 总结梳理【温故而知新】"></a>第4章 总结梳理【温故而知新】</h2><blockquote><p>快速进行课程知识总结梳理，让你真正Get精华。</p></blockquote><h3 id="4-1总结"><a href="#4-1总结" class="headerlink" title="4-1总结"></a>4-1总结</h3><h2 id="第5章-实战课程体验【Zookeeper源码解析】"><a href="#第5章-实战课程体验【Zookeeper源码解析】" class="headerlink" title="第5章 实战课程体验【Zookeeper源码解析】"></a>第5章 实战课程体验【Zookeeper源码解析】</h2><blockquote><p>本章为大家开通讲师实战课程的体验内容，初衷是希望能降低大家学习选择风险，让大家少走冤枉路，少花冤枉钱，祝大家学习愉快！觉得正是自己所需的课程，链接奉上：<a href="https://coding.imooc.com/learn/list/361.html" target="_blank" rel="noopener">https://coding.imooc.com/learn/list/361.html</a></p></blockquote><h3 id="5-1Zookeeper源码序章【只学有用的】"><a href="#5-1Zookeeper源码序章【只学有用的】" class="headerlink" title="5-1Zookeeper源码序章【只学有用的】"></a>5-1Zookeeper源码序章【只学有用的】</h3><h3 id="5-2探索java-serialized序列化本质【抛砖引玉】"><a href="#5-2探索java-serialized序列化本质【抛砖引玉】" class="headerlink" title="5-2探索java-serialized序列化本质【抛砖引玉】"></a>5-2探索java-serialized序列化本质【抛砖引玉】</h3><h3 id="5-3jute序列化原来可以很简单【简单但不失精要】"><a href="#5-3jute序列化原来可以很简单【简单但不失精要】" class="headerlink" title="5-3jute序列化原来可以很简单【简单但不失精要】"></a>5-3jute序列化原来可以很简单【简单但不失精要】</h3><h3 id="5-4大PK：zk-jute-VS-java-serialized【没有对比就没有伤害】"><a href="#5-4大PK：zk-jute-VS-java-serialized【没有对比就没有伤害】" class="headerlink" title="5-4大PK：zk-jute VS java-serialized【没有对比就没有伤害】"></a>5-4大PK：zk-jute VS java-serialized【没有对比就没有伤害】</h3><h3 id="5-5序列化-核心归纳【提纲掣领】"><a href="#5-5序列化-核心归纳【提纲掣领】" class="headerlink" title="5-5序列化-核心归纳【提纲掣领】"></a>5-5序列化-核心归纳【提纲掣领】</h3><h3 id="5-6数据模型【抛砖引玉】"><a href="#5-6数据模型【抛砖引玉】" class="headerlink" title="5-6数据模型【抛砖引玉】"></a>5-6数据模型【抛砖引玉】</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 慕课网 </category>
+          
+          <category> 337-透视HashMap </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>08-课程总结</title>
+      <link href="/imooc/356-springcloud/08-summary/"/>
+      <url>/imooc/356-springcloud/08-summary/</url>
+      
+        <content type="html"><![CDATA[<p>@[TOC]</p><h2 id="8-1-课程总结"><a href="#8-1-课程总结" class="headerlink" title="8-1 课程总结"></a>8-1 课程总结</h2><ul><li>选择自己需要的SpringCloud组件去学习、使用</li><li>先理解组件含义和功能，再去学习使用组件，最后再考虑研究其原理</li><li>在理解业务思想的基础之上做服务拆分（更多的是经验）</li><li>做好服务熔断，不要引起服务雪崩</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 慕课网 </category>
+          
+          <category> 356-慕课网主页后端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SpringCloud </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>07-系统可用性测试</title>
+      <link href="/imooc/356-springcloud/07-system-test/"/>
+      <url>/imooc/356-springcloud/07-system-test/</url>
+      
+        <content type="html"><![CDATA[<p>@[TOC]</p><h2 id="7-1-可用性测试前的准备工作"><a href="#7-1-可用性测试前的准备工作" class="headerlink" title="7-1 可用性测试前的准备工作"></a>7-1 可用性测试前的准备工作</h2><pre><code class="yaml">zuul:  prefix: /tuyrk  routes:    course:      path: /homepage-course/**      serviceId: eureka-client-homepage-course      strip-prefix: false    user:      path: /homepage-user/**      serviceId: eureka-client-homepage-user      strip-prefix: false</code></pre><h2 id="7-2-测试对外服务接口的可用性"><a href="#7-2-测试对外服务接口的可用性" class="headerlink" title="7-2 测试对外服务接口的可用性"></a>7-2 测试对外服务接口的可用性</h2><ul><li><p>课程服务</p><pre><code>GET http://127.0.0.1:7001/homepage-course/get/course?id=1</code></pre><pre><code>GET http://127.0.0.1:9000/tuyrk/homepage-course/get/course?id=1</code></pre><pre><code>POST http://192.168.0.109:9000/tuyrk/homepage-course/get/courses{  &quot;ids&quot;: [1, 2]}</code></pre></li><li><p>用户服务</p><pre><code>POST http://192.168.0.109:9000/tuyrk/homepage-user/create/user{  &quot;username&quot;: &quot;wm&quot;,  &quot;email&quot;: &quot;wm@qq.com&quot;}</code></pre><pre><code>GET http://192.168.0.109:9000/tuyrk/homepage-user/get/user?id=1</code></pre><pre><code>GET http://192.168.0.109:9000/tuyrk/homepage-user/get/user/course?id=1</code></pre></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 慕课网 </category>
+          
+          <category> 356-慕课网主页后端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SpringCloud </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>06-实现用户微服务</title>
+      <link href="/imooc/356-springcloud/06-user-server/"/>
+      <url>/imooc/356-springcloud/06-user-server/</url>
+      
+        <content type="html"><![CDATA[<p>@[TOC]</p><h2 id="6-1-搭建微服务"><a href="#6-1-搭建微服务" class="headerlink" title="6-1 搭建微服务"></a>6-1 搭建微服务</h2><ol><li><p>引入依赖</p><pre><code class="xml">&lt;!-- 引入 Web 功能 --&gt;&lt;dependency&gt;  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;&lt;/dependency&gt;&lt;!-- Eureka 客户端 --&gt;&lt;dependency&gt;  &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;  &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;&lt;/dependency&gt;&lt;!-- 引入 Feign, 可以以声明的方式调用微服务 --&gt;&lt;dependency&gt;  &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;  &lt;artifactId&gt;spring-cloud-starter-openfeign&lt;/artifactId&gt;&lt;/dependency&gt;&lt;!-- 引入服务容错 Hystrix 的依赖 --&gt;&lt;dependency&gt;  &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;  &lt;artifactId&gt;spring-cloud-starter-netflix-hystrix&lt;/artifactId&gt;&lt;/dependency&gt;&lt;!-- Java Persistence API, ORM 规范 --&gt;&lt;dependency&gt;  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;&lt;/dependency&gt;&lt;!-- MySQL 驱动, 注意, 这个需要与 MySQL 版本对应 --&gt;&lt;dependency&gt;  &lt;groupId&gt;mysql&lt;/groupId&gt;  &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;  &lt;version&gt;8.0.19&lt;/version&gt;  &lt;scope&gt;runtime&lt;/scope&gt;&lt;/dependency&gt;&lt;!-- 通用模块 --&gt;&lt;dependency&gt;  &lt;groupId&gt;com.tuyrk&lt;/groupId&gt;  &lt;artifactId&gt;homepage-common&lt;/artifactId&gt;  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;&lt;/dependency&gt;</code></pre></li><li><p>启动类注解</p><pre><code class="java">@EnableJpaAuditing@EnableFeignClients@EnableCircuitBreaker@EnableEurekaClient@SpringBootApplication</code></pre></li><li><p>项目配置</p><pre><code class="yaml">server:  port: 7000  servlet:    context-path: /homepage-userspring:  application:    name: eureka-client-homepage-user  main:    allow-bean-definition-overriding: true  jpa:    show-sql: true    hibernate:      ddl-auto: none    properties:       hibernate.format_sql: true    open-in-view: false  datasource:    url: jdbc:mysql://127.0.0.1:3306/imooc_356?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false    username: root    password: 123456    driver-class-name: com.mysql.cj.jdbc.Driver    tomcat:      max-active: 4      min-idle: 2      initial-size: 2eureka:  client:    service-url:      defaultZone: http://server1:8000/eureka/feign:  hystrix:    enabled: true</code></pre></li></ol><h2 id="6-2-数据表实体类及Dao接口的定义"><a href="#6-2-数据表实体类及Dao接口的定义" class="headerlink" title="6-2 数据表实体类及Dao接口的定义"></a>6-2 数据表实体类及Dao接口的定义</h2><ol><li><p>用户信息表homepage_user映射实体表</p><pre><code class="java">@Data@NoArgsConstructor@AllArgsConstructor@Entity@EntityListeners(AuditingEntityListener.class)@Table(name = &quot;homepage_user&quot;)public class HomepageUser {  @Id  @GeneratedValue(strategy = GenerationType.IDENTITY)  @Column(name = &quot;id&quot;, nullable = false)  private Long id;  // 用户名  @Column(name = &quot;username&quot;, nullable = false)  private String username;  // 用户邮箱  @Column(name = &quot;email&quot;, nullable = false)  private String email;  // 创建时间  @Column(name = &quot;create_time&quot;, nullable = false)  @CreatedDate  private Date createTime;  // 更新时间  @Column(name = &quot;update_time&quot;, nullable = false)  @LastModifiedDate  private Date updateTime;  public HomepageUser(String username, String email) {    this.username = username;    this.email = email;  }  public static HomepageUser invalid() {    HomepageUser homepageUser = new HomepageUser(&quot;&quot;, &quot;&quot;);    homepageUser.setId(-1L);    return homepageUser;  }}</code></pre></li><li><p>用户课程表homepage_user_course映射实体表</p><pre><code class="java">@Data@NoArgsConstructor@AllArgsConstructor@Entity@EntityListeners(AuditingEntityListener.class)@Table(name = &quot;homepage_user_course&quot;)public class HomepageUserCourse {  @Id  @GeneratedValue(strategy = GenerationType.IDENTITY)  @Column(name = &quot;id&quot;, nullable = false)  private Long id;  // 用户id  @Column(name = &quot;user_id&quot;, nullable = false)  private Long userId;  // 课程id  @Column(name = &quot;course_id&quot;, nullable = false)  private Long courseId;  // 创建时间  @Column(name = &quot;create_time&quot;, nullable = false)  @CreatedDate  private Date createTime;  // 更新时间  @Column(name = &quot;update_time&quot;, nullable = false)  @LastModifiedDate  private Date updateTime;}</code></pre></li><li><p>HomepageUser数据表访问接口</p><pre><code class="java">public interface HomepageUserDao extends JpaRepository&lt;HomepageUser, Long&gt; {  // 通过用户名寻找用户记录  HomepageUser findByUsername(String username);}</code></pre></li><li><p>HomepageUserCourse数据表访问接口</p><pre><code class="java">public interface HomepageUserCourseDao extends JpaRepository&lt;HomepageUserCourse, Long&gt; {  // 通过用户id寻找数据记录  List&lt;HomepageUserCourse&gt; findAllByUserId(Long userId);}</code></pre></li></ol><h2 id="6-3-Feign-接口及值对象的定义"><a href="#6-3-Feign-接口及值对象的定义" class="headerlink" title="6-3 Feign 接口及值对象的定义"></a>6-3 Feign 接口及值对象的定义</h2><ol><li><p>通过Feign访问课程微服务</p><pre><code class="java">@FeignClient(value = &quot;eureka-client-homepage-course&quot;, fallback = CourseClientHystrix.class)public interface CourseClient {  // 通过id获取课程信息  @GetMapping(&quot;/homepage-course/get/course&quot;)  CourseInfo getCourseInfo(Long id);  // 通过ids获取课程信息  @PostMapping(&quot;/homepage-course/get/courses&quot;)  List&lt;CourseInfo&gt; getCourseInfos(CourseInfosRequest request);}</code></pre></li><li><p>熔断降级策略</p><pre><code class="java">@Componentpublic class CourseClientHystrix implements CourseClient {  @Override  public CourseInfo getCourseInfo(Long id) {    return CourseInfo.invalid();  }  @Override  public List&lt;CourseInfo&gt; getCourseInfos(CourseInfosRequest request) {    return Collections.emptyList();  }}</code></pre></li><li><p>创建用户请求对象</p><pre><code class="java">@Data@NoArgsConstructor@AllArgsConstructorpublic class CreateUserRequest {  private String username;  private String email;  // 请求有效性验证  public boolean validate() {    return StringUtils.isNotBlank(username) &amp;&amp; StringUtils.isNotBlank(email);  }}</code></pre></li><li><p>用户课程对象</p><pre><code class="java">@Data@NoArgsConstructor@AllArgsConstructorpublic class UserCourseInfo {  private UserInfo userInfo;  private List&lt;CourseInfo&gt; courseInfos;  public static UserCourseInfo invalid() {    return new UserCourseInfo(new UserInfo(), Collections.emptyList());  }}</code></pre></li></ol><h2 id="6-4-微服务功能实现"><a href="#6-4-微服务功能实现" class="headerlink" title="6-4 微服务功能实现"></a>6-4 微服务功能实现</h2><ol><li><p>用户相关服务接口</p><pre><code class="java">public interface IUserService {    // 创建用户    UserInfo createUser(CreateUserRequest request);    // 根据ID获取用户信息    UserInfo getUserInfo(Long id);    // 获取用户和课程信息    UserCourseInfo getUserCourseInfo(Long id);}</code></pre></li><li><p>用户相关实现</p><pre><code class="java">@Slf4j@Servicepublic class UserServiceImpl implements IUserService {  @Autowired  private HomepageUserDao homepageUserDao;  @Autowired  private HomepageUserCourseDao homepageUserCourseDao;  @Autowired  private CourseClient courseClient;  // 创建用户  @Override  public UserInfo createUser(CreateUserRequest request) {    if (!request.validate()) {      return UserInfo.invalid();    }    HomepageUser oldUser = homepageUserDao.findByUsername(request.getUsername());    if (!Objects.isNull(oldUser)) {      return UserInfo.invalid();    }    HomepageUser newUser = homepageUserDao.save(new HomepageUser(request.getUsername(), request.getEmail()));    return new UserInfo(newUser.getId(), newUser.getUsername(), newUser.getEmail());  }  // 根据ID获取用户信息  @Override  public UserInfo getUserInfo(Long id) {    Optional&lt;HomepageUser&gt; user = homepageUserDao.findById(id);    HomepageUser curUser = user.orElse(HomepageUser.invalid());    return new UserInfo(curUser.getId(), curUser.getUsername(), curUser.getEmail());  }  // 获取用户和课程信息  @Override  public UserCourseInfo getUserCourseInfo(Long id) {    Optional&lt;HomepageUser&gt; user = homepageUserDao.findById(id);    HomepageUser curUser = user.orElse(null);    if (Objects.isNull(curUser)) {      return UserCourseInfo.invalid();    }    UserInfo userInfo = new UserInfo(curUser.getId(), curUser.getUsername(), curUser.getEmail());    List&lt;HomepageUserCourse&gt; userCourses = homepageUserCourseDao.findAllByUserId(curUser.getId());    if (CollectionUtils.isEmpty(userCourses)) {      return new UserCourseInfo(userInfo, Collections.emptyList());    }    List&lt;Long&gt; courseIds = userCourses.stream().map(HomepageUserCourse::getCourseId).collect(Collectors.toList());    List&lt;CourseInfo&gt; courseInfos = courseClient.getCourseInfos(new CourseInfosRequest(courseIds));    return new UserCourseInfo(userInfo, courseInfos);  }}</code></pre></li><li><p>用户服务对外接口</p><pre><code class="java">@Slf4j@RestControllerpublic class HomepageUserController {  @Autowired  private IUserService userService;  @PostMapping(&quot;/create/user&quot;)  public UserInfo createUser(@RequestBody CreateUserRequest request) {    log.info(&quot;&lt;homepage-user&gt;: create user -&gt; {}&quot;, JSON.toJSONString(request));    return userService.createUser(request);  }  @GetMapping(&quot;/get/user&quot;)  public UserInfo getUserInfo(Long id) {    log.info(&quot;&lt;homepage-user&gt;: get user -&gt; {}&quot;, id);    return userService.getUserInfo(id);  }  @GetMapping(&quot;/get/user/course&quot;)  public UserCourseInfo getUserCourseInfo(Long id) {    log.info(&quot;&lt;homepage-user&gt;: get user course -&gt; {}&quot;, id);    return userService.getUserCourseInfo(id);  }}</code></pre></li></ol><h2 id="6-5-功能接口测试用例的实现"><a href="#6-5-功能接口测试用例的实现" class="headerlink" title="6-5 功能接口测试用例的实现"></a>6-5 功能接口测试用例的实现</h2><ol><li><p>创建用户</p><pre><code class="java">@Test@Transactionalvoid createUser() {  CreateUserRequest request = new CreateUserRequest(&quot;tuyrk&quot;, &quot;tuyrk@qq.com&quot;);  UserInfo user = userService.createUser(request);  assertEquals(&quot;tuyrk&quot;, user.getUsername());}</code></pre></li><li><p>获取用户信息</p><pre><code class="java">@Testvoid getUserInfo() {  UserInfo userInfo = userService.getUserInfo(1L);  assertEquals(&quot;tuyrk&quot;, userInfo.getUsername());}</code></pre></li><li><p>创建用户课程对应关系</p><pre><code class="java">@Test@Transactionalvoid findAllByUserId() {  HomepageUserCourse userCourse1 = new HomepageUserCourse();  userCourse1.setUserId(1L);  userCourse1.setCourseId(1L);  HomepageUserCourse userCourse2 = new HomepageUserCourse();  userCourse2.setUserId(1L);  userCourse2.setCourseId(2L);  java.util.List&lt;HomepageUserCourse&gt; userCourses = homepageUserCourseDao.saveAll(List.of(userCourse1, userCourse2));  assertEquals(2, userCourses.size());}</code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 慕课网 </category>
+          
+          <category> 356-慕课网主页后端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SpringCloud </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>05-实现课程微服务</title>
+      <link href="/imooc/356-springcloud/05-course-server/"/>
+      <url>/imooc/356-springcloud/05-course-server/</url>
+      
+        <content type="html"><![CDATA[<p>@[TOC]</p><h2 id="5-1-搭建微服务及数据表操作相关实现"><a href="#5-1-搭建微服务及数据表操作相关实现" class="headerlink" title="5-1 搭建微服务及数据表操作相关实现"></a>5-1 搭建微服务及数据表操作相关实现</h2><ol><li><p>引入依赖</p><pre><code class="xml">&lt;!-- 引入 Web 功能 --&gt;&lt;dependency&gt;  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;&lt;/dependency&gt;&lt;!-- Eureka 客户端 --&gt;&lt;dependency&gt;  &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;  &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;&lt;/dependency&gt;&lt;!-- Java Persistence API, ORM 规范 --&gt;&lt;dependency&gt;  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;&lt;/dependency&gt;&lt;!-- MySQL 驱动, 注意, 这个需要与 MySQL 版本对应 --&gt;&lt;dependency&gt;  &lt;groupId&gt;mysql&lt;/groupId&gt;  &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;  &lt;version&gt;8.0.19&lt;/version&gt;  &lt;scope&gt;runtime&lt;/scope&gt;&lt;/dependency&gt;&lt;!-- 通用模块 --&gt;&lt;dependency&gt;  &lt;groupId&gt;com.tuyrk&lt;/groupId&gt;  &lt;artifactId&gt;homepage-common&lt;/artifactId&gt;  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;&lt;/dependency&gt;</code></pre></li><li><p>启动类注解</p><pre><code class="java">@EnableJpaAuditing@EnableEurekaClient@SpringBootApplication</code></pre></li><li><p>项目配置</p><pre><code class="yaml">server:  port: 7001  servlet:    context-path: /homepage-coursespring:  application:    name: eureka-client-homepage-course  jpa:    show-sql: true    hibernate:      ddl-auto: none    properties:      hibernate.format_sql: true    open-in-view: false  datasource:    url: jdbc:mysql://127.0.0.1:3306/imooc_356?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false    username: root    password: 123456    driver-class-name: com.mysql.cj.jdbc.Driver    tomcat:      max-active: 4      min-idle: 2      initial-size: 2eureka:  client:    service-url:      defaultZone: http://server1:8000/eureka/</code></pre></li><li><p>用户信息表homepage_course映射实体表</p><pre><code class="java">@Data@NoArgsConstructor@AllArgsConstructor@Entity // 实体类@EntityListeners(AuditingEntityListener.class) // 捕获监听，持久化和更新操作@Table(name = &quot;homepage_course&quot;) // 表名public class HomepageCourse {  @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) // 生成主键策略：自增  @Column(name = &quot;id&quot;, nullable = false)  private Long id;  // 课程名称  @Basic // 缺省  @Column(name = &quot;course_name&quot;, nullable = false) // 字段名，不可为空  private String courseName;  // 课程类型：0（免费课），1（实战课）  @Column(name = &quot;course_type&quot;, nullable = false)  private Integer courseType;  // 课程图标  @Column(name = &quot;course_icon&quot;, nullable = false)  private String courseIcon;  // 课程介绍  @Column(name = &quot;course_intro&quot;, nullable = false)  private String courseIntro;  // 创建时间  @Column(name = &quot;create_time&quot;, nullable = false)  @CreatedDate // 创建则自动生成时间  private Date createTime;  // 更新时间  @Column(name = &quot;update_time&quot;, nullable = false)  @LastModifiedDate // 改变则自动更新时间  private Date updateTime;  public HomepageCourse(String courseName, Integer courseType, String courseIcon, String courseIntro) {    this.courseName = courseName;    this.courseType = courseType;    this.courseIcon = courseIcon;    this.courseIntro = courseIntro;  }  // 返回一个无效的课程  public static HomepageCourse invalid() {    HomepageCourse homePageCourse = new HomepageCourse(&quot;&quot;, 0, &quot;&quot;, &quot;&quot;);    homePageCourse.setId(-1L);    return homePageCourse;  }}</code></pre></li><li><p>增删改查dao</p><pre><code class="java">public interface HomepageCourseDao extends JpaRepository&lt;HomepageCourse, Long&gt; {}</code></pre></li></ol><h2 id="5-2-微服务功能实现"><a href="#5-2-微服务功能实现" class="headerlink" title="5-2 微服务功能实现"></a>5-2 微服务功能实现</h2><ol><li><p>课程相关服务接口定义</p><pre><code class="java">public interface ICourseService {  // 通过id获取课程信息  CourseInfo getCourseInfo(Long id);  // 通过ids获取课程信息  List&lt;CourseInfo&gt; getCourseInfos(CourseInfosRequest request);}</code></pre></li><li><p>课程服务功能实现</p><pre><code class="java">@Slf4j@Servicepublic class CourseServiceImpl implements ICourseService {    @Autowired    private HomepageCourseDao homepageCourseDao;    // 通过id获取课程信息    @Override    public CourseInfo getCourseInfo(Long id) {        Optional&lt;HomepageCourse&gt; course = homepageCourseDao.findById(id);        return buildCourseInfo(course.orElse(HomepageCourse.invalid()));    }    // 通过ids获取课程信息    @Override    public List&lt;CourseInfo&gt; getCourseInfos(CourseInfosRequest request) {        if (CollectionUtils.isEmpty(request.getIds())) {            return Collections.emptyList();        }        List&lt;HomepageCourse&gt; courses = homepageCourseDao.findAllById(request.getIds());        return courses.stream().map(this::buildCourseInfo).collect(Collectors.toList());    }    // 根据数据记录构造对象信息    private CourseInfo buildCourseInfo(HomepageCourse course) {        return CourseInfo.builder()                .id(course.getId())                .courseName(course.getCourseName())                .courseType(course.getCourseType() == 0 ? &quot;免费课程&quot; : &quot;实战课程&quot;)                .courseIcon(course.getCourseIcon())                .courseIntro(course.getCourseIntro())                .build();    }}</code></pre></li><li><p>课程对外服务接口</p><pre><code class="java">@Slf4j@RestControllerpublic class HomepageCourseController {    @Autowired  private final ICourseService courseService;  @GetMapping(&quot;/get/course&quot;)  public CourseInfo getCourseInfo(Long id) {    log.info(&quot;&lt;homepage-course&gt;:get course -&gt; {}&quot;, id);    return courseService.getCourseInfo(id);  }  @PostMapping(&quot;/get/courses&quot;)  public List&lt;CourseInfo&gt; getCourseInfos(@RequestBody CourseInfosRequest request) {    log.info(&quot;&lt;homepage-course&gt;:get courses -&gt; {}&quot;, JSON.toJSONString(request));    return courseService.getCourseInfos(request);  }}</code></pre></li></ol><h2 id="5-3-功能接口测试用例的实现"><a href="#5-3-功能接口测试用例的实现" class="headerlink" title="5-3 功能接口测试用例的实现"></a>5-3 功能接口测试用例的实现</h2><ol><li><p>测试启动类</p><pre><code class="java">@RunWith(SpringRunner.class)@SpringBootTestpublic class HomepageCourseApplicationTests {}</code></pre></li><li><p>创建课程信息</p><pre><code class="java">@Test@Transactionalpublic void testCreateCourseInfo() {  HomepageCourse course1 = new HomepageCourse(&quot;JDK11&amp;12 新特性解读&quot;, 0, &quot;https://www.imooc.com&quot;, &quot;解读 JDK11 和 JDK12 的新版本特性&quot;);  HomepageCourse course2 = new HomepageCourse(&quot;基于 SpringCloud 微服务架构 广告系统设计与实现&quot;, 1, &quot;https://www.imooc.com&quot;, &quot;广告系统的设计与实现&quot;);  List&lt;HomepageCourse&gt; homepageCourses = homepageCourseDao.saveAll(Arrays.asList(course1, course2));  assertEquals(2, homepageCourses.size());}</code></pre></li><li><p>获取课程信息</p><pre><code class="java">@Testvoid getCourseInfo() {  CourseInfo courseInfo1 = courseService.getCourseInfo(1L);  assertEquals(1, courseInfo1.getId());  CourseInfo courseInfo2 = courseService.getCourseInfo(2L);  assertEquals(2, courseInfo2.getId());}</code></pre><pre><code class="java">@Testvoid getCourseInfos() {  List&lt;CourseInfo&gt; courseInfos = courseService.getCourseInfos(new CourseInfosRequest(Arrays.asList(1L, 2L)));  assertEquals(2, courseInfos.size());}</code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 慕课网 </category>
+          
+          <category> 356-慕课网主页后端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SpringCloud </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>04-通用模块的实现</title>
+      <link href="/imooc/356-springcloud/04-common-model/"/>
+      <url>/imooc/356-springcloud/04-common-model/</url>
+      
+        <content type="html"><![CDATA[<p>@[TOC]</p><h2 id="4-1-微服务通用模块的实现"><a href="#4-1-微服务通用模块的实现" class="headerlink" title="4-1 微服务通用模块的实现"></a>4-1 微服务通用模块的实现</h2><ol><li><p>添加依赖</p><pre><code class="xml">&lt;dependency&gt;  &lt;groupId&gt;com.alibaba&lt;/groupId&gt;  &lt;artifactId&gt;fastjson&lt;/artifactId&gt;  &lt;version&gt;1.2.68&lt;/version&gt;&lt;/dependency&gt;&lt;dependency&gt;  &lt;groupId&gt;commons-codec&lt;/groupId&gt;  &lt;artifactId&gt;commons-codec&lt;/artifactId&gt;  &lt;version&gt;1.14&lt;/version&gt;&lt;/dependency&gt;</code></pre></li><li><p>公用对象</p><pre><code class="java">// 基本的用户信息@Data@NoArgsConstructor@AllArgsConstructorpublic class UserInfo {    private Long id;    private String username;    private String email;    public static UserInfo invalid() {        return new UserInfo(-1L, &quot;&quot;, &quot;&quot;);    }}</code></pre><pre><code class="java">// 课程信息@Data@Builder@NoArgsConstructor@AllArgsConstructorpublic class CourseInfo {    private Long id;    private String courseName;    private String courseType;    private String courseIcon;    private String courseIntro;    public static CourseInfo invalid() {        return new CourseInfo(-1L, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;);    }}</code></pre><pre><code class="java">// 课程信息请求对象@Data@NoArgsConstructor@AllArgsConstructorpublic class CourseInfosRequest {    private List&lt;Long&gt; ids;}</code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 慕课网 </category>
+          
+          <category> 356-慕课网主页后端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SpringCloud </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>03-构建工程结构与基础设施</title>
+      <link href="/imooc/356-springcloud/03-structure/"/>
+      <url>/imooc/356-springcloud/03-structure/</url>
+      
+        <content type="html"><![CDATA[<p>@[TOC]</p><h2 id="3-1-搭建工程结构目录"><a href="#3-1-搭建工程结构目录" class="headerlink" title="3-1 搭建工程结构目录"></a>3-1 搭建工程结构目录</h2><pre><code class="xml">&lt;!-- 项目的打包类型, 即项目的发布形式, 默认为 jar. 对于聚合项目的父模块来说, 必须指定为 pom --&gt;&lt;packaging&gt;pom&lt;/packaging&gt;&lt;!-- 标识 SpringCloud 的版本 --&gt;&lt;dependencyManagement&gt;  &lt;dependencies&gt;    &lt;dependency&gt;      &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;      &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;      &lt;version&gt;Hoxton.SR4&lt;/version&gt;      &lt;type&gt;pom&lt;/type&gt;      &lt;scope&gt;import&lt;/scope&gt;    &lt;/dependency&gt;  &lt;/dependencies&gt;&lt;/dependencyManagement&gt;</code></pre><h2 id="3-2-单节点-Eureka-Server-的开发"><a href="#3-2-单节点-Eureka-Server-的开发" class="headerlink" title="3-2 单节点 Eureka Server 的开发"></a>3-2 单节点 Eureka Server 的开发</h2><ol><li><p>添加依赖：eureka server提供服务发现与服务注册</p><pre><code class="xml">&lt;dependency&gt;  &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;  &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-server&lt;/artifactId&gt;&lt;/dependency&gt;</code></pre></li><li><p>启动类添加注解</p><pre><code class="java">@EnableEurekaServer</code></pre></li><li><p>项目配置</p><pre><code class="yaml">spring:  application:    name: homepage-eurekaserver:  port: 8000eureka:  instance:    hostname: localhost # 实例主机名  client:    # 表示是否从Eureka server中获取注册信息，默认是 true.    # 单点的Eureka server不需要同步其他节点的数据，所以设置为false    fetch-registry: false    # 表示是否将自己注册到Eureka Server，默认是 true.    register-with-eureka: false #    service-url:      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/</code></pre></li></ol><h2 id="3-3-多节点-Eureka-Server-的搭建"><a href="#3-3-多节点-Eureka-Server-的搭建" class="headerlink" title="3-3 多节点 Eureka Server 的搭建"></a>3-3 多节点 Eureka Server 的搭建</h2><ol><li><p>添加主机名</p><pre><code>127.0.0.1 server1127.0.0.1 server2127.0.0.1 server3</code></pre></li><li><p>项目配置</p><p>SpringBoot应用启动时，会先加载bootstrap.yml，然后才是application.yml</p><pre><code class="yaml">spring:  application:    name: homepage-eureka  profiles: server1server:  port: 8000eureka:  instance:    hostname: server1    prefer-ip-address: false  client:    service-url:      defaultZone: http://server2:8001/eureka/,http://server3:8002/eureka/---spring:  application:    name: homepage-eureka  profiles: server2server:  port: 8001eureka:  instance:    hostname: server2    prefer-ip-address: false  client:    service-url:      defaultZone: http://server1:8000/eureka,http://server3:8002/eureka/---spring:  application:    name: homepage-eureka  profiles: server3server:  port: 8002eureka:  instance:    hostname: server3    prefer-ip-address: false  client:    service-url:      defaultZone: http://server1:8000/eureka,http://server2:8001/eureka/</code></pre></li><li><p>打包</p><pre><code class="shell">mvn clean package -Dmaven.test.skip=true -U</code></pre></li><li><p>启动</p><pre><code class="shell">java -jar homepage-eureka/target/homepage-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=server1 java -jar homepage-eureka/target/homepage-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=server2java -jar homepage-eureka/target/homepage-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=server3</code></pre></li></ol><h2 id="3-4-服务网关模块的开发"><a href="#3-4-服务网关模块的开发" class="headerlink" title="3-4 服务网关模块的开发"></a>3-4 服务网关模块的开发</h2><ol><li><p>添加依赖</p><p>Eureka Client 向 Eureka Server 注册的时候会提供一系列的元数据信息, 例如: 主机, 端口, 健康检查url等<br>Eureka Server 接受每个客户端发送的心跳信息, 如果在某个配置的超时时间内未接收到心跳信息, 实例会被从注册列表中移除</p><pre><code class="xml">&lt;!-- Eureka 客户端 --&gt;&lt;dependency&gt;  &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;  &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;&lt;/dependency&gt;&lt;!-- 服务网关 --&gt;&lt;dependency&gt;  &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;  &lt;artifactId&gt;spring-cloud-starter-netflix-zuul&lt;/artifactId&gt;&lt;/dependency&gt;&lt;!-- apache 工具类 --&gt;&lt;dependency&gt;  &lt;groupId&gt;commons-io&lt;/groupId&gt;  &lt;artifactId&gt;commons-io&lt;/artifactId&gt;  &lt;version&gt;2.6&lt;/version&gt;&lt;/dependency&gt;</code></pre></li><li><p>启动类添加注解：网关应用程序</p><pre><code class="java">@EnableZuulProxy@SpringCloudApplication</code></pre></li><li><p>自定义过滤器：计算请求响应耗时</p><pre><code class="java">@Componentpublic class PreRequestFilter extends ZuulFilter {    @Override    public String filterType() {        // 过滤器的类型。发起请求前        return FilterConstants.PRE_TYPE;    }    @Override    public int filterOrder() {        // 过滤器优先级。数值越小，级别越高        return 0;    }    @Override    public boolean shouldFilter() {        // 是否启用当前过滤器        return true;    }    @Override    public Object run() throws ZuulException {        // 用于在过滤器之间传递消息（路由信息、错误、Request、Response）        RequestContext ctx = RequestContext.getCurrentContext();        ctx.set(&quot;startTime&quot;, System.currentTimeMillis());        return null;    }}</code></pre><pre><code class="java">@Slf4j@Componentpublic class AccessLogFilter extends ZuulFilter {    @Override    public String filterType() {        return FilterConstants.POST_TYPE;    }    @Override    public int filterOrder() {        return FilterConstants.SEND_RESPONSE_FILTER_ORDER - 1;    }    @Override    public boolean shouldFilter() {        return true;    }    @Override    public Object run() throws ZuulException {        RequestContext ctx = RequestContext.getCurrentContext();        long startTime = Long.parseLong((String) ctx.get(&quot;startTime&quot;));        HttpServletRequest request = ctx.getRequest();        String uri = request.getRequestURI();        long duration = System.currentTimeMillis() - startTime;        log.info(&quot;uri: {}, duration: {} ms&quot;, uri, duration / 1000);        return null;    }}</code></pre></li><li><p>项目配置</p><pre><code class="yaml">spring:  application:    name: homepage-zuulserver:  port: 9000eureka:  client:    service-url:       defaultZone: http://server1:8000/eureka/</code></pre></li></ol><h2 id="3-5-数据表的设计与创建"><a href="#3-5-数据表的设计与创建" class="headerlink" title="3-5 数据表的设计与创建"></a>3-5 数据表的设计与创建</h2><ul><li><p>课程表：home_page</p><table><thead><tr><th>字段名</th><th>类型</th><th>字段含义</th></tr></thead><tbody><tr><td>id</td><td>bigint</td><td>自增主键</td></tr><tr><td>course_name</td><td>varchar(128)</td><td>课程名称，唯一索引</td></tr><tr><td>course_type</td><td>varchar(128)</td><td>课程类型</td></tr><tr><td>course_icon</td><td>varchar(128)</td><td>课程图标</td></tr><tr><td>course_intro</td><td>varchar(128)</td><td>课程介绍</td></tr><tr><td>create_time</td><td>datetime</td><td>创建时间</td></tr><tr><td>upadte_time</td><td>datetime</td><td>更新时间</td></tr></tbody></table></li><li><p>用户信息表和用户课程表：homepage_user、homepage_user_course</p><table><thead><tr><th>字段名</th><th>类型</th><th>字段含义</th></tr></thead><tbody><tr><td>id</td><td>bigint</td><td>自增主键</td></tr><tr><td>username</td><td>varchar(128)</td><td>用户名，唯一索引</td></tr><tr><td>email</td><td>varchar(128)</td><td>用户邮箱</td></tr><tr><td>create_time</td><td>datetime</td><td>创建时间</td></tr><tr><td>update_time</td><td>datetime</td><td>更新时间</td></tr></tbody></table><table><thead><tr><th>字段名</th><th>类型</th><th>字段含义</th></tr></thead><tbody><tr><td>id</td><td>bigint</td><td>自增主键</td></tr><tr><td>user_id</td><td>bigint</td><td>用户id</td></tr><tr><td>course_id</td><td>bigint</td><td>课程id</td></tr><tr><td>create_time</td><td>datetime</td><td>创建时间</td></tr><tr><td>update_time</td><td>datetime</td><td>更新时间</td></tr></tbody></table><p>备注：user_id与course_id构成联合唯一索引</p><pre><code class="sql">-- 数据库create database imooc_356;-- 用户信息表create table if not exists `imooc_356`.`homepage_user` (  `id` bigint(20) not null auto_increment comment &#39;自增ID&#39;,  `username` varchar(128) not null default &#39;&#39; comment &#39;用户名&#39;,  `email` varchar(128) not null default &#39;&#39; comment &#39;用户邮箱&#39;,  `create_time` datetime not null default &#39;1970-01-01 08:00:00&#39; comment &#39;创建时间&#39;,  `update_time` datetime not null default &#39;1970-01-01 08:00:00&#39; comment &#39;更新时间&#39;,  primary key (`id`),  unique key `key_username` (`username`)) engine=InnoDB auto_increment = 1 default charset=utf8 row_format=compact comment=&#39;用户信息表&#39;;-- 用户课程表create table if not exists `imooc_356`.`homepage_user_course` (  `id` bigint(20) not null auto_increment comment &#39;自增ID&#39;,  `user_id` bigint(20) not null default 0 comment &#39;用户ID&#39;,  `course_id` bigint(20) not null default 0 comment &#39;课程ID&#39;,  `create_time` datetime not null default &#39;1970-01-01 08:00:00&#39; comment &#39;创建时间&#39;,  `update_time` datetime not null default &#39;1970-01-01 08:00:00&#39; comment &#39;更新时间&#39;,  primary key (`id`),  unique key `key_user_course` (`user_id`, `course_id`)) engine=InnoDB auto_increment = 1 default charset=utf8 row_format=compact comment=&#39;用户课程表&#39;;-- 课程信息表create table if not exists `imooc_356`.`homepage_course` (  `id` bigint(20) not null auto_increment comment &#39;自增ID&#39;,  `course_name` varchar(128) not null default &#39;&#39; comment &#39;课程名称&#39;,  `course_type` varchar(128) not null default &#39;&#39; comment &#39;课程类型&#39;,  `course_icon` varchar(128) not null default &#39;&#39; comment &#39;课程图片&#39;,  `course_intro` varchar(128) not null default &#39;&#39; comment &#39;课程介绍&#39;,  `create_time` datetime not null default &#39;1970-01-01 08:00:00&#39; comment &#39;创建时间&#39;,  `update_time` datetime not null default &#39;1970-01-01 08:00:00&#39; comment &#39;更新时间&#39;,  primary key (`id`),  unique key `key_course_name` (`course_name`)) engine=InnoDB auto_increment = 1 default charset=utf8 row_format=compact comment=&#39;课程信息表&#39;;</code></pre></li></ul><p>INSERT INTO imooc_356.homepage_course (id, course_name, course_type, course_icon, course_intro, create_time, update_time) VALUES (1, ‘JDK11&amp;12 新特性解读’, ‘0’, ‘<a href="https://www.imooc.com&#39;" target="_blank" rel="noopener">https://www.imooc.com&#39;</a>, ‘解读 JDK11 和 JDK12 的新版本特性’, ‘2020-04-27 15:07:32’, ‘2020-04-27 15:07:32’);<br>  INSERT INTO imooc_356.homepage_course (id, course_name, course_type, course_icon, course_intro, create_time, update_time) VALUES (2, ‘基于 SpringCloud 微服务架构 广告系统设计与实现’, ‘1’, ‘<a href="https://www.imooc.com&#39;" target="_blank" rel="noopener">https://www.imooc.com&#39;</a>, ‘广告系统的设计与实现’, ‘2020-04-27 15:07:32’, ‘2020-04-27 15:07:32’);</p><p>  INSERT INTO imooc_356.homepage_user (id, username, email, create_time, update_time) VALUES (1, ‘tuyrk’, ‘tuyrk@qq.com’, ‘2020-04-28 14:51:39’, ‘2020-04-28 14:51:39’);</p><p>  INSERT INTO imooc_356.homepage_user_course (id, user_id, course_id, create_time, update_time) VALUES (1, 1, 1, ‘2020-04-28 15:02:50’, ‘2020-04-28 15:02:50’);<br>  INSERT INTO imooc_356.homepage_user_course (id, user_id, course_id, create_time, update_time) VALUES (2, 1, 2, ‘2020-04-28 15:02:50’, ‘2020-04-28 15:02:50’);</p><pre><code></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 慕课网 </category>
+          
+          <category> 356-慕课网主页后端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SpringCloud </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>02-SpringCloud框架预览</title>
+      <link href="/imooc/356-springcloud/02-introduce/"/>
+      <url>/imooc/356-springcloud/02-introduce/</url>
+      
+        <content type="html"><![CDATA[<p>@[TOC]</p><h2 id="2-1-Eureka-和-Zuul-的介绍"><a href="#2-1-Eureka-和-Zuul-的介绍" class="headerlink" title="2-1 Eureka 和 Zuul 的介绍"></a>2-1 Eureka 和 Zuul 的介绍</h2><h3 id="SpringCloud-Eureka"><a href="#SpringCloud-Eureka" class="headerlink" title="SpringCloud Eureka"></a>SpringCloud Eureka</h3><blockquote><p>Eureka包含两个组件：Eureka Server和Eureka Client</p></blockquote><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge6dsp92rdj30m807djum.jpg" alt="" style="zoom:80%;" /><pre><code class="java">ConcurrentHashMap&lt;String, Map&lt;String, Lease&lt;InstanceInfo&gt;&gt;&gt;</code></pre><p>第一个String：表示应用的名称</p><p>第二个String：实例的名称（每一个微服务可以部署多个实例）</p><p>Lease：保存实例的信息</p><h3 id="SpringCloud-Zuul"><a href="#SpringCloud-Zuul" class="headerlink" title="SpringCloud Zuul"></a>SpringCloud Zuul</h3><blockquote><p>Zuul是一个API Gateway服务器，本质上是一个Web Servlet应用</p><p>Zuul提供了动态路由、监控等服务，这些功能实现的核心是一系列的filters</p></blockquote><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge6dt7ujxfj30e207ijtd.jpg" alt="" style="zoom:80%;" /><ol><li>pre filters：在请求被路由之前调用，利用这种过滤器实现身份验证、在集群中选择请求的微服务等</li><li>routing filters：构建发送给微服务的一个请求，请求对应的微服务，微服务的响应返回给routing filters</li><li>post filters：路由到微服务之后执行，为响应添加标准的HTTP头，把响应发送给客户端</li><li>custom filters：自定义过滤器，实现相应的功能</li><li>error filters：HTTP请求执行过程中，随时调用，发生错误时执行的过滤器</li></ol><h2 id="2-2-Feign-和-Hystrix-的介绍"><a href="#2-2-Feign-和-Hystrix-的介绍" class="headerlink" title="2-2 Feign 和 Hystrix 的介绍"></a>2-2 Feign 和 Hystrix 的介绍</h2><blockquote><p>Ribbon和Feign存在的目的是什么？</p><p>答：解决微服务之间相互调用的一些问题</p></blockquote><h3 id="SpringCloud-Ribbon"><a href="#SpringCloud-Ribbon" class="headerlink" title="SpringCloud Ribbon"></a>SpringCloud Ribbon</h3><p>Ribbon包括了两个部分：负载均衡算法+app_name转具体的ip:port</p><p>每一个微服务都会部署多个实例，在调用的时候会怎样选择实例</p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge6dto6xzlj30hs08awgz.jpg" alt="" style="zoom:80%;" /><h3 id="SpringCloud-Feign"><a href="#SpringCloud-Feign" class="headerlink" title="SpringCloud Feign"></a>SpringCloud Feign</h3><p>定义接口，并在接口上添加注解，消费者通过调用接口的形式进行服务消费</p><p>Feign依赖于Ribbon，还整合了Hystrix，实现熔断降级的功能</p><h3 id="SpringCloud-Hystrix"><a href="#SpringCloud-Hystrix" class="headerlink" title="SpringCloud Hystrix"></a>SpringCloud Hystrix</h3><p>服务雪崩是熔断器解决的最核心问题</p><ol><li>在微服务架构中，通常会有多个服务层级的调用，某个服务的故障，可能会导致级联故障，进而造成整个系统不可用的情况，这种现象被称为服务雪崩效应</li><li>服务提供者的不可用，导致服务消费者的不可用，并将不可用扩大化，最终导致整个系统瘫痪</li></ol><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge6du60d4lj30fs09jtcd.jpg" alt="" style="zoom:80%;" /><p>Hystrix三个特性：断路器机制、Fallback、资源隔离</p><ol><li><p>断路器机制：当Hystrix Command请求后端服务器失败数量超过一个阈值比例，断路器就会切换到开路状态。所有请求会失败，不会发送到后端，对请求失败进行了控制</p></li><li><p>Fallback：降级回滚策略。请求失败之后，有兜底的返回，例如果请求课程服务，课程服务不可用，可以返回一个空的列表、或者返回缓存的数据。</p></li><li><p>资源隔离：不同的微服务调用使用不同的线程池来管理。线程池实现资源隔离，根据服务进行划分，每个服务都有单独的线程池（维护多个线程池，带来额外开销）</p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge6duimbmrj30e7047wfm.jpg" alt="" style="zoom:80%;" /></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 慕课网 </category>
+          
+          <category> 356-慕课网主页后端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SpringCloud </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>01-课程导学</title>
+      <link href="/imooc/356-springcloud/01-guide/"/>
+      <url>/imooc/356-springcloud/01-guide/</url>
+      
+        <content type="html"><![CDATA[<p>@[TOC]</p><h2 id="1-1-课程导学"><a href="#1-1-课程导学" class="headerlink" title="1-1 课程导学"></a>1-1 课程导学</h2><p>SpringCloud：分布式、服务治理框架</p><blockquote><p>本身不提供具体功能性的操作，更多关注服务之间的通讯、熔断、监控。因此需要很多的组件支撑这样一套功能</p></blockquote><ul><li>Eureka：（核心组件）服务注册、发现</li><li>Zuul：（服务网关）服务网关，提供统一的访问入口，分发客户端请求</li><li>Feign：服务之间调用，HTTP请求</li><li>Hystrix：容错机制、降级</li></ul><p>微服务开发：多模块项目、编码设计、服务拆分</p><p>课程目标：</p><blockquote><p>用户信息：用户基本信息（用户服务）、用户课程信息（课程服务）</p><p>用户服务调用课程服务</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 慕课网 </category>
+          
+          <category> 356-慕课网主页后端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SpringCloud </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>00-目录</title>
+      <link href="/imooc/356-springcloud/00-catalog/"/>
+      <url>/imooc/356-springcloud/00-catalog/</url>
+      
+        <content type="html"><![CDATA[<p>@[TOC]</p><blockquote><p><a href="https://coding.imooc.com/class/356.html" target="_blank" rel="noopener">https://coding.imooc.com/class/356.html</a></p></blockquote><h2 id="第1章-课程导学【先来了解下课程】"><a href="#第1章-课程导学【先来了解下课程】" class="headerlink" title="第1章 课程导学【先来了解下课程】"></a>第1章 课程导学【先来了解下课程】</h2><blockquote><p>对课程的知识点、课程要实现的项目案例以及学习这门课程之前需要做哪些准备进行说明。</p></blockquote><ul><li>1-1 课程导学</li></ul><h2 id="第2章-SpringCloud框架预览【框架给我们提供了什么】"><a href="#第2章-SpringCloud框架预览【框架给我们提供了什么】" class="headerlink" title="第2章 SpringCloud框架预览【框架给我们提供了什么】"></a>第2章 SpringCloud框架预览【框架给我们提供了什么】</h2><blockquote><p>针对课程中会使用到的SpringCloud组件进行介绍，主要是介绍它们的功能作用、交互关系以及简单的讲解实现原理。</p></blockquote><ul><li>2-1 Eureka 和 Zuul 的介绍</li><li>2-2 Feign 和 Hystrix 的介绍</li></ul><h2 id="第3章-构建工程结构与基础设施【完善工程环境】"><a href="#第3章-构建工程结构与基础设施【完善工程环境】" class="headerlink" title="第3章 构建工程结构与基础设施【完善工程环境】"></a>第3章 构建工程结构与基础设施【完善工程环境】</h2><blockquote><p>实现工程的具体功能之前，第一步要做的就是去搭建工程的结构并完善基础设施。工程的结构需要完成一个父模块的搭建、基础设施包含了Eureka和Zuul的搭建。同时，还完成了数据表的设计与创建。</p></blockquote><ul><li>3-1 搭建工程结构目录</li><li>3-2 单节点 Eureka Server 的开发</li><li>3-3 多节点 Eureka Server 的搭建</li><li>3-4 服务网关模块的开发</li><li>3-5 数据表的设计与创建</li></ul><h2 id="第4章-通用模块的实现【抽离通用代码，减少程序耦合】"><a href="#第4章-通用模块的实现【抽离通用代码，减少程序耦合】" class="headerlink" title="第4章 通用模块的实现【抽离通用代码，减少程序耦合】"></a>第4章 通用模块的实现【抽离通用代码，减少程序耦合】</h2><blockquote><p>为了避免相同的代码被重复编写，我们需要提取一个通用的模块，将所有微服务都会用到的代码放在里面。</p></blockquote><ul><li>4-1 微服务通用模块的实现</li></ul><h2 id="第5章-实现课程微服务【注意微服务构建的细节】"><a href="#第5章-实现课程微服务【注意微服务构建的细节】" class="headerlink" title="第5章 实现课程微服务【注意微服务构建的细节】"></a>第5章 实现课程微服务【注意微服务构建的细节】</h2><blockquote><p>这是我们编写的第一个功能微服务，它对外提供获取课程信息的功能。需要注意怎样去配置、编写微服务。</p></blockquote><ul><li>5-1 搭建微服务及数据表操作相关实现</li><li>5-2 微服务功能实现</li><li>5-3 功能接口测试用例的实现</li></ul><h2 id="第6章-实现用户微服务【得心应手，从容开发】"><a href="#第6章-实现用户微服务【得心应手，从容开发】" class="headerlink" title="第6章 实现用户微服务【得心应手，从容开发】"></a>第6章 实现用户微服务【得心应手，从容开发】</h2><blockquote><p>在实现课程微服务的基础上，再去实现用户微服务，就会很简单了。用户微服务主要提供创建用户、获取用户和课程信息等功能。</p></blockquote><ul><li>6-1 搭建微服务</li><li>6-2 数据表实体类及Dao接口的定义</li><li>6-3 Feign 接口及值对象的定义</li><li>6-4 微服务功能实现</li><li>6-5 功能接口测试用例的实现</li></ul><h2 id="第7章-系统可用性测试【完善系统少不了测试】"><a href="#第7章-系统可用性测试【完善系统少不了测试】" class="headerlink" title="第7章 系统可用性测试【完善系统少不了测试】"></a>第7章 系统可用性测试【完善系统少不了测试】</h2><blockquote><p>工程完成之后，就需要对服务接口进行测试。这一章讲解部署工程的方法以及使用Postman对接口进行测试。</p></blockquote><ul><li>7-1 可用性测试前的准备工作</li><li>7-2 测试对外服务接口的可用性</li></ul><h2 id="第8章-课程总结【对学习的一些感悟】"><a href="#第8章-课程总结【对学习的一些感悟】" class="headerlink" title="第8章 课程总结【对学习的一些感悟】"></a>第8章 课程总结【对学习的一些感悟】</h2><blockquote><p>这一章主要是讲解对于学习的一些方法论，大家在工作、学习的时候可以作为参考。</p></blockquote><ul><li>8-1 课程总结</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 慕课网 </category>
+          
+          <category> 356-慕课网主页后端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SpringCloud </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>553-JDK11&amp;12 新特性解读</title>
       <link href="/imooc/553-jdk11&amp;12/"/>
       <url>/imooc/553-jdk11&amp;12/</url>
@@ -63,6 +333,8 @@
       
       <categories>
           
+          <category> 慕课网 </category>
+          
           <category> 分布式消息队列-Kafka </category>
           
       </categories>
@@ -87,6 +359,8 @@
       
       
       <categories>
+          
+          <category> 慕课网 </category>
           
           <category> 分布式消息队列-Kafka </category>
           
@@ -113,6 +387,8 @@
       
       <categories>
           
+          <category> 慕课网 </category>
+          
           <category> 分布式消息队列-Kafka </category>
           
       </categories>
@@ -137,6 +413,8 @@
       
       
       <categories>
+          
+          <category> 慕课网 </category>
           
           <category> 分布式消息队列-Kafka </category>
           
@@ -190,6 +468,8 @@
       
       <categories>
           
+          <category> 慕课网 </category>
+          
           <category> 分布式消息队列-Kafka </category>
           
       </categories>
@@ -214,6 +494,8 @@
       
       
       <categories>
+          
+          <category> 慕课网 </category>
           
           <category> 分布式消息队列-Kafka </category>
           
@@ -240,6 +522,8 @@
       
       <categories>
           
+          <category> 慕课网 </category>
+          
           <category> 分布式消息队列-Kafka </category>
           
       </categories>
@@ -264,6 +548,8 @@
       
       
       <categories>
+          
+          <category> 慕课网 </category>
           
           <category> 分布式消息队列-Kafka </category>
           
@@ -290,6 +576,8 @@
       
       <categories>
           
+          <category> 慕课网 </category>
+          
           <category> 分布式消息队列-Kafka </category>
           
       </categories>
@@ -314,6 +602,8 @@
       
       
       <categories>
+          
+          <category> 慕课网 </category>
           
           <category> 分布式消息队列-Kafka </category>
           
@@ -340,6 +630,8 @@
       
       <categories>
           
+          <category> 慕课网 </category>
+          
           <category> 分布式消息队列-Kafka </category>
           
       </categories>
@@ -364,6 +656,8 @@
       
       
       <categories>
+          
+          <category> 慕课网 </category>
           
           <category> 分布式消息队列-Kafka </category>
           
@@ -984,11 +1278,11 @@
     
     
     <entry>
-      <title>5.3-SQL语句</title>
-      <link href="/alibaba-p3c/53-sql/"/>
-      <url>/alibaba-p3c/53-sql/</url>
+      <title>5.2-索引规约</title>
+      <link href="/alibaba-p3c/52-dbi-statute/"/>
+      <url>/alibaba-p3c/52-dbi-statute/</url>
       
-        <content type="html"><![CDATA[<ol><li>【强制】不要使用count(列名)或count(常量)来替代count(<em>)，count(</em>)是SQL92定义的标准统计行数的语法，跟数据库无关，跟NULL和非NULL无关。<br><br><span style="color:orange">说明</span>：count(*)会统计值为NULL的行，而count(列名)不会统计此列为NULL值的行。 </li><li>【强制】count(distinct col) 计算该列除NULL之外的不重复行数，注意 count(distinct col1, col2) 如果其中一列全为NULL，那么即使另一列有不同的值，也返回为0。 </li><li>【强制】当某一列的值全是NULL时，count(col)的返回结果为0，但sum(col)的返回结果为NULL，因此使用sum()时需注意NPE问题。<br><br><span style="color:green">正例</span>：可以使用如下方式来避免sum的NPE问题：<pre>SELECT IF(ISNULL(SUM(g)),0,SUM(g)) FROM table; </pre></li><li>【强制】使用<code>ISNULL()</code>来判断是否为NULL值。 说明：NULL与任何值的直接比较都为NULL。<br>1） <code>NULL&lt;&gt;NULL</code>的返回结果是NULL，而不是<code>false</code>。<br>2） <code>NULL=NULL</code>的返回结果是NULL，而不是<code>true</code>。<br>3） <code>NULL&lt;&gt;1</code>的返回结果是NULL，而不是<code>true</code>。 </li><li>【强制】 在代码中写分页查询逻辑时，若count为0应直接返回，避免执行后面的分页语句。 </li><li>【强制】不得使用外键与级联，一切外键概念必须在应用层解决。<br><br><span style="color:orange">说明</span>：以学生和成绩的关系为例，学生表中的student_id是主键，那么成绩表中的student_id则为外键。如果更新学生表中的student_id，同时触发成绩表中的student_id更新，即为级联更新。外键与级联更新适用于单机低并发，不适合分布式、高并发集群；级联更新是强阻塞，存在数据库更新风暴的风险；外键影响数据库的插入速度。 </li><li>【强制】禁止使用存储过程，存储过程难以调试和扩展，更没有移植性。 </li><li>【强制】数据订正（特别是删除、修改记录操作）时，要先select，避免出现误删除，确认无误才能执行更新语句。 </li><li>【推荐】in操作能避免则避免，若实在避免不了，需要仔细评估in后边的集合元素数量，控制在1000个之内。 </li><li>【参考】如果有全球化需要，所有的字符存储与表示，均以utf-8编码，注意字符统计函数的区别。<br><br><span style="color:orange">说明</span>：<pre>SELECT LENGTH("轻松工作")； 返回为12SELECT CHARACTER_LENGTH("轻松工作")； 返回为4</pre>如果需要存储表情，那么选择utf8mb4来进行存储，注意它与utf-8编码的区别。 </li><li>【参考】 TRUNCATE TABLE 比 DELETE 速度快，且使用的系统和事务日志资源少，但TRUNCATE无事务且不触发trigger，有可能造成事故，故不建议在开发代码中使用此语句。<br><br><span style="color:orange">说明</span>：TRUNCATE TABLE 在功能上与不带 WHERE 子句的 DELETE 语句相同。 </li></ol>]]></content>
+        <content type="html"><![CDATA[<ol><li>【强制】业务上具有唯一特性的字段，即使是多个字段的组合，也必须建成唯一索引。<br><br><span style="color:orange">说明</span>：不要以为唯一索引影响了insert速度，这个速度损耗可以忽略，但提高查找速度是明显的；另外，即使在应用层做了非常完善的校验控制，只要没有唯一索引，根据墨菲定律，必然有脏数据产生。 </li><li>【强制】超过三个表禁止join。需要join的字段，数据类型必须绝对一致；多表关联查询时，保证被关联的字段需要有索引。<br><br><span style="color:orange">说明</span>：即使双表join也要注意表索引、SQL性能。 </li><li>【强制】在varchar字段上建立索引时，必须指定索引长度，没必要对全字段建立索引，根据实际文本区分度决定索引长度即可。<br><br><span style="color:orange">说明</span>：索引的长度与区分度是一对矛盾体，一般对字符串类型数据，长度为20的索引，区分度会高达90%以上，可以使用count(distinct left(列名, 索引长度))/count(*)的区分度来确定。 </li><li>【强制】页面搜索严禁左模糊或者全模糊，如果需要请走搜索引擎来解决。<br><br><span style="color:orange">说明</span>：索引文件具有B-Tree的最左前缀匹配特性，如果左边的值未确定，那么无法使用此索引。</li><li>【推荐】如果有order by的场景，请注意利用索引的有序性。order by 最后的字段是组合索引的一部分，并且放在索引组合顺序的最后，避免出现file_sort的情况，影响查询性能。<br><br><span style="color:green">正例</span>：where a=? and b=? order by c; 索引：a_b_c<br><br><span style="color:red">反例</span>：索引中有范围查找，那么索引有序性无法利用，如：WHERE a&gt;10 ORDER BY b; 索引a_b无法排序。 </li><li>【推荐】利用覆盖索引来进行查询操作，避免回表。<br><br><span style="color:orange">说明</span>：如果一本书需要知道第11章是什么标题，会翻开第11章对应的那一页吗？目录浏览一下就好，这个目录就是起到覆盖索引的作用。<br><br><span style="color:green">正例</span>：能够建立索引的种类分为主键索引、唯一索引、普通索引三种，而覆盖索引只是一种查询的一种效果，用explain的结果，extra列会出现：using index。 </li><li>【推荐】利用延迟关联或者子查询优化超多分页场景。 <br><span style="color:orange">说明</span>：MySQL并不是跳过offset行，而是取offset+N行，然后返回放弃前offset行，返回N行，那当offset特别大的时候，效率就非常的低下，要么控制返回的总页数，要么对超过特定阈值的页数进行SQL改写。<br><br><span style="color:green">正例</span>：先快速定位需要获取的id段，然后再关联：       <pre>SELECT a.* FROM 表1 a, (select id from 表1 where 条件 LIMIT 100000,20 ) b where a.id=b.id </pre></li><li>【推荐】 SQL性能优化的目标：至少要达到 range 级别，要求是ref级别，如果可以是consts最好。<br><br><span style="color:orange">说明</span>：<br>1）consts 单表中最多只有一个匹配行（主键或者唯一索引），在优化阶段即可读取到数据。<br>2）ref 指的是使用普通的索引（normal index）。<br>3）range 对索引进行范围检索。 <br><span style="color:red">反例</span>：explain表的结果，type=index，索引物理文件全扫描，速度非常慢，这个index级别比较range还低，与全表扫描是小巫见大巫。 </li><li>【推荐】建组合索引的时候，区分度最高的在最左边。 <br><span style="color:green">正例</span>：如果where a=? and b=? ，a列的几乎接近于唯一值，那么只需要单建idx_a索引即可。<br><br><span style="color:orange">说明</span>：存在非等号和等号混合判断条件时，在建索引时，请把等号条件的列前置。如：where a&gt;? and b=? 那么即使a的区分度更高，也必须把b放在索引的最前列。 </li><li>【推荐】防止因字段类型不同造成的隐式转换，导致索引失效。 </li><li>【参考】创建索引时避免有如下极端误解：  1）宁滥勿缺。认为一个查询就需要建一个索引。  2）宁缺勿滥。认为索引会消耗空间、严重拖慢更新和新增速度。  3）抵制惟一索引。认为业务的惟一性一律需要在应用层通过“先查后插”方式解决。 </li></ol>]]></content>
       
       
       <categories>
@@ -1011,11 +1305,11 @@
     
     
     <entry>
-      <title>5.2-索引规约</title>
-      <link href="/alibaba-p3c/52-dbi-statute/"/>
-      <url>/alibaba-p3c/52-dbi-statute/</url>
+      <title>5.3-SQL语句</title>
+      <link href="/alibaba-p3c/53-sql/"/>
+      <url>/alibaba-p3c/53-sql/</url>
       
-        <content type="html"><![CDATA[<ol><li>【强制】业务上具有唯一特性的字段，即使是多个字段的组合，也必须建成唯一索引。<br><br><span style="color:orange">说明</span>：不要以为唯一索引影响了insert速度，这个速度损耗可以忽略，但提高查找速度是明显的；另外，即使在应用层做了非常完善的校验控制，只要没有唯一索引，根据墨菲定律，必然有脏数据产生。 </li><li>【强制】超过三个表禁止join。需要join的字段，数据类型必须绝对一致；多表关联查询时，保证被关联的字段需要有索引。<br><br><span style="color:orange">说明</span>：即使双表join也要注意表索引、SQL性能。 </li><li>【强制】在varchar字段上建立索引时，必须指定索引长度，没必要对全字段建立索引，根据实际文本区分度决定索引长度即可。<br><br><span style="color:orange">说明</span>：索引的长度与区分度是一对矛盾体，一般对字符串类型数据，长度为20的索引，区分度会高达90%以上，可以使用count(distinct left(列名, 索引长度))/count(*)的区分度来确定。 </li><li>【强制】页面搜索严禁左模糊或者全模糊，如果需要请走搜索引擎来解决。<br><br><span style="color:orange">说明</span>：索引文件具有B-Tree的最左前缀匹配特性，如果左边的值未确定，那么无法使用此索引。</li><li>【推荐】如果有order by的场景，请注意利用索引的有序性。order by 最后的字段是组合索引的一部分，并且放在索引组合顺序的最后，避免出现file_sort的情况，影响查询性能。<br><br><span style="color:green">正例</span>：where a=? and b=? order by c; 索引：a_b_c<br><br><span style="color:red">反例</span>：索引中有范围查找，那么索引有序性无法利用，如：WHERE a&gt;10 ORDER BY b; 索引a_b无法排序。 </li><li>【推荐】利用覆盖索引来进行查询操作，避免回表。<br><br><span style="color:orange">说明</span>：如果一本书需要知道第11章是什么标题，会翻开第11章对应的那一页吗？目录浏览一下就好，这个目录就是起到覆盖索引的作用。<br><br><span style="color:green">正例</span>：能够建立索引的种类分为主键索引、唯一索引、普通索引三种，而覆盖索引只是一种查询的一种效果，用explain的结果，extra列会出现：using index。 </li><li>【推荐】利用延迟关联或者子查询优化超多分页场景。 <br><span style="color:orange">说明</span>：MySQL并不是跳过offset行，而是取offset+N行，然后返回放弃前offset行，返回N行，那当offset特别大的时候，效率就非常的低下，要么控制返回的总页数，要么对超过特定阈值的页数进行SQL改写。<br><br><span style="color:green">正例</span>：先快速定位需要获取的id段，然后再关联：       <pre>SELECT a.* FROM 表1 a, (select id from 表1 where 条件 LIMIT 100000,20 ) b where a.id=b.id </pre></li><li>【推荐】 SQL性能优化的目标：至少要达到 range 级别，要求是ref级别，如果可以是consts最好。<br><br><span style="color:orange">说明</span>：<br>1）consts 单表中最多只有一个匹配行（主键或者唯一索引），在优化阶段即可读取到数据。<br>2）ref 指的是使用普通的索引（normal index）。<br>3）range 对索引进行范围检索。 <br><span style="color:red">反例</span>：explain表的结果，type=index，索引物理文件全扫描，速度非常慢，这个index级别比较range还低，与全表扫描是小巫见大巫。 </li><li>【推荐】建组合索引的时候，区分度最高的在最左边。 <br><span style="color:green">正例</span>：如果where a=? and b=? ，a列的几乎接近于唯一值，那么只需要单建idx_a索引即可。<br><br><span style="color:orange">说明</span>：存在非等号和等号混合判断条件时，在建索引时，请把等号条件的列前置。如：where a&gt;? and b=? 那么即使a的区分度更高，也必须把b放在索引的最前列。 </li><li>【推荐】防止因字段类型不同造成的隐式转换，导致索引失效。 </li><li>【参考】创建索引时避免有如下极端误解：  1）宁滥勿缺。认为一个查询就需要建一个索引。  2）宁缺勿滥。认为索引会消耗空间、严重拖慢更新和新增速度。  3）抵制惟一索引。认为业务的惟一性一律需要在应用层通过“先查后插”方式解决。 </li></ol>]]></content>
+        <content type="html"><![CDATA[<ol><li>【强制】不要使用count(列名)或count(常量)来替代count(<em>)，count(</em>)是SQL92定义的标准统计行数的语法，跟数据库无关，跟NULL和非NULL无关。<br><br><span style="color:orange">说明</span>：count(*)会统计值为NULL的行，而count(列名)不会统计此列为NULL值的行。 </li><li>【强制】count(distinct col) 计算该列除NULL之外的不重复行数，注意 count(distinct col1, col2) 如果其中一列全为NULL，那么即使另一列有不同的值，也返回为0。 </li><li>【强制】当某一列的值全是NULL时，count(col)的返回结果为0，但sum(col)的返回结果为NULL，因此使用sum()时需注意NPE问题。<br><br><span style="color:green">正例</span>：可以使用如下方式来避免sum的NPE问题：<pre>SELECT IF(ISNULL(SUM(g)),0,SUM(g)) FROM table; </pre></li><li>【强制】使用<code>ISNULL()</code>来判断是否为NULL值。 说明：NULL与任何值的直接比较都为NULL。<br>1） <code>NULL&lt;&gt;NULL</code>的返回结果是NULL，而不是<code>false</code>。<br>2） <code>NULL=NULL</code>的返回结果是NULL，而不是<code>true</code>。<br>3） <code>NULL&lt;&gt;1</code>的返回结果是NULL，而不是<code>true</code>。 </li><li>【强制】 在代码中写分页查询逻辑时，若count为0应直接返回，避免执行后面的分页语句。 </li><li>【强制】不得使用外键与级联，一切外键概念必须在应用层解决。<br><br><span style="color:orange">说明</span>：以学生和成绩的关系为例，学生表中的student_id是主键，那么成绩表中的student_id则为外键。如果更新学生表中的student_id，同时触发成绩表中的student_id更新，即为级联更新。外键与级联更新适用于单机低并发，不适合分布式、高并发集群；级联更新是强阻塞，存在数据库更新风暴的风险；外键影响数据库的插入速度。 </li><li>【强制】禁止使用存储过程，存储过程难以调试和扩展，更没有移植性。 </li><li>【强制】数据订正（特别是删除、修改记录操作）时，要先select，避免出现误删除，确认无误才能执行更新语句。 </li><li>【推荐】in操作能避免则避免，若实在避免不了，需要仔细评估in后边的集合元素数量，控制在1000个之内。 </li><li>【参考】如果有全球化需要，所有的字符存储与表示，均以utf-8编码，注意字符统计函数的区别。<br><br><span style="color:orange">说明</span>：<pre>SELECT LENGTH("轻松工作")； 返回为12SELECT CHARACTER_LENGTH("轻松工作")； 返回为4</pre>如果需要存储表情，那么选择utf8mb4来进行存储，注意它与utf-8编码的区别。 </li><li>【参考】 TRUNCATE TABLE 比 DELETE 速度快，且使用的系统和事务日志资源少，但TRUNCATE无事务且不触发trigger，有可能造成事故，故不建议在开发代码中使用此语句。<br><br><span style="color:orange">说明</span>：TRUNCATE TABLE 在功能上与不带 WHERE 子句的 DELETE 语句相同。 </li></ol>]]></content>
       
       
       <categories>
