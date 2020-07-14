@@ -1,6 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/00-synopsis/</loc>
+    <lastmod>2020-07-14</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/23-Interview-qa/</loc>
+    <lastmod>2020-07-14</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/07-springcloud-gateway/</loc>
+    <lastmod>2020-07-14</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/22-client-feign/</loc>
+    <lastmod>2020-07-14</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/21-provider-user/</loc>
+    <lastmod>2020-07-14</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/19-provider-menu/</loc>
+    <lastmod>2020-07-14</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/20-provider-order/</loc>
+    <lastmod>2020-07-14</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/18-provider-account/</loc>
+    <lastmod>2020-07-14</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/17-register-config/</loc>
+    <lastmod>2020-07-14</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/16-env-build/</loc>
+    <lastmod>2020-07-13</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/10-open-feign/</loc>
+    <lastmod>2020-07-13</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/15-sleuth-zipkin/</loc>
+    <lastmod>2020-07-13</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/11-springcloud-bus/</loc>
+    <lastmod>2020-07-13</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/14-config-github/</loc>
+    <lastmod>2020-07-13</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/10-springcloud-config/</loc>
+    <lastmod>2020-07-13</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/13-rabbitmq/</loc>
+    <lastmod>2020-07-13</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/12-config-native/</loc>
+    <lastmod>2020-07-13</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/11-hystrix/</loc>
+    <lastmod>2020-07-13</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/09-ribbon/</loc>
+    <lastmod>2020-07-10</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/08-zuul/</loc>
+    <lastmod>2020-07-10</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/07-rest-template/</loc>
+    <lastmod>2020-07-10</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/06-rest-template/</loc>
+    <lastmod>2020-07-10</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/05-eureka-client/</loc>
+    <lastmod>2020-07-10</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/04-eureka-server/</loc>
+    <lastmod>2020-07-10</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/03-micro-services/</loc>
+    <lastmod>2020-07-10</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/02-springboot-start/</loc>
+    <lastmod>2020-07-10</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-minimal/01-springboot-quickly/</loc>
+    <lastmod>2020-07-10</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/08-springcloud-feign/</loc>
+    <lastmod>2020-07-09</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/13-springcloud-redlock/</loc>
+    <lastmod>2020-07-09</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/14-springcloud-atomikos/</loc>
+    <lastmod>2020-07-09</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/21-k8s-docker-cluster/</loc>
+    <lastmod>2020-07-08</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/19-application-deploy/</loc>
+    <lastmod>2020-07-08</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/00-synopsis/</loc>
+    <lastmod>2020-07-07</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/20-springcloud-source/</loc>
+    <lastmod>2020-07-07</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/18-bussiness-code/</loc>
+    <lastmod>2020-07-07</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/17-framework-build-03/</loc>
+    <lastmod>2020-07-07</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/15-framework-build-01/</loc>
+    <lastmod>2020-07-06</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/16-framework-build-02/</loc>
+    <lastmod>2020-07-06</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/12-springcloud-sleuth/</loc>
+    <lastmod>2020-07-03</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/09-springcloud-hystrix/</loc>
+    <lastmod>2020-07-01</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/06-springcloud-eureka/</loc>
+    <lastmod>2020-06-30</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/05-springcloud-base/</loc>
+    <lastmod>2020-06-30</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/04-springboot-start/</loc>
+    <lastmod>2020-06-30</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/03-springboot-advance/</loc>
+    <lastmod>2020-06-30</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/02-springboot-begin/</loc>
+    <lastmod>2020-06-28</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/gitchat/springcloud-quickly/01-guide/</loc>
+    <lastmod>2020-06-28</lastmod>
+  </url>  <url>
+    <loc>https://www.tuyrk.cn/imooc/1058-springboot-2/</loc>
+    <lastmod>2020-06-13</lastmod>
+  </url>  <url>
     <loc>https://www.tuyrk.cn/imooc/337-hashmap/337-hashmap/</loc>
     <lastmod>2020-04-28</lastmod>
   </url>  <url>
